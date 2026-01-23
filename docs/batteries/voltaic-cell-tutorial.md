@@ -139,7 +139,15 @@ A better way to think about it: **the whole system rearranges from an uncomforta
 - **Starting arrangement:** Zn metal + H⁺ ions in solution (high energy, "uncomfortable" for nature)
 - **Ending arrangement:** Zn²⁺ dissolved + H₂ gas (low energy, "comfortable" for nature)
 
-Nature "prefers" the ending arrangement. The starting arrangement has excess energy stored in it - like a compressed spring or a room full of magnets held in an unstable pattern. When you let the system rearrange (by connecting the circuit), it snaps into the lower-energy configuration, and the energy difference gets released.
+Nature "prefers" the ending arrangement. The starting arrangement has excess energy stored in it. But here's the key: **the energy doesn't just dissipate - it gets converted into electrical potential energy.**
+
+Think of it like a compressed spring attached to a ball:
+1. **Spring compressed** = chemical energy stored in zinc metal
+2. **Spring releases, ball flies up to a ledge** = oxidation reaction pumps electrons to high electrical potential (the negative charge on zinc)
+3. **Ball sitting on ledge** = electrons at high voltage, waiting
+4. **Ball rolls off ledge through a turbine** = electrons flow through external circuit, doing useful work
+
+The oxidation reaction is the "spring" that does the work of lifting electrons to high potential. The electrons then sit there (in the double layer) as stored electrical potential energy, ready to flow and do work when you complete the circuit.
 
 **Where does this energy go?**
 
