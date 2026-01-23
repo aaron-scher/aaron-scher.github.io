@@ -65,9 +65,11 @@ When you place a zinc bar in sulfuric acid, **the metal bar becomes negatively c
 Let's trace through the steps using zinc in sulfuric acid:
 
 **Step 1: Acid dissociates**
+
 $$\text{H}_2\text{SO}_4 \rightarrow 2\text{H}^+ + \text{SO}_4^{2-}$$
 
 **Step 2: Zinc oxidizes**
+
 $$\text{Zn}(s) \rightarrow \text{Zn}^{2+}(aq) + 2e^-$$
 
 The zinc atoms leave the metal surface and enter solution as Zn²⁺ ions. Crucially, the electrons stay behind in the metal - they cannot enter the electrolyte.
@@ -93,7 +95,9 @@ Eventually, the electric field from the accumulated charge opposes further oxida
 
 The metal-electrolyte interface can be modeled as an EMF (electromotive force):
 
-$$\mathcal{E}_{\text{Zn,ox}} = E_{0,\text{Zn}} + E_{\text{SHE}}$$
+$$
+\mathcal{E}_{\text{Zn,ox}} = E_{0,\text{Zn}} + E_{\text{SHE}}
+$$
 
 where $E_{0,\text{Zn}} = -0.76$ V is zinc's standard electrode potential.
 
@@ -117,12 +121,15 @@ where $E_{0,\text{Zn}} = -0.76$ V is zinc's standard electrode potential.
 ### In Our Battery
 
 **At the anode (oxidation - SUPPLIES energy):**
+
 $$\text{Zn}(s) \rightarrow \text{Zn}^{2+}(aq) + 2e^-$$
 
 **At the cathode (reduction - CONSUMES energy):**
+
 $$2\text{H}^+(aq) + 2e^- \rightarrow \text{H}_2(g)$$
 
 **Full reaction:**
+
 $$\text{Zn}(s) + 2\text{H}^+(aq) \rightarrow \text{Zn}^{2+}(aq) + \text{H}_2(g)$$
 
 ![Figure 6: Simple equivalent circuit showing energy flow](./Voltaic%20cell%20tutorial%20images/Simple%20equivlent%20circuit.png)
@@ -160,6 +167,7 @@ This comes down to quantum mechanics and electron configuration. In metallic bon
 Zinc's electronic structure makes it "want" to release electrons more readily than copper. This isn't simply about having more protons - it's about the energy levels of the valence electrons and how they interact with the metal's band structure.
 
 > **Key insight:** Battery voltage equals the difference in standard potentials:
+>
 > $$V_{\text{batt}} = |\mathcal{E}_{\text{Zn,ox}}| - |\mathcal{E}_{\text{H,red}}| = 0.76 \text{ V}$$
 
 ---
