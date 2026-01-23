@@ -141,13 +141,22 @@ A better way to think about it: **the whole system rearranges from an uncomforta
 
 Nature "prefers" the ending arrangement. The starting arrangement has excess energy stored in it. But here's the key: **the energy doesn't just dissipate - it gets converted into electrical potential energy.**
 
-Think of it like a compressed spring attached to a ball:
+Think of it like a compressed spring that launches balls onto a ledge:
+
 1. **Spring compressed** = chemical energy stored in zinc metal
-2. **Spring releases, ball flies up to a ledge** = oxidation reaction pumps electrons to high electrical potential (the negative charge on zinc)
-3. **Ball sitting on ledge** = electrons at high voltage, waiting
+2. **Spring releases, ball flies up to a ledge** = oxidation reaction pumps electrons to high electrical potential
+3. **Ball sitting on ledge** = electrons at high voltage in the double layer, waiting
 4. **Ball rolls off ledge through a turbine** = electrons flow through external circuit, doing useful work
 
-The oxidation reaction is the "spring" that does the work of lifting electrons to high potential. The electrons then sit there (in the double layer) as stored electrical potential energy, ready to flow and do work when you complete the circuit.
+But here's the crucial extension: **the ledge has limited capacity, and a full ledge locks the spring.**
+
+- As balls accumulate on the ledge, their weight presses down on a mechanism that locks the spring
+- When the ledge is "full" (equilibrium), the spring can't fire anymore - this is what happens when you have zinc in acid with no circuit connected
+- When balls roll off (electrons flow through the circuit), the ledge gets lighter
+- This **unlocks the spring**, allowing it to fire more balls
+- More oxidation occurs, launching more electrons up to the ledge
+
+This is the feedback loop that sustains the battery: electrons flowing away → reduces the charge barrier → allows more oxidation → pumps more electrons up → they flow away → and so on, until the zinc is consumed.
 
 **Where does this energy go?**
 
