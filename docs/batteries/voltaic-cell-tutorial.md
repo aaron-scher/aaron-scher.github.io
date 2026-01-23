@@ -132,7 +132,14 @@ The energy was **already stored in the zinc metal**. Here's the key insight:
 - When zinc oxidizes, it transitions from high-energy → low-energy state.
 - **This energy difference is released**, and it's what pushes electrons through the external circuit.
 
-Think of it like a ball at the top of a hill. The ball has stored potential energy. When it rolls down, that energy gets released and can do work. The zinc is the ball; the oxidation reaction is it "rolling downhill" to a more stable state.
+A simple analogy: a ball rolling downhill releases potential energy. But this analogy is incomplete because in a battery, multiple things are moving and rearranging - electrons, zinc ions, hydrogen ions.
+
+A better way to think about it: **the whole system rearranges from an uncomfortable configuration to a more comfortable one.**
+
+- **Starting arrangement:** Zn metal + H⁺ ions in solution (high energy, "uncomfortable" for nature)
+- **Ending arrangement:** Zn²⁺ dissolved + H₂ gas (low energy, "comfortable" for nature)
+
+Nature "prefers" the ending arrangement. The starting arrangement has excess energy stored in it - like a compressed spring or a room full of magnets held in an unstable pattern. When you let the system rearrange (by connecting the circuit), it snaps into the lower-energy configuration, and the energy difference gets released.
 
 **Where does this energy go?**
 
