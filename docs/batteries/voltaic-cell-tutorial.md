@@ -148,12 +148,12 @@ The battery converts **chemical energy → electrical energy**. It's the same id
 From a circuit perspective, the battery acts like a pump lifting electrons to higher voltage. Here's the mechanism:
 
 1. The Zn → Zn²⁺ + 2e⁻ reaction is spontaneous (energetically favorable)
-2. When a zinc atom oxidizes, it leaves its electrons behind in the metal and departs as Zn²⁺
-3. This **separates charge** - positive ions go into solution, negative electrons stay in metal
-4. Charge separation = voltage. The zinc electrode becomes negatively charged (high potential for electrons)
-5. Electrons now "want" to flow to lower potential (the copper electrode)
+2. When a zinc atom oxidizes, its electrons **get left behind** in the metal while the Zn²⁺ departs into solution
+3. The electron is now **trapped at high potential** - it's stuck in the negatively-charged zinc electrode, but the positive charge it was associated with is gone
+4. The electron "wants" to follow the positive charge, but it can't travel through the electrolyte - it must go through the external wire
+5. This is what creates the driving force (voltage) for electron flow
 
-The key insight: **the chemical reaction does the work of separating charges**. This charge separation is what creates the voltage. The energy stored in zinc's chemical bonds gets converted into the electrical potential energy of separated charges.
+(You might ask: doesn't the Zn²⁺ just meet other negative charges in solution? Yes - it gets surrounded by water molecules and anions, which stabilizes it. This **solvation energy** is part of why the overall reaction is energetically favorable. But the electron can't follow - it's stuck in the metal.)
 
 ![Figure 6: Simple equivalent circuit showing energy flow](./Voltaic%20cell%20tutorial%20images/Simple%20equivlent%20circuit.png)
 *Figure 6: The zinc oxidizing acts as an energy source (EMF), while hydrogen reduction acts as an energy sink.*
