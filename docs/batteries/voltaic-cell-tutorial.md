@@ -62,29 +62,25 @@ When you place a zinc bar in sulfuric acid, **the metal bar becomes negatively c
 
 ### Why Does This Happen?
 
-Let's trace through the steps using zinc in sulfuric acid:
+Let's trace through what happens when zinc meets sulfuric acid:
 
-**Step 1: Acid dissociates**
+**The starting point:** The acid is already dissociated in water (this happens the moment you make the solution, before any metal is involved):
 
 $$\text{H}_2\text{SO}_4 \rightarrow 2\text{H}^+ + \text{SO}_4^{2-}$$
 
-**Step 2: Zinc oxidizes**
+**When zinc enters the solution:**
+
+1. **Zinc oxidizes** - Zinc atoms leave the metal surface and enter solution as Zn²⁺ ions:
 
 $$\text{Zn}(s) \rightarrow \text{Zn}^{2+}(aq) + 2e^-$$
 
-The zinc atoms leave the metal surface and enter solution as Zn²⁺ ions. Crucially, the electrons stay behind in the metal - they cannot enter the electrolyte.
+Crucially, the electrons stay behind in the metal - they cannot enter the electrolyte.
 
-**Step 3: Negative charge builds**
+2. **Negative charge builds** - As more zinc atoms oxidize, electrons accumulate on the zinc surface. The metal becomes increasingly negatively charged.
 
-As more zinc atoms oxidize, electrons accumulate on the zinc surface. The metal becomes increasingly negatively charged.
+3. **Double layer forms** - The negative surface attracts positive ions (Zn²⁺, H⁺) from solution, forming what's called the **electric double layer**.
 
-**Step 4: Double layer forms**
-
-The negative surface attracts positive ions (Zn²⁺, H⁺) from solution, forming what's called the **electric double layer**.
-
-**Step 5: Equilibrium reached**
-
-Eventually, the electric field from the accumulated charge opposes further oxidation. The system reaches equilibrium.
+4. **Equilibrium reached** - Eventually, the electric field from the accumulated charge opposes further oxidation. The system reaches equilibrium.
 
 ![Figure 4: The electric double layer at the metal-electrolyte interface](./Voltaic%20cell%20tutorial%20images/Electric%20double%20layer.png)
 *Figure 4: The electric double layer consists of a compact layer (fixed) of adsorbed ions and a diffuse layer (mobile) extending into solution. The characteristic thickness is called the Debye length.*
