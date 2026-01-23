@@ -178,11 +178,13 @@ Zinc's electronic structure makes it "want" to release electrons more readily th
 ![Figure 10: Voltaic cell showing electron and ion flow](./Voltaic%20cell%20tutorial%20images/Voltaic%20cell%20in%20a%20glass%20cartoon.png)
 *Figure 10: When the circuit closes, electrons flow from zinc through the wire to copper, while ions move through the electrolyte to complete the circuit.*
 
-When the switch closes:
+When the switch closes, three things happen **simultaneously** (not sequentially - they all enable each other):
 
-1. **Electrons flow:** Zn → wire → Cu
-2. **At Cu surface:** H⁺ + e⁻ → ½H₂ (bubbles form!)
-3. **Ions move** in electrolyte to complete circuit
+- **Electrons flow** through the wire: Zn → wire → Cu
+- **Reduction occurs at Cu surface:** H⁺ + e⁻ → ½H₂ (bubbles form!)
+- **Ions move** through the electrolyte to balance the charge
+
+Why simultaneous? Because each process depends on the others. Electrons can only keep flowing if reduction consumes them at copper. Reduction can only continue if electrons arrive. And ions must move to prevent charge buildup that would stop everything.
 
 ![Figure 11: Animation of ion movement in a simple cell](./Voltaic%20cell%20tutorial%20images/simple%20cell%20animation.png)
 *Figure 11: Ion movement in the electrolyte completes the circuit. Cations move toward the cathode; anions move toward the anode.*
@@ -205,13 +207,13 @@ When the switch closes:
 
 ### 6.4 Why Must Electrodes Share Electrolyte?
 
-If you put the electrodes in separate containers without any connection:
+Imagine putting the electrodes in separate containers, connected only by a wire (no shared electrolyte):
 
-- Positive charge accumulates in the Zn container (losing electrons as Zn²⁺)
-- Negative charge accumulates in the Cu container (gaining electrons)
-- This opposing voltage stops current almost instantly!
+- **At the zinc container:** Zinc oxidizes, releasing Zn²⁺ ions into solution. The solution becomes increasingly positive.
+- **At the copper container:** H⁺ ions get reduced to H₂, depleting positive ions. The solution becomes increasingly negative.
+- **Result:** This charge imbalance creates a voltage that *opposes* electron flow. Current stops almost instantly!
 
-The electrolyte (or a salt bridge) allows ion flow that neutralizes this charge buildup.
+The electrolyte (or a salt bridge) solves this by allowing ions to flow between containers, neutralizing the charge buildup so electrons can keep flowing.
 
 ### 6.5 Why Does Voltage Decrease Over Time?
 
@@ -284,7 +286,15 @@ The answer is **impurities**:
 ![Figure 16: Equivalent circuit for zinc granules dissolving](./Voltaic%20cell%20tutorial%20images/zinc%20granules%20in%20sulfuric%20acid%20equivalent%20circuit.png)
 *Figure 16: Each impurity creates a tiny short-circuited galvanic cell on the zinc surface.*
 
-As the reaction proceeds: electrons are removed → negative charge on zinc decreases → equilibrium shifts → more zinc dissolves → sustained H₂ release continues until zinc is consumed or acid is neutralized.
+Here's the causal chain that sustains the reaction:
+
+1. H⁺ ions reduce at impurity sites, **consuming electrons** from the zinc metal
+2. This decreases the negative charge on the zinc surface
+3. With less negative charge, the electrostatic barrier opposing oxidation is weakened
+4. More zinc atoms can now oxidize, releasing more electrons
+5. These electrons get consumed at impurity sites... and the cycle continues
+
+The reaction sustains itself until the zinc is consumed or the acid is neutralized.
 
 ---
 
