@@ -181,6 +181,14 @@ Not all metals behave the same in electrolytes. Why does zinc oxidize readily wh
 - **Anodic end (top):** Mg, Zn, Al - more reactive, easily oxidize
 - **Cathodic end (bottom):** Cu, Ag, Au - less reactive, noble metals
 
+**Why the difference?** It comes down to how tightly each metal holds its outer electrons:
+
+- Every metal atom has a positive nucleus pulling on its electrons
+- But outer electrons are **shielded** from the nucleus by inner electron shells
+- The balance between nuclear pull and shielding determines how easily an electron can escape
+
+Zinc's outer electrons sit in orbitals that are relatively exposed and loosely held - they're easy to remove. Gold's outer electrons, despite gold having way more protons, are held very tightly due to how its many electron shells are arranged (plus relativistic effects that contract its orbitals). So gold stubbornly keeps its electrons while zinc readily gives them up.
+
 ### Zinc vs Copper Comparison
 
 ![Figure 8: Zinc versus copper behavior in acid](./Voltaic%20cell%20tutorial%20images/Zinc%20versus%20Cu%20in%20solution.png)
