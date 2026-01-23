@@ -68,6 +68,7 @@ nav:
   - "Phonons: What They Are and How They Hit Electrons": quantum-mechanics/phonons.md
   - Velocity in Quantum Mechanics: quantum-mechanics/quantum-velocity.md
   - Why Massive Particles Stay Localized: quantum-mechanics/quantum-mass-localization.md
+  - "Voltaic Cells: How Batteries Work": batteries/voltaic-cell-tutorial.md
 
 extra:
   generator: false

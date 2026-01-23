@@ -13,3 +13,4 @@ A place for my future self to quickly get back up to speed (and hopefully be use
 - [Phonons: What They Are and How They Hit Electrons](quantum-mechanics/phonons.md)
 - [Velocity in Quantum Mechanics](quantum-mechanics/quantum-velocity.md)
 - [Why Massive Particles Stay Localized](quantum-mechanics/quantum-mass-localization.md)
+- [Voltaic Cells: How Batteries Work](batteries/voltaic-cell-tutorial.md)
