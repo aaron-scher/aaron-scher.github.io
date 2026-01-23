@@ -125,59 +125,44 @@ $$\text{Zn}(s) + 2\text{H}^+(aq) \rightarrow \text{Zn}^{2+}(aq) + \text{H}_2(g)$
 
 ### Where Does the Energy Come From?
 
-The energy was **already stored in the zinc metal**. Here's the key insight:
+Let's build up an analogy that captures what's really happening.
 
-- Zinc metal is in a relatively **high-energy state**. (It took energy to produce metallic zinc in the first place - this energy is now stored in its chemical bonds.)
-- Zn²⁺ dissolved in water is a **lower-energy state** - more thermodynamically stable.
-- When zinc oxidizes, it transitions from high-energy → low-energy state.
-- **This energy difference is released**, and it's what pushes electrons through the external circuit.
+**The Setup:** Imagine a compressed spring that can launch balls up onto a ledge. The ledge sits above a turbine - when balls roll off, they spin the turbine and do useful work.
 
-A simple analogy: a ball rolling downhill releases potential energy. But this analogy is incomplete because in a battery, multiple things are moving and rearranging - electrons, zinc ions, hydrogen ions.
+**The Analogy:**
 
-A better way to think about it: **the whole system rearranges from an uncomfortable configuration to a more comfortable one.**
+| Analogy | Battery |
+|---------|---------|
+| Compressed spring | Chemical energy stored in zinc metal |
+| Spring releases, launches ball up | Zinc oxidizes: Zn → Zn²⁺ + 2e⁻ |
+| Ball lands on ledge | Electron arrives at high electrical potential (in the double layer) |
+| Ball rolls off through turbine | Electron flows through external circuit, doing work |
 
-- **Starting arrangement:** Zn metal + H⁺ ions in solution (high energy, "uncomfortable" for nature)
-- **Ending arrangement:** Zn²⁺ dissolved + H₂ gas (low energy, "comfortable" for nature)
+But here's what makes this analogy actually useful - **the feedback mechanism:**
 
-Nature "prefers" the ending arrangement. The starting arrangement has excess energy stored in it. But here's the key: **the energy doesn't just dissipate - it gets converted into electrical potential energy.**
+- As balls accumulate on the ledge, their weight presses on a lock that prevents the spring from firing
+- When the ledge is "full," the spring is locked - no more balls can be launched
+- This is equilibrium: zinc in acid with no circuit connected. Oxidation stops because electrons have accumulated.
 
-Think of it like a compressed spring that launches balls onto a ledge:
+Now connect the circuit:
 
-1. **Spring compressed** = chemical energy stored in zinc metal
-2. **Spring releases, ball flies up to a ledge** = oxidation reaction pumps electrons to high electrical potential
-3. **Ball sitting on ledge** = electrons at high voltage in the double layer, waiting
-4. **Ball rolls off ledge through a turbine** = electrons flow through external circuit, doing useful work
+- Balls start rolling off the ledge (electrons flow through wire)
+- The ledge gets lighter → the lock releases → the spring can fire again
+- More balls get launched up (more zinc oxidizes)
+- This sustains the current until the spring is exhausted (zinc consumed)
 
-But here's the crucial extension: **the ledge has limited capacity, and a full ledge locks the spring.**
+**Where was the energy originally?** In the compressed spring - which represents the chemical bonds of zinc metal. It took energy to produce metallic zinc in the first place (extracted from ore in a factory). That energy is now stored in the zinc, waiting to be released.
 
-- As balls accumulate on the ledge, their weight presses down on a mechanism that locks the spring
-- When the ledge is "full" (equilibrium), the spring can't fire anymore - this is what happens when you have zinc in acid with no circuit connected
-- When balls roll off (electrons flow through the circuit), the ledge gets lighter
-- This **unlocks the spring**, allowing it to fire more balls
-- More oxidation occurs, launching more electrons up to the ledge
+**Where does the energy go?**
 
-This is the feedback loop that sustains the battery: electrons flowing away → reduces the charge barrier → allows more oxidation → pumps more electrons up → they flow away → and so on, until the zinc is consumed.
+1. First into **electrical potential** - the spring launches balls up to the ledge (electrons get pumped to high voltage)
+2. Then into **useful work** - balls roll through the turbine (electrons flow through your LED, motor, etc.)
+3. Some into **heat** - friction in the system (the battery warms slightly)
+4. Some into **forming H₂** - at the cathode, energy goes into making hydrogen gas
 
-**Where does this energy go?**
+**One more detail:** Why can't the electron just follow the Zn²⁺ into solution? Because electrons cannot travel through electrolytes - there's an energy barrier. The electron is *trapped* in the metal. Its "parent" Zn²⁺ has left, and the electron "wants" to follow the positive charge, but it can only escape through the external wire. This is what creates voltage.
 
-1. **Into the electrons** - The released energy gives electrons the "push" (voltage) to flow through the external circuit
-2. **Into useful work** - As electrons flow through your device (LED, motor, etc.), they transfer energy to it
-3. **Into heat** - Some energy is always lost as heat (the battery gets slightly warm)
-4. **Into forming H₂** - At the cathode, energy goes into forming the H-H bond in hydrogen gas
-
-The battery converts **chemical energy → electrical energy**. It's the same idea as burning fuel, except instead of releasing energy as heat and light, a battery channels it into an organized flow of electrons that can do useful work.
-
-**But how does the chemistry actually "pump" electrons to higher potential?**
-
-From a circuit perspective, the battery acts like a pump lifting electrons to higher voltage. Here's the mechanism:
-
-1. The Zn → Zn²⁺ + 2e⁻ reaction is spontaneous (energetically favorable)
-2. When a zinc atom oxidizes, its electrons **get left behind** in the metal while the Zn²⁺ departs into solution
-3. The electron is now **trapped at high potential** - it's stuck in the negatively-charged zinc electrode, but the positive charge it was associated with is gone
-4. The electron "wants" to follow the positive charge, but it can't travel through the electrolyte - it must go through the external wire
-5. This is what creates the driving force (voltage) for electron flow
-
-(You might ask: doesn't the Zn²⁺ just meet other negative charges in solution? Yes - it gets surrounded by water molecules and anions, which stabilizes it. This **solvation energy** is part of why the overall reaction is energetically favorable. But the electron can't follow - it's stuck in the metal.)
+(The Zn²⁺ does meet negative charges in solution - water molecules and anions surround and stabilize it. This "solvation energy" is part of why the reaction is favorable. But the electron can't follow - it's stuck.)
 
 ![Figure 6: Simple equivalent circuit showing energy flow](./Voltaic%20cell%20tutorial%20images/Simple%20equivlent%20circuit.png)
 *Figure 6: The zinc oxidizing acts as an energy source (EMF), while hydrogen reduction acts as an energy sink.*
