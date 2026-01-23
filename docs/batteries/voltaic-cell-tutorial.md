@@ -87,15 +87,9 @@ Crucially, the electrons stay behind in the metal - they cannot enter the electr
 
 > **Key analogy:** Metal in electrolyte acts like a "self-charging capacitor." The oxidation reaction provides the energy to build up and maintain the negative charge on the metal surface.
 
-### Equivalent Circuit Representation
+### The Electrode Potential
 
-The metal-electrolyte interface can be modeled as an EMF (electromotive force):
-
-$$
-\mathcal{E}_{\text{Zn,ox}} = E_{0,\text{Zn}} + E_{\text{SHE}}
-$$
-
-where $E_{0,\text{Zn}} = -0.76$ V is zinc's standard electrode potential.
+Each metal-electrolyte interface develops a characteristic voltage called the **standard electrode potential**. For zinc, this is $E_{0,\text{Zn}} = -0.76$ V. The negative sign indicates zinc has a strong tendency to oxidize (lose electrons). We'll use this number later to calculate battery voltage.
 
 ---
 
@@ -111,8 +105,9 @@ where $E_{0,\text{Zn}} = -0.76$ V is zinc's standard electrode potential.
 
 ### Historical Origin of Terms
 
-- **"Oxidation"** - Named because oxygen is highly electronegative and "steals" electrons from other elements. Originally meant "combining with oxygen."
-- **"Reduction"** - Metal ores were "reduced" to pure metal when heated with hydrogen. The ore lost oxygen (or gained electrons).
+- **"Oxidation"** - Originally meant "combining with oxygen." Why does oxygen take electrons? Oxygen atoms have 6 electrons in their outer shell but "want" 8 (a full shell). This makes oxygen highly **electronegative** - it strongly attracts electrons from other atoms. When iron rusts (Fe + O₂ → Fe₂O₃), the oxygen is pulling electrons away from the iron. Later, chemists realized the key event was *losing electrons*, whether oxygen was involved or not.
+
+- **"Reduction"** - Originally a metallurgy term. An **ore** is rock containing metal bonded to other elements (usually oxygen) - like iron ore (Fe₂O₃) or copper ore (CuO). Ancient metalworkers would heat ore with charcoal, and the pure metal would emerge. They called this "reduction" because the ore's mass *literally reduced* (the oxygen left as CO₂ gas). What's happening chemically? The oxygen had been hogging the metal's electrons. When oxygen leaves, the metal gets those electrons back. So "reduction" = gaining electrons.
 
 ### In Our Battery
 
