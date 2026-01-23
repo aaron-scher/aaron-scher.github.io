@@ -83,7 +83,7 @@ Crucially, the electrons stay behind in the metal - they cannot enter the electr
 4. **Equilibrium reached** - Eventually, the electric field from the accumulated charge opposes further oxidation. The system reaches equilibrium.
 
 ![Figure 4: The electric double layer at the metal-electrolyte interface](./Voltaic%20cell%20tutorial%20images/Electric%20double%20layer.png)
-*Figure 4: The electric double layer consists of a compact layer (fixed) of adsorbed ions and a diffuse layer (mobile) extending into solution. The characteristic thickness is called the Debye length.*
+*Figure 4: The electric double layer. Here's what you're seeing: The brown bar on the left is the metal (negatively charged). The blue ⊕ circles are **all the cations in solution** - this includes both the Zn²⁺ ions that dissolved from the metal AND the H⁺ ions that were already in the acid. The red ⊖ circles are anions (like SO₄²⁻). Because the metal surface is negative, positive ions (cations) cluster near it - these are called "counterions." The green curve shows how the electric potential drops from ψ₀ at the metal surface to zero in the bulk solution. The "Debye length" marks roughly where this transition happens.*
 
 > **Key analogy:** Metal in electrolyte acts like a "self-charging capacitor." The oxidation reaction provides the energy to build up and maintain the negative charge on the metal surface.
 
