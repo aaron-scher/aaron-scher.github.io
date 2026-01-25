@@ -370,6 +370,20 @@ When H⁺ + e⁻ → ½H₂ happens:
 
 - **Chemical reaction** = people actually leave through an exit door. The waiting room never fills up because occupants keep leaving. The + and - don't just pair up nearby - they merge and depart.
 
+**But wait - isn't a neutral H₂ molecule just a tiny "double layer" at the atomic scale?**
+
+You could argue that a neutral atom is still made of + and - charges, just very close together. So what's really different?
+
+Three things:
+
+1. **The fields cancel at very short range.** In a neutral H₂ molecule, the electron cloud surrounds the protons so closely (fractions of an Ångström) that beyond a few Ångströms, the electric field is essentially zero. In a double layer, charges are separated by nanometers - a thousand times farther - so the field extends over a much larger region.
+
+2. **Neutral molecules can move away.** The H₂ molecule diffuses into the bulk solution and eventually bubbles out. It physically leaves the electrode region. Charges in a double layer are stuck at the interface - positive ions held there by the negative surface, electrons confined to the metal.
+
+3. **Random orientations = no coherent field.** Even if H₂ had a small residual field, the molecules tumble randomly in solution. Their tiny fields point in all directions and cancel out statistically. In a double layer, all the charge pairs are aligned the same way (negative on metal side, positive on solution side), so their fields ADD UP to create a macroscopic voltage.
+
+So yes - you're right that a neutral molecule is "charges close together." But "close together + mobile + randomly oriented" is fundamentally different from "separated + fixed + aligned." The first gives you a gas that floats away. The second gives you a voltage that blocks current.
+
 **The reduction reaction is essential because it CONSUMES electrons.**
 
 When H⁺ + e⁻ → ½H₂ happens, the electron is gone - incorporated into a neutral H₂ molecule that floats away as a bubble. This:
