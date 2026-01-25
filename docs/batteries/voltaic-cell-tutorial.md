@@ -269,153 +269,86 @@ As the battery discharges:
 
 Net effect: $V_{\text{batt}}$ drops over time.
 
-### 6.6 Why Does H₂ Form at Cu, Not Zn? (The Deep Dive)
+### 6.6 The Cathode Reaction: Why It Matters and How It Works
 
-This is subtle and important. Let me explain what's actually happening at the molecular level.
+This section answers three connected questions:
+1. Why does H₂ form at copper instead of zinc?
+2. Is the bubbling essential for the battery to work?
+3. What's the difference between a battery and a capacitor?
 
-**Thermodynamics says:** H⁺ reduction is allowed on BOTH metals. So why doesn't it happen on zinc?
+#### The Multi-Step Mechanism of Hydrogen Evolution
 
-**The answer is kinetics** - specifically, the multi-step mechanism of hydrogen evolution:
+Thermodynamics says H⁺ reduction is allowed on BOTH metals. The difference is **kinetics** - how fast it happens. Hydrogen evolution requires multiple steps:
 
-**Step 1 - Volmer step:** H⁺ from solution approaches the metal surface, receives an electron, and **adsorbs** onto the metal as a hydrogen atom:
+**Step 1 (Volmer):** H⁺ approaches the metal, receives an electron, and adsorbs:
 
 $$\text{H}^+ + e^- + \text{M} \rightarrow \text{M-H}$$
 
-This creates a **metal-hydrogen bond** (M-H). The hydrogen atom is now stuck to the metal surface.
+**Step 2 (Tafel or Heyrovsky):** Adsorbed hydrogen atoms combine to form H₂:
+- *Tafel:* M-H + M-H → H₂ + 2M
+- *Heyrovsky:* M-H + H⁺ + e⁻ → H₂ + M
 
-**Step 2 - Forming H₂:** Two possibilities:
-- *Tafel step:* Two adsorbed H atoms find each other and combine: M-H + M-H → H₂ + 2M
-- *Heyrovsky step:* An adsorbed H reacts with another H⁺ from solution: M-H + H⁺ + e⁻ → H₂ + M
+For this to work efficiently, the **metal-hydrogen bond must be "just right"** (Sabatier principle):
+- Too weak → H can't adsorb (Step 1 fails)
+- Too strong → H won't let go (Step 2 fails)
 
-**Here's the key insight:** For this to work efficiently, the M-H bond needs to be "just right":
-- **Too weak:** H can't adsorb in the first place (Volmer step fails)
-- **Too strong:** H sticks to the surface and won't let go to form H₂ (Step 2 fails)
+**Zinc** has the wrong bond strength. The Zn-H bond is too weak - hydrogen barely adsorbs. This gives zinc a high **overpotential** (~0.7 V): you'd need 0.7 V extra to force H₂ formation at any reasonable rate.
 
-This is called the **Sabatier principle** - the best catalysts have intermediate bond strengths.
+**Copper** is closer to optimal. The Cu-H bond is strong enough for adsorption but weak enough for release. Lower overpotential (~0.5 V).
 
-**Why zinc is bad at this:**
+> Think of it as matchmaking: zinc can't get H⁺ and electrons together properly. Copper holds hydrogen just long enough for the chemistry to happen.
 
-Zinc has a **high hydrogen overpotential** (~0.7 V). This means you need to apply 0.7 V extra beyond what thermodynamics requires before H₂ will form at any reasonable rate. Why?
+#### Why the Reduction Reaction is Essential
 
-- The Zn-H bond is **too weak** - hydrogen doesn't adsorb well onto zinc surfaces
-- Zinc's most stable crystal faces have high coordination numbers, making hydrogen adsorption thermodynamically unfavorable
-- The activation energy for the Volmer step on zinc is ~1.3 eV - quite high
+What if electrons arrived at copper but didn't react? They'd accumulate, the electrode would go negative, and current would stop. You'd have a capacitor, not a battery.
 
-**Why copper is better:**
+**Double layer vs. chemical reaction - what's the difference?**
 
-Copper has a **lower hydrogen overpotential** (~0.5 V). The Cu-H bond strength is closer to optimal:
-- Hydrogen can adsorb onto copper
-- But it's not so strongly bound that it can't leave to form H₂
+In a double layer, electrons on the metal and H⁺ ions in solution sit nanometers apart. They're close but don't combine. This acts like a tiny capacitor:
+- Limited capacity (~microcoulombs)
+- Fills in microseconds
+- The built-up voltage opposes further current
 
-**So in the battery:**
-- Electrons arrive at the copper surface through the wire
-- H⁺ ions are already there in solution
-- The Cu surface catalyzes the reaction: H⁺ adsorbs → forms Cu-H → combines with another H → releases as H₂ bubble
-- This happens efficiently on copper, very slowly on zinc
+In the chemical reaction, electrons and H⁺ actually **combine** into neutral H₂ that floats away. The charge is gone from the system, making room for more electrons.
 
-> The zinc surface is like a bad matchmaker - it can't get H⁺ and electrons together properly. Copper is a good matchmaker - it holds the hydrogen just long enough for the chemistry to happen.
+**But isn't a neutral H₂ molecule just charges close together?**
 
-**What about the H⁺ getting used up?**
+Yes, but three things make it fundamentally different from a double layer:
+
+| Property | Double Layer | Neutral H₂ Molecule |
+|----------|--------------|---------------------|
+| **Separation** | Nanometers | Fractions of an Ångström (1000× closer) |
+| **Mobility** | Stuck at interface | Diffuses away, bubbles out |
+| **Field orientation** | All aligned → fields add up | Random tumbling → fields cancel |
+
+The double layer creates a coherent voltage that blocks current. Neutral molecules have no net field and leave the system entirely.
+
+#### Concentration Changes Over Time
 
 As the battery runs:
-- H⁺ concentration near the copper electrode drops (being consumed)
-- H⁺ diffuses from the bulk solution to replace it
-- Zn²⁺ concentration near the zinc electrode increases (being produced)
-- Zn²⁺ diffuses away into the bulk
+- [H⁺] drops (consumed at copper) - diffusion from bulk replaces it
+- [Zn²⁺] rises (produced at zinc) - diffuses into bulk
 
-Over time, [H⁺] drops throughout the solution and [Zn²⁺] rises. This is why battery voltage decreases (Le Chatelier / Nernst equation effects).
+This is why voltage decreases over time (Nernst equation / Le Chatelier effects).
 
-### 6.7 Is the Bubbling Essential?
-
-Yes - and understanding why reveals something fundamental about ALL batteries.
-
-**What if electrons just accumulated on the copper?**
-
-Imagine the electrons arrive at the copper but DON'T react with H⁺. What would happen?
-
-- Copper would become more and more negatively charged
-- This negative charge would repel incoming electrons
-- The voltage driving electron flow would decrease
-- Current would quickly stop
-
-The copper's double layer would grow larger and larger, building up more negative charge, until the electrostatic repulsion stops any more electrons from arriving. You'd have a "full" capacitor, not a working battery.
-
-**But wait - doesn't the double layer have + and - near each other, so they "cancel out"?**
-
-This is the subtle point. In a double layer:
-- Electrons sit on the metal surface
-- Positive ions (H⁺) sit in solution right next to the surface
-- They're very close (nanometers apart) but **they don't actually touch or combine**
-- There's still an electric field between them
-
-Here's why this matters:
-
-1. **The double layer has LIMITED CAPACITY.** Think of it like a tiny capacitor. You can only pack so much charge into that nanometer-thick layer before the electric field becomes so strong that no more charge can enter. A typical double layer capacitance is ~10-50 µF/cm² - enough for maybe microcoulombs of charge. A battery needs to deliver coulombs.
-
-2. **It fills up FAST.** The double layer forms in microseconds. The moment you connect a circuit, it's already "full." If that were the only thing happening, current would flow for a tiny fraction of a second, then stop.
-
-3. **The voltage opposes further current.** As the double layer charges up, it develops a voltage that opposes the battery's driving voltage. When they're equal, current = zero.
-
-**The chemical reaction is fundamentally different:**
-
-When H⁺ + e⁻ → ½H₂ happens:
-- The electron and H⁺ don't just sit near each other - they **actually combine** into a neutral atom
-- That neutral H₂ molecule floats away as a gas
-- The charge is truly GONE from the system, not just "balanced nearby"
-- This makes room for the next electron
-
-**Analogy:**
-
-- **Double layer** = a waiting room that fills up. Once all the seats are taken, no one else can enter. People are "paired" (sitting across from each other) but still separate individuals.
-
-- **Chemical reaction** = people actually leave through an exit door. The waiting room never fills up because occupants keep leaving. The + and - don't just pair up nearby - they merge and depart.
-
-**But wait - isn't a neutral H₂ molecule just a tiny "double layer" at the atomic scale?**
-
-You could argue that a neutral atom is still made of + and - charges, just very close together. So what's really different?
-
-Three things:
-
-1. **The fields cancel at very short range.** In a neutral H₂ molecule, the electron cloud surrounds the protons so closely (fractions of an Ångström) that beyond a few Ångströms, the electric field is essentially zero. In a double layer, charges are separated by nanometers - a thousand times farther - so the field extends over a much larger region.
-
-2. **Neutral molecules can move away.** The H₂ molecule diffuses into the bulk solution and eventually bubbles out. It physically leaves the electrode region. Charges in a double layer are stuck at the interface - positive ions held there by the negative surface, electrons confined to the metal.
-
-3. **Random orientations = no coherent field.** Even if H₂ had a small residual field, the molecules tumble randomly in solution. Their tiny fields point in all directions and cancel out statistically. In a double layer, all the charge pairs are aligned the same way (negative on metal side, positive on solution side), so their fields ADD UP to create a macroscopic voltage.
-
-So yes - you're right that a neutral molecule is "charges close together." But "close together + mobile + randomly oriented" is fundamentally different from "separated + fixed + aligned." The first gives you a gas that floats away. The second gives you a voltage that blocks current.
-
-**The reduction reaction is essential because it CONSUMES electrons.**
-
-When H⁺ + e⁻ → ½H₂ happens, the electron is gone - incorporated into a neutral H₂ molecule that floats away as a bubble. This:
-- Removes negative charge from the copper electrode
-- Makes room for more electrons to arrive
-- Keeps the current flowing
-
-> **Key insight:** In ANY battery, the cathode must have a reduction reaction that consumes electrons. Without it, electrons pile up, the electrode goes negative, and current stops. The reaction is what "drains" the electrons and allows continuous flow.
-
-**How is this different from a lithium-ion battery?**
-
-In a lithium-ion battery, there's no bubbling - but there IS still a reduction reaction:
+#### Comparison: Our Cell vs. Lithium-Ion Battery
 
 | | Zn/Cu/Acid Cell | Lithium-Ion Battery |
 |---|---|---|
-| **At cathode** | H⁺ + e⁻ → ½H₂ (gas escapes) | Li⁺ + e⁻ + CoO₂ → LiCoO₂ (stored in electrode) |
-| **Electron fate** | Leaves as H₂ gas | Stays in cathode material (reduces Co⁴⁺ to Co³⁺) |
-| **Reversible?** | No - H₂ escapes | Yes - can push Li⁺ back out |
-| **Recharging** | Can't easily recapture H₂ | Reverse the current, reverse the chemistry |
+| **Cathode reaction** | H⁺ + e⁻ → ½H₂ | Li⁺ + e⁻ + CoO₂ → LiCoO₂ |
+| **Product fate** | Gas escapes | Stored in electrode |
+| **Rechargeable?** | No | Yes (reverse the reaction) |
 
-In both cases, electrons arriving at the cathode participate in a chemical reaction - they don't just accumulate. The difference is:
-- In our simple cell, the product (H₂) leaves as a gas → not rechargeable
-- In Li-ion, the product (LiCoO₂) stays put → rechargeable by reversing
+Both require a reduction reaction that consumes electrons. The difference: our cell's product (H₂) leaves, so it's not rechargeable. Li-ion's product stays put, so you can reverse it.
 
-**So could you make a battery without any reaction - just growing double layers?**
+#### Battery vs. Capacitor
 
-That's essentially a **capacitor**, not a battery! Capacitors store energy by charge separation (growing double layers), but:
-- They store much less energy than batteries
-- They "fill up" quickly
-- No chemical reaction means no sustained current
+Could you skip the chemistry and just grow double layers? That's a **capacitor**:
+- Stores energy by charge separation
+- Low capacity, fills instantly
+- No sustained current
 
-Batteries store energy in chemical bonds and release it through reactions. The reaction is what gives batteries their high energy density.
+Batteries store energy in chemical bonds. The reaction is what gives them high energy density and sustained current.
 
 ---
 
