@@ -269,23 +269,61 @@ As the battery discharges:
 
 Net effect: $V_{\text{batt}}$ drops over time.
 
-### 6.6 Why Does H₂ Form at Cu, Not Zn?
+### 6.6 Why Does H₂ Form at Cu, Not Zn? (The Deep Dive)
 
-This is a subtle point that confuses many students.
+This is subtle and important. Let me explain what's actually happening at the molecular level.
 
-**Thermodynamics** = "Is this reaction allowed?"
-→ YES, H⁺ reduction is thermodynamically allowed on BOTH metals.
+**Thermodynamics says:** H⁺ reduction is allowed on BOTH metals. So why doesn't it happen on zinc?
 
-**Kinetics** = "How fast does it happen?"
-→ MUCH faster on copper.
+**The answer is kinetics** - specifically, the multi-step mechanism of hydrogen evolution:
 
-**Physical explanation:**
-- Zinc CAN reduce H⁺ (thermodynamically allowed)
-- But copper has much lower **activation energy** for the reaction
-- This is surface physics: Cu provides better catalytic sites for H atoms to combine into H₂
-- **Overvoltage** = extra voltage needed to overcome the kinetic barrier
+**Step 1 - Volmer step:** H⁺ from solution approaches the metal surface, receives an electron, and **adsorbs** onto the metal as a hydrogen atom:
 
-> Don't think "zinc can't reduce hydrogen." Think "copper does it much more easily, so electrons prefer to flow there."
+$$\text{H}^+ + e^- + \text{M} \rightarrow \text{M-H}$$
+
+This creates a **metal-hydrogen bond** (M-H). The hydrogen atom is now stuck to the metal surface.
+
+**Step 2 - Forming H₂:** Two possibilities:
+- *Tafel step:* Two adsorbed H atoms find each other and combine: M-H + M-H → H₂ + 2M
+- *Heyrovsky step:* An adsorbed H reacts with another H⁺ from solution: M-H + H⁺ + e⁻ → H₂ + M
+
+**Here's the key insight:** For this to work efficiently, the M-H bond needs to be "just right":
+- **Too weak:** H can't adsorb in the first place (Volmer step fails)
+- **Too strong:** H sticks to the surface and won't let go to form H₂ (Step 2 fails)
+
+This is called the **Sabatier principle** - the best catalysts have intermediate bond strengths.
+
+**Why zinc is bad at this:**
+
+Zinc has a **high hydrogen overpotential** (~0.7 V). This means you need to apply 0.7 V extra beyond what thermodynamics requires before H₂ will form at any reasonable rate. Why?
+
+- The Zn-H bond is **too weak** - hydrogen doesn't adsorb well onto zinc surfaces
+- Zinc's most stable crystal faces have high coordination numbers, making hydrogen adsorption thermodynamically unfavorable
+- The activation energy for the Volmer step on zinc is ~1.3 eV - quite high
+
+**Why copper is better:**
+
+Copper has a **lower hydrogen overpotential** (~0.5 V). The Cu-H bond strength is closer to optimal:
+- Hydrogen can adsorb onto copper
+- But it's not so strongly bound that it can't leave to form H₂
+
+**So in the battery:**
+- Electrons arrive at the copper surface through the wire
+- H⁺ ions are already there in solution
+- The Cu surface catalyzes the reaction: H⁺ adsorbs → forms Cu-H → combines with another H → releases as H₂ bubble
+- This happens efficiently on copper, very slowly on zinc
+
+> The zinc surface is like a bad matchmaker - it can't get H⁺ and electrons together properly. Copper is a good matchmaker - it holds the hydrogen just long enough for the chemistry to happen.
+
+**What about the H⁺ getting used up?**
+
+As the battery runs:
+- H⁺ concentration near the copper electrode drops (being consumed)
+- H⁺ diffuses from the bulk solution to replace it
+- Zn²⁺ concentration near the zinc electrode increases (being produced)
+- Zn²⁺ diffuses away into the bulk
+
+Over time, [H⁺] drops throughout the solution and [Zn²⁺] rises. This is why battery voltage decreases (Le Chatelier / Nernst equation effects).
 
 ---
 
@@ -313,32 +351,46 @@ Let's return to our opening example (Figure 1) with new understanding.
 ![Figure 14: Zinc granules dissolving in sulfuric acid](./Voltaic%20cell%20tutorial%20images/zinc%20granules%20disolving%20photo.png)
 *Figure 14: Zinc granules dissolving in dilute sulfuric acid. Note the hydrogen bubbles forming directly on the zinc surface.*
 
-**Observation:** Zinc granules in H₂SO₄ dissolve with vigorous H₂ bubbling - but we just said hydrogen forms more easily on copper!
+**Observation:** Zinc granules in H₂SO₄ dissolve with vigorous H₂ bubbling - but we just said zinc has high hydrogen overpotential!
 
 ### Why Do Bubbles Form on Zinc Itself?
 
-![Figure 15: Impurities in zinc granules create local galvanic cells](./Voltaic%20cell%20tutorial%20images/zinc%20granules%20impure%20diagram.png)
-*Figure 15: Impurities in the zinc create microscopic galvanic cells. The impurity sites have lower hydrogen overvoltage, allowing H₂ to form there.*
+The answer is **impurities**, and this connects back to everything we learned in Section 6.6.
 
-The answer is **impurities**:
-- Real zinc granules aren't pure
-- Impurity sites (iron, copper traces) create local galvanic cells
-- These sites have lower hydrogen overvoltage
-- H⁺ reduces preferentially at impurity sites
-- High surface area of granules accelerates the reaction
+**What are impurities?** Real zinc isn't pure. During mining and refining, tiny amounts of other metals get trapped in the zinc - typically iron (Fe) and copper (Cu) particles, sometimes just a few atoms wide, scattered throughout the zinc.
+
+**Why do impurities matter?** Remember:
+- Zinc has HIGH hydrogen overpotential (bad at making H₂)
+- Copper and iron have LOWER hydrogen overpotential (better at making H₂)
+
+The impurity particles are like tiny copper or iron electrodes embedded in the zinc surface!
+
+![Figure 15: Impurities in zinc granules create local galvanic cells](./Voltaic%20cell%20tutorial%20images/zinc%20granules%20impure%20diagram.png)
+*Figure 15: Impurities create microscopic galvanic cells. Each impurity site is a tiny cathode where H₂ can form efficiently.*
+
+**The mechanism:**
+
+Each impurity creates a **local short-circuited galvanic cell** right on the zinc surface:
+
+1. **At the zinc (anode):** Zn → Zn²⁺ + 2e⁻ (zinc dissolves)
+2. **Electrons flow** through the metal from zinc regions to impurity sites (no external wire needed - it's all connected!)
+3. **At the impurity (cathode):** 2H⁺ + 2e⁻ → H₂ (bubbles form)
+
+The impurity site acts like a tiny copper electrode. It has the right Cu-H or Fe-H bond characteristics to catalyze the Volmer and Tafel/Heyrovsky steps efficiently. The hydrogen adsorbs, combines, and leaves as bubbles.
 
 ![Figure 16: Equivalent circuit for zinc granules dissolving](./Voltaic%20cell%20tutorial%20images/zinc%20granules%20in%20sulfuric%20acid%20equivalent%20circuit.png)
-*Figure 16: Each impurity creates a tiny short-circuited galvanic cell on the zinc surface.*
+*Figure 16: Equivalent circuit: thousands of tiny short-circuited batteries on the zinc surface.*
 
-Here's the causal chain that sustains the reaction:
+**Why pure zinc reacts slowly:** With no impurities, there's no good site for H₂ to form. The zinc can oxidize a little (building up the double layer), but without somewhere for electrons to go, it stops. The high hydrogen overpotential of pure zinc (~0.7 V) almost cancels out zinc's standard potential (-0.76 V), making the net driving force tiny.
 
-1. H⁺ ions reduce at impurity sites, **consuming electrons** from the zinc metal
-2. This decreases the negative charge on the zinc surface
-3. With less negative charge, the electrostatic barrier opposing oxidation is weakened
-4. More zinc atoms can now oxidize, releasing more electrons
-5. These electrons get consumed at impurity sites... and the cycle continues
+**The feedback loop that sustains the reaction:**
 
-The reaction sustains itself until the zinc is consumed or the acid is neutralized.
+1. H⁺ reduces at impurity sites, **consuming electrons** from the zinc metal
+2. This decreases the negative charge built up on zinc
+3. With less charge barrier, more zinc can oxidize, releasing more electrons
+4. These electrons flow to impurity sites and get consumed... cycle continues
+
+**This is why chemists use impure zinc for H₂ production in labs** - pure zinc would barely react!
 
 ---
 
