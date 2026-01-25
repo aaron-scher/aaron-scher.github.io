@@ -325,6 +325,54 @@ As the battery runs:
 
 Over time, [H⁺] drops throughout the solution and [Zn²⁺] rises. This is why battery voltage decreases (Le Chatelier / Nernst equation effects).
 
+### 6.7 Is the Bubbling Essential?
+
+Yes - and understanding why reveals something fundamental about ALL batteries.
+
+**What if electrons just accumulated on the copper?**
+
+Imagine the electrons arrive at the copper but DON'T react with H⁺. What would happen?
+
+- Copper would become more and more negatively charged
+- This negative charge would repel incoming electrons
+- The voltage driving electron flow would decrease
+- Current would quickly stop
+
+The copper's double layer would grow larger and larger, building up more negative charge, until the electrostatic repulsion stops any more electrons from arriving. You'd have a "full" capacitor, not a working battery.
+
+**The reduction reaction is essential because it CONSUMES electrons.**
+
+When H⁺ + e⁻ → ½H₂ happens, the electron is gone - incorporated into a neutral H₂ molecule that floats away as a bubble. This:
+- Removes negative charge from the copper electrode
+- Makes room for more electrons to arrive
+- Keeps the current flowing
+
+> **Key insight:** In ANY battery, the cathode must have a reduction reaction that consumes electrons. Without it, electrons pile up, the electrode goes negative, and current stops. The reaction is what "drains" the electrons and allows continuous flow.
+
+**How is this different from a lithium-ion battery?**
+
+In a lithium-ion battery, there's no bubbling - but there IS still a reduction reaction:
+
+| | Zn/Cu/Acid Cell | Lithium-Ion Battery |
+|---|---|---|
+| **At cathode** | H⁺ + e⁻ → ½H₂ (gas escapes) | Li⁺ + e⁻ + CoO₂ → LiCoO₂ (stored in electrode) |
+| **Electron fate** | Leaves as H₂ gas | Stays in cathode material (reduces Co⁴⁺ to Co³⁺) |
+| **Reversible?** | No - H₂ escapes | Yes - can push Li⁺ back out |
+| **Recharging** | Can't easily recapture H₂ | Reverse the current, reverse the chemistry |
+
+In both cases, electrons arriving at the cathode participate in a chemical reaction - they don't just accumulate. The difference is:
+- In our simple cell, the product (H₂) leaves as a gas → not rechargeable
+- In Li-ion, the product (LiCoO₂) stays put → rechargeable by reversing
+
+**So could you make a battery without any reaction - just growing double layers?**
+
+That's essentially a **capacitor**, not a battery! Capacitors store energy by charge separation (growing double layers), but:
+- They store much less energy than batteries
+- They "fill up" quickly
+- No chemical reaction means no sustained current
+
+Batteries store energy in chemical bonds and release it through reactions. The reaction is what gives batteries their high energy density.
+
 ---
 
 ## 7. The Lemon Battery Revisited
