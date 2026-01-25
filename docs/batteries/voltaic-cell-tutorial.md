@@ -340,6 +340,36 @@ Imagine the electrons arrive at the copper but DON'T react with H⁺. What would
 
 The copper's double layer would grow larger and larger, building up more negative charge, until the electrostatic repulsion stops any more electrons from arriving. You'd have a "full" capacitor, not a working battery.
 
+**But wait - doesn't the double layer have + and - near each other, so they "cancel out"?**
+
+This is the subtle point. In a double layer:
+- Electrons sit on the metal surface
+- Positive ions (H⁺) sit in solution right next to the surface
+- They're very close (nanometers apart) but **they don't actually touch or combine**
+- There's still an electric field between them
+
+Here's why this matters:
+
+1. **The double layer has LIMITED CAPACITY.** Think of it like a tiny capacitor. You can only pack so much charge into that nanometer-thick layer before the electric field becomes so strong that no more charge can enter. A typical double layer capacitance is ~10-50 µF/cm² - enough for maybe microcoulombs of charge. A battery needs to deliver coulombs.
+
+2. **It fills up FAST.** The double layer forms in microseconds. The moment you connect a circuit, it's already "full." If that were the only thing happening, current would flow for a tiny fraction of a second, then stop.
+
+3. **The voltage opposes further current.** As the double layer charges up, it develops a voltage that opposes the battery's driving voltage. When they're equal, current = zero.
+
+**The chemical reaction is fundamentally different:**
+
+When H⁺ + e⁻ → ½H₂ happens:
+- The electron and H⁺ don't just sit near each other - they **actually combine** into a neutral atom
+- That neutral H₂ molecule floats away as a gas
+- The charge is truly GONE from the system, not just "balanced nearby"
+- This makes room for the next electron
+
+**Analogy:**
+
+- **Double layer** = a waiting room that fills up. Once all the seats are taken, no one else can enter. People are "paired" (sitting across from each other) but still separate individuals.
+
+- **Chemical reaction** = people actually leave through an exit door. The waiting room never fills up because occupants keep leaving. The + and - don't just pair up nearby - they merge and depart.
+
 **The reduction reaction is essential because it CONSUMES electrons.**
 
 When H⁺ + e⁻ → ½H₂ happens, the electron is gone - incorporated into a neutral H₂ molecule that floats away as a bubble. This:
