@@ -14,3 +14,5 @@ A place for my future self to quickly get back up to speed (and hopefully be use
 - [Velocity in Quantum Mechanics](quantum-mechanics/quantum-velocity.md)
 - [Why Massive Particles Stay Localized](quantum-mechanics/quantum-mass-localization.md)
 - [Voltaic Cells: How Batteries Work](batteries/voltaic-cell-tutorial.md)
+- [ARM Assembly: Fundamentals](arm-assembly/arm-assembly-fundamentals.md)
+- [ARM Assembly: Control Flow & Functions](arm-assembly/arm-assembly-control-flow.md)
