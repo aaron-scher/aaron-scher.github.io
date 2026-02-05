@@ -1,6 +1,6 @@
 # The C Toolchain: From Source to Binary
 
-You've written ARM assembly directly — loading values into registers, branching to labels, managing the stack by hand. Now let's see what happens when you write C instead. The compiler produces the same kind of assembly you wrote by hand, plus metadata for the linker. This page shows you how to inspect every step.
+The compiler isn't magic — it just produces assembly, the same kind you wrote by hand in the ARM tutorials. The difference is that it also generates metadata for the linker to stitch everything together. This page covers the full pipeline from `.c` to executable, and how to inspect each stage.
 
 !!! tip "Try it yourself"
     Paste any code example into [Compiler Explorer (godbolt.org)](https://godbolt.org/) to see the generated assembly side-by-side with your C code. Use [OnlineGDB](https://www.onlinegdb.com/online_c_compiler) to compile and run.
