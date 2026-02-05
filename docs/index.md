@@ -19,3 +19,4 @@ A place for my future self to quickly get back up to speed (and hopefully be use
 - [C Toolchain: From Source to Binary](c-programming/c-toolchain.md)
 - [C Memory Model: Objects & Pointers](c-programming/c-memory-model.md)
 - [Organizing C Programs: Scope, Linkage & Storage](c-programming/c-program-structure.md)
+- [Visual Reference: ASCII Diagrams](c-programming/visual-reference.md)
