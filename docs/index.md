@@ -16,3 +16,6 @@ A place for my future self to quickly get back up to speed (and hopefully be use
 - [Voltaic Cells: How Batteries Work](batteries/voltaic-cell-tutorial.md)
 - [ARM Assembly: Fundamentals](arm-assembly/arm-assembly-fundamentals.md)
 - [ARM Assembly: Control Flow & Functions](arm-assembly/arm-assembly-control-flow.md)
+- [C Toolchain: From Source to Binary](c-programming/c-toolchain.md)
+- [C Memory Model: Objects & Pointers](c-programming/c-memory-model.md)
+- [Organizing C Programs: Scope, Linkage & Storage](c-programming/c-program-structure.md)
