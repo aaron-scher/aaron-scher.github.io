@@ -1,0 +1,4965 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/quantum-mechanics/quantum-mass-localization/">
+      
+      
+        <link rel="prev" href="../quantum-velocity/">
+      
+      
+        <link rel="next" href="../band-theory-of-solids/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Why Massive Particles Stay Localized - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#why-massive-particles-stay-more-localized" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Why Massive Particles Stay Localized
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-complete-tutorial-from-first-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Complete Tutorial from First Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-core-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The Core Insight
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Core Insight">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mass-as-quantum-mechanics-resistance-to-delocalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mass as Quantum Mechanics' "Resistance to Delocalization"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does This Happen?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-foundationthe-schrodinger-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Foundation—The Schrödinger Equation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Foundation—The Schrödinger Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-wavefunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Wavefunction?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-time-independent-schrodinger-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Time-Independent Schrödinger Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-energy-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Energy Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-the-curvature-argument-most-fundamental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: The Curvature Argument (Most Fundamental)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: The Curvature Argument (Most Fundamental)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-rearranging-for-curvature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Rearranging for Curvature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-defining-normalized-curvature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Defining Normalized Curvature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-what-does-curvature-mean-geometrically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: What Does Curvature Mean Geometrically?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-the-mass-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: The Mass Dependence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: The Mass Dependence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implication-1-same-kinetic-energy-different-masses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implication 1: Same kinetic energy, different masses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implication-2-achieving-a-certain-kinetic-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implication 2: Achieving a certain kinetic energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-connecting-curvature-to-spatial-extent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Connecting Curvature to Spatial Extent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Connecting Curvature to Spatial Extent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analogy-bending-rods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analogy: Bending Rods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-particle-in-a-box-a-concrete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Particle in a Box (A Concrete Example)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Particle in a Box (A Concrete Example)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-physical-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Physical Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ground-state-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ground State Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ground-state-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ground State Energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-1-same-box-size-different-masses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison 1: Same Box Size, Different Masses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-does-less-energy-mean-physically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Does "Less Energy" Mean Physically?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-2-same-energy-different-box-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison 2: Same Energy, Different Box Sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works-the-curvature-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Works: The Curvature Story
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Works: The Curvature Story">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#everyday-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Everyday Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-the-harmonic-oscillator-smooth-potential-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: The Harmonic Oscillator (Smooth Potential Wells)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: The Harmonic Oscillator (Smooth Potential Wells)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-physical-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Physical Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ground-state-wavefunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ground State Wavefunction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mass-dependence-of-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mass Dependence of Width
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-free-particle-wave-packet-spreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: Free Particle Wave Packet Spreading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Free Particle Wave Packet Spreading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-setup-a-gaussian-wave-packet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Setup: A Gaussian Wave Packet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-a-free-particle-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does a Free Particle Spread?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-width-as-a-function-of-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Width as a Function of Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-spreading-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Spreading Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concrete-comparison-electron-vs-proton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concrete Comparison: Electron vs. Proton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-mass-slow-spreading-rigorous-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does Mass Slow Spreading? (Rigorous Treatment)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Does Mass Slow Spreading? (Rigorous Treatment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-velocity-are-we-talking-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Velocity Are We Talking About?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-two-meanings-of-group-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Two Meanings of "Group Velocity"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters-dispersive-vs-non-dispersive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters: Dispersive vs Non-Dispersive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-physical-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Physical Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-better-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Better Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-the-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of the Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mathematics-dispersion-relation-for-free-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mathematics: Dispersion Relation for Free Particles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-momentum-spread-rigorously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining Momentum Spread Rigorously
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-velocity-spread-rigorously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining Velocity Spread Rigorously
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-different-masses-give-different-spreading-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Different Masses Give Different Spreading Rates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to the Uncertainty Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#race-analogy-now-precise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Race Analogy (Now Precise)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-the-heisenberg-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: The Heisenberg Uncertainty Principle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: The Heisenberg Uncertainty Principle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fundamental-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fundamental Relation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-velocity-uncertainty-careful-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducing Velocity Uncertainty (Careful Treatment)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducing Velocity Uncertainty (Careful Treatment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-question-what-is-velocity-in-quantum-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Question: What Is "Velocity" in Quantum Mechanics?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rigorous-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rigorous Relationship
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewriting-the-uncertainty-principle-in-terms-of-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rewriting the Uncertainty Principle in Terms of Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-equation-tells-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Equation Tells Us
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-consequences-of-velocity-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Consequences of Velocity Uncertainty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical Consequences of Velocity Uncertainty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-confined-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Confined Particles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concrete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concrete Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-self-consistency-of-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Self-Consistency of Localization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-8-the-fourier-transform-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 8: The Fourier Transform Perspective
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 8: The Fourier Transform Perspective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position-and-momentum-as-fourier-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position and Momentum as Fourier Pairs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fourier-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fourier Uncertainty Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-does-mass-enter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Does Mass Enter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dephasing-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Dephasing Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-9-the-inevitable-localization-a-classical-quantum-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 9: The Inevitable Localization - A Classical-Quantum Bridge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 9: The Inevitable Localization - A Classical-Quantum Bridge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-rolling-balls-in-a-u-shaped-valley" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classical: Rolling Balls in a U-Shaped Valley
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-the-heavy-ball-have-more-momentum-despite-moving-slower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does the Heavy Ball Have More Momentum Despite Moving Slower?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classical-spreads-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classical Spreads: Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forces-and-energy-the-bridge-to-quantum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forces and Energy (The Bridge to Quantum)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantum-the-blur-of-all-classical-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum: The Blur of All Classical Paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-beautiful-inevitability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Beautiful Inevitability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-10-summary-tables-and-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 10: Summary Tables and Quick Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 10: Summary Tables and Quick Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-1-how-mass-affects-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 1: How Mass Affects Localization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-2-mass-dependence-in-key-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 2: Mass Dependence in Key Formulas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-3-concrete-numbers-electron-vs-proton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 3: Concrete Numbers (Electron vs. Proton)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-4-which-approach-answers-which-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 4: Which Approach Answers Which Question?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-5-domain-of-validity-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 5: Domain of Validity Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-6-what-different-velocities-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 6: What Different "Velocities" Mean
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-11-the-deep-unity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 11: The Deep Unity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 11: The Deep Unity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-all-roads-lead-to-the-same-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why All Roads Lead to the Same Answer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-classical-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Classical Limit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-intuition-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Intuition Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-notes-on-equation-validity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Notes on Equation Validity
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-complete-tutorial-from-first-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Complete Tutorial from First Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-core-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The Core Insight
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Core Insight">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mass-as-quantum-mechanics-resistance-to-delocalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mass as Quantum Mechanics' "Resistance to Delocalization"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does This Happen?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-foundationthe-schrodinger-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Foundation—The Schrödinger Equation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Foundation—The Schrödinger Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-wavefunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Wavefunction?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-time-independent-schrodinger-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Time-Independent Schrödinger Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-energy-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Energy Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-the-curvature-argument-most-fundamental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: The Curvature Argument (Most Fundamental)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: The Curvature Argument (Most Fundamental)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-rearranging-for-curvature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Rearranging for Curvature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-defining-normalized-curvature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Defining Normalized Curvature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-what-does-curvature-mean-geometrically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: What Does Curvature Mean Geometrically?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-the-mass-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: The Mass Dependence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: The Mass Dependence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implication-1-same-kinetic-energy-different-masses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implication 1: Same kinetic energy, different masses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implication-2-achieving-a-certain-kinetic-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implication 2: Achieving a certain kinetic energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-connecting-curvature-to-spatial-extent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Connecting Curvature to Spatial Extent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Connecting Curvature to Spatial Extent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analogy-bending-rods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analogy: Bending Rods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-particle-in-a-box-a-concrete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Particle in a Box (A Concrete Example)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Particle in a Box (A Concrete Example)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-physical-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Physical Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ground-state-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ground State Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ground-state-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ground State Energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-1-same-box-size-different-masses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison 1: Same Box Size, Different Masses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-does-less-energy-mean-physically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Does "Less Energy" Mean Physically?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-2-same-energy-different-box-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison 2: Same Energy, Different Box Sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works-the-curvature-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Works: The Curvature Story
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Works: The Curvature Story">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#everyday-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Everyday Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-the-harmonic-oscillator-smooth-potential-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: The Harmonic Oscillator (Smooth Potential Wells)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: The Harmonic Oscillator (Smooth Potential Wells)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-physical-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Physical Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ground-state-wavefunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ground State Wavefunction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mass-dependence-of-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mass Dependence of Width
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-free-particle-wave-packet-spreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: Free Particle Wave Packet Spreading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Free Particle Wave Packet Spreading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-setup-a-gaussian-wave-packet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Setup: A Gaussian Wave Packet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-a-free-particle-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does a Free Particle Spread?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-width-as-a-function-of-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Width as a Function of Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-spreading-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Spreading Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concrete-comparison-electron-vs-proton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concrete Comparison: Electron vs. Proton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-mass-slow-spreading-rigorous-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does Mass Slow Spreading? (Rigorous Treatment)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Does Mass Slow Spreading? (Rigorous Treatment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-velocity-are-we-talking-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Velocity Are We Talking About?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-two-meanings-of-group-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Two Meanings of "Group Velocity"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters-dispersive-vs-non-dispersive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters: Dispersive vs Non-Dispersive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-physical-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Physical Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-better-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Better Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-the-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of the Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mathematics-dispersion-relation-for-free-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mathematics: Dispersion Relation for Free Particles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-momentum-spread-rigorously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining Momentum Spread Rigorously
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-velocity-spread-rigorously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining Velocity Spread Rigorously
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-different-masses-give-different-spreading-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Different Masses Give Different Spreading Rates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to the Uncertainty Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#race-analogy-now-precise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Race Analogy (Now Precise)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-the-heisenberg-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: The Heisenberg Uncertainty Principle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: The Heisenberg Uncertainty Principle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fundamental-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fundamental Relation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-velocity-uncertainty-careful-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducing Velocity Uncertainty (Careful Treatment)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducing Velocity Uncertainty (Careful Treatment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-question-what-is-velocity-in-quantum-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Question: What Is "Velocity" in Quantum Mechanics?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rigorous-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rigorous Relationship
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewriting-the-uncertainty-principle-in-terms-of-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rewriting the Uncertainty Principle in Terms of Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-equation-tells-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Equation Tells Us
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-consequences-of-velocity-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Consequences of Velocity Uncertainty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical Consequences of Velocity Uncertainty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-confined-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Confined Particles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concrete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concrete Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-self-consistency-of-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Self-Consistency of Localization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-8-the-fourier-transform-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 8: The Fourier Transform Perspective
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 8: The Fourier Transform Perspective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position-and-momentum-as-fourier-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position and Momentum as Fourier Pairs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fourier-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fourier Uncertainty Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-does-mass-enter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Does Mass Enter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dephasing-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Dephasing Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-9-the-inevitable-localization-a-classical-quantum-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 9: The Inevitable Localization - A Classical-Quantum Bridge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 9: The Inevitable Localization - A Classical-Quantum Bridge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-rolling-balls-in-a-u-shaped-valley" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classical: Rolling Balls in a U-Shaped Valley
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-the-heavy-ball-have-more-momentum-despite-moving-slower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does the Heavy Ball Have More Momentum Despite Moving Slower?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classical-spreads-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classical Spreads: Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forces-and-energy-the-bridge-to-quantum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forces and Energy (The Bridge to Quantum)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantum-the-blur-of-all-classical-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum: The Blur of All Classical Paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-beautiful-inevitability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Beautiful Inevitability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-10-summary-tables-and-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 10: Summary Tables and Quick Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 10: Summary Tables and Quick Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-1-how-mass-affects-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 1: How Mass Affects Localization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-2-mass-dependence-in-key-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 2: Mass Dependence in Key Formulas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-3-concrete-numbers-electron-vs-proton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 3: Concrete Numbers (Electron vs. Proton)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-4-which-approach-answers-which-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 4: Which Approach Answers Which Question?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-5-domain-of-validity-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 5: Domain of Validity Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-6-what-different-velocities-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 6: What Different "Velocities" Mean
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-11-the-deep-unity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 11: The Deep Unity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 11: The Deep Unity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-all-roads-lead-to-the-same-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why All Roads Lead to the Same Answer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-classical-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Classical Limit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-intuition-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Intuition Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-notes-on-equation-validity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Notes on Equation Validity
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="why-massive-particles-stay-more-localized">Why Massive Particles Stay More Localized<a class="headerlink" href="#why-massive-particles-stay-more-localized" title="Permanent link">&para;</a></h1>
+<h2 id="a-complete-tutorial-from-first-principles">A Complete Tutorial from First Principles<a class="headerlink" href="#a-complete-tutorial-from-first-principles" title="Permanent link">&para;</a></h2>
+<p>This tutorial explains why electrons spread out and "blur" much more than protons, even though both are quantum particles. We attack this question from every angle: the Schrödinger equation, potential wells, free particle spreading, the Heisenberg uncertainty principle, and Fourier analysis. Each approach gives the same answer through different reasoning—that's how you know you truly understand something.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This tutorial assumes only:
+1. Basic calculus (derivatives, integrals)
+2. Familiarity with classical mechanics concepts like kinetic energy KE = ½mv² and potential energy
+3. The willingness to follow careful step-by-step arguments</p>
+<p>Every concept and symbol will be defined before use, and <strong>critically, we'll specify exactly when each equation applies</strong> (free space vs potentials, plane waves vs general states, etc.).</p>
+<hr />
+<h2 id="part-1-the-core-insight">Part 1: The Core Insight<a class="headerlink" href="#part-1-the-core-insight" title="Permanent link">&para;</a></h2>
+<h3 id="mass-as-quantum-mechanics-resistance-to-delocalization">Mass as Quantum Mechanics' "Resistance to Delocalization"<a class="headerlink" href="#mass-as-quantum-mechanics-resistance-to-delocalization" title="Permanent link">&para;</a></h3>
+<p>Before diving into equations, let's state the central insight that everything else will support:</p>
+<blockquote>
+<p><strong>In classical mechanics, mass resists changes in velocity (this is inertia).</strong></p>
+<p><strong>In quantum mechanics, mass resists spatial spreading (delocalization).</strong></p>
+</blockquote>
+<p>A heavy particle "wants" to stay put; a light particle "wants" to spread out. This isn't a metaphor—it's a precise mathematical consequence of the Schrödinger equation.</p>
+<h3 id="why-does-this-happen">Why Does This Happen?<a class="headerlink" href="#why-does-this-happen" title="Permanent link">&para;</a></h3>
+<p>Quantum mechanics assigns wave-like properties to all particles. The key relationship is the <strong>de Broglie wavelength</strong>:</p>
+<div class="arithmatex">\[\lambda = \frac{h}{p} = \frac{h}{mv}\]</div>
+<p><strong>IMPORTANT - Domain of Validity:</strong>
+- <strong>This formula is exact for plane waves</strong> (waves with definite momentum p)
+- <strong>For wave packets and general states:</strong> The particle doesn't have a single wavelength, but rather a spectrum of wavelengths corresponding to the momentum components present. The formula still applies to each momentum component individually
+- <strong>Works in any potential</strong> (free space or otherwise), but remember: in a general potential, the momentum isn't constant in space—it varies depending on the potential energy at each location
+- <strong>The formula p = mv is the classical momentum</strong>, which corresponds to the expectation value ⟨p⟩ for quantum states</p>
+<p>For particles with the same velocity:</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Mass</th>
+<th>Wavelength (for same v)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron</td>
+<td><span class="arithmatex">\(m_e\)</span></td>
+<td><span class="arithmatex">\(\lambda_e = h/(m_e v)\)</span></td>
+</tr>
+<tr>
+<td>Proton</td>
+<td><span class="arithmatex">\(1836 m_e\)</span></td>
+<td><span class="arithmatex">\(\lambda_p = h/(1836 m_e v) = \lambda_e/1836\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The proton's wavelength is <strong>1836 times shorter</strong> than the electron's! Shorter wavelengths mean the wave "fits" into smaller spaces. Longer wavelengths mean the wave is inherently "fuzzier" and more spread out in space.</p>
+<p>This is the intuitive answer. Now let's see it emerge rigorously from the Schrödinger equation.</p>
+<hr />
+<h2 id="part-2-foundationthe-schrodinger-equation">Part 2: Foundation—The Schrödinger Equation<a class="headerlink" href="#part-2-foundationthe-schrodinger-equation" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-a-wavefunction">What Is a Wavefunction?<a class="headerlink" href="#what-is-a-wavefunction" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> The wavefunction <span class="arithmatex">\(\psi(x,t)\)</span> is a mathematical function that encodes everything knowable about a quantum particle's state. It is a <strong>complex-valued function</strong> (meaning it can have real and imaginary parts) that varies over space (x) and time (t).</p>
+<p><strong>The physical meaning:</strong> <span class="arithmatex">\(|\psi(x)|^2\)</span> (the squared magnitude of the wavefunction) gives the <strong>probability density</strong>—the probability per unit length of finding the particle near position x.</p>
+<ul>
+<li>A particle is <strong>localized</strong> when <span class="arithmatex">\(|\psi(x)|^2\)</span> is tall and narrow (high probability in a small region)</li>
+<li>A particle is <strong>delocalized</strong> when <span class="arithmatex">\(|\psi(x)|^2\)</span> is short and wide (probability spread over a large region)</li>
+</ul>
+<h3 id="the-time-independent-schrodinger-equation">The Time-Independent Schrödinger Equation<a class="headerlink" href="#the-time-independent-schrodinger-equation" title="Permanent link">&para;</a></h3>
+<p><strong>Domain of Validity:</strong> This equation applies to <strong>stationary states</strong>—states with definite total energy E. These are the eigenstates of the Hamiltonian. The full time-dependent wavefunction is <span class="arithmatex">\(\Psi(x,t) = \psi(x)e^{-iEt/\hbar}\)</span>, where <span class="arithmatex">\(\psi(x)\)</span> satisfies:</p>
+<div class="arithmatex">\[-\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2} + V(x)\psi = E\psi\]</div>
+<p><strong>Definition of each symbol:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\hbar\)</span></td>
+<td>Reduced Planck constant</td>
+<td>Nature's quantum scale (<span class="arithmatex">\(1.055 \times 10^{-34}\)</span> J·s)</td>
+<td>J·s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m\)</span></td>
+<td>Particle mass</td>
+<td>How much "stuff" the particle has</td>
+<td>kg</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\psi\)</span></td>
+<td>Wavefunction</td>
+<td>Probability amplitude at position x</td>
+<td><span class="arithmatex">\(m^{-1/2}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(d^2\psi/dx^2\)</span></td>
+<td>Second derivative</td>
+<td>How much <span class="arithmatex">\(\psi\)</span> curves (bends) in space</td>
+<td><span class="arithmatex">\(m^{-5/2}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(V(x)\)</span></td>
+<td>Potential energy</td>
+<td>Energy from external forces at position x</td>
+<td>J</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E\)</span></td>
+<td>Total energy</td>
+<td>Kinetic + potential energy (constant for stationary states)</td>
+<td>J</td>
+</tr>
+</tbody>
+</table>
+<h3 id="understanding-the-energy-terms">Understanding the Energy Terms<a class="headerlink" href="#understanding-the-energy-terms" title="Permanent link">&para;</a></h3>
+<p>The total energy E is the sum of kinetic energy (energy of motion) and potential energy (energy from position in a force field):</p>
+<div class="arithmatex">\[E = KE + PE = KE + V(x)\]</div>
+<p><strong>Validity note:</strong> For stationary states, E is constant in time. At each position x, we can write:</p>
+<div class="arithmatex">\[KE(x) = E - V(x)\]</div>
+<p><strong>This is crucial:</strong> The kinetic energy at each position depends on how deep the particle is in the potential. In a potential well (where V is negative), <span class="arithmatex">\(E - V(x)\)</span> is larger than E alone, so the kinetic energy is high.</p>
+<hr />
+<h2 id="part-3-the-curvature-argument-most-fundamental">Part 3: The Curvature Argument (Most Fundamental)<a class="headerlink" href="#part-3-the-curvature-argument-most-fundamental" title="Permanent link">&para;</a></h2>
+<p>This section contains the deepest insight. Read it carefully—everything else follows from here.</p>
+<h3 id="step-1-rearranging-for-curvature">Step 1: Rearranging for Curvature<a class="headerlink" href="#step-1-rearranging-for-curvature" title="Permanent link">&para;</a></h3>
+<p>Start with the Schrödinger equation and solve for the second derivative (the curvature term):</p>
+<p><strong>Starting equation</strong> (valid for stationary states in any potential):
+$<span class="arithmatex">\(-\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2} + V(x)\psi = E\psi\)</span>$</p>
+<p>Move <span class="arithmatex">\(V(x)\psi\)</span> to the right side:
+$<span class="arithmatex">\(-\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2} = E\psi - V(x)\psi = [E - V(x)]\psi\)</span>$</p>
+<p>Multiply both sides by <span class="arithmatex">\(-2m/\hbar^2\)</span>:
+$<span class="arithmatex">\(\frac{d^2\psi}{dx^2} = -\frac{2m}{\hbar^2} [E - V(x)] \psi\)</span>$</p>
+<p>Recognize that <span class="arithmatex">\([E - V(x)] = KE\)</span> (kinetic energy at position x):
+$<span class="arithmatex">\(\frac{d^2\psi}{dx^2} = -\frac{2m}{\hbar^2} \cdot KE \cdot \psi\)</span>$</p>
+<p><strong>Validity:</strong> This relationship holds <strong>at every point in space</strong> for any stationary state in any potential <span class="arithmatex">\(V(x)\)</span>.</p>
+<h3 id="step-2-defining-normalized-curvature">Step 2: Defining Normalized Curvature<a class="headerlink" href="#step-2-defining-normalized-curvature" title="Permanent link">&para;</a></h3>
+<p>The second derivative <span class="arithmatex">\(d^2\psi/dx^2\)</span> tells us how much the wavefunction bends. But to compare curvature meaningfully, we should look at the curvature <strong>relative to</strong> the wavefunction's value at that point.</p>
+<p><strong>Definition:</strong> The <strong>normalized curvature</strong> (or relative curvature) is the second derivative divided by the wavefunction itself:</p>
+<div class="arithmatex">\[\frac{d^2\psi/dx^2}{\psi}\]</div>
+<p>Dividing both sides of our equation by <span class="arithmatex">\(\psi\)</span>:</p>
+<div class="arithmatex">\[\boxed{\frac{d^2\psi/dx^2}{\psi} = -\frac{2m}{\hbar^2} \cdot KE}\]</div>
+<p><strong>This is the master equation for understanding localization.</strong> Applies to any stationary state, any potential.</p>
+<h3 id="step-3-what-does-curvature-mean-geometrically">Step 3: What Does Curvature Mean Geometrically?<a class="headerlink" href="#step-3-what-does-curvature-mean-geometrically" title="Permanent link">&para;</a></h3>
+<p>The second derivative tells you how much a function "bends":</p>
+<table>
+<thead>
+<tr>
+<th>Curvature Value</th>
+<th>What the Function Does</th>
+<th>Visual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Large negative</td>
+<td>Bends sharply downward (concave down)</td>
+<td>Like ∩ with tight curve</td>
+</tr>
+<tr>
+<td>Small negative</td>
+<td>Bends gently downward</td>
+<td>Like ∩ with wide curve</td>
+</tr>
+<tr>
+<td>Zero</td>
+<td>Straight line (no bending)</td>
+<td>Like —</td>
+</tr>
+<tr>
+<td>Small positive</td>
+<td>Bends gently upward</td>
+<td>Like ∪ with wide curve</td>
+</tr>
+<tr>
+<td>Large positive</td>
+<td>Bends sharply upward (concave up)</td>
+<td>Like ∪ with tight curve</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key geometric fact:</strong> A function that curves sharply bends back toward zero quickly. A function that curves gently extends far before turning around.</p>
+<h3 id="step-4-the-mass-dependence">Step 4: The Mass Dependence<a class="headerlink" href="#step-4-the-mass-dependence" title="Permanent link">&para;</a></h3>
+<p>Now examine our master equation:</p>
+<div class="arithmatex">\[\frac{d^2\psi/dx^2}{\psi} = -\frac{2m}{\hbar^2} \cdot KE\]</div>
+<p>The normalized curvature is <strong>proportional to the mass</strong> m. This has two important implications:</p>
+<h4 id="implication-1-same-kinetic-energy-different-masses">Implication 1: Same kinetic energy, different masses<a class="headerlink" href="#implication-1-same-kinetic-energy-different-masses" title="Permanent link">&para;</a></h4>
+<p>If an electron and a proton have the same kinetic energy (at some point in space):</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Mass</th>
+<th>Normalized Curvature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron</td>
+<td><span class="arithmatex">\(m_e\)</span></td>
+<td>Curvature = C</td>
+</tr>
+<tr>
+<td>Proton</td>
+<td><span class="arithmatex">\(1836 m_e\)</span></td>
+<td>Curvature = <span class="arithmatex">\(1836 \times C\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>For the same kinetic energy, the proton's wavefunction curves 1836 times more sharply!</strong> It bends back toward zero much faster, so it stays in a smaller region.</p>
+<h4 id="implication-2-achieving-a-certain-kinetic-energy">Implication 2: Achieving a certain kinetic energy<a class="headerlink" href="#implication-2-achieving-a-certain-kinetic-energy" title="Permanent link">&para;</a></h4>
+<p>Rearranging the equation to solve for KE:</p>
+<div class="arithmatex">\[KE = -\frac{\hbar^2}{2m} \cdot \frac{d^2\psi/dx^2}{\psi}\]</div>
+<p>This says: <strong>kinetic energy equals <span class="arithmatex">\((\hbar^2/2m)\)</span> times the curvature magnitude</strong>. So:</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>To achieve a given KE...</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heavy (large m)</td>
+<td>Needs large curvature</td>
+<td>Wavefunction must bend sharply → stays localized</td>
+</tr>
+<tr>
+<td>Light (small m)</td>
+<td>Even small curvature gives large KE</td>
+<td>Wavefunction can bend gently → extends far</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Think of it this way:</strong> For a light particle, even a gently curving wavefunction represents a lot of kinetic energy. For a heavy particle, you need sharp curvature to get the same kinetic energy.</p>
+<h3 id="step-5-connecting-curvature-to-spatial-extent">Step 5: Connecting Curvature to Spatial Extent<a class="headerlink" href="#step-5-connecting-curvature-to-spatial-extent" title="Permanent link">&para;</a></h3>
+<p>Imagine drawing a wavefunction that starts at zero (at a boundary), rises up, and must eventually return to zero (at another boundary or at infinity). How far does it extend before returning?</p>
+<p><strong>Light particle (small m):</strong> Gentle curvature → The wavefunction rises slowly, bends back gradually, and takes a long distance to return to zero. <strong>Result: Wide, spread-out wavefunction.</strong></p>
+<p><strong>Heavy particle (large m):</strong> Sharp curvature → The wavefunction bends back quickly and returns to zero in a short distance. <strong>Result: Narrow, localized wavefunction.</strong></p>
+<h4 id="analogy-bending-rods">Analogy: Bending Rods<a class="headerlink" href="#analogy-bending-rods" title="Permanent link">&para;</a></h4>
+<p>Think of trying to bend flexible versus stiff rods into an arch:
+- A flexible rod (like a light particle's wavefunction) makes wide, gentle arcs
+- A stiff rod (like a heavy particle's wavefunction) makes tight, compact loops</p>
+<p><strong>Mass acts like "stiffness" for the wavefunction's spatial behavior.</strong> Heavier particles have "stiffer" wavefunctions that resist spreading out.</p>
+<hr />
+<h2 id="part-4-particle-in-a-box-a-concrete-example">Part 4: Particle in a Box (A Concrete Example)<a class="headerlink" href="#part-4-particle-in-a-box-a-concrete-example" title="Permanent link">&para;</a></h2>
+<p>Let's see the curvature argument work out concretely in the simplest confined system.</p>
+<h3 id="the-physical-setup">The Physical Setup<a class="headerlink" href="#the-physical-setup" title="Permanent link">&para;</a></h3>
+<p>A particle is trapped between two impenetrable walls at x = 0 and x = L. The potential is:</p>
+<div class="arithmatex">\[V(x) = \begin{cases}
+0 &amp; \text{inside the box } (0 &lt; x &lt; L) \\
+\infty &amp; \text{outside the box}
+\end{cases}\]</div>
+<p><strong>Domain note:</strong> Inside the box, we're solving the free-particle Schrödinger equation (V=0), but with <strong>boundary conditions</strong> that <span class="arithmatex">\(\psi(0) = \psi(L) = 0\)</span>. The infinite walls mean the wavefunction must be zero at the walls (the particle has zero probability of being at the walls).</p>
+<h3 id="the-ground-state-solution">The Ground State Solution<a class="headerlink" href="#the-ground-state-solution" title="Permanent link">&para;</a></h3>
+<p>The lowest-energy (ground state) wavefunction is a half sine wave:</p>
+<div class="arithmatex">\[\psi_1(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{\pi x}{L}\right)\]</div>
+<p>This wavefunction starts at zero (left wall), rises to a maximum in the middle, and returns to zero (right wall). It makes exactly one "hump."</p>
+<h3 id="the-ground-state-energy">The Ground State Energy<a class="headerlink" href="#the-ground-state-energy" title="Permanent link">&para;</a></h3>
+<p>Substituting into the Schrödinger equation gives the ground state energy:</p>
+<div class="arithmatex">\[\boxed{E_1 = \frac{\pi^2\hbar^2}{2mL^2}}\]</div>
+<p><strong>This is a crucial result.</strong> Notice that <span class="arithmatex">\(E_1\)</span> depends on both the mass m and the box size L.</p>
+<h3 id="comparison-1-same-box-size-different-masses">Comparison 1: Same Box Size, Different Masses<a class="headerlink" href="#comparison-1-same-box-size-different-masses" title="Permanent link">&para;</a></h3>
+<p><strong>Physical situation:</strong> We have a box of fixed size L and put different particles in it. What is the minimum energy each particle can have?</p>
+<p><strong>Why this comparison matters:</strong> In real systems (atoms, quantum dots, nanostructures), the confining region often has a fixed size. We want to know how different particles behave in that same confinement.</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Mass</th>
+<th>Ground State Energy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron</td>
+<td><span class="arithmatex">\(m_e\)</span></td>
+<td><span class="arithmatex">\(E_1 = \pi^2\hbar^2/(2m_e L^2)\)</span></td>
+</tr>
+<tr>
+<td>Proton</td>
+<td><span class="arithmatex">\(1836 m_e\)</span></td>
+<td><span class="arithmatex">\(E_1 = \pi^2\hbar^2/(2 \cdot 1836 \cdot m_e L^2) = E_e/1836\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The proton has 1836 times less energy than the electron in the same box!</strong></p>
+<h3 id="what-does-less-energy-mean-physically">What Does "Less Energy" Mean Physically?<a class="headerlink" href="#what-does-less-energy-mean-physically" title="Permanent link">&para;</a></h3>
+<p>This is the key question. Let's understand it through the curvature argument:</p>
+<p>Both wavefunctions have the <strong>same shape</strong> (a half sine wave) because they must fit in the same box. Same shape means <strong>same curvature</strong>.</p>
+<p>From our master equation: <span class="arithmatex">\(KE = (\hbar^2/2m) \times |\text{curvature}|\)</span></p>
+<p>For the same curvature:
+- <strong>Light particle:</strong> small m → large KE (high energy for this curvature)
+- <strong>Heavy particle:</strong> large m → small KE (low energy for this curvature)</p>
+<p><strong>The heavy particle "pays less" in kinetic energy for the same amount of spatial bending.</strong> The light particle has much higher kinetic energy just to achieve the same gentle curve.</p>
+<h3 id="comparison-2-same-energy-different-box-sizes">Comparison 2: Same Energy, Different Box Sizes<a class="headerlink" href="#comparison-2-same-energy-different-box-sizes" title="Permanent link">&para;</a></h3>
+<p><strong>Physical situation:</strong> We give each particle the same total energy E. How much space does each particle need to "fit"?</p>
+<p><strong>Why this comparison matters:</strong> In thermal equilibrium at temperature T, particles have average energy proportional to T. This comparison tells us how localized different particles are at the same temperature.</p>
+<p>Rearranging <span class="arithmatex">\(E_1 = \pi^2\hbar^2/(2mL^2)\)</span> to solve for L:</p>
+<div class="arithmatex">\[L = \frac{\pi\hbar}{\sqrt{2mE}}\]</div>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Mass</th>
+<th>Box Size Needed for Energy E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron</td>
+<td><span class="arithmatex">\(m_e\)</span></td>
+<td><span class="arithmatex">\(L_e = \pi\hbar/\sqrt{2m_e E}\)</span></td>
+</tr>
+<tr>
+<td>Proton</td>
+<td><span class="arithmatex">\(1836 m_e\)</span></td>
+<td><span class="arithmatex">\(L_p = \pi\hbar/\sqrt{2 \cdot 1836 \cdot m_e E} = L_e/\sqrt{1836} \approx L_e/43\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>For the same energy budget, the proton fits in a box 43 times smaller than the electron!</strong></p>
+<h3 id="why-this-works-the-curvature-story">Why This Works: The Curvature Story<a class="headerlink" href="#why-this-works-the-curvature-story" title="Permanent link">&para;</a></h3>
+<p>To fit in a smaller box, the wavefunction must curve more sharply (it has less room to turn around). From <span class="arithmatex">\(KE = (\hbar^2/2m) \times |\text{curvature}|\)</span>:</p>
+<ul>
+<li><strong>Light particle:</strong> Even gentle curvature gives high KE. Sharp curvature (small box) would require enormous energy. So light particles need big boxes.</li>
+<li><strong>Heavy particle:</strong> Curvature is "cheap" in energy terms. The particle can curve sharply without requiring much kinetic energy. So heavy particles fit in small boxes.</li>
+</ul>
+<h4 id="everyday-analogy">Everyday Analogy<a class="headerlink" href="#everyday-analogy" title="Permanent link">&para;</a></h4>
+<p>Think of energy as money and spatial confinement as rent:
+- A <strong>light particle</strong> pays high rent to stay in a small space. With a fixed budget, it can only afford a large, cheap apartment.
+- A <strong>heavy particle</strong> pays low rent. The same budget lets it afford a small, "expensive" (tightly confined) space.</p>
+<p>This is why mass leads to localization: <strong>heavy particles can "afford" tight confinement on the same energy budget that forces light particles to spread out.</strong></p>
+<hr />
+<h2 id="part-5-the-harmonic-oscillator-smooth-potential-wells">Part 5: The Harmonic Oscillator (Smooth Potential Wells)<a class="headerlink" href="#part-5-the-harmonic-oscillator-smooth-potential-wells" title="Permanent link">&para;</a></h2>
+<p>The infinite square well has hard walls. Real confining potentials (atoms, molecules, traps) are usually smoother. The harmonic oscillator is the prototype of a "bowl-shaped" potential.</p>
+<h3 id="the-physical-setup_1">The Physical Setup<a class="headerlink" href="#the-physical-setup_1" title="Permanent link">&para;</a></h3>
+<p>The potential energy is parabolic (like a ball in a bowl):</p>
+<div class="arithmatex">\[V(x) = \frac{1}{2}m\omega^2 x^2\]</div>
+<p>where <span class="arithmatex">\(\omega\)</span> (omega) is the angular frequency of oscillation. The potential is lowest at x = 0 and increases as the particle moves away from center.</p>
+<p><strong>Domain note:</strong> This is the potential for a quantum harmonic oscillator. We're solving the time-independent Schrödinger equation with this specific <span class="arithmatex">\(V(x)\)</span> to find stationary states.</p>
+<h3 id="the-ground-state-wavefunction">The Ground State Wavefunction<a class="headerlink" href="#the-ground-state-wavefunction" title="Permanent link">&para;</a></h3>
+<p>The ground state is a <strong>Gaussian</strong> (bell curve):</p>
+<div class="arithmatex">\[\psi_0(x) = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4} \exp\left(-\frac{m\omega x^2}{2\hbar}\right)\]</div>
+<p>The width of this Gaussian (specifically, its standard deviation <span class="arithmatex">\(\sigma\)</span>) tells us how spread out the particle is:</p>
+<div class="arithmatex">\[\sigma = \sqrt{\frac{\hbar}{2m\omega}}\]</div>
+<h3 id="the-mass-dependence-of-width">The Mass Dependence of Width<a class="headerlink" href="#the-mass-dependence-of-width" title="Permanent link">&para;</a></h3>
+<p>The width <span class="arithmatex">\(\sigma\)</span> is proportional to <span class="arithmatex">\(1/\sqrt{m}\)</span>. For the same oscillator frequency <span class="arithmatex">\(\omega\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Mass</th>
+<th>Ground State Width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron</td>
+<td><span class="arithmatex">\(m_e\)</span></td>
+<td><span class="arithmatex">\(\sigma_e = \sqrt{\hbar/(2m_e\omega)}\)</span></td>
+</tr>
+<tr>
+<td>Proton</td>
+<td><span class="arithmatex">\(1836 m_e\)</span></td>
+<td><span class="arithmatex">\(\sigma_p = \sqrt{\hbar/(2 \cdot 1836 \cdot m_e\omega)} = \sigma_e/\sqrt{1836} \approx \sigma_e/43\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The proton's ground state is 43 times narrower than the electron's in the same harmonic trap!</strong></p>
+<h3 id="physical-interpretation">Physical Interpretation<a class="headerlink" href="#physical-interpretation" title="Permanent link">&para;</a></h3>
+<p>In a harmonic oscillator, the particle oscillates back and forth around the center. The width <span class="arithmatex">\(\sigma\)</span> represents how far from center the particle typically ventures.</p>
+<ul>
+<li>A <strong>heavier particle</strong> has more inertia—it settles into a tighter region near the bottom of the potential well. The same restoring force confines it more effectively.</li>
+<li>A <strong>lighter particle</strong> experiences larger quantum "jitters." Its inherent wave-like fuzziness carries it farther from center. The same restoring force cannot hold it as tightly.</li>
+</ul>
+<hr />
+<h2 id="part-6-free-particle-wave-packet-spreading">Part 6: Free Particle Wave Packet Spreading<a class="headerlink" href="#part-6-free-particle-wave-packet-spreading" title="Permanent link">&para;</a></h2>
+<p>Now we leave potential wells behind. What happens to a localized particle in <strong>free space</strong> (<span class="arithmatex">\(V = 0\)</span> everywhere)? It spreads out—but the rate depends critically on mass.</p>
+<h3 id="the-setup-a-gaussian-wave-packet">The Setup: A Gaussian Wave Packet<a class="headerlink" href="#the-setup-a-gaussian-wave-packet" title="Permanent link">&para;</a></h3>
+<p><strong>Domain note:</strong> We're now discussing <strong>time-dependent</strong> wavefunctions, not stationary states. The wavefunction evolves according to the time-dependent Schrödinger equation.</p>
+<p>At time t = 0, we prepare a particle as a localized "blob" of probability—a Gaussian wave packet:</p>
+<div class="arithmatex">\[\psi(x,0) = \left[\frac{1}{2\pi\sigma_0^2}\right]^{1/4} \exp\left(-\frac{x^2}{4\sigma_0^2}\right) \exp\left(\frac{ip_0 x}{\hbar}\right)\]</div>
+<p>What each part means:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Mathematical Form</th>
+<th>Physical Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normalization</td>
+<td><span class="arithmatex">\([1/(2\pi\sigma_0^2)]^{1/4}\)</span></td>
+<td>Ensures total probability = 1</td>
+</tr>
+<tr>
+<td>Gaussian envelope</td>
+<td><span class="arithmatex">\(\exp(-x^2/4\sigma_0^2)\)</span></td>
+<td>Particle localized near x=0 with width <span class="arithmatex">\(\sigma_0\)</span></td>
+</tr>
+<tr>
+<td>Momentum factor</td>
+<td><span class="arithmatex">\(\exp(ip_0 x/\hbar)\)</span></td>
+<td>Particle has average momentum <span class="arithmatex">\(p_0\)</span> (it's moving)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Definition:</strong> <span class="arithmatex">\(\sigma_0\)</span> is the <strong>initial width</strong>—the standard deviation of the position distribution at t = 0. It quantifies how localized the particle is initially.</p>
+<h3 id="why-does-a-free-particle-spread">Why Does a Free Particle Spread?<a class="headerlink" href="#why-does-a-free-particle-spread" title="Permanent link">&para;</a></h3>
+<p>This is the key to understanding. A localized wave packet is actually a <strong>superposition</strong> (sum) of many plane waves with different momenta. Think of it as a "swarm" of waves:</p>
+<div class="arithmatex">\[\psi(x,t) = \int A(k) \exp[i(kx - \omega(k)t)] dk\]</div>
+<p><strong>Domain clarification:</strong> Each component of this integral is a <strong>plane wave</strong> with definite wave number k (where momentum <span class="arithmatex">\(p = \hbar k\)</span>). The de Broglie relation <span class="arithmatex">\(\lambda = h/p = 2\pi/k\)</span> applies exactly to each of these plane wave components.</p>
+<p>Each wave component has a different wave number k (related to momentum by <span class="arithmatex">\(p = \hbar k\)</span>), and each travels at its own velocity. For a free particle, the velocity of each component is:</p>
+<div class="arithmatex">\[v = \frac{p}{m} = \frac{\hbar k}{m}\]</div>
+<p><strong>Components with different k travel at different speeds.</strong> Over time, they get out of sync, and the packet spreads out. This is called <strong>dispersion</strong>.</p>
+<h3 id="the-width-as-a-function-of-time">The Width as a Function of Time<a class="headerlink" href="#the-width-as-a-function-of-time" title="Permanent link">&para;</a></h3>
+<p>Solving the <strong>time-dependent</strong> Schrödinger equation for the time evolution of a Gaussian packet gives:</p>
+<div class="arithmatex">\[\sigma(t) = \sigma_0 \sqrt{1 + \left(\frac{\hbar t}{2m\sigma_0^2}\right)^2}\]</div>
+<p>This formula says the width grows from its initial value <span class="arithmatex">\(\sigma_0\)</span>. The rate of growth depends on the combination <span class="arithmatex">\(\hbar/(m\sigma_0^2)\)</span>.</p>
+<h3 id="the-spreading-rate">The Spreading Rate<a class="headerlink" href="#the-spreading-rate" title="Permanent link">&para;</a></h3>
+<p>For long times (<span class="arithmatex">\(t \gg 2m\sigma_0^2/\hbar\)</span>), the formula simplifies to:</p>
+<div class="arithmatex">\[\sigma(t) \approx \frac{\hbar t}{2m\sigma_0}\]</div>
+<p>The spreading rate <span class="arithmatex">\(d\sigma/dt\)</span> is approximately:</p>
+<div class="arithmatex">\[\text{Spreading rate} \approx \frac{\hbar}{2m\sigma_0} \propto \frac{1}{m}\]</div>
+<p><strong>The spreading rate is inversely proportional to mass!</strong></p>
+<h3 id="concrete-comparison-electron-vs-proton">Concrete Comparison: Electron vs. Proton<a class="headerlink" href="#concrete-comparison-electron-vs-proton" title="Permanent link">&para;</a></h3>
+<p><strong>Physical situation:</strong> Both particles start with the same initial width <span class="arithmatex">\(\sigma_0 = 10\)</span> nm (<span class="arithmatex">\(10^{-8}\)</span> m). How quickly does each spread?</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Mass (kg)</th>
+<th>Time to Double Width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron</td>
+<td><span class="arithmatex">\(9.1 \times 10^{-31}\)</span></td>
+<td>~0.2 picoseconds (<span class="arithmatex">\(10^{-12}\)</span> s)</td>
+</tr>
+<tr>
+<td>Proton</td>
+<td><span class="arithmatex">\(1.67 \times 10^{-27}\)</span></td>
+<td>~0.3 nanoseconds (<span class="arithmatex">\(10^{-9}\)</span> s)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The proton takes ~1836 times longer to spread by the same amount!</strong></p>
+<h3 id="why-does-mass-slow-spreading-rigorous-treatment">Why Does Mass Slow Spreading? (Rigorous Treatment)<a class="headerlink" href="#why-does-mass-slow-spreading-rigorous-treatment" title="Permanent link">&para;</a></h3>
+<p>This requires understanding <strong>group velocity</strong> and carefully defining what we mean by "velocity spread." Let's be meticulous.</p>
+<h4 id="what-velocity-are-we-talking-about">What Velocity Are We Talking About?<a class="headerlink" href="#what-velocity-are-we-talking-about" title="Permanent link">&para;</a></h4>
+<p><strong>Critical distinction:</strong> For wave packets, there are two types of velocities:
+1. <strong>Phase velocity</strong> <span class="arithmatex">\(v_{\text{phase}} = \omega/k\)</span> - how fast the wiggles of the wave move
+2. <strong>Group velocity</strong> <span class="arithmatex">\(v_{\text{group}} = d\omega/dk\)</span> - how fast the envelope (the probability blob) moves</p>
+<p>But there's a deeper subtlety you need to understand first!</p>
+<h4 id="the-two-meanings-of-group-velocity">The Two Meanings of "Group Velocity"<a class="headerlink" href="#the-two-meanings-of-group-velocity" title="Permanent link">&para;</a></h4>
+<p>This is where many students get confused, so read carefully:</p>
+<p><strong>Meaning 1: The velocity of the packet as a whole</strong></p>
+<p>You're right to think: "A wave packet has ONE group velocity—the speed at which the peak moves." This is correct! If the packet is centered at momentum <span class="arithmatex">\(p_0\)</span>, the peak of the packet travels at:</p>
+<div class="arithmatex">\[v_{\text{peak}} = \left.\frac{d\omega}{dk}\right|_{k_0} = \frac{p_0}{m}\]</div>
+<p>This is "the" group velocity you learn about first—the speed of the envelope maximum.</p>
+<p><strong>Meaning 2: The group velocities of the individual components</strong></p>
+<p>But here's the key: the packet is built from MANY plane wave components, each with its own momentum p. Each component propagates at its own velocity:</p>
+<div class="arithmatex">\[v(p) = \frac{p}{m}\]</div>
+<p>If the packet contains momenta from <span class="arithmatex">\((p_0 - \Delta p)\)</span> to <span class="arithmatex">\((p_0 + \Delta p)\)</span>, then these components travel at velocities from:
+- Slowest: <span class="arithmatex">\(v_{\text{slow}} = (p_0 - \Delta p)/m\)</span>
+- Fastest: <span class="arithmatex">\(v_{\text{fast}} = (p_0 + \Delta p)/m\)</span></p>
+<p><strong>The spread in these component velocities is:</strong> <span class="arithmatex">\(\Delta v = v_{\text{fast}} - v_{\text{slow}} = 2\Delta p/m\)</span></p>
+<h4 id="why-this-matters-dispersive-vs-non-dispersive">Why This Matters: Dispersive vs Non-Dispersive<a class="headerlink" href="#why-this-matters-dispersive-vs-non-dispersive" title="Permanent link">&para;</a></h4>
+<p>The crucial question: <strong>Do all the components travel at the same speed?</strong></p>
+<p><strong>Non-dispersive medium</strong> (like sound waves in air at low frequencies):
+- All frequencies have the same group velocity
+- All Fourier components travel together
+- The packet moves but doesn't spread
+- You can send a clean pulse that stays clean</p>
+<p><strong>Dispersive medium</strong> (like quantum particles, or light in glass):
+- Different frequencies have different group velocities
+- For quantum free particles: <span class="arithmatex">\(v = p/m\)</span>, so higher-momentum components travel faster
+- The Fourier components separate from each other over time
+- The packet spreads as it travels</p>
+<h4 id="the-physical-picture">The Physical Picture<a class="headerlink" href="#the-physical-picture" title="Permanent link">&para;</a></h4>
+<p>Imagine your wave packet at t = 0 as a bell curve. This bell curve is actually the SUM of many sine waves (Fourier components):</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ψ(x,0) = ∫ A(k) e^(ikx) dk
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>         ↑
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>         Sum of many plane waves with different k
+</code></pre></div>
+<p>At t = 0, all these sine waves add up constructively at the center, creating the bell curve.</p>
+<p><strong>Now time evolves:</strong></p>
+<ul>
+<li>The component with momentum <span class="arithmatex">\(p_1\)</span> propagates as: <span class="arithmatex">\(e^{i(k_1 x - \omega_1 t)}\)</span>, moving at <span class="arithmatex">\(v_1 = p_1/m\)</span></li>
+<li>The component with momentum <span class="arithmatex">\(p_2\)</span> propagates as: <span class="arithmatex">\(e^{i(k_2 x - \omega_2 t)}\)</span>, moving at <span class="arithmatex">\(v_2 = p_2/m\)</span></li>
+<li>The component with momentum <span class="arithmatex">\(p_3\)</span> propagates as: <span class="arithmatex">\(e^{i(k_3 x - \omega_3 t)}\)</span>, moving at <span class="arithmatex">\(v_3 = p_3/m\)</span></li>
+<li>...and so on for all components</li>
+</ul>
+<p>Since <span class="arithmatex">\(v_1 \neq v_2 \neq v_3\)</span> (because they have different momenta), these sine waves gradually get out of sync—they <strong>dephase</strong>.</p>
+<ul>
+<li>Initially, they all interfered constructively to make a tight packet</li>
+<li>Over time, fast components move ahead, slow components lag behind</li>
+<li>The packet spreads because the constructive interference that created the localized "bump" falls apart</li>
+</ul>
+<p><strong>The center of mass</strong> of the packet still moves at <span class="arithmatex">\(v_0 = p_0/m\)</span> (the "main" group velocity), but the packet gets wider and wider.</p>
+<h4 id="a-better-analogy">A Better Analogy<a class="headerlink" href="#a-better-analogy" title="Permanent link">&para;</a></h4>
+<p>Think of marathon runners (the Fourier components):
+- All start together at the starting line (t = 0, constructive interference creates localized packet)
+- They run at slightly different speeds (different momenta → different velocities v = p/m)
+- The center of the pack moves at the average speed (this is "the" group velocity of the packet)
+- But the pack spreads out over time as faster runners pull ahead and slower runners fall behind
+- After an hour, the pack is stretched over a much longer distance</p>
+<p><strong>The spread rate</strong> depends on:
+- How different the runners' speeds are (velocity spread Δv)
+- For quantum particles: Δv = Δp/m, so lighter particles spread faster</p>
+<h4 id="summary-of-the-resolution">Summary of the Resolution<a class="headerlink" href="#summary-of-the-resolution" title="Permanent link">&para;</a></h4>
+<p><strong>You thought:</strong> "The packet has one group velocity and just spreads out somehow."
+<strong>Actually:</strong> The packet's peak moves at one group velocity, BUT the packet is made of components that each move at their own group velocities. These components separate, causing the spread.</p>
+<p><strong>The correct picture:</strong>
+- The packet's center moves at <span class="arithmatex">\(v_{\text{center}} = p_0/m\)</span> (this is "the" group velocity you learned about)
+- But the packet is built from components with momenta near <span class="arithmatex">\(p_0\)</span>
+- These components have velocities <span class="arithmatex">\(v(p) = p/m\)</span>, which differ by <span class="arithmatex">\(\Delta v \approx \Delta p/m\)</span>
+- As time passes, the components separate, and the packet width grows</p>
+<p><strong>For a free quantum particle</strong>, group velocity DEPENDS on momentum: <span class="arithmatex">\(v = p/m\)</span>. This makes quantum mechanics dispersive, which is why wave packets spread!</p>
+<hr />
+<h4 id="the-mathematics-dispersion-relation-for-free-particles">The Mathematics: Dispersion Relation for Free Particles<a class="headerlink" href="#the-mathematics-dispersion-relation-for-free-particles" title="Permanent link">&para;</a></h4>
+<p>Now let's make this rigorous. <strong>For a free particle</strong> (V = 0), the dispersion relation is:</p>
+<div class="arithmatex">\[E = \frac{p^2}{2m} = \frac{\hbar^2 k^2}{2m}\]</div>
+<p>Therefore: <span class="arithmatex">\(\omega = E/\hbar = \hbar k^2/(2m)\)</span></p>
+<p>The <strong>group velocity</strong> for a plane wave component with wave number k is:</p>
+<div class="arithmatex">\[v_{\text{group}}(k) = \frac{d\omega}{dk} = \frac{d}{dk}\left(\frac{\hbar k^2}{2m}\right) = \frac{\hbar k}{m} = \frac{p}{m}\]</div>
+<p><strong>Key observation:</strong> This group velocity <strong>depends on k (or p)</strong>!</p>
+<ul>
+<li>A component with momentum <span class="arithmatex">\(p\)</span> travels at <span class="arithmatex">\(v = p/m\)</span></li>
+<li>A component with momentum <span class="arithmatex">\(p + \delta p\)</span> travels at <span class="arithmatex">\(v + \delta v = (p + \delta p)/m\)</span></li>
+<li>They separate at rate <span class="arithmatex">\(\delta v = \delta p / m\)</span></li>
+</ul>
+<p>This is dispersion! Different frequency components travel at different speeds.</p>
+<p><strong>Domain of validity:</strong> This <span class="arithmatex">\(v = p/m\)</span> relationship for group velocity applies <strong>specifically to free particles</strong> (V = 0). In a general potential, the dispersion relation is more complex and <span class="arithmatex">\(v \neq p/m\)</span>.</p>
+<div class="arithmatex">\[E = \frac{p^2}{2m} = \frac{\hbar^2 k^2}{2m}\]</div>
+<p>Therefore: <span class="arithmatex">\(\omega = E/\hbar = \hbar k^2/(2m)\)</span></p>
+<p>The <strong>group velocity</strong> (the speed at which that momentum component's contribution to the packet moves) is:</p>
+<div class="arithmatex">\[v_{\text{group}} = \frac{d\omega}{dk} = \frac{d}{dk}\left(\frac{\hbar k^2}{2m}\right) = \frac{\hbar k}{m} = \frac{p}{m}\]</div>
+<p><strong>This is the key:</strong> When we write <span class="arithmatex">\(v = p/m\)</span>, we're talking about the <strong>group velocity</strong> of each plane wave component in the free-space wave packet. This is the velocity at which that particular momentum component contributes to the probability distribution.</p>
+<p><strong>Domain of validity:</strong> This <span class="arithmatex">\(v = p/m\)</span> relationship for group velocity applies <strong>specifically to free particles</strong> (V = 0). In a general potential, the dispersion relation is more complex and <span class="arithmatex">\(v \neq p/m\)</span>.</p>
+<h4 id="defining-momentum-spread-rigorously">Defining Momentum Spread Rigorously<a class="headerlink" href="#defining-momentum-spread-rigorously" title="Permanent link">&para;</a></h4>
+<p>The wave packet has a momentum-space wavefunction <span class="arithmatex">\(\phi(p)\)</span>. The <strong>momentum spread</strong> is the standard deviation:</p>
+<div class="arithmatex">\[\Delta p = \sqrt{\langle p^2 \rangle - \langle p \rangle^2}\]</div>
+<p>where:
+$<span class="arithmatex">\(\langle p \rangle = \int_{-\infty}^{\infty} p |\phi(p)|^2 dp \quad \text{(average momentum)}\)</span>$</p>
+<div class="arithmatex">\[\langle p^2 \rangle = \int_{-\infty}^{\infty} p^2 |\phi(p)|^2 dp \quad \text{(average of momentum squared)}\]</div>
+<p><strong>Physical meaning:</strong> <span class="arithmatex">\(\Delta p\)</span> tells you the "width" of the momentum distribution. If the packet has a narrow range of momenta, <span class="arithmatex">\(\Delta p\)</span> is small. If it contains a wide spectrum of momenta, <span class="arithmatex">\(\Delta p\)</span> is large.</p>
+<h4 id="defining-velocity-spread-rigorously">Defining Velocity Spread Rigorously<a class="headerlink" href="#defining-velocity-spread-rigorously" title="Permanent link">&para;</a></h4>
+<p>Now here's the subtle part. For a <strong>free particle</strong>, each momentum component travels at group velocity <span class="arithmatex">\(v = p/m\)</span>. We want to know: <strong>what is the spread in these group velocities?</strong></p>
+<p>Since group velocity <span class="arithmatex">\(v = p/m\)</span>, we can think of velocity as a function of momentum: <span class="arithmatex">\(v(p) = p/m\)</span>.</p>
+<p>The <strong>velocity spread</strong> <span class="arithmatex">\(\Delta v\)</span> is the standard deviation of the group velocity distribution:</p>
+<div class="arithmatex">\[\Delta v = \sqrt{\langle v^2 \rangle - \langle v \rangle^2}\]</div>
+<p>where:
+$<span class="arithmatex">\(\langle v \rangle = \int_{-\infty}^{\infty} \frac{p}{m} |\phi(p)|^2 dp = \frac{1}{m} \int_{-\infty}^{\infty} p |\phi(p)|^2 dp = \frac{\langle p \rangle}{m}\)</span>$</p>
+<div class="arithmatex">\[\langle v^2 \rangle = \int_{-\infty}^{\infty} \left(\frac{p}{m}\right)^2 |\phi(p)|^2 dp = \frac{1}{m^2} \int_{-\infty}^{\infty} p^2 |\phi(p)|^2 dp = \frac{\langle p^2 \rangle}{m^2}\]</div>
+<p>Therefore:
+$<span class="arithmatex">\(\Delta v^2 = \langle v^2 \rangle - \langle v \rangle^2 = \frac{\langle p^2 \rangle}{m^2} - \frac{\langle p \rangle^2}{m^2} = \frac{1}{m^2}\left(\langle p^2 \rangle - \langle p \rangle^2\right) = \frac{(\Delta p)^2}{m^2}\)</span>$</p>
+<p>Taking the square root:</p>
+<div class="arithmatex">\[\boxed{\Delta v = \frac{\Delta p}{m}}\]</div>
+<p><strong>This is the rigorous derivation.</strong> The velocity spread equals the momentum spread divided by mass.</p>
+<p><strong>What this means physically:</strong>
+- The momentum-space wavefunction <span class="arithmatex">\(\phi(p)\)</span> has width <span class="arithmatex">\(\Delta p\)</span> (how spread out the momenta are)
+- Each momentum component moves at group velocity <span class="arithmatex">\(v = p/m\)</span>
+- The range of group velocities therefore has width <span class="arithmatex">\(\Delta v = \Delta p/m\)</span>
+- <strong>This is specifically for free particles where the group velocity is p/m</strong></p>
+<h4 id="why-different-masses-give-different-spreading-rates">Why Different Masses Give Different Spreading Rates<a class="headerlink" href="#why-different-masses-give-different-spreading-rates" title="Permanent link">&para;</a></h4>
+<p>Now we can understand spreading with the correct picture:</p>
+<p><strong>The wave packet at t = 0:</strong>
+- Centered at position <span class="arithmatex">\(x_0\)</span>
+- Peak momentum <span class="arithmatex">\(p_0\)</span>
+- Momentum spread <span class="arithmatex">\(\Delta p\)</span> (contains components from <span class="arithmatex">\(p_0 - \Delta p\)</span> to <span class="arithmatex">\(p_0 + \Delta p\)</span>)</p>
+<p><strong>Evolution over time:</strong></p>
+<p>At <strong>t = 0</strong>: All Fourier components are in phase → constructive interference → localized packet</p>
+<p>At <strong>time t later</strong>:
+- Component with momentum <span class="arithmatex">\(p_0\)</span> has traveled distance: <span class="arithmatex">\(x_{\text{center}} = p_0 t/m\)</span>
+- Component with momentum <span class="arithmatex">\(p_0 + \Delta p\)</span> has traveled: <span class="arithmatex">\(x_{\text{fast}} = (p_0 + \Delta p)t/m\)</span>
+- Component with momentum <span class="arithmatex">\(p_0 - \Delta p\)</span> has traveled: <span class="arithmatex">\(x_{\text{slow}} = (p_0 - \Delta p)t/m\)</span></p>
+<p><strong>The packet width</strong> is now roughly the separation between fastest and slowest components:</p>
+<div class="arithmatex">\[\text{Width}(t) \approx x_{\text{fast}} - x_{\text{slow}} = \frac{(p_0 + \Delta p)t}{m} - \frac{(p_0 - \Delta p)t}{m} = \frac{2\Delta p \cdot t}{m}\]</div>
+<p><strong>The spreading rate</strong> is:</p>
+<div class="arithmatex">\[\frac{d(\text{Width})}{dt} \approx \frac{2\Delta p}{m} = 2\Delta v\]</div>
+<p>This grows linearly with time! The packet gets wider and wider as the components separate.</p>
+<p><strong>For the same momentum distribution</strong> (same <span class="arithmatex">\(\Delta p\)</span>):</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Velocity Spread</th>
+<th>Component Separation After Time t</th>
+<th>Physical Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Light (small m)</td>
+<td>Large <span class="arithmatex">\(\Delta v = \Delta p/m\)</span></td>
+<td>Large: <span class="arithmatex">\(\approx 2\Delta p \cdot t/m\)</span></td>
+<td><strong>Fast spreading</strong> - components quickly separate</td>
+</tr>
+<tr>
+<td>Heavy (large m)</td>
+<td>Small <span class="arithmatex">\(\Delta v = \Delta p/m\)</span></td>
+<td>Small: <span class="arithmatex">\(\approx 2\Delta p \cdot t/m\)</span></td>
+<td><strong>Slow spreading</strong> - components stay closer together</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The concrete mechanism:</strong>
+1. The momentum spread <span class="arithmatex">\(\Delta p\)</span> is a property of the initial wave packet
+2. This translates to a velocity spread: <span class="arithmatex">\(\Delta v = \Delta p/m\)</span>
+3. Over time t, components with different velocities separate by distance <span class="arithmatex">\(\sim \Delta v \cdot t\)</span>
+4. <strong>Mass appears in the denominator</strong>, so heavier particles spread slower</p>
+<p>The packet's center moves at <span class="arithmatex">\(v_{\text{center}} = p_0/m\)</span>, but the packet width grows as <span class="arithmatex">\(\sim (\Delta p/m) \cdot t\)</span>.</p>
+<h4 id="connecting-to-the-uncertainty-principle">Connecting to the Uncertainty Principle<a class="headerlink" href="#connecting-to-the-uncertainty-principle" title="Permanent link">&para;</a></h4>
+<p><strong>Important note:</strong> The momentum spread <span class="arithmatex">\(\Delta p\)</span> we've been discussing here is the <strong>same</strong> <span class="arithmatex">\(\Delta p\)</span> that appears in the Heisenberg uncertainty principle <span class="arithmatex">\(\Delta x \cdot \Delta p \geq \hbar/2\)</span>.</p>
+<ul>
+<li>A localized wave packet (small <span class="arithmatex">\(\Delta x\)</span>) <strong>must</strong> have a wide momentum distribution (large <span class="arithmatex">\(\Delta p\)</span>) to satisfy the uncertainty principle</li>
+<li>This wide momentum distribution means wide velocity distribution: <span class="arithmatex">\(\Delta v = \Delta p/m\)</span></li>
+<li>The wide velocity distribution is what causes spreading</li>
+</ul>
+<p><strong>The full story:</strong>
+1. Confine particle to small <span class="arithmatex">\(\Delta x\)</span> → forces large <span class="arithmatex">\(\Delta p\)</span> (uncertainty principle)
+2. Large <span class="arithmatex">\(\Delta p\)</span> means large <span class="arithmatex">\(\Delta v\)</span> (for light particles especially)
+3. Large <span class="arithmatex">\(\Delta v\)</span> means rapid spreading (group velocity dispersion)</p>
+<p>This is why light particles can't stay localized—confinement forces them to have large momentum/velocity spread, which causes them to immediately disperse!</p>
+<h4 id="race-analogy-now-precise">Race Analogy (Now Precise)<a class="headerlink" href="#race-analogy-now-precise" title="Permanent link">&para;</a></h4>
+<p>Think of the wave packet's Fourier components as runners in a marathon, where:
+- Each runner represents a plane wave component with a specific momentum p
+- The runner's speed is their group velocity: <span class="arithmatex">\(v = p/m\)</span>
+- The packet's momentum spread <span class="arithmatex">\(\Delta p\)</span> means runners have momenta ranging from <span class="arithmatex">\(p_0 - \Delta p\)</span> to <span class="arithmatex">\(p_0 + \Delta p\)</span></p>
+<p><strong>At the starting gun (t = 0):</strong>
+- All runners line up at the starting line together
+- This represents all Fourier components being in phase
+- Their constructive interference creates the localized wave packet</p>
+<p><strong>During the race (t &gt; 0):</strong></p>
+<p><strong>Light particle (small m):</strong>
+- A runner with momentum <span class="arithmatex">\(p\)</span> runs at speed <span class="arithmatex">\(v = p/m\)</span>
+- A runner with slightly more momentum <span class="arithmatex">\(p + \delta p\)</span> runs at <span class="arithmatex">\(v + \delta v = (p + \delta p)/m\)</span>
+- Small mass in denominator → even tiny momentum differences create <strong>large velocity differences</strong>
+- Runners with slightly different momenta run at very different speeds
+- The pack quickly spreads out along the track
+- After time t, the pack is stretched over distance <span class="arithmatex">\(\sim (\Delta p/m) \cdot t\)</span></p>
+<p><strong>Heavy particle (large m):</strong>
+- Same momentum differences between runners
+- But now large mass in denominator → <strong>small velocity differences</strong>
+- Runners with different momenta all run at nearly the same speed
+- The pack stays bunched together much longer
+- After the same time t, the pack is only stretched over <span class="arithmatex">\(\sim (\Delta p/m) \cdot t\)</span>, which is much smaller</p>
+<p><strong>The center of the pack</strong> moves at the average speed <span class="arithmatex">\(\bar{v} = p_0/m\)</span> (this is "the" group velocity of the packet). But what we care about for spreading is how much the pack stretches out—and that depends on the spread in individual runner velocities: <span class="arithmatex">\(\Delta v = \Delta p/m\)</span>.</p>
+<p><strong>The key insight:</strong> Mass is in the denominator of the velocity formula <span class="arithmatex">\(v = p/m\)</span>. This makes the velocity spread smaller for heavier particles, even when they have the same momentum uncertainty. The marathon runners stay closer together, so the wave packet spreads slower.</p>
+<hr />
+<h2 id="part-7-the-heisenberg-uncertainty-principle">Part 7: The Heisenberg Uncertainty Principle<a class="headerlink" href="#part-7-the-heisenberg-uncertainty-principle" title="Permanent link">&para;</a></h2>
+<p>This principle provides another powerful lens for understanding why mass leads to localization.</p>
+<h3 id="the-fundamental-relation">The Fundamental Relation<a class="headerlink" href="#the-fundamental-relation" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\boxed{\Delta x \cdot \Delta p \geq \frac{\hbar}{2}}\]</div>
+<p><strong>Domain of validity:</strong> This is a <strong>general principle</strong> that applies to ANY quantum state (stationary or time-dependent, free space or in a potential, plane wave or wave packet). It's a fundamental property of the wavefunction.</p>
+<p><strong>Definition of terms:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Precise Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\Delta x\)</span></td>
+<td>Position uncertainty</td>
+<td>Standard deviation of position distribution; measures how spread out the particle is in space</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Delta p\)</span></td>
+<td>Momentum uncertainty</td>
+<td>Standard deviation of momentum distribution; measures the range of momenta present in the wavefunction</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\hbar/2\)</span></td>
+<td>Minimum product</td>
+<td>About <span class="arithmatex">\(5.3 \times 10^{-35}\)</span> J·s; a fundamental quantum limit</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What the principle says:</strong> You cannot simultaneously know both position and momentum with arbitrary precision. The more precisely you know one, the less precisely you know the other. The product of uncertainties has a minimum value.</p>
+<h3 id="introducing-velocity-uncertainty-careful-treatment">Introducing Velocity Uncertainty (Careful Treatment)<a class="headerlink" href="#introducing-velocity-uncertainty-careful-treatment" title="Permanent link">&para;</a></h3>
+<p>This section requires care because "velocity uncertainty" means something specific in quantum mechanics.</p>
+<h4 id="the-question-what-is-velocity-in-quantum-mechanics">The Question: What Is "Velocity" in Quantum Mechanics?<a class="headerlink" href="#the-question-what-is-velocity-in-quantum-mechanics" title="Permanent link">&para;</a></h4>
+<p>In classical mechanics, velocity is well-defined: <span class="arithmatex">\(v = p/m\)</span>. But in quantum mechanics, both position and momentum can be uncertain, so what do we mean by "velocity uncertainty"?</p>
+<p><strong>Two approaches to defining velocity uncertainty:</strong></p>
+<p><strong>Approach 1: Velocity operator (formal quantum mechanics)</strong></p>
+<p>In quantum mechanics, we can define a velocity operator:
+$<span class="arithmatex">\(\hat{v} = \frac{\hat{p}}{m}\)</span>$</p>
+<p>Just like position and momentum operators, this has a probability distribution with mean and spread:
+$<span class="arithmatex">\(\langle v \rangle = \frac{\langle p \rangle}{m}\)</span>$
+$<span class="arithmatex">\(\langle v^2 \rangle = \frac{\langle p^2 \rangle}{m^2}\)</span>$</p>
+<p>The uncertainty in velocity (standard deviation) is:
+$<span class="arithmatex">\(\Delta v = \sqrt{\langle v^2 \rangle - \langle v \rangle^2} = \sqrt{\frac{\langle p^2 \rangle}{m^2} - \frac{\langle p \rangle^2}{m^2}} = \frac{1}{m}\sqrt{\langle p^2 \rangle - \langle p \rangle^2} = \frac{\Delta p}{m}\)</span>$</p>
+<p><strong>Approach 2: Physical interpretation for free particles</strong></p>
+<p>For a <strong>free particle</strong> (as we discussed in the wave packet section), each momentum component travels at group velocity <span class="arithmatex">\(v = p/m\)</span>. The uncertainty in velocity is the spread in these group velocities:</p>
+<div class="arithmatex">\[\Delta v = \frac{\Delta p}{m}\]</div>
+<p><strong>Both approaches give the same result:</strong> The velocity uncertainty equals the momentum uncertainty divided by mass.</p>
+<h4 id="the-rigorous-relationship">The Rigorous Relationship<a class="headerlink" href="#the-rigorous-relationship" title="Permanent link">&para;</a></h4>
+<p>Momentum and velocity uncertainties are related by:</p>
+<div class="arithmatex">\[\boxed{\Delta p = m \cdot \Delta v}\]</div>
+<p><strong>Derivation (using standard deviations):</strong></p>
+<p>Starting with definitions:
+- <span class="arithmatex">\(\Delta p = \sqrt{\langle p^2 \rangle - \langle p \rangle^2}\)</span> (standard deviation of momentum)
+- <span class="arithmatex">\(\Delta v = \sqrt{\langle v^2 \rangle - \langle v \rangle^2}\)</span> (standard deviation of velocity)</p>
+<p>With <span class="arithmatex">\(v = p/m\)</span>:
+$<span class="arithmatex">\(\langle v \rangle = \frac{\langle p \rangle}{m}\)</span>$
+$<span class="arithmatex">\(\langle v^2 \rangle = \left\langle \frac{p^2}{m^2} \right\rangle = \frac{\langle p^2 \rangle}{m^2}\)</span>$</p>
+<p>Therefore:
+$<span class="arithmatex">\(\Delta v^2 = \langle v^2 \rangle - \langle v \rangle^2 = \frac{\langle p^2 \rangle}{m^2} - \frac{\langle p \rangle^2}{m^2} = \frac{1}{m^2}(\langle p^2 \rangle - \langle p \rangle^2) = \frac{(\Delta p)^2}{m^2}\)</span>$</p>
+<p>Taking square root: <span class="arithmatex">\(\Delta v = \Delta p/m\)</span></p>
+<p>Multiplying both sides by m: <span class="arithmatex">\(\Delta p = m \cdot \Delta v\)</span> ✓</p>
+<p><strong>What these uncertainties represent:</strong>
+- <span class="arithmatex">\(\Delta p\)</span>: the spread (standard deviation) of the momentum probability distribution <span class="arithmatex">\(|\phi(p)|^2\)</span>
+- <span class="arithmatex">\(\Delta v\)</span>: the spread (standard deviation) of the velocity probability distribution
+- These are <strong>NOT</strong> the same as "error bars" or "measurement uncertainty" - they're intrinsic properties of the quantum state</p>
+<p><strong>Domain of validity:</strong> While <span class="arithmatex">\(\Delta p = m \cdot \Delta v\)</span> is derived using <span class="arithmatex">\(v = p/m\)</span>, it's actually valid for any quantum state, not just free particles. The velocity operator <span class="arithmatex">\(\hat{v} = \hat{p}/m\)</span> is well-defined in general.</p>
+<h4 id="rewriting-the-uncertainty-principle-in-terms-of-velocity">Rewriting the Uncertainty Principle in Terms of Velocity<a class="headerlink" href="#rewriting-the-uncertainty-principle-in-terms-of-velocity" title="Permanent link">&para;</a></h4>
+<p>Substituting <span class="arithmatex">\(\Delta p = m \cdot \Delta v\)</span> into the standard uncertainty principle:</p>
+<div class="arithmatex">\[\Delta x \cdot \Delta p \geq \frac{\hbar}{2}\]</div>
+<p>becomes:</p>
+<div class="arithmatex">\[\Delta x \cdot (m \cdot \Delta v) \geq \frac{\hbar}{2}\]</div>
+<p>Rearranging to solve for velocity uncertainty:</p>
+<div class="arithmatex">\[\boxed{\Delta v \geq \frac{\hbar}{2m \cdot \Delta x}}\]</div>
+<p><strong>This tells us:</strong> If you confine a particle to a region of size <span class="arithmatex">\(\Delta x\)</span>, its velocity must be uncertain by at least <span class="arithmatex">\(\hbar/(2m \cdot \Delta x)\)</span>.</p>
+<h3 id="what-this-equation-tells-us">What This Equation Tells Us<a class="headerlink" href="#what-this-equation-tells-us" title="Permanent link">&para;</a></h3>
+<p><strong>Physical situation:</strong> Confine two different particles to the same spatial region (same <span class="arithmatex">\(\Delta x\)</span>). What happens?</p>
+<p><strong>Why this comparison matters:</strong> We're asking "If I localize two particles to the same degree, how do they behave?" This directly addresses the localization question.</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Mass</th>
+<th>Minimum Velocity Uncertainty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron</td>
+<td><span class="arithmatex">\(m_e\)</span></td>
+<td><span class="arithmatex">\(\Delta v_e = \hbar/(2m_e \cdot \Delta x)\)</span></td>
+</tr>
+<tr>
+<td>Proton</td>
+<td><span class="arithmatex">\(1836 m_e\)</span></td>
+<td><span class="arithmatex">\(\Delta v_p = \hbar/(2 \cdot 1836 \cdot m_e \cdot \Delta x) = \Delta v_e/1836\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>For the same spatial confinement, the proton has 1836 times less velocity uncertainty than the electron!</strong></p>
+<h3 id="physical-consequences-of-velocity-uncertainty">Physical Consequences of Velocity Uncertainty<a class="headerlink" href="#physical-consequences-of-velocity-uncertainty" title="Permanent link">&para;</a></h3>
+<p>Now that we understand <span class="arithmatex">\(\Delta v\)</span> rigorously, what does it mean physically?</p>
+<p><strong>For a wave packet in free space:</strong>
+- The packet is a superposition of plane waves with different momenta
+- Each plane wave component has momentum p and contributes with group velocity <span class="arithmatex">\(v = p/m\)</span>
+- The range of group velocities present is <span class="arithmatex">\(\Delta v = \Delta p/m\)</span>
+- Components with different velocities will separate over time, causing the packet to spread</p>
+<p><strong>High velocity uncertainty (<span class="arithmatex">\(\Delta v\)</span> large):</strong>
+- The momentum components span a wide range
+- Their group velocities differ greatly: some parts of the wavefunction's momentum content travel fast, others slow
+- The packet rapidly disperses
+- Distance between fastest and slowest components grows as <span class="arithmatex">\(\Delta v \cdot t\)</span></p>
+<p><strong>Low velocity uncertainty (<span class="arithmatex">\(\Delta v\)</span> small):</strong>
+- The momentum components are clustered in a narrow range
+- Their group velocities are similar: most of the wavefunction's momentum content travels at nearly the same speed
+- The packet holds together longer
+- Components don't separate as quickly</p>
+<p><strong>What "different parts moving at different speeds" means:</strong>
+- It's not that the particle is in multiple places moving differently
+- Rather, the wave packet's <strong>Fourier components</strong> (the plane waves that add up to make the packet) each propagate at their own group velocity
+- When we say "the electron's velocity uncertainty is 58,000 m/s," we mean: the momentum spectrum of the electron's wavefunction is wide enough that the fastest-moving Fourier components outpace the slowest by 58,000 m/s</p>
+<h4 id="comparison-confined-particles">Comparison: Confined Particles<a class="headerlink" href="#comparison-confined-particles" title="Permanent link">&para;</a></h4>
+<p><strong>Confined electron:</strong>
+- High velocity uncertainty: <span class="arithmatex">\(\Delta v = \hbar/(2m_e \Delta x)\)</span> is large
+- The momentum spectrum is wide
+- Group velocities of the Fourier components differ greatly
+- The packet (if released from confinement) would rapidly fly apart
+- <strong>Analogy:</strong> Like confining a hyperactive child who, the moment you let go, scatters in all directions at once</p>
+<p><strong>Confined proton:</strong>
+- Low velocity uncertainty: <span class="arithmatex">\(\Delta v = \hbar/(2m_p \Delta x)\)</span> is small
+- The momentum spectrum is narrow
+- Group velocities of the Fourier components are similar
+- The packet (if released) would disperse slowly
+- <strong>Analogy:</strong> Like a calm adult who, when released, wanders off slowly and stays roughly localized</p>
+<h3 id="concrete-example">Concrete Example<a class="headerlink" href="#concrete-example" title="Permanent link">&para;</a></h3>
+<p><strong>Physical situation:</strong> Confine both particles to <span class="arithmatex">\(\Delta x = 1\)</span> nanometer (<span class="arithmatex">\(10^{-9}\)</span> m).</p>
+<table>
+<thead>
+<tr>
+<th>Particle</th>
+<th>Position Uncertainty</th>
+<th>Minimum Velocity Uncertainty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron</td>
+<td>1 nm</td>
+<td>~58,000 m/s</td>
+</tr>
+<tr>
+<td>Proton</td>
+<td>1 nm</td>
+<td>~32 m/s</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The electron, when confined to 1 nm, has velocity components spanning ~58,000 m/s in different directions!</strong> The proton's velocity spread is only ~32 m/s. No wonder the electron spreads out so much faster.</p>
+<h3 id="the-self-consistency-of-localization">The Self-Consistency of Localization<a class="headerlink" href="#the-self-consistency-of-localization" title="Permanent link">&para;</a></h3>
+<p>Now we can understand why heavy particles "stay put" while light particles spread:</p>
+<ol>
+<li><strong>Confine a light particle:</strong> Small <span class="arithmatex">\(\Delta x\)</span> forces large <span class="arithmatex">\(\Delta v\)</span> → particle rapidly escapes confinement → cannot stay localized</li>
+<li><strong>Confine a heavy particle:</strong> Same <span class="arithmatex">\(\Delta x\)</span> requires only small <span class="arithmatex">\(\Delta v\)</span> → particle doesn't have the "velocity budget" to escape → stays localized</li>
+</ol>
+<p><strong>Mass acts as a "brake" on the velocity uncertainty that confinement creates.</strong> Heavy particles can be confined without gaining the velocity spread that would let them escape.</p>
+<hr />
+<h2 id="part-8-the-fourier-transform-perspective">Part 8: The Fourier Transform Perspective<a class="headerlink" href="#part-8-the-fourier-transform-perspective" title="Permanent link">&para;</a></h2>
+<p>This is the most mathematically elegant view, showing why the uncertainty principle exists.</p>
+<h3 id="position-and-momentum-as-fourier-pairs">Position and Momentum as Fourier Pairs<a class="headerlink" href="#position-and-momentum-as-fourier-pairs" title="Permanent link">&para;</a></h3>
+<p>A fundamental fact of quantum mechanics: the wavefunction in position space <span class="arithmatex">\(\psi(x)\)</span> and the wavefunction in momentum space <span class="arithmatex">\(\phi(p)\)</span> are related by <strong>Fourier transforms</strong>:</p>
+<div class="arithmatex">\[\phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int \psi(x) \exp\left(-\frac{ipx}{\hbar}\right) dx\]</div>
+<div class="arithmatex">\[\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int \phi(p) \exp\left(\frac{ipx}{\hbar}\right) dp\]</div>
+<p><strong>Domain note:</strong> This relationship is <strong>completely general</strong>—it applies to any quantum state, any potential, any time. It's a mathematical property of how quantum mechanics represents states.</p>
+<p><strong>What this means:</strong> Position and momentum descriptions contain the same information, just encoded differently. They are two "views" of the same quantum state, related by a mathematical transformation (the Fourier transform).</p>
+<h3 id="the-fourier-uncertainty-principle">The Fourier Uncertainty Principle<a class="headerlink" href="#the-fourier-uncertainty-principle" title="Permanent link">&para;</a></h3>
+<p>A fundamental mathematical property of Fourier transforms (nothing specifically quantum!):</p>
+<blockquote>
+<p><strong>A narrow function in one domain must be wide in the conjugate domain.</strong></p>
+</blockquote>
+<p>This applies to sound waves, signal processing, image analysis—anywhere Fourier transforms appear. For quantum mechanics:</p>
+<ul>
+<li>Narrow <span class="arithmatex">\(\psi(x)\)</span> in position → Wide <span class="arithmatex">\(\phi(p)\)</span> in momentum</li>
+<li>Narrow <span class="arithmatex">\(\phi(p)\)</span> in momentum → Wide <span class="arithmatex">\(\psi(x)\)</span> in position</li>
+</ul>
+<p>Mathematically: <span class="arithmatex">\(\Delta x \cdot \Delta p \geq \hbar/2\)</span></p>
+<p><strong>The Heisenberg uncertainty principle is just the Fourier uncertainty principle applied to quantum wavefunctions!</strong></p>
+<h3 id="where-does-mass-enter">Where Does Mass Enter?<a class="headerlink" href="#where-does-mass-enter" title="Permanent link">&para;</a></h3>
+<p>Mass doesn't appear in the Fourier relationship between x and p. But it <strong>crucially appears in time evolution</strong>.</p>
+<p>Each momentum component of the wavefunction evolves in time as:</p>
+<div class="arithmatex">\[\exp(-iEt/\hbar) = \exp\left(-i\frac{p^2 t}{2m\hbar}\right)\]</div>
+<p><strong>Domain note:</strong> This is the time evolution for a <strong>free particle</strong> (V = 0). In a general potential, the time dependence is more complicated, but the mass-dependence of the kinetic energy term remains.</p>
+<p>The phase accumulated depends on <span class="arithmatex">\(p^2/m\)</span>. Different momentum components acquire different phases at a rate that depends on mass:</p>
+<ul>
+<li><strong>Large m:</strong> Phases change slowly → Components stay in sync → Packet holds together</li>
+<li><strong>Small m:</strong> Phases change quickly → Components dephase rapidly → Packet spreads</li>
+</ul>
+<h3 id="the-dephasing-picture">The Dephasing Picture<a class="headerlink" href="#the-dephasing-picture" title="Permanent link">&para;</a></h3>
+<p>Think of the wave packet as a choir of singers (each momentum component) trying to sing in harmony. At t = 0, they're all in phase—constructive interference creates the localized packet.</p>
+<p>As time passes, each singer's pitch drifts at a rate proportional to <span class="arithmatex">\(p^2/m\)</span>:</p>
+<ul>
+<li>For a <strong>heavy particle</strong> (large m), the drift is slow—the choir stays in harmony, the packet stays localized</li>
+<li>For a <strong>light particle</strong> (small m), the drift is fast—the harmony breaks down, the packet spreads</li>
+</ul>
+<hr />
+<h2 id="part-9-the-inevitable-localization-a-classical-quantum-bridge">Part 9: The Inevitable Localization - A Classical-Quantum Bridge<a class="headerlink" href="#part-9-the-inevitable-localization-a-classical-quantum-bridge" title="Permanent link">&para;</a></h2>
+<h3 id="classical-rolling-balls-in-a-u-shaped-valley">Classical: Rolling Balls in a U-Shaped Valley<a class="headerlink" href="#classical-rolling-balls-in-a-u-shaped-valley" title="Permanent link">&para;</a></h3>
+<p>Imagine two frictionless balls - a marble (electron) and a bowling ball (proton) - rolling in a U-shaped valley:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        ●m
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>       /   \
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      /     \
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>     /       \
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>____/    ●M   \____
+</code></pre></div>
+<p><strong>Both have the same total energy E.</strong></p>
+<p><strong>At the edges (maximum height):</strong></p>
+<p>Total energy = potential energy: <span class="arithmatex">\(E = mgh_{max}\)</span></p>
+<p>So maximum height: <span class="arithmatex">\(h_{max} = \frac{E}{mg}\)</span></p>
+<ul>
+<li><strong>Heavy ball (M):</strong> <span class="arithmatex">\(h_{max} = \frac{E}{Mg}\)</span> — doesn't roll up very high (small Δh)</li>
+<li><strong>Light ball (m):</strong> <span class="arithmatex">\(h_{max} = \frac{E}{mg}\)</span> — rolls up much higher (large Δh)</li>
+</ul>
+<p>The heavier ball stays in the valley; the lighter ball explores more space!</p>
+<p><strong>At the bottom (center of valley):</strong></p>
+<p>Total energy = kinetic energy: <span class="arithmatex">\(E = \frac{1}{2}mv^2\)</span></p>
+<p>So velocity at bottom: <span class="arithmatex">\(v_{max} = \sqrt{\frac{2E}{m}}\)</span></p>
+<ul>
+<li><strong>Heavy ball:</strong> <span class="arithmatex">\(v_{max} = \sqrt{\frac{2E}{M}}\)</span> — moving slower</li>
+<li><strong>Light ball:</strong> <span class="arithmatex">\(v_{max} = \sqrt{\frac{2E}{m}}\)</span> — moving faster</li>
+</ul>
+<p>The lighter ball zips through the center faster!</p>
+<p><strong>But momentum at bottom:</strong> <span class="arithmatex">\(p_{max} = m \cdot v_{max} = m \cdot \sqrt{\frac{2E}{m}} = \sqrt{2mE}\)</span></p>
+<ul>
+<li><strong>Heavy ball:</strong> <span class="arithmatex">\(p_{max} = \sqrt{2ME}\)</span> — <strong>larger momentum!</strong></li>
+<li><strong>Light ball:</strong> <span class="arithmatex">\(p_{max} = \sqrt{2mE}\)</span> — smaller momentum</li>
+</ul>
+<h3 id="why-does-the-heavy-ball-have-more-momentum-despite-moving-slower">Why Does the Heavy Ball Have More Momentum Despite Moving Slower?<a class="headerlink" href="#why-does-the-heavy-ball-have-more-momentum-despite-moving-slower" title="Permanent link">&para;</a></h3>
+<p><strong>The key:</strong> Momentum = mass × velocity, but energy = mass × velocity²</p>
+<p>Think of it this way:
+- To have energy E, you need: velocity = <span class="arithmatex">\(\sqrt{E/m}\)</span>
+- Your momentum is then: <span class="arithmatex">\(p = m \cdot \sqrt{E/m} = \sqrt{mE}\)</span></p>
+<p><strong>As mass increases:</strong>
+- Velocity decreases (as <span class="arithmatex">\(1/\sqrt{m}\)</span>)
+- But mass increases (as <span class="arithmatex">\(m\)</span>)
+- Momentum = mass × velocity increases (as <span class="arithmatex">\(\sqrt{m}\)</span>)</p>
+<p><strong>Intuition:</strong> Momentum is about "how hard to stop." Energy is about "how much work you did." A slow-moving truck has more momentum than a fast-moving bicycle even if you put the same amount of work into both!</p>
+<p><strong>The trade-off:</strong>
+- Heavy: lots of mass, little velocity → <strong>high momentum</strong>
+- Light: little mass, lots of velocity → <strong>low momentum</strong></p>
+<p>Mass wins because momentum is linear in mass but energy is quadratic in velocity.</p>
+<h3 id="classical-spreads-summary">Classical Spreads: Summary<a class="headerlink" href="#classical-spreads-summary" title="Permanent link">&para;</a></h3>
+<p>During oscillation, each ball's position ranges from bottom to <span class="arithmatex">\(h_{max}\)</span>, and momentum ranges from <span class="arithmatex">\(p_{max}\)</span> to 0:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Position Spread (Δh)</th>
+<th>Momentum Spread (Δp)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Heavy ball</strong></td>
+<td><strong>Small</strong> (E/Mg)</td>
+<td><strong>Large</strong> (<span class="arithmatex">\(\sqrt{2ME}\)</span>)</td>
+</tr>
+<tr>
+<td><strong>Light ball</strong></td>
+<td>Large (E/mg)</td>
+<td>Small (<span class="arithmatex">\(\sqrt{2mE}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Classically: heavy particles stay in a smaller region but carry more momentum!</p>
+<h3 id="forces-and-energy-the-bridge-to-quantum">Forces and Energy (The Bridge to Quantum)<a class="headerlink" href="#forces-and-energy-the-bridge-to-quantum" title="Permanent link">&para;</a></h3>
+<p>In classical mechanics, force relates to potential energy:</p>
+<div class="arithmatex">\[F = -\frac{dU}{dx}\]</div>
+<p>Force is the negative gradient (slope) of energy! At the bottom of the valley:
+- Large slope → large restoring force pushing ball back
+- This is what determines the oscillation</p>
+<p><strong>Why does this matter for quantum?</strong> In quantum mechanics, <strong>there are no forces</strong> - only the potential energy function U(x). The Schrödinger equation uses U(x), not F. But they're related by F = -dU/dx, so the physics is the same: steep potentials (large -dU/dx) confine particles more.</p>
+<h3 id="quantum-the-blur-of-all-classical-paths">Quantum: The Blur of All Classical Paths<a class="headerlink" href="#quantum-the-blur-of-all-classical-paths" title="Permanent link">&para;</a></h3>
+<p>Now go quantum. The particle isn't rolling - it's a <strong>wavefunction</strong> that exists everywhere at once.</p>
+<p><strong>Think of the wavefunction as a blur photograph of all possible classical trajectories:</strong>
+- Some parts correspond to "classical ball near the edge" (high position, low momentum)
+- Some parts correspond to "classical ball at the bottom" (center position, high momentum)
+- The quantum state contains the full range of classical possibilities</p>
+<p><strong>The momentum content must span the classical range:</strong>
+- From ~0 (at the edges) to ~<span class="arithmatex">\(p_{max} = \sqrt{2mE}\)</span> (at the center)
+- Momentum spread: <span class="arithmatex">\(\Delta p \sim \sqrt{2mE}\)</span></p>
+<p>Just like classical!</p>
+<p><strong>Heavy particle:</strong>
+- Classical <span class="arithmatex">\(p_{max}\)</span> is large → quantum Δp is large
+- Contains high-momentum components
+- High momentum → short wavelength: <span class="arithmatex">\(\lambda = h/p\)</span>
+- Short wavelengths are "tight" and don't spread out much
+- By uncertainty <span class="arithmatex">\(\Delta x \cdot \Delta p \sim \hbar\)</span>: large Δp forces <strong>small Δx</strong></p>
+<p><strong>Light particle:</strong>
+- Classical <span class="arithmatex">\(p_{max}\)</span> is small → quantum Δp is small
+- Contains only low-momentum components
+- Low momentum → long wavelength
+- Long wavelengths are inherently "fuzzy"
+- Small Δp allows <strong>large Δx</strong></p>
+<h3 id="the-beautiful-inevitability">The Beautiful Inevitability<a class="headerlink" href="#the-beautiful-inevitability" title="Permanent link">&para;</a></h3>
+<p><strong>Classically:</strong> Heavy ball doesn't roll as high (small Δh) but has more momentum (large Δp)</p>
+<p><strong>Quantum:</strong> Same story!
+- Momentum spread set by classical physics: <span class="arithmatex">\(\Delta p \sim \sqrt{2mE}\)</span> (large for heavy)
+- de Broglie: <span class="arithmatex">\(\lambda = h/p\)</span> (short for heavy)
+- Uncertainty: <span class="arithmatex">\(\Delta x \cdot \Delta p \sim \hbar\)</span> (small Δx for heavy)</p>
+<p><strong>Of course it can be no other way!</strong></p>
+<p>The classical physics already told us:
+- Heavy stays in smaller region (small Δh)
+- Heavy has larger momentum swing (large Δp)</p>
+<p>Quantum mechanics respects this completely. The wavefunction for a heavy particle:
+- Has large momentum content (large Δp) because classical <span class="arithmatex">\(p_{max}\)</span> is large
+- Must be localized (small Δx) by uncertainty principle
+- Lives near the center where large momenta "belong"</p>
+<p><strong>The quantum blur preserves the classical wisdom:</strong> Momentum is understood the same way (quantity of motion, mass × velocity), and for the same energy, heavy particles occupy less space and carry more momentum - both classically and quantum mechanically.</p>
+<p>It all makes perfect sense.</p>
+<hr />
+<h2 id="part-10-summary-tables-and-quick-reference">Part 10: Summary Tables and Quick Reference<a class="headerlink" href="#part-10-summary-tables-and-quick-reference" title="Permanent link">&para;</a></h2>
+<h3 id="table-1-how-mass-affects-localization">Table 1: How Mass Affects Localization<a class="headerlink" href="#table-1-how-mass-affects-localization" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Phenomenon</th>
+<th>Light Particle (small m)</th>
+<th>Heavy Particle (large m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wavefunction curvature</td>
+<td>Low (gentle bending)</td>
+<td>High (sharp bending)</td>
+</tr>
+<tr>
+<td>Spatial extent</td>
+<td>Large (spread out)</td>
+<td>Small (localized)</td>
+</tr>
+<tr>
+<td>Ground state energy in box</td>
+<td>High ("cramped")</td>
+<td>Low ("comfortable")</td>
+</tr>
+<tr>
+<td>Wave packet spreading rate</td>
+<td>Fast</td>
+<td>Slow</td>
+</tr>
+<tr>
+<td>Velocity uncertainty</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>de Broglie wavelength</td>
+<td>Long (fuzzy)</td>
+<td>Short (sharp)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-2-mass-dependence-in-key-formulas">Table 2: Mass Dependence in Key Formulas<a class="headerlink" href="#table-2-mass-dependence-in-key-formulas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Formula</th>
+<th>Mass Dependence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normalized curvature</td>
+<td><span class="arithmatex">\((d^2\psi/dx^2)/\psi = -(2m/\hbar^2) \cdot KE\)</span></td>
+<td><span class="arithmatex">\(\propto m\)</span></td>
+</tr>
+<tr>
+<td>Particle in box energy</td>
+<td><span class="arithmatex">\(E = \pi^2\hbar^2/(2mL^2)\)</span></td>
+<td><span class="arithmatex">\(\propto 1/m\)</span></td>
+</tr>
+<tr>
+<td>Harmonic oscillator width</td>
+<td><span class="arithmatex">\(\sigma = \sqrt{\hbar/(2m\omega)}\)</span></td>
+<td><span class="arithmatex">\(\propto 1/\sqrt{m}\)</span></td>
+</tr>
+<tr>
+<td>Wave packet spreading</td>
+<td><span class="arithmatex">\(d\sigma/dt \sim \hbar/(2m\sigma_0)\)</span></td>
+<td><span class="arithmatex">\(\propto 1/m\)</span></td>
+</tr>
+<tr>
+<td>Velocity uncertainty</td>
+<td><span class="arithmatex">\(\Delta v = \Delta p/m \geq \hbar/(2m\Delta x)\)</span></td>
+<td><span class="arithmatex">\(\propto 1/m\)</span></td>
+</tr>
+<tr>
+<td>de Broglie wavelength</td>
+<td><span class="arithmatex">\(\lambda = h/p = h/\sqrt{2mE}\)</span></td>
+<td><span class="arithmatex">\(\propto 1/\sqrt{m}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3-concrete-numbers-electron-vs-proton">Table 3: Concrete Numbers (Electron vs. Proton)<a class="headerlink" href="#table-3-concrete-numbers-electron-vs-proton" title="Permanent link">&para;</a></h3>
+<p><strong>Conditions:</strong> Same energy E = 1 eV, same initial width <span class="arithmatex">\(\sigma_0 = 1\)</span> nm, same harmonic frequency <span class="arithmatex">\(\omega\)</span></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Electron</th>
+<th>Proton</th>
+<th>Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>de Broglie wavelength</td>
+<td>1.23 nm</td>
+<td>0.029 nm</td>
+<td>43:1</td>
+</tr>
+<tr>
+<td>Ground state width (harmonic)</td>
+<td><span class="arithmatex">\(\sigma\)</span></td>
+<td><span class="arithmatex">\(\sigma/43\)</span></td>
+<td>43:1</td>
+</tr>
+<tr>
+<td>Time to double packet width</td>
+<td>t</td>
+<td>1836t</td>
+<td>1:1836</td>
+</tr>
+<tr>
+<td>Velocity uncertainty (<span class="arithmatex">\(\Delta x\)</span>=1nm)</td>
+<td>58,000 m/s</td>
+<td>32 m/s</td>
+<td>1836:1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-4-which-approach-answers-which-question">Table 4: Which Approach Answers Which Question?<a class="headerlink" href="#table-4-which-approach-answers-which-question" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Best Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Why do confined particles have different energies?</td>
+<td>Curvature argument (Part 3)</td>
+</tr>
+<tr>
+<td>How does the ground state depend on mass?</td>
+<td>Particle in box / Harmonic oscillator (Parts 4-5)</td>
+</tr>
+<tr>
+<td>How fast does a free particle spread?</td>
+<td>Wave packet analysis (Part 6)</td>
+</tr>
+<tr>
+<td>Why can't particles be perfectly localized?</td>
+<td>Heisenberg uncertainty (Part 7)</td>
+</tr>
+<tr>
+<td>Where does the uncertainty principle come from?</td>
+<td>Fourier analysis (Part 8)</td>
+</tr>
+<tr>
+<td>How does classical intuition connect to quantum?</td>
+<td>Classical-quantum bridge (Part 9)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-5-domain-of-validity-summary">Table 5: Domain of Validity Summary<a class="headerlink" href="#table-5-domain-of-validity-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Equation/Concept</th>
+<th>Applies To</th>
+<th>Restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\lambda = h/p\)</span></td>
+<td>Exact for plane waves; each momentum component in general states</td>
+<td>p must be well-defined for that component</td>
+</tr>
+<tr>
+<td>Time-independent Schrödinger equation</td>
+<td>Stationary states (eigenstates)</td>
+<td>States with definite energy E</td>
+</tr>
+<tr>
+<td>Curvature relation</td>
+<td>Any stationary state, any potential</td>
+<td>At each point in space</td>
+</tr>
+<tr>
+<td>Particle in box solutions</td>
+<td>Confined particles with hard walls</td>
+<td>Boundary conditions <span class="arithmatex">\(\psi(0) = \psi(L) = 0\)</span></td>
+</tr>
+<tr>
+<td>Wave packet spreading formula</td>
+<td>Free particles (<span class="arithmatex">\(V = 0\)</span>), time-dependent</td>
+<td>Initial Gaussian packet</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(v_{\text{group}} = p/m\)</span></td>
+<td><strong>Free particles only</strong> (<span class="arithmatex">\(V = 0\)</span>)</td>
+<td>Group velocity of plane wave components</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Delta v = \Delta p/m\)</span></td>
+<td>Any quantum state</td>
+<td>Relates standard deviations via <span class="arithmatex">\(\hat{v} = \hat{p}/m\)</span></td>
+</tr>
+<tr>
+<td>Uncertainty principle</td>
+<td>ANY quantum state</td>
+<td>General, fundamental limit</td>
+</tr>
+<tr>
+<td>Fourier transform relation</td>
+<td>ANY quantum state</td>
+<td>Mathematical property of wavefunctions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-6-what-different-velocities-mean">Table 6: What Different "Velocities" Mean<a class="headerlink" href="#table-6-what-different-velocities-mean" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>When It Applies</th>
+<th>Physical Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classical velocity</td>
+<td><span class="arithmatex">\(v = p/m\)</span></td>
+<td>Single particle with definite p</td>
+<td>How fast particle moves</td>
+</tr>
+<tr>
+<td>Group velocity</td>
+<td><span class="arithmatex">\(v_g = d\omega/dk = p/m\)</span></td>
+<td>Free particle plane wave component</td>
+<td>Speed of wave packet envelope; <strong>equals p/m for free particles</strong></td>
+</tr>
+<tr>
+<td>Phase velocity</td>
+<td><span class="arithmatex">\(v_{\phi} = \omega/k\)</span></td>
+<td>Plane wave</td>
+<td>Speed of wave crests (not probability)</td>
+</tr>
+<tr>
+<td>Velocity uncertainty</td>
+<td><span class="arithmatex">\(\Delta v = \Delta p/m\)</span></td>
+<td>Any quantum state</td>
+<td>Spread in velocity operator eigenvalues</td>
+</tr>
+<tr>
+<td>Expectation value</td>
+<td><span class="arithmatex">\(\langle v \rangle = \langle p \rangle/m\)</span></td>
+<td>Any quantum state</td>
+<td>Average velocity of ensemble</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-11-the-deep-unity">Part 11: The Deep Unity<a class="headerlink" href="#part-11-the-deep-unity" title="Permanent link">&para;</a></h2>
+<h3 id="why-all-roads-lead-to-the-same-answer">Why All Roads Lead to the Same Answer<a class="headerlink" href="#why-all-roads-lead-to-the-same-answer" title="Permanent link">&para;</a></h3>
+<p>We've attacked the localization question from five different angles. Every approach gives the same answer because they're all manifestations of one underlying truth:</p>
+<blockquote>
+<p><strong>Mass determines how "quantum" a particle behaves.</strong></p>
+</blockquote>
+<p>The quantum scale is set by Planck's constant <span class="arithmatex">\(\hbar\)</span>. The combination <span class="arithmatex">\(\hbar/m\)</span> determines:</p>
+<ul>
+<li>How much the wavefunction spreads (<span class="arithmatex">\(\propto \hbar/m\)</span>)</li>
+<li>How uncertain the velocity is (<span class="arithmatex">\(\propto \hbar/m\)</span>)</li>
+<li>How fast quantum phases dephase (<span class="arithmatex">\(\propto \hbar/m\)</span>)</li>
+<li>How "expensive" in energy terms curvature is (<span class="arithmatex">\(\propto \hbar^2/m\)</span>)</li>
+</ul>
+<h3 id="the-classical-limit">The Classical Limit<a class="headerlink" href="#the-classical-limit" title="Permanent link">&para;</a></h3>
+<p>For everyday objects (<span class="arithmatex">\(m \sim 1\)</span> kg), <span class="arithmatex">\(\hbar/m \sim 10^{-34}\)</span> m²/s. Quantum effects are utterly negligible. A baseball has such enormous mass that its wavefunction is essentially a point—it behaves classically.</p>
+<p>For electrons (<span class="arithmatex">\(m \sim 10^{-30}\)</span> kg), <span class="arithmatex">\(\hbar/m \sim 10^{-4}\)</span> m²/s. Quantum effects dominate at atomic scales.</p>
+<p><strong>The proton isn't "classical"</strong>—it's still fully quantum mechanical. But it's 1836 times closer to classical behavior than the electron.</p>
+<h3 id="final-intuition-check">Final Intuition Check<a class="headerlink" href="#final-intuition-check" title="Permanent link">&para;</a></h3>
+<p><strong>Ask yourself: "Why do more massive particles stay localized?"</strong></p>
+<p><strong>One-sentence answer:</strong> Because mass suppresses velocity uncertainty—for the same spatial confinement, heavy particles have less "spread" in their velocities, so they hold together instead of flying apart.</p>
+<ul>
+<li><strong>From the Schrödinger equation:</strong> Curvature <span class="arithmatex">\(\propto m\)</span>, so heavy particles bend back quickly and don't extend far</li>
+<li><strong>From the uncertainty principle:</strong> <span class="arithmatex">\(\Delta v = \Delta p/m = \hbar/(2m\Delta x)\)</span>, so large m means small <span class="arithmatex">\(\Delta v\)</span></li>
+<li><strong>From wave packet physics:</strong> Dispersion <span class="arithmatex">\(\propto 1/m\)</span>, so heavy particle packets spread slowly</li>
+</ul>
+<p><strong>All the same physics. All the same answer.</strong></p>
+<h3 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h3>
+<p><strong>In atomic physics:</strong> Electrons orbit far from the nucleus (large wavefunctions). Protons and neutrons stay tightly packed in the nucleus. This is why atoms are mostly empty space!</p>
+<p><strong>In chemistry:</strong> Electrons delocalize across molecules (enabling bonding and tunneling). Nuclei stay put. This separation of scales is the Born-Oppenheimer approximation—the foundation of computational chemistry.</p>
+<p><strong>In solid-state physics:</strong> Electrons in crystals are described by Bloch waves that extend over many atoms. The light electron mass is what makes metals metallic—electrons can spread throughout the material and conduct electricity.</p>
+<hr />
+<h2 id="final-notes-on-equation-validity">Final Notes on Equation Validity<a class="headerlink" href="#final-notes-on-equation-validity" title="Permanent link">&para;</a></h2>
+<p>Throughout this document, we've been careful to specify when each equation applies. Here's a summary of the most commonly confused points:</p>
+<ol>
+<li><strong>de Broglie wavelength <span class="arithmatex">\(\lambda = h/p\)</span>:</strong></li>
+<li>Exact for plane waves with definite momentum</li>
+<li>For wave packets: applies to each momentum component individually</li>
+<li>Works in any potential (free space or confined)</li>
+<li>
+<p>The momentum p may vary with position in non-uniform potentials</p>
+</li>
+<li>
+<p><strong>Group velocity <span class="arithmatex">\(v = p/m\)</span>:</strong></p>
+</li>
+<li><strong>Only exact for free particles</strong> where <span class="arithmatex">\(V = 0\)</span> and <span class="arithmatex">\(\omega = \hbar k^2/(2m)\)</span></li>
+<li><strong>Important: Two different meanings!</strong><ul>
+<li><strong>Packet's group velocity:</strong> The speed at which the packet's peak moves = <span class="arithmatex">\(p_0/m\)</span> for packet centered at <span class="arithmatex">\(p_0\)</span></li>
+<li><strong>Component group velocities:</strong> Each Fourier component with momentum p propagates at <span class="arithmatex">\(v(p) = p/m\)</span></li>
+</ul>
+</li>
+<li>The packet spreads because different components have different group velocities (dispersion)</li>
+<li>In non-dispersive media (where all components have the same group velocity), packets don't spread</li>
+<li>In quantum mechanics for free particles, the medium IS dispersive because <span class="arithmatex">\(v = p/m\)</span> depends on p</li>
+<li>
+<p>In general potentials, the relationship between group velocity and momentum is more complex</p>
+</li>
+<li>
+<p><strong>Velocity uncertainty <span class="arithmatex">\(\Delta v = \Delta p/m\)</span>:</strong></p>
+</li>
+<li>This relationship is <strong>general</strong> - applies to any quantum state, not just free particles</li>
+<li>Derived from the velocity operator <span class="arithmatex">\(\hat{v} = \hat{p}/m\)</span></li>
+<li><span class="arithmatex">\(\Delta v\)</span> and <span class="arithmatex">\(\Delta p\)</span> are standard deviations: <span class="arithmatex">\(\Delta v = \sqrt{\langle v^2 \rangle - \langle v \rangle^2}\)</span></li>
+<li>For free particles, <span class="arithmatex">\(\Delta v\)</span> equals the spread in group velocities of the momentum components</li>
+<li>
+<p>For confined particles, <span class="arithmatex">\(\Delta v\)</span> still measures the velocity operator's uncertainty, but may not correspond to actual spatial motion</p>
+</li>
+<li>
+<p><strong>Time-independent vs time-dependent Schrödinger equation:</strong></p>
+</li>
+<li>Time-independent: for stationary states with definite energy</li>
+<li>Time-dependent: for general evolving states</li>
+<li>
+<p>Stationary states are special solutions of the time-dependent equation</p>
+</li>
+<li>
+<p><strong>Free space vs confined:</strong></p>
+</li>
+<li>"Free particle" means <span class="arithmatex">\(V = 0\)</span> everywhere</li>
+<li>"Confined" means there's a potential well or barriers</li>
+<li>
+<p>The curvature argument works in both cases—it's the most general approach</p>
+</li>
+<li>
+<p><strong>Plane waves vs wave packets:</strong></p>
+</li>
+<li>Plane waves have definite wavelength, extend infinitely</li>
+<li>Wave packets are superpositions of plane waves, are localized</li>
+<li>
+<p>Real particles are always wave packets, never pure plane waves</p>
+</li>
+<li>
+<p><strong>What "momentum spread causes spreading" really means:</strong></p>
+</li>
+<li>A wave packet with momentum spread <span class="arithmatex">\(\Delta p\)</span> contains components with different momenta</li>
+<li>In free space, each component travels at group velocity <span class="arithmatex">\(v = p/m\)</span></li>
+<li>The range of group velocities is <span class="arithmatex">\(\Delta v = \Delta p/m\)</span></li>
+<li>Over time <span class="arithmatex">\(t\)</span>, the fastest and slowest components separate by distance <span class="arithmatex">\(\approx \Delta v \cdot t\)</span></li>
+<li>This is the physical mechanism of wave packet spreading</li>
+<li>
+<p><strong>Important distinction:</strong></p>
+<ul>
+<li>The <strong>center</strong> of the packet moves at <span class="arithmatex">\(v_{\text{center}} = p_0/m\)</span> (where <span class="arithmatex">\(p_0\)</span> is the average momentum)</li>
+<li>The <strong>width</strong> of the packet grows as <span class="arithmatex">\(\sim (\Delta p/m) \cdot t\)</span> because components separate</li>
+<li>A packet can move AND spread simultaneously—these are independent phenomena</li>
+</ul>
+</li>
+<li>
+<p><strong>Dispersion vs non-dispersion:</strong></p>
+</li>
+<li><strong>Dispersive</strong>: Group velocity depends on frequency/momentum → different components travel at different speeds → packets spread</li>
+<li><strong>Non-dispersive</strong>: Group velocity same for all frequencies → all components travel together → packets maintain shape</li>
+<li>Quantum mechanics for free particles is dispersive because <span class="arithmatex">\(v = p/m\)</span> depends on p</li>
+<li>This is why quantum wave packets inevitably spread in free space</li>
+</ol>
+<p>Understanding these distinctions will help you avoid confusion as you study quantum mechanics further!</p>
+<hr />
+<p><em>This page was written with the assistance of Claude (Anthropic).</em></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

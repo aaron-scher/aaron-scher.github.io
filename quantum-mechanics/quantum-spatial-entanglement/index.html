@@ -1,0 +1,2383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/quantum-mechanics/quantum-spatial-entanglement/">
+      
+      
+        <link rel="prev" href="../quantum-operators/">
+      
+      
+        <link rel="next" href="../quantum-velocity/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Entanglement Isn't Just for Spin - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#entanglement-isnt-just-for-spin" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Entanglement Isn't Just for Spin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-pedagogical-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Pedagogical Insight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-particle-in-two-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Particle in Two Dimensions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One Particle in Two Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-a-separable-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: A Separable Wave Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-a-non-separable-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: A Non-Separable Wave Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-see-the-difference-slice-the-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to See the Difference: Slice the Wave Function
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to See the Difference: Slice the Wave Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-a-separable-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For a Separable Wave Function:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-a-non-separable-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For a Non-Separable Wave Function:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-one-coordinate-affects-the-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measuring One Coordinate Affects the Other
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring One Coordinate Affects the Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-the-non-separable-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: The Non-Separable State
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-interactions-create-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Interactions Create Entanglement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Interactions Create Entanglement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-particles-with-repulsive-interaction-in-a-box-at-steady-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Particles with Repulsive Interaction in a box at steady state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-ground-state-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the Ground State Wave Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamics-watching-entanglement-form-in-real-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamics: Watching Entanglement Form in Real Time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamics: Watching Entanglement Form in Real Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-scattering-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Scattering Event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-configuration-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding Configuration Space
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Configuration Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-seeing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you're seeing:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-for-entanglement-the-slicing-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing for Entanglement: The Slicing Method
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing for Entanglement: The Slicing Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-before-state-is-not-entangled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Before" state is NOT entangled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-after-state-is-entangled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "After" state IS entangled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-the-visual-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: The visual test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-fig-5-is-frozen-but-fig-6-evolves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Fig. 5 is Frozen But Fig. 6 Evolves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-cant-we-see-this-in-real-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Can't We See This in Real Space?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-why-electrons-act-like-wave-packets-in-real-metals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application: Why Electrons Act Like Wave Packets in Real Metals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application: Why Electrons Act Like Wave Packets in Real Metals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-space-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Space Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-heavy-ions-localize-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Heavy Ions Localize Electrons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeated-scattering-creates-effective-wave-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repeated Scattering Creates Effective Wave Packets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-spin-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection to Spin Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-pedagogical-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Pedagogical Insight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-particle-in-two-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Particle in Two Dimensions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One Particle in Two Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-a-separable-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: A Separable Wave Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-a-non-separable-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: A Non-Separable Wave Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-see-the-difference-slice-the-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to See the Difference: Slice the Wave Function
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to See the Difference: Slice the Wave Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-a-separable-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For a Separable Wave Function:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-a-non-separable-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For a Non-Separable Wave Function:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-one-coordinate-affects-the-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measuring One Coordinate Affects the Other
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring One Coordinate Affects the Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-the-non-separable-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: The Non-Separable State
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-interactions-create-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Interactions Create Entanglement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Interactions Create Entanglement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-particles-with-repulsive-interaction-in-a-box-at-steady-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Particles with Repulsive Interaction in a box at steady state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-ground-state-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the Ground State Wave Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamics-watching-entanglement-form-in-real-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamics: Watching Entanglement Form in Real Time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamics: Watching Entanglement Form in Real Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-scattering-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Scattering Event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-configuration-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding Configuration Space
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Configuration Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-seeing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you're seeing:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-for-entanglement-the-slicing-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing for Entanglement: The Slicing Method
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing for Entanglement: The Slicing Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-before-state-is-not-entangled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Before" state is NOT entangled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-after-state-is-entangled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "After" state IS entangled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-the-visual-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: The visual test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-fig-5-is-frozen-but-fig-6-evolves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Fig. 5 is Frozen But Fig. 6 Evolves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-cant-we-see-this-in-real-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Can't We See This in Real Space?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-why-electrons-act-like-wave-packets-in-real-metals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application: Why Electrons Act Like Wave Packets in Real Metals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application: Why Electrons Act Like Wave Packets in Real Metals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-space-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Space Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-heavy-ions-localize-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Heavy Ions Localize Electrons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeated-scattering-creates-effective-wave-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repeated Scattering Creates Effective Wave Packets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-spin-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection to Spin Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="entanglement-isnt-just-for-spin">Entanglement Isn't Just for Spin<a class="headerlink" href="#entanglement-isnt-just-for-spin" title="Permanent link">&para;</a></h1>
+<p>This page highlights some of my favorite insights from Daniel V. Schroeder's paper [1]:</p>
+<p><strong>"Entanglement isn't just for spin"</strong>, <em>American Journal of Physics</em> <strong>85</strong>, 812 (2017)
+arXiv: <a href="https://arxiv.org/abs/1703.10620">1703.10620</a></p>
+<p>The paper shows that quantum entanglement occurs not just in spin systems, but also in the spatial wave functions of particles. You can see entanglement in simple 2D systems that are easy to visualize.</p>
+<h2 id="key-pedagogical-insight">Key Pedagogical Insight<a class="headerlink" href="#key-pedagogical-insight" title="Permanent link">&para;</a></h2>
+<p>A powerful insight from the paper is that you can first study a <strong>single particle in 2D</strong>, with a wavefunction <span class="arithmatex">\(\psi(x, y)\)</span>, and learn to see the difference between <strong>separable states</strong> (which factor into <span class="arithmatex">\(X(x)Y(y)\)</span>) and <strong>non-separable states</strong> (whose x- and y-shapes depend on each other).</p>
+<p>Once students can visually recognize non-separability in 2D plots, you then make the simple substitution <span class="arithmatex">\((x,y) \to (x_1, x_2)\)</span>. Instantly, the <em>same</em> mathematics describes a <strong>two-particle system</strong>, and the <em>same</em> non-separability now becomes <strong>true entanglement</strong> between particle 1 and particle 2.</p>
+<h2 id="one-particle-in-two-dimensions">One Particle in Two Dimensions<a class="headerlink" href="#one-particle-in-two-dimensions" title="Permanent link">&para;</a></h2>
+<p>Consider a particle in a 2D square box (infinite square well), where both x and y go from 0 to L.</p>
+<h3 id="example-1-a-separable-wave-function">Example 1: A Separable Wave Function<a class="headerlink" href="#example-1-a-separable-wave-function" title="Permanent link">&para;</a></h3>
+<p>The simplest solutions have the form:</p>
+<div class="arithmatex">\[\psi(x,y) = \sin\left(\frac{n_x \pi x}{L}\right) \sin\left(\frac{n_y \pi y}{L}\right)\]</div>
+<p>This is called <strong>separable</strong> because it factors into a function of x times a function of y:</p>
+<div class="arithmatex">\[\psi(x,y) = f(x) \cdot g(y)\]</div>
+<p>Here's what the state with <span class="arithmatex">\(n_x = 2, n_y = 3\)</span> looks like:</p>
+<p><img alt="Separable wave function with marginal plots" src="../../images/entanglement-fig1-separable.png" /></p>
+<p><em>Figure 1 (from [1]): A separable wave function. Red = positive, cyan = negative, black = zero. The 1D functions along the top and right show how this factors into <span class="arithmatex">\(f(x) \times g(y)\)</span>.</em></p>
+<h3 id="example-2-a-non-separable-wave-function">Example 2: A Non-Separable Wave Function<a class="headerlink" href="#example-2-a-non-separable-wave-function" title="Permanent link">&para;</a></h3>
+<p>Now consider a superposition of two energy eigenstates:</p>
+<div class="arithmatex">\[\psi(x,y) = \sin\left(\frac{2\pi x}{L}\right)\sin\left(\frac{3\pi y}{L}\right) + \frac{1}{2}\sin\left(\frac{3\pi x}{L}\right)\sin\left(\frac{2\pi y}{L}\right)\]</div>
+<p>Even though this is built from separable pieces, the sum itself is <strong>not separable</strong> - you cannot write it as a single function of x times a single function of y.</p>
+<p><img alt="Non-separable wave functions" src="../../images/entanglement-fig2-nonseparable.png" /></p>
+<p><em>Figure 2 (from [1]): Non-separable wave functions. (a) A superposition of two states. (b) Superposition with three states. (c) A "cat state" with isolated peaks at opposite corners.</em></p>
+<h2 id="how-to-see-the-difference-slice-the-wave-function">How to See the Difference: Slice the Wave Function<a class="headerlink" href="#how-to-see-the-difference-slice-the-wave-function" title="Permanent link">&para;</a></h2>
+<p>The key to understanding separability is to <strong>slice</strong> the 2D wave function at different values of x and look at what y-dependence you get.</p>
+<h3 id="for-a-separable-wave-function">For a Separable Wave Function:<a class="headerlink" href="#for-a-separable-wave-function" title="Permanent link">&para;</a></h3>
+<p>If you fix x at some value <span class="arithmatex">\(x_0\)</span>, you get:</p>
+<div class="arithmatex">\[\psi(x_0, y) = f(x_0) \cdot g(y)\]</div>
+<p>The y-dependence is always <span class="arithmatex">\(g(y)\)</span> - <strong>the same function shape</strong> - just scaled by the constant <span class="arithmatex">\(f(x_0)\)</span>.</p>
+<p><strong>Key point</strong>: Different slices (different values of <span class="arithmatex">\(x_0\)</span>) give the <strong>same y-pattern</strong>, just with different amplitudes.</p>
+<h3 id="for-a-non-separable-wave-function">For a Non-Separable Wave Function:<a class="headerlink" href="#for-a-non-separable-wave-function" title="Permanent link">&para;</a></h3>
+<p>If you fix x at value <span class="arithmatex">\(x_0\)</span>, you get some function of y. But if you fix x at a different value <span class="arithmatex">\(x_0'\)</span>, you get a <strong>different shaped</strong> function of y.</p>
+<p><strong>Key point</strong>: Different slices give <strong>different y-patterns</strong> - not just different amplitudes, but different shapes entirely.</p>
+<h2 id="measuring-one-coordinate-affects-the-other">Measuring One Coordinate Affects the Other<a class="headerlink" href="#measuring-one-coordinate-affects-the-other" title="Permanent link">&para;</a></h2>
+<p>The physical difference shows up in measurements:</p>
+<p><strong>Before measuring x</strong>, the probability distribution for y is:</p>
+<div class="arithmatex">\[P(y) = \int_0^L |\psi(x,y)|^2 \, dx\]</div>
+<p><strong>Geometric interpretation:</strong>
+- This integral sums along a <strong>horizontal line</strong> at height y
+- You're adding up the brightness across the entire row
+- <span class="arithmatex">\(P(y)\)</span> is literally the <strong>"horizontal brightness profile"</strong></p>
+<p><strong>Why this matters:</strong>
+- If a horizontal slice is <strong>mostly dark</strong> → the integral adds up small numbers → <span class="arithmatex">\(P(y)\)</span> is <strong>small</strong>
+- If a horizontal slice is <strong>bright</strong> across many x-values → the integral adds up larger numbers → <span class="arithmatex">\(P(y)\)</span> is <strong>large</strong></p>
+<p><strong>After measuring x and getting result <span class="arithmatex">\(x_0\)</span></strong>, the wave function "collapses" to:</p>
+<div class="arithmatex">\[P(y|x_0) = |\psi(x_0, y)|^2\]</div>
+<p>Now you're looking at a <strong>vertical line</strong> at <span class="arithmatex">\(x_0\)</span> - only that x-value survives.</p>
+<p><strong>Quick summary:</strong>
+- Before x-measurement: <span class="arithmatex">\(P(y) = \int |\psi(x,y)|^2 dx\)</span> → horizontal line → sum over all x
+- After x-measurement: <span class="arithmatex">\(P(y|x_0) = |\psi(x_0, y)|^2\)</span> → vertical line → only that x survives</p>
+<h3 id="example-the-non-separable-state">Example: The Non-Separable State<a class="headerlink" href="#example-the-non-separable-state" title="Permanent link">&para;</a></h3>
+<p>For the wave function in Figure 2(a), here's what happens:</p>
+<p><img alt="Probability distributions before and after measurement" src="../../images/entanglement-fig3-probability.png" /></p>
+<p><em>Figure 3 (from [1]): Probability distribution for measuring y. Green (solid) = before measuring x. Purple (dashed) = after measuring x and getting <span class="arithmatex">\(x = L/4\)</span>. The measurement changes the distribution!</em></p>
+<p><strong>Before measuring x</strong>: The green curve shows three peaks with certain relative heights.</p>
+<p><strong>After measuring x = L/4</strong>: The purple curve shows the same three peaks, but now the peak at <span class="arithmatex">\(y = L/4\)</span> is much more likely, and the peak at <span class="arithmatex">\(y = 3L/4\)</span> is much less likely.</p>
+<p><strong>The measurements are correlated!</strong> Measuring x changes what we expect to see when we measure y.</p>
+<hr />
+<h2 id="how-interactions-create-entanglement">How Interactions Create Entanglement<a class="headerlink" href="#how-interactions-create-entanglement" title="Permanent link">&para;</a></h2>
+<p>So far we've seen examples of entangled states, but <strong>how do particles become entangled?</strong> The answer: <strong>interactions between particles</strong>.</p>
+<h3 id="two-particles-with-repulsive-interaction-in-a-box-at-steady-state">Two Particles with Repulsive Interaction in a box at steady state<a class="headerlink" href="#two-particles-with-repulsive-interaction-in-a-box-at-steady-state" title="Permanent link">&para;</a></h3>
+<p>Consider two particles in a 1D infinite square well that repel each other. The interaction potential is:</p>
+<div class="arithmatex">\[V(x_1, x_2) = V_0 e^{-(x_2-x_1)^2/a^2}\]</div>
+<p><strong>What this means physically:</strong></p>
+<ul>
+<li>When <span class="arithmatex">\(x_1 \approx x_2\)</span> (particles close together) → exponential is large → <strong>strong repulsion</strong></li>
+<li>When <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> are far apart → exponential is tiny → <strong>almost no repulsion</strong></li>
+</ul>
+<p><strong>The particles "hate" being near each other. Their lowest-energy arrangement keeps them far apart.</strong></p>
+<h3 id="reading-the-ground-state-wave-function">Reading the Ground State Wave Function<a class="headerlink" href="#reading-the-ground-state-wave-function" title="Permanent link">&para;</a></h3>
+<p><img alt="Two-particle entangled ground state" src="../../images/entangled_ground_state_wavefun.png" /></p>
+<p><em>Figure 5 (from [1]): Ground state wave function for two repelling particles in a 1D box (0 to L). Horizontal axis = position of particle 1 (<span class="arithmatex">\(x_1\)</span>). Vertical axis = position of particle 2 (<span class="arithmatex">\(x_2\)</span>). Bright = high probability, dark = low probability. "Left" = 0 &lt; x &lt; L/2, "Right" = L/2 &lt; x &lt; L.</em></p>
+<p><strong>Important:</strong> This shows what the wave function looks like <strong>IF you prepare the system in the ground state</strong>. The Schrödinger equation conserves energy - it doesn't push particles toward lower energy states. If you prepare particles in an excited state or superposition, they stay in that state (though superpositions will have oscillating phases). This ground state is just one possible stationary solution, not something the system naturally evolves into.</p>
+<p><strong>Key features:</strong></p>
+<ul>
+<li><strong>The diagonal <span class="arithmatex">\(x_1 = x_2\)</span> is dark</strong> - particles strongly avoid being in the same place (where repulsion is largest)</li>
+<li><strong>Two bright peaks</strong> - when you measure the particles, you're most likely to find:<ul>
+<li><strong>One particle on the left, the other on the right</strong> (top-left corner)</li>
+<li><strong>One particle on the right, the other on the left</strong> (bottom-right corner)</li>
+</ul>
+</li>
+<li>These are exactly the arrangements where particles stay far apart!</li>
+</ul>
+<h2 id="dynamics-watching-entanglement-form-in-real-time">Dynamics: Watching Entanglement Form in Real Time<a class="headerlink" href="#dynamics-watching-entanglement-form-in-real-time" title="Permanent link">&para;</a></h2>
+<p>The ground state above is <strong>stationary</strong> - the probability distribution doesn't change with time. But what if the particles aren't in an energy eigenstate? What if they're <strong>moving</strong>?</p>
+<h3 id="a-scattering-event">A Scattering Event<a class="headerlink" href="#a-scattering-event" title="Permanent link">&para;</a></h3>
+<p>Two equal-mass particles in 1D start as separated Gaussian wave packets moving toward each other. They interact via a short-range rectangular barrier:</p>
+<div class="arithmatex">\[V(x_1, x_2) = \begin{cases} V_0 &amp; \text{if } |x_2 - x_1| &lt; a \\ 0 &amp; \text{otherwise} \end{cases}\]</div>
+<p>The parameters V₀ and a are chosen so transmission and reflection probabilities are approximately equal.</p>
+<p><img alt="Scattering dynamics showing entanglement formation" src="../../images/entangle_dynamics.png" /></p>
+<p><em>Figure 6 (from [1]): Time evolution of a two-particle scattering event. Three snapshots: Before, During, and After the interaction. The diagonal gray line shows where x₁ = x₂. Rainbow colors indicate the phase of the wave function (arrows show direction of motion). Brightness shows the magnitude (probability density).</em></p>
+<h3 id="understanding-configuration-space">Understanding Configuration Space<a class="headerlink" href="#understanding-configuration-space" title="Permanent link">&para;</a></h3>
+<p><strong>Critical: Don't confuse the map with the territory</strong></p>
+<p>This plot shows <strong>configuration space</strong> (x₁, x₂), not real space. Each point represents where BOTH particles are simultaneously.</p>
+<h4 id="what-youre-seeing">What you're seeing:<a class="headerlink" href="#what-youre-seeing" title="Permanent link">&para;</a></h4>
+<p>• <strong>Before</strong>: ONE blob in upper-left corner
+  - Particle 1 on left, particle 2 on right (definite configuration)
+  - In real space: two separated wave packets moving toward each other
+  - Separable (product) state</p>
+<p>• <strong>During</strong>: The wave packets collide and scatter via repulsion</p>
+<p>• <strong>After</strong>: TWO blobs appear
+  - Top-left blob: particle 1 left, particle 2 right (reflection - bounced off each other)
+  - Bottom-right blob: particle 1 right, particle 2 left (transmission - passed through)
+  - <strong>Why two blobs?</strong> When wave packets collide, there are two possible outcomes: they can bounce back (reflection) or pass through each other (transmission). Quantum mechanics keeps <strong>both outcomes in superposition</strong> - that's why you see two blobs instead of one
+  - The rainbow stripes show both blobs moving apart (arrows show direction of motion)
+  - <strong>Note:</strong> There are still tiny probability tails near the diagonal (where particles would be close together), but the probability is extremely small compared to the two dominant peaks</p>
+<h3 id="testing-for-entanglement-the-slicing-method">Testing for Entanglement: The Slicing Method<a class="headerlink" href="#testing-for-entanglement-the-slicing-method" title="Permanent link">&para;</a></h3>
+<h4 id="the-before-state-is-not-entangled">The "Before" state is NOT entangled<a class="headerlink" href="#the-before-state-is-not-entangled" title="Permanent link">&para;</a></h4>
+<p>The <strong>Before</strong> state is separable: ψ(x₁,x₂) = ψ₁(x₁)·ψ₂(x₂). This means:</p>
+<p>• <strong>The slicing test:</strong> Draw a vertical line anywhere (fix x₁). The distribution you see for x₂ always has the <strong>same shape</strong> - just a different height
+• Measuring particle 1's position doesn't change the <strong>shape</strong> of particle 2's distribution
+• Geometrically: the blob is <strong>round/oval</strong> - not tilted, not split</p>
+<h4 id="the-after-state-is-entangled">The "After" state IS entangled<a class="headerlink" href="#the-after-state-is-entangled" title="Permanent link">&para;</a></h4>
+<p>The <strong>After</strong> state is entangled: ψ(x₁,x₂) ≠ ψ₁(x₁)·ψ₂(x₂). Now:</p>
+<p>• <strong>The slicing test fails:</strong> Draw a vertical line on the left → you see a bump at the top (x₂ large). Draw one on the right → you see a bump at the bottom (x₂ small)
+• Measuring particle 1's position <strong>completely changes</strong> particle 2's distribution
+• Geometrically: the blob is <strong>split diagonally</strong> - two separate peaks along the anti-diagonal</p>
+<h4 id="summary-the-visual-test">Summary: The visual test<a class="headerlink" href="#summary-the-visual-test" title="Permanent link">&para;</a></h4>
+<p><strong>The test for entanglement:</strong> Slide a vertical line across the plot. If every slice gives the same shape in x₂ → separable. If different slices give different shapes → entangled.</p>
+<h3 id="why-fig-5-is-frozen-but-fig-6-evolves">Why Fig. 5 is Frozen But Fig. 6 Evolves<a class="headerlink" href="#why-fig-5-is-frozen-but-fig-6-evolves" title="Permanent link">&para;</a></h3>
+<p><strong>Fig. 5 (ground state)</strong> is an energy eigenstate. Time evolution only adds a global phase: Ψ(x₁,x₂,t) = e^(-iEt/ℏ)Ψ(x₁,x₂,0). The phase factor cancels when you calculate |Ψ|², so the probability distribution never changes. The pattern is frozen.</p>
+<p><strong>Fig. 6 (scattering)</strong> starts with moving Gaussian wave packets - NOT energy eigenstates. Each packet is a superposition of many momenta and energies. Different energy components oscillate at different rates, causing the packets to move, spread, collide, and interfere. Wave packets must evolve in time.</p>
+<p><strong>The rainbow colors</strong> in Fig. 6 show the phase gradient (momentum direction). Arrows point in the direction of motion: initially toward each other, then apart after scattering.</p>
+<h3 id="why-cant-we-see-this-in-real-space">Why Can't We See This in Real Space?<a class="headerlink" href="#why-cant-we-see-this-in-real-space" title="Permanent link">&para;</a></h3>
+<p>In real 1D physical space, you always see <strong>two bumps</strong> (the two particles) - before, during, and after the collision. After scattering, both outcomes (reflection and transmission) look identical in real space: one bump moving left, one moving right. Real space <strong>cannot distinguish</strong> which particle is which or whether they bounced vs. passed through.</p>
+<p><strong>Configuration space reveals what real space hides:</strong> The two blobs in Fig. 6 show that reflection and transmission exist <strong>in superposition</strong>. One blob represents "particle 1 left, particle 2 right" and the other represents "particle 1 right, particle 2 left" - these are <strong>correlated outcomes</strong>, not just two independent particles. This correlation is entanglement, and it's only visible when you plot both particle positions simultaneously in 2D configuration space.</p>
+<p><strong>The key difference:</strong> Real space shows <em>where particles are</em>. Configuration space shows <em>which combinations of positions are correlated</em> - that's where entanglement lives.</p>
+<h2 id="application-why-electrons-act-like-wave-packets-in-real-metals">Application: Why Electrons Act Like Wave Packets in Real Metals<a class="headerlink" href="#application-why-electrons-act-like-wave-packets-in-real-metals" title="Permanent link">&para;</a></h2>
+<p>In a perfect crystal, electrons should be extended Bloch waves spread across the entire metal (like particle in a box eigenstates). But in real metals, we treat electrons as <strong>localized wave packets</strong> moving with definite velocities. Why?</p>
+<p><strong>The answer: entanglement with heavy ions.</strong></p>
+<h3 id="configuration-space-picture">Configuration Space Picture<a class="headerlink" href="#configuration-space-picture" title="Permanent link">&para;</a></h3>
+<p>Consider an electron-ion interaction in configuration space (x_electron, x_ion):</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BEFORE INTERACTION:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>x_ion
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ^
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  |
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>x₀|======================  ← long horizontal stripe
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  |                         (electron delocalized everywhere,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  |                          ion localized at x₀)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  +-----------------------&gt; x_electron
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>AFTER INTERACTION:
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>x_ion
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  ^
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  |
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>x₀| ***          ***  ← TWO short horizontal segments
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  |                    (electron localized into wave packets)
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  +-----------------------&gt; x_electron
+</code></pre></div>
+<p><strong>What happened:</strong> The interaction V(x_e - x_ion) creates entanglement, just like in Fig. 6. The time-dependent Schrödinger equation evolves the initial separable state into a non-separable superposition.</p>
+<h3 id="why-heavy-ions-localize-electrons">Why Heavy Ions Localize Electrons<a class="headerlink" href="#why-heavy-ions-localize-electrons" title="Permanent link">&para;</a></h3>
+<p>Heavy ions have:
+- Tiny de Broglie wavelength (λ = h/mv, huge m → tiny λ)
+- Very sharp position localization
+- Essentially fixed position (act like delta functions)</p>
+<p>When the electron interacts with a well-localized ion, the <strong>conditional electron wavefunction</strong> ψ_e(x_e | x_ion ≈ x₀) ∝ Ψ(x_e, x₀) becomes a <strong>localized wave packet</strong> instead of an extended Bloch wave. This is exactly the "slicing test" from the paper: measuring (or knowing) one particle's position changes the other particle's distribution.</p>
+<h3 id="repeated-scattering-creates-effective-wave-packets">Repeated Scattering Creates Effective Wave Packets<a class="headerlink" href="#repeated-scattering-creates-effective-wave-packets" title="Permanent link">&para;</a></h3>
+<p>In real metals, electrons constantly scatter off vibrating ions (phonons), impurities, and defects. Each interaction:
+- Creates entanglement between electron and ion
+- Destroys long-range coherence of the Bloch wave
+- Effectively localizes the electron over a finite region (mean free path)</p>
+<p><strong>The result:</strong> Electrons behave as quasiparticle wave packets with finite spatial extent and definite momentum, not as extended eigenstates of the perfect crystal. This is why electron transport is diffusive (resistivity) rather than ballistic, and why we can think of electrons as localized packets moving through the metal.</p>
+<p>The heavy ion acts like a <strong>continuous measurement</strong> - not a sharp collapse, but decoherence through entanglement that gives electrons their packet-like character.</p>
+<hr />
+<h2 id="connection-to-spin-systems">Connection to Spin Systems<a class="headerlink" href="#connection-to-spin-systems" title="Permanent link">&para;</a></h2>
+<p>The same mathematics applies to two spin-1/2 particles. Instead of plotting ψ(x₁, x₂), you plot the four spin state amplitudes in a 2×2 grid, where the axes represent the spin z-components (↑ or ↓) of each particle.</p>
+<p><img alt="Spin density plots showing entanglement" src="../../images/spin_particle_density_plot_entanglement.png" /></p>
+<p><em>Figure 7 (from [1]): 2×2 density plots for singlet and triplet states of two spin-1/2 particles. The horizontal axis shows particle 1's spin (−ℏ/2 or +ℏ/2), the vertical axis shows particle 2's spin. Bright colors show larger amplitudes, black shows zero. The singlet state (top) is entangled - measuring one spin immediately determines the other. The triplet states show different correlation patterns.</em></p>
+<p>The visual pattern is identical to the spatial case: entangled states show correlations (anti-diagonal pattern for singlet), while separable states have simpler structures. This correspondence helps students recognize entanglement across different quantum systems.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>[1] D. V. Schroeder, "Entanglement isn't just for spin," <em>Am. J. Phys.</em>, vol. 85, no. 11, pp. 812–820, Nov. 2017, doi: 10.1119/1.5003808. Available: https://arxiv.org/abs/1703.10620</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

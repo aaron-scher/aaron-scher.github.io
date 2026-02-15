@@ -1,0 +1,2375 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/arm-assembly/arm-assembly-fundamentals/">
+      
+      
+        <link rel="prev" href="../../batteries/voltaic-cell-tutorial/">
+      
+      
+        <link rel="next" href="../arm-assembly-control-flow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>ARM Assembly: Fundamentals - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arm-assembly-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ARM Assembly: Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-your-first-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Your First Program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-memory-addressing-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Memory &amp; Addressing Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Memory &amp; Addressing Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-data-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The .data Section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addressing-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressing Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addressing-modes-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressing Modes Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-arithmetic-cpsr-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Arithmetic &amp; CPSR Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Arithmetic &amp; CPSR Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpsr-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPSR Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-logical-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Logical Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Logical Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-operations-truth-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logical Operations Truth Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-shifts-rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Shifts &amp; Rotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Shifts &amp; Rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-register-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Register Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shifts-vs-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shifts vs Rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Quick Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Quick Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instructions-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instructions Covered
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-your-first-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Your First Program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-memory-addressing-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Memory &amp; Addressing Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Memory &amp; Addressing Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-data-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The .data Section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addressing-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressing Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addressing-modes-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressing Modes Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-arithmetic-cpsr-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Arithmetic &amp; CPSR Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Arithmetic &amp; CPSR Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpsr-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPSR Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-logical-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Logical Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Logical Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-operations-truth-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logical Operations Truth Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-shifts-rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Shifts &amp; Rotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Shifts &amp; Rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-register-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Register Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shifts-vs-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shifts vs Rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Quick Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Quick Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instructions-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instructions Covered
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="arm-assembly-fundamentals">ARM Assembly: Fundamentals<a class="headerlink" href="#arm-assembly-fundamentals" title="Permanent link">&para;</a></h1>
+<p>These notes follow the <a href="https://www.youtube.com/watch?v=in-UY_EyI14&amp;list=PL2EF13wm-hWAlQe87UB2HV0SVhBXFpXbn">Olive Stem ARM Assembly tutorial series</a> on YouTube (tutorials 1-5). They're designed as a quick-review reference with runnable code examples.</p>
+<div class="admonition tip">
+<p class="admonition-title">Try it yourself</p>
+<p>Open the <a href="https://cpulator.01xz.net/?sys=arm-de1soc">ARM Emulator</a> and paste any code example below to run it.</p>
+</div>
+<hr />
+<h2 id="1-your-first-program">1. Your First Program<a class="headerlink" href="#1-your-first-program" title="Permanent link">&para;</a></h2>
+<p><a class="md-button" href="https://www.youtube.com/watch?v=in-UY_EyI14&amp;list=PL2EF13wm-hWAlQe87UB2HV0SVhBXFpXbn"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg></span> Watch Tutorial 1</a></p>
+<p>Every ARM assembly program needs a <strong><code>_start</code> label</strong> — this is where execution begins. The <code>.global</code> directive makes <code>_start</code> visible to the linker so it knows where to begin. This is analogous to <code>int main()</code> in C: the linker needs an entry point, and <code>.global _start</code> is how you provide one.</p>
+<div class="highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">.global</span><span class="w"> </span><span class="no">_start</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nl">_start:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#30</span><span class="w">      </span><span class="err">@</span><span class="w"> </span><span class="no">Load</span><span class="w"> </span><span class="no">the</span><span class="w"> </span><span class="no">value</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="no">into</span><span class="w"> </span><span class="no">register</span><span class="w"> </span><span class="no">R0</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R7</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span><span class="w">       </span><span class="err">@</span><span class="w"> </span><span class="no">Syscall</span><span class="w"> </span><span class="no">number</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">exit</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nf">SWI</span><span class="w"> </span><span class="mi">0</span><span class="w">            </span><span class="err">@</span><span class="w"> </span><span class="no">Trigger</span><span class="w"> </span><span class="no">the</span><span class="w"> </span><span class="no">syscall</span><span class="w"> </span><span class="p">(</span><span class="no">Software</span><span class="w"> </span><span class="no">Interrupt</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>What's happening:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.global _start</code></td>
+<td>Export <code>_start</code> so the linker can find the entry point</td>
+</tr>
+<tr>
+<td><code>_start:</code></td>
+<td>Label marking where execution begins</td>
+</tr>
+<tr>
+<td><code>MOV R0, #30</code></td>
+<td>Move the immediate value 30 into register R0</td>
+</tr>
+<tr>
+<td><code>MOV R7, #1</code></td>
+<td>Load syscall number 1 (exit) into R7</td>
+</tr>
+<tr>
+<td><code>SWI 0</code></td>
+<td>Execute the syscall — program exits with code 30</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Why <code>SWI 0</code>?</p>
+<p>ARM uses software interrupts to make system calls. <code>R7</code> holds the syscall number (1 = exit), and <code>R0</code> holds the return value. This is how your assembly program talks to the operating system.</p>
+</div>
+<p><strong>Try it:</strong> Change <code>#30</code> to a different value and check the exit code. In the emulator, step through each instruction and watch the registers update.</p>
+<hr />
+<h2 id="2-memory-addressing-modes">2. Memory &amp; Addressing Modes<a class="headerlink" href="#2-memory-addressing-modes" title="Permanent link">&para;</a></h2>
+<p><a class="md-button" href="https://www.youtube.com/watch?v=3ZXfWYQSulA&amp;list=PL2EF13wm-hWAlQe87UB2HV0SVhBXFpXbn&amp;index=3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg></span> Watch Tutorial 2</a></p>
+<p>ARM is a <strong>load/store architecture</strong> — you can't operate on memory directly. You must first load data into registers, work on it, then store it back. The <code>LDR</code> instruction is how you get data from memory into a register.</p>
+<h3 id="the-data-section">The <code>.data</code> Section<a class="headerlink" href="#the-data-section" title="Permanent link">&para;</a></h3>
+<p>The <code>.data</code> section holds your program's variables and constants. The <code>.word</code> directive allocates 32-bit integers in memory, stored sequentially.</p>
+<h3 id="addressing-modes">Addressing Modes<a class="headerlink" href="#addressing-modes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">.global</span><span class="w"> </span><span class="no">_start</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nl">_start:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nf">LDR</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">list</span><span class="w">       </span><span class="err">@</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">address</span><span class="w"> </span><span class="no">of</span><span class="w"> </span><span class="err">&#39;</span><span class="no">list</span><span class="err">&#39;</span><span class="w"> </span><span class="p">(</span><span class="no">pointer</span><span class="w"> </span><span class="no">to</span><span class="w"> </span><span class="no">the</span><span class="w"> </span><span class="no">array</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nf">LDR</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">R0</span><span class="p">]</span><span class="w">        </span><span class="err">@</span><span class="w"> </span><span class="no">R1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">*</span><span class="no">R0</span><span class="w"> </span><span class="p">(</span><span class="no">load</span><span class="w"> </span><span class="no">value</span><span class="w"> </span><span class="no">at</span><span class="w"> </span><span class="no">address</span><span class="w"> </span><span class="no">in</span><span class="w"> </span><span class="no">R0</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nf">LDR</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#4</span><span class="p">]</span><span class="w">    </span><span class="err">@</span><span class="w"> </span><span class="no">R2</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">*(</span><span class="no">R0</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="no">offset</span><span class="p">:</span><span class="w"> </span><span class="no">skip</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="no">bytes</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="no">word</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nf">LDR</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#4</span><span class="p">]!</span><span class="w">   </span><span class="err">@</span><span class="w"> </span><span class="no">Pre-increment</span><span class="p">:</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="err">+=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="no">then</span><span class="w"> </span><span class="no">R3</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">*</span><span class="no">R0</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nf">LDR</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">list</span><span class="w">       </span><span class="err">@</span><span class="w"> </span><span class="no">Reset</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="no">to</span><span class="w"> </span><span class="no">start</span><span class="w"> </span><span class="no">of</span><span class="w"> </span><span class="no">list</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nf">LDR</span><span class="w"> </span><span class="no">R4</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">R0</span><span class="p">],</span><span class="w"> </span><span class="mi">#4</span><span class="w">    </span><span class="err">@</span><span class="w"> </span><span class="no">Post-increment</span><span class="p">:</span><span class="w"> </span><span class="no">R4</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">*</span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">then</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="err">+=</span><span class="w"> </span><span class="mi">4</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R7</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nf">SWI</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="na">.data</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nl">list:</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="na">.word</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">-9</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">-3</span>
+</code></pre></div>
+<h3 id="addressing-modes-summary">Addressing Modes Summary<a class="headerlink" href="#addressing-modes-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Syntax</th>
+<th>Effect</th>
+<th>C Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Register indirect</strong></td>
+<td><code>[R0]</code></td>
+<td>Load from address in R0</td>
+<td><code>*ptr</code></td>
+</tr>
+<tr>
+<td><strong>Offset</strong></td>
+<td><code>[R0, #4]</code></td>
+<td>Load from R0 + 4 (R0 unchanged)</td>
+<td><code>*(ptr + 1)</code></td>
+</tr>
+<tr>
+<td><strong>Pre-increment</strong></td>
+<td><code>[R0, #4]!</code></td>
+<td>R0 += 4, then load from R0</td>
+<td><code>*++ptr</code></td>
+</tr>
+<tr>
+<td><strong>Post-increment</strong></td>
+<td><code>[R0], #4</code></td>
+<td>Load from R0, then R0 += 4</td>
+<td><code>*ptr++</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Why offsets are multiples of 4</p>
+<p>Each <code>.word</code> is 32 bits = 4 bytes. To access the second element, offset by 4. Third element: offset by 8. This is just like pointer arithmetic in C where <code>ptr + 1</code> on an <code>int*</code> advances by <code>sizeof(int)</code>.</p>
+</div>
+<p><strong>Try it:</strong> Step through the code in the emulator. After each <code>LDR</code>, check both the destination register and R0 — notice how pre-increment and post-increment change R0 at different times.</p>
+<hr />
+<h2 id="3-arithmetic-cpsr-flags">3. Arithmetic &amp; CPSR Flags<a class="headerlink" href="#3-arithmetic-cpsr-flags" title="Permanent link">&para;</a></h2>
+<p><a class="md-button" href="https://www.youtube.com/watch?v=CG2UZGFhXLo&amp;list=PL2EF13wm-hWAlQe87UB2HV0SVhBXFpXbn&amp;index=4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg></span> Watch Tutorial 3</a></p>
+<p>ARM has two versions of arithmetic instructions: with and without the <strong><code>S</code> suffix</strong>. The <code>S</code> suffix tells the CPU to update the <strong>CPSR</strong> (Current Program Status Register) flags based on the result. Without <code>S</code>, the flags are untouched.</p>
+<div class="highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="na">.global</span><span class="w"> </span><span class="no">_start</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nl">_start:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#5</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">#7</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nf">ADD</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="w">       </span><span class="err">@</span><span class="w"> </span><span class="no">R2</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="no">R1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">12</span><span class="p">.</span><span class="w"> </span><span class="no">No</span><span class="w"> </span><span class="no">flags</span><span class="w"> </span><span class="no">updated.</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nf">SUBS</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="w">      </span><span class="err">@</span><span class="w"> </span><span class="no">R2</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="p">-</span><span class="w"> </span><span class="no">R1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">-2</span><span class="p">.</span><span class="w"> </span><span class="no">Flags</span><span class="w"> </span><span class="no">updated</span><span class="p">!</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">                         </span><span class="err">@</span><span class="w"> </span><span class="nf">N</span><span class="w"> </span><span class="no">flag</span><span class="w"> </span><span class="no">set</span><span class="w"> </span><span class="p">(</span><span class="no">result</span><span class="w"> </span><span class="no">is</span><span class="w"> </span><span class="no">negative</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nf">ADDS</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="no">R2</span><span class="w">      </span><span class="err">@</span><span class="w"> </span><span class="no">R3</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">R2</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="no">R2</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">-4</span><span class="p">.</span><span class="w"> </span><span class="no">Flags</span><span class="w"> </span><span class="no">updated</span><span class="p">!</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">                         </span><span class="err">@</span><span class="w"> </span><span class="nf">Check</span><span class="w"> </span><span class="no">V</span><span class="w"> </span><span class="no">flag</span><span class="w"> </span><span class="no">for</span><span class="w"> </span><span class="no">signed</span><span class="w"> </span><span class="no">overflow</span>
+</code></pre></div>
+<h3 id="cpsr-flags">CPSR Flags<a class="headerlink" href="#cpsr-flags" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Name</th>
+<th>Set When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>N</strong></td>
+<td>Negative</td>
+<td>Result is negative (bit 31 = 1)</td>
+</tr>
+<tr>
+<td><strong>Z</strong></td>
+<td>Zero</td>
+<td>Result is exactly zero</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Carry</td>
+<td>Unsigned operation overflowed (carry out of bit 31)</td>
+</tr>
+<tr>
+<td><strong>V</strong></td>
+<td>Overflow</td>
+<td>Signed operation overflowed (result doesn't fit in 32 bits)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">ADD vs ADDS</p>
+<p><code>ADD</code> performs addition but <strong>does not</strong> update flags. <code>ADDS</code> performs the same addition <strong>and</strong> updates flags. This matters because branching instructions (covered in Part 2) check these flags. If you forget the <code>S</code>, your branches won't work as expected.</p>
+</div>
+<p><strong>Try it:</strong> Run the code and inspect the CPSR register after each instruction. Try <code>SUBS R2, R0, R0</code> — you should see the Z flag set.</p>
+<hr />
+<h2 id="4-logical-operations">4. Logical Operations<a class="headerlink" href="#4-logical-operations" title="Permanent link">&para;</a></h2>
+<p><a class="md-button" href="https://www.youtube.com/watch?v=Zyulp52YFm0&amp;list=PL2EF13wm-hWAlQe87UB2HV0SVhBXFpXbn&amp;index=5"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg></span> Watch Tutorial 4</a></p>
+<p>Bitwise operations work on individual bits of a value. These are essential for working with hardware registers, flags, and bit manipulation.</p>
+<div class="highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">.global</span><span class="w"> </span><span class="no">_start</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nl">_start:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span><span class="no">xFF</span><span class="w">         </span><span class="err">@</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">0xFF</span><span class="w"> </span><span class="p">(</span><span class="no">binary</span><span class="p">:</span><span class="w"> </span><span class="mi">11111111</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">#22</span><span class="w">           </span><span class="err">@</span><span class="w"> </span><span class="no">R1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">22</span><span class="w">  </span><span class="p">(</span><span class="no">binary</span><span class="p">:</span><span class="w"> </span><span class="mi">00010110</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nf">AND</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="w">        </span><span class="err">@</span><span class="w"> </span><span class="no">Bitwise</span><span class="w"> </span><span class="no">AND</span><span class="p">:</span><span class="w"> </span><span class="no">keep</span><span class="w"> </span><span class="no">bits</span><span class="w"> </span><span class="no">that</span><span class="w"> </span><span class="no">are</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="no">in</span><span class="w"> </span><span class="no">both</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nf">ORR</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="w">        </span><span class="err">@</span><span class="w"> </span><span class="no">Bitwise</span><span class="w"> </span><span class="no">OR</span><span class="p">:</span><span class="w"> </span><span class="no">set</span><span class="w"> </span><span class="no">bits</span><span class="w"> </span><span class="no">that</span><span class="w"> </span><span class="no">are</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="no">in</span><span class="w"> </span><span class="no">either</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nf">EOR</span><span class="w"> </span><span class="no">R4</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="w">        </span><span class="err">@</span><span class="w"> </span><span class="no">Exclusive</span><span class="w"> </span><span class="no">OR</span><span class="p">:</span><span class="w"> </span><span class="no">set</span><span class="w"> </span><span class="no">bits</span><span class="w"> </span><span class="no">that</span><span class="w"> </span><span class="no">differ</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nf">MVN</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="w">            </span><span class="err">@</span><span class="w"> </span><span class="no">Move</span><span class="w"> </span><span class="no">Negation</span><span class="p">:</span><span class="w"> </span><span class="no">flip</span><span class="w"> </span><span class="no">all</span><span class="w"> </span><span class="no">bits</span><span class="w"> </span><span class="p">(</span><span class="err">~</span><span class="no">R0</span><span class="p">)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nf">AND</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span><span class="no">x000000FF</span><span class="w">   </span><span class="err">@</span><span class="w"> </span><span class="no">Bit</span><span class="w"> </span><span class="no">mask</span><span class="p">:</span><span class="w"> </span><span class="no">keep</span><span class="w"> </span><span class="no">only</span><span class="w"> </span><span class="no">lowest</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="no">bits</span>
+</code></pre></div>
+<h3 id="logical-operations-truth-table">Logical Operations Truth Table<a class="headerlink" href="#logical-operations-truth-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>AND</th>
+<th>ORR</th>
+<th>EOR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Bit Masking Pattern</p>
+<p><code>AND</code> with a mask keeps only the bits you want. For example, <code>AND R0, R0, #0xFF</code> zeroes out everything except the lowest 8 bits. This is how you extract specific fields from a hardware register or protocol word — the same idea as <code>value &amp; 0xFF</code> in C.</p>
+</div>
+<p><strong>Try it:</strong> Change <code>R1</code> to different values and predict the results of each operation before stepping through. Verify <code>MVN</code> flips every bit.</p>
+<hr />
+<h2 id="5-shifts-rotations">5. Shifts &amp; Rotations<a class="headerlink" href="#5-shifts-rotations" title="Permanent link">&para;</a></h2>
+<p><a class="md-button" href="https://www.youtube.com/watch?v=cye4fDE1czY&amp;list=PL2EF13wm-hWAlQe87UB2HV0SVhBXFpXbn&amp;index=7"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg></span> Watch Tutorial 5</a></p>
+<p>Shifting bits left or right is equivalent to multiplying or dividing by powers of 2 — and it's much faster than actual multiplication.</p>
+<div class="highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="na">.global</span><span class="w"> </span><span class="no">_start</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nl">_start:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="err">@</span><span class="w"> </span><span class="nf">Simple</span><span class="w"> </span><span class="no">shifts</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#10</span><span class="w">          </span><span class="err">@</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">(</span><span class="no">binary</span><span class="p">:</span><span class="w"> </span><span class="mi">1010</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nf">LSL</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span><span class="w">           </span><span class="err">@</span><span class="w"> </span><span class="no">Shift</span><span class="w"> </span><span class="no">left</span><span class="w"> </span><span class="no">by</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">multiply</span><span class="w"> </span><span class="no">by</span><span class="w"> </span><span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nf">LSR</span><span class="w"> </span><span class="no">R0</span><span class="p">,</span><span class="w"> </span><span class="mi">#2</span><span class="w">           </span><span class="err">@</span><span class="w"> </span><span class="no">Shift</span><span class="w"> </span><span class="no">right</span><span class="w"> </span><span class="no">by</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">divide</span><span class="w"> </span><span class="no">by</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="err">@</span><span class="w"> </span><span class="nf">Move</span><span class="w"> </span><span class="no">and</span><span class="w"> </span><span class="no">shift</span><span class="w"> </span><span class="p">(</span><span class="no">preserves</span><span class="w"> </span><span class="no">original</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">#10</span><span class="w">          </span><span class="err">@</span><span class="w"> </span><span class="no">R1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">10</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">LSL</span><span class="w"> </span><span class="mi">#1</span><span class="w">   </span><span class="err">@</span><span class="w"> </span><span class="no">R2</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">R1</span><span class="w"> </span><span class="err">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">(</span><span class="no">R1</span><span class="w"> </span><span class="no">stays</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="err">@</span><span class="w"> </span><span class="nf">Rotation</span><span class="w"> </span><span class="no">vs</span><span class="w"> </span><span class="no">shift</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="mi">#15</span><span class="w">          </span><span class="err">@</span><span class="w"> </span><span class="no">R3</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">(</span><span class="no">binary</span><span class="p">:</span><span class="w"> </span><span class="no">...0000</span><span class="w"> </span><span class="mi">1111</span><span class="p">)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nf">ROR</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span><span class="w">           </span><span class="err">@</span><span class="w"> </span><span class="no">Rotate</span><span class="w"> </span><span class="no">right</span><span class="p">:</span><span class="w"> </span><span class="no">bits</span><span class="w"> </span><span class="no">wrap</span><span class="w"> </span><span class="no">around</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">                         </span><span class="err">@</span><span class="w"> </span><span class="nl">Result:</span><span class="w"> </span><span class="err">0</span><span class="nf">x80000007</span><span class="w"> </span><span class="p">(</span><span class="no">MSB</span><span class="w"> </span><span class="no">gets</span><span class="w"> </span><span class="no">the</span><span class="w"> </span><span class="no">shifted-out</span><span class="w"> </span><span class="no">bit</span><span class="p">)</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">R4</span><span class="p">,</span><span class="w"> </span><span class="mi">#15</span><span class="w">          </span><span class="err">@</span><span class="w"> </span><span class="no">R4</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">15</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="nf">LSR</span><span class="w"> </span><span class="no">R4</span><span class="p">,</span><span class="w"> </span><span class="mi">#1</span><span class="w">           </span><span class="err">@</span><span class="w"> </span><span class="no">Logical</span><span class="w"> </span><span class="no">shift</span><span class="w"> </span><span class="no">right</span><span class="p">:</span><span class="w"> </span><span class="no">bits</span><span class="w"> </span><span class="no">fall</span><span class="w"> </span><span class="no">off</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">                         </span><span class="err">@</span><span class="w"> </span><span class="nl">Result:</span><span class="w"> </span><span class="err">0</span><span class="nf">x00000007</span><span class="w"> </span><span class="p">(</span><span class="no">shifted-out</span><span class="w"> </span><span class="no">bit</span><span class="w"> </span><span class="no">is</span><span class="w"> </span><span class="no">lost</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="final-register-values">Final Register Values<a class="headerlink" href="#final-register-values" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Register</th>
+<th>Value</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R0</td>
+<td><code>0x00000005</code></td>
+<td>10 &lt;&lt; 1 = 20, then 20 &gt;&gt; 2 = 5</td>
+</tr>
+<tr>
+<td>R1</td>
+<td><code>0x0000000A</code></td>
+<td>Unchanged (10)</td>
+</tr>
+<tr>
+<td>R2</td>
+<td><code>0x00000014</code></td>
+<td>10 &lt;&lt; 1 = 20</td>
+</tr>
+<tr>
+<td>R3</td>
+<td><code>0x80000007</code></td>
+<td>15 rotated right 1 — bit wraps to MSB</td>
+</tr>
+<tr>
+<td>R4</td>
+<td><code>0x00000007</code></td>
+<td>15 shifted right 1 — bit lost</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shifts-vs-rotation">Shifts vs Rotation<a class="headerlink" href="#shifts-vs-rotation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>What Happens to Shifted-Out Bits</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LSL #n</code></td>
+<td>Discarded (zeros fill from right)</td>
+<td>Multiply by 2^n</td>
+</tr>
+<tr>
+<td><code>LSR #n</code></td>
+<td>Discarded (zeros fill from left)</td>
+<td>Unsigned divide by 2^n</td>
+</tr>
+<tr>
+<td><code>ROR #n</code></td>
+<td>Wrap around to the other side</td>
+<td>Cryptography, checksums</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">No ROL instruction</p>
+<p>ARM has <code>ROR</code> (rotate right) but no rotate-left instruction. This is intentional — to minimize the instruction set. You can achieve a left rotation by rotating right by (32 - n). For example, rotating left by 4 is the same as <code>ROR #28</code>.</p>
+</div>
+<p><strong>Try it:</strong> Experiment with <code>ROR</code> on different values. Watch how bits that "fall off" the right side reappear on the left — like pac-man wrapping around the screen.</p>
+<hr />
+<h2 id="6-quick-reference">6. Quick Reference<a class="headerlink" href="#6-quick-reference" title="Permanent link">&para;</a></h2>
+<h3 id="instructions-covered">Instructions Covered<a class="headerlink" href="#instructions-covered" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MOV</code></td>
+<td><code>MOV Rd, #imm</code> / <code>MOV Rd, Rs</code></td>
+<td>Move value into register</td>
+</tr>
+<tr>
+<td><code>LDR</code></td>
+<td><code>LDR Rd, =label</code></td>
+<td>Load address of label into register</td>
+</tr>
+<tr>
+<td><code>LDR</code></td>
+<td><code>LDR Rd, [Rn]</code></td>
+<td>Load value from memory address</td>
+</tr>
+<tr>
+<td><code>LDR</code></td>
+<td><code>LDR Rd, [Rn, #off]</code></td>
+<td>Load with offset</td>
+</tr>
+<tr>
+<td><code>LDR</code></td>
+<td><code>LDR Rd, [Rn, #off]!</code></td>
+<td>Load with pre-increment</td>
+</tr>
+<tr>
+<td><code>LDR</code></td>
+<td><code>LDR Rd, [Rn], #off</code></td>
+<td>Load with post-increment</td>
+</tr>
+<tr>
+<td><code>ADD</code></td>
+<td><code>ADD Rd, Rn, Rm</code></td>
+<td>Rd = Rn + Rm</td>
+</tr>
+<tr>
+<td><code>SUB</code></td>
+<td><code>SUB Rd, Rn, Rm</code></td>
+<td>Rd = Rn - Rm</td>
+</tr>
+<tr>
+<td><code>AND</code></td>
+<td><code>AND Rd, Rn, Rm</code></td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td><code>ORR</code></td>
+<td><code>ORR Rd, Rn, Rm</code></td>
+<td>Bitwise OR</td>
+</tr>
+<tr>
+<td><code>EOR</code></td>
+<td><code>EOR Rd, Rn, Rm</code></td>
+<td>Bitwise XOR</td>
+</tr>
+<tr>
+<td><code>MVN</code></td>
+<td><code>MVN Rd, Rs</code></td>
+<td>Bitwise NOT (move negated)</td>
+</tr>
+<tr>
+<td><code>LSL</code></td>
+<td><code>LSL Rd, #n</code></td>
+<td>Logical shift left (multiply by 2^n)</td>
+</tr>
+<tr>
+<td><code>LSR</code></td>
+<td><code>LSR Rd, #n</code></td>
+<td>Logical shift right (divide by 2^n)</td>
+</tr>
+<tr>
+<td><code>ROR</code></td>
+<td><code>ROR Rd, #n</code></td>
+<td>Rotate right</td>
+</tr>
+<tr>
+<td><code>SWI</code></td>
+<td><code>SWI 0</code></td>
+<td>Software interrupt (syscall)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.global _start</code></td>
+<td>Makes entry point visible to linker</td>
+</tr>
+<tr>
+<td><code>.data</code></td>
+<td>Section for variables and constants</td>
+</tr>
+<tr>
+<td><code>.word</code></td>
+<td>Allocates 32-bit integers</td>
+</tr>
+<tr>
+<td><code>S</code> suffix</td>
+<td>Updates CPSR flags (e.g., <code>ADDS</code>, <code>SUBS</code>)</td>
+</tr>
+<tr>
+<td>CPSR</td>
+<td>Holds N, Z, C, V flags after <code>S</code>-suffixed instructions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://cpulator.01xz.net/?sys=arm-de1soc">ARM Emulator (CPUlator)</a></li>
+<li><a href="https://azeria-labs.com/writing-arm-assembly-part-1/">Azeria Labs — Writing ARM Assembly</a></li>
+<li><a href="https://armasm.com/docs/getting-to-hello-world/basics/">ARM ASM Basics</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

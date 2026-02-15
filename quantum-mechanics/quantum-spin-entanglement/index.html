@@ -1,0 +1,2372 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/quantum-mechanics/quantum-spin-entanglement/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Spin, Entanglement, and Bell's Theorem - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spin-entanglement-and-bells-theorem" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spin, Entanglement, and Bell's Theorem
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#from-position-to-spin-a-new-quantum-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Position to Spin: A New Quantum Property
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spin-a-brief-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spin: A Brief Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spin: A Brief Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-spin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is Spin?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-states-as-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spin States as Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-state-spatial-spin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete State: Spatial + Spin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-electrons-position-and-spin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Electrons: Position AND Spin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spin-entanglement-and-the-epr-paradox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spin Entanglement and the EPR Paradox
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spin Entanglement and the EPR Paradox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-singlet-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Singlet State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-epr-setup-1935" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The EPR Setup (1935)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#einsteins-objection-spooky-action-at-a-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Einstein's Objection: "Spooky Action at a Distance"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-quantum-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Quantum Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bells-theorem-deriving-the-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bell's Theorem: Deriving the Inequality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bell&#39;s Theorem: Deriving the Inequality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-hidden-variables-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Hidden Variables Prediction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-chsh-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CHSH Inequality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantum-mechanics-violates-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum Mechanics Violates It!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Means
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-tests-bells-inequality-in-the-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Tests: Bell's Inequality in the Lab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental Tests: Bell&#39;s Inequality in the Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aspects-experiments-1981-1982" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aspect's Experiments (1981-1982)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loopholes-and-how-they-were-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loopholes and How They Were Closed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loophole-free-experiments-2015" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loophole-Free Experiments (2015)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-2022-nobel-prize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 2022 Nobel Prize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-weve-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We've Learned
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-representation-for-discrete-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matrix Representation for Discrete Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Representation for Discrete Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-spin-2d-hilbert-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Spin: 2D Hilbert Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-spins-4d-hilbert-space-tensor-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Spins: 4D Hilbert Space (Tensor Product)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-states-vs-entangled-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product States vs Entangled States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measuring-entanglement-example-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measuring Entanglement: Example Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators-as-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators as Matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-the-big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: The Big Picture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary: The Big Picture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spin-as-a-quantum-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spin as a Quantum Property
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-epr-paradox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The EPR Paradox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bells-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bell's Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-all-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It All Means
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-and-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applications and Future
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="spin-entanglement-and-bells-theorem">Spin, Entanglement, and Bell's Theorem<a class="headerlink" href="#spin-entanglement-and-bells-theorem" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">OUTDATED CONTENT</p>
+<p>This page contains draft/outdated material and is not currently maintained.</p>
+</div>
+<p><strong>Prerequisites:</strong> This builds on <a href="../quantum-multi-particle/">Multi-Particle Quantum Mechanics</a> and <a href="../quantum-pauli-exclusion/">The Pauli Exclusion Principle</a>. Make sure you understand entangled states and identical particles before continuing!</p>
+<hr />
+<h2 id="from-position-to-spin-a-new-quantum-property">From Position to Spin: A New Quantum Property<a class="headerlink" href="#from-position-to-spin-a-new-quantum-property" title="Permanent link">&para;</a></h2>
+<p>So far, we've focused on <strong>spatial entanglement</strong> (correlations in position). Now we'll introduce <strong>spin</strong> - an intrinsic quantum property that provides the cleanest examples of entanglement and led to experimental tests that shook our understanding of reality.</p>
+<p><strong>Quick recap of what we know about entanglement:</strong></p>
+<p>In <a href="../quantum-multi-particle/">Multi-Particle Quantum Mechanics</a>, we learned that entangled states <strong>cannot be factored</strong>:</p>
+<div class="arithmatex">\[
+\psi(x_1, x_2) \neq \psi_a(x_1) \psi_b(x_2)
+\]</div>
+<p>And we saw that measuring one particle <strong>instantly affects</strong> the probability distribution of the other. Now we'll see this gets even stranger with spin...</p>
+<hr />
+<h2 id="spin-a-brief-introduction">Spin: A Brief Introduction<a class="headerlink" href="#spin-a-brief-introduction" title="Permanent link">&para;</a></h2>
+<p>Before we go further, we need to introduce <strong>spin</strong> (an intrinsic property of particles like electrons).</p>
+<h3 id="what-is-spin">What Is Spin?<a class="headerlink" href="#what-is-spin" title="Permanent link">&para;</a></h3>
+<p>Spin is <strong>angular momentum</strong> that particles have even when sitting still. It's not actually spinning (electrons aren't little balls), but it acts like angular momentum in many ways.</p>
+<p><strong>For electrons:</strong> Spin-1/2, meaning it comes in two states:</p>
+<ul>
+<li>Spin up: <span class="arithmatex">\(|\uparrow\rangle\)</span> or <span class="arithmatex">\(|+\rangle\)</span></li>
+<li>Spin down: <span class="arithmatex">\(|\downarrow\rangle\)</span> or <span class="arithmatex">\(|-\rangle\)</span></li>
+</ul>
+<p>These are the only two options. Measure electron spin along any axis (say, the z-axis) and you get one of these two results.</p>
+<p><strong>Important:</strong> "Up" and "down" are <strong>relative to your measurement direction</strong>, not absolute directions in space! There's no universal "up" in the universe (is the center of the Milky Way "down"?). When we say "spin up along the z-axis," we mean the spin is <strong>aligned with</strong> the direction you chose to call +z (your detector's orientation). "Spin down" means <strong>opposite to</strong> that direction. You're free to choose any axis you want—the labels just tell you whether the spin points parallel or antiparallel to your chosen measurement direction.</p>
+<h3 id="spin-states-as-vectors">Spin States as Vectors<a class="headerlink" href="#spin-states-as-vectors" title="Permanent link">&para;</a></h3>
+<p>We can represent spin states as column vectors in a 2D Hilbert space:</p>
+<div class="arithmatex">\[
+|\uparrow\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad |\downarrow\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\]</div>
+<p>A general spin state is a superposition:</p>
+<div class="arithmatex">\[
+|\psi\rangle = \alpha|\uparrow\rangle + \beta|\downarrow\rangle = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}
+\]</div>
+<p>where <span class="arithmatex">\(|\alpha|^2 + |\beta|^2 = 1\)</span>.</p>
+<p><strong>Measurement:</strong> If you measure spin along the z-axis, you get:</p>
+<ul>
+<li><span class="arithmatex">\(|\uparrow\rangle\)</span> with probability <span class="arithmatex">\(|\alpha|^2\)</span></li>
+<li><span class="arithmatex">\(|\downarrow\rangle\)</span> with probability <span class="arithmatex">\(|\beta|^2\)</span></li>
+</ul>
+<h3 id="complete-state-spatial-spin">Complete State: Spatial + Spin<a class="headerlink" href="#complete-state-spatial-spin" title="Permanent link">&para;</a></h3>
+<p>An electron has <strong>two properties</strong>: where it is (position) and which way it's spinning (spin). The complete quantum state must specify both!</p>
+<p><strong>You still have ONE quantum state</strong>, but now it has <strong>two components</strong> (because spin can be ↑ or ↓).</p>
+<p><strong>Analogy:</strong> A 2D velocity vector <span class="arithmatex">\(\vec{v} = (v_x, v_y)\)</span> is ONE vector, but it has two components (x-component and y-component). Similarly, the electron's quantum state is ONE state, but it has two spin components.</p>
+<p><strong>The complete state</strong> is written:</p>
+<div class="arithmatex">\[
+\Psi(x) = \psi_{\uparrow}(x)|\uparrow\rangle + \psi_{\downarrow}(x)|\downarrow\rangle
+\]</div>
+<p><strong>Wait, what's going on here? Are the kets column vectors? Are they being multiplied?</strong></p>
+<p>Yes! Let me unpack this confusing notation. The kets ARE still column vectors:</p>
+<div class="arithmatex">\[
+|\uparrow\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad |\downarrow\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\]</div>
+<p>And <span class="arithmatex">\(\psi_\uparrow(x)\)</span> and <span class="arithmatex">\(\psi_\downarrow(x)\)</span> are just <strong>scalar functions</strong> (regular numbers that depend on <span class="arithmatex">\(x\)</span>).</p>
+<p><strong>So at each position <span class="arithmatex">\(x\)</span>, you multiply scalars times vectors:</strong></p>
+<div class="arithmatex">\[
+\Psi(x) = \psi_{\uparrow}(x) \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \psi_{\downarrow}(x) \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} \psi_{\uparrow}(x) \\ \psi_{\downarrow}(x) \end{pmatrix}
+\]</div>
+<p><strong>Key insight:</strong> At each position <span class="arithmatex">\(x\)</span>, the wavefunction Ψ(x) is a <strong>2-component column vector</strong>! The top component is ψ↑(x) and the bottom component is ψ↓(x).</p>
+<p><strong>What are these components?</strong></p>
+<ul>
+<li><span class="arithmatex">\(\psi_\uparrow(x)\)</span> = amplitude for electron to be at position <span class="arithmatex">\(x\)</span> <strong>with spin up</strong></li>
+<li><span class="arithmatex">\(\psi_\downarrow(x)\)</span> = amplitude for electron to be at position <span class="arithmatex">\(x\)</span> <strong>with spin down</strong></li>
+</ul>
+<p>This is the <strong>ONE</strong> complete wavefunction—it just has two components (a 2D spinor) at each position <span class="arithmatex">\(x\)</span>!</p>
+<p><strong>What this means:</strong></p>
+<ul>
+<li>If you measure spin and get ↑, the electron's position is described by <span class="arithmatex">\(\psi_\uparrow(x)\)</span></li>
+<li>If you measure spin and get ↓, the electron's position is described by <span class="arithmatex">\(\psi_\downarrow(x)\)</span></li>
+<li>Before measurement, the electron is in a superposition of both spin states</li>
+</ul>
+<p><strong>Important: Renormalization after measurement!</strong></p>
+<p>Before measurement, the full state is normalized:</p>
+<div class="arithmatex">\[
+\int \left[|\psi_\uparrow(x)|^2 + |\psi_\downarrow(x)|^2\right] dx = 1
+\]</div>
+<p>But <span class="arithmatex">\(\int |\psi_\uparrow(x)|^2 dx\)</span> alone equals the <strong>probability</strong> of measuring spin up (call it <span class="arithmatex">\(P_\uparrow\)</span>), which might be less than 1!</p>
+<p><strong>After you measure spin up</strong>, the state collapses to just the spin-up component, but you need to <strong>renormalize</strong> it:</p>
+<div class="arithmatex">\[
+\psi_\uparrow(x) \to \frac{\psi_\uparrow(x)}{\sqrt{P_\uparrow}}
+\]</div>
+<p>Now <span class="arithmatex">\(\int \left|\frac{\psi_\uparrow(x)}{\sqrt{P_\uparrow}}\right|^2 dx = \frac{P_\uparrow}{P_\uparrow} = 1\)</span> ✓</p>
+<p>This ensures the collapsed state is still properly normalized (total probability = 1).</p>
+<p><strong>Probability interpretation:</strong></p>
+<ul>
+<li><span class="arithmatex">\(|\psi_\uparrow(x)|^2 dx\)</span> = probability of finding electron at position <span class="arithmatex">\(x\)</span> <strong>with spin up</strong></li>
+<li><span class="arithmatex">\(|\psi_\downarrow(x)|^2 dx\)</span> = probability of finding electron at position <span class="arithmatex">\(x\)</span> <strong>with spin down</strong></li>
+</ul>
+<p>The ket notation <span class="arithmatex">\(|\uparrow\rangle\)</span> and <span class="arithmatex">\(|\downarrow\rangle\)</span> is just a compact way to label which spin component you're talking about.</p>
+<p><strong>Key point:</strong> Spin adds an extra "dimension" to the wavefunction. Before spin: ψ(x) was one number at each position. With spin: Ψ(x) has two numbers at each position (one for spin-up, one for spin-down). It's still ONE quantum state—just with more structure!</p>
+<h3 id="two-electrons-position-and-spin">Two Electrons: Position AND Spin<a class="headerlink" href="#two-electrons-position-and-spin" title="Permanent link">&para;</a></h3>
+<p>For two electrons in 1D, you have <strong>four</strong> possible spin combinations. The complete state is actually:</p>
+<div class="arithmatex">\[
+\Psi(x_1, x_2) = \psi_{\uparrow\uparrow}(x_1, x_2)|\uparrow\uparrow\rangle + \psi_{\uparrow\downarrow}(x_1, x_2)|\uparrow\downarrow\rangle + \psi_{\downarrow\uparrow}(x_1, x_2)|\downarrow\uparrow\rangle + \psi_{\downarrow\downarrow}(x_1, x_2)|\downarrow\downarrow\rangle
+\]</div>
+<p><strong>So yes, it's a column vector with FOUR elements, each multiplied by a spatial wavefunction!</strong></p>
+<p>At each pair of positions <span class="arithmatex">\((x_1, x_2)\)</span>, the state is:</p>
+<div class="arithmatex">\[
+\Psi(x_1, x_2) = \begin{pmatrix}
+\psi_{\uparrow\uparrow}(x_1, x_2) \\
+\psi_{\uparrow\downarrow}(x_1, x_2) \\
+\psi_{\downarrow\uparrow}(x_1, x_2) \\
+\psi_{\downarrow\downarrow}(x_1, x_2)
+\end{pmatrix}
+\]</div>
+<p><strong>What these mean:</strong></p>
+<ul>
+<li><span class="arithmatex">\(\psi_{\uparrow\uparrow}(x_1, x_2)\)</span> = amplitude for electron 1 at <span class="arithmatex">\(x_1\)</span> with spin up AND electron 2 at <span class="arithmatex">\(x_2\)</span> with spin up</li>
+<li><span class="arithmatex">\(\psi_{\uparrow\downarrow}(x_1, x_2)\)</span> = amplitude for electron 1 at <span class="arithmatex">\(x_1\)</span> with spin up AND electron 2 at <span class="arithmatex">\(x_2\)</span> with spin down</li>
+<li>And so on...</li>
+</ul>
+<p><strong>Compact notation:</strong> We often write this as <span class="arithmatex">\(\psi(x_1, x_2)|s_1, s_2\rangle\)</span> where <span class="arithmatex">\(s_1, s_2 \in \{\uparrow, \downarrow\}\)</span>, but that's hiding the fact that there are really <strong>four different spatial wavefunctions</strong>, one for each spin combination!</p>
+<p><strong>Important simplification:</strong> Often the spin and spatial parts are <strong>separable</strong>, meaning we can write:</p>
+<div class="arithmatex">\[
+\Psi(x_1, x_2) = \psi_{\text{spatial}}(x_1, x_2) \times |\text{spin state}\rangle
+\]</div>
+<p>For example: <span class="arithmatex">\(\psi(x_1, x_2)|\uparrow\downarrow\rangle\)</span> means the <strong>same</strong> spatial wavefunction ψ(x₁, x₂) applies, with electron 1 having spin up and electron 2 having spin down. This is much simpler and is what we'll use for most of the document!</p>
+<p>We'll return to spin in much more detail when we discuss Bell's theorem!</p>
+<hr />
+<hr />
+<h2 id="spin-entanglement-and-the-epr-paradox">Spin Entanglement and the EPR Paradox<a class="headerlink" href="#spin-entanglement-and-the-epr-paradox" title="Permanent link">&para;</a></h2>
+<p>Now we're ready for the truly weird stuff: <strong>entangled spin states</strong> and the EPR paradox that troubled Einstein.</p>
+<h3 id="the-singlet-state">The Singlet State<a class="headerlink" href="#the-singlet-state" title="Permanent link">&para;</a></h3>
+<p>The most famous entangled state is the <strong>spin singlet</strong>:</p>
+<div class="arithmatex">\[
+|\psi\rangle = \frac{1}{\sqrt{2}}(|\uparrow\downarrow\rangle - |\downarrow\uparrow\rangle)
+\]</div>
+<p><strong>What this means:</strong></p>
+<ul>
+<li>Particle 1 spin up AND particle 2 spin down</li>
+<li><strong>minus</strong> particle 1 spin down AND particle 2 spin up</li>
+</ul>
+<p>This is a superposition of the two possibilities! You don't know which is which until you measure.</p>
+<p><strong>Key property:</strong> The two spins are <strong>anticorrelated</strong>. If you measure particle 1 and find spin up, particle 2 is <strong>definitely</strong> spin down (and vice versa).</p>
+<h3 id="the-epr-setup-1935">The EPR Setup (1935)<a class="headerlink" href="#the-epr-setup-1935" title="Permanent link">&para;</a></h3>
+<p>Einstein, Podolsky, and Rosen proposed this thought experiment:</p>
+<p><strong>Step 1:</strong> Create two particles in the singlet state.</p>
+<p><strong>Step 2:</strong> Separate them by a huge distance (say, light-years apart).</p>
+<p><strong>Step 3:</strong> Alice measures particle 1's spin. Bob measures particle 2's spin.</p>
+<p><strong>What happens:</strong></p>
+<p>• Alice measures particle 1 → finds spin up
+• <strong>Instantly</strong>, particle 2's state becomes spin down
+• Bob measures particle 2 → finds spin down (guaranteed!)</p>
+<p>They're perfectly anticorrelated, no matter how far apart!</p>
+<h3 id="einsteins-objection-spooky-action-at-a-distance">Einstein's Objection: "Spooky Action at a Distance"<a class="headerlink" href="#einsteins-objection-spooky-action-at-a-distance" title="Permanent link">&para;</a></h3>
+<p>Einstein was deeply troubled by this:</p>
+<p><strong>Einstein's argument:</strong></p>
+<ol>
+<li>The particles are far apart (space-like separated)</li>
+<li>Special relativity says no signal can travel faster than light</li>
+<li>Yet Alice's measurement <strong>instantly</strong> determines Bob's result</li>
+<li>How can particle 2 "know" what Alice measured?</li>
+</ol>
+<p><strong>Einstein's conclusion:</strong> Quantum mechanics must be <strong>incomplete</strong>. The particles must have carried predetermined values with them (<strong>hidden variables</strong> that quantum mechanics doesn't describe).</p>
+<p><strong>Local realism:</strong> Each particle has a definite (but hidden) spin value from the moment they separate. Measurements just reveal pre-existing properties.</p>
+<p>This seems reasonable! Like drawing colored balls from a hat (they had their colors all along).</p>
+<h3 id="the-quantum-response">The Quantum Response<a class="headerlink" href="#the-quantum-response" title="Permanent link">&para;</a></h3>
+<p><strong>Quantum mechanics says:</strong> No! The particles <strong>don't</strong> have definite spins until measured. The singlet state is the complete description.</p>
+<p>Before measurement:</p>
+<ul>
+<li>Particle 1 is in superposition: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(|\uparrow\rangle - |\downarrow\rangle)\)</span> (if you ignore particle 2)</li>
+<li>Particle 2 is in superposition: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(|\downarrow\rangle - |\uparrow\rangle)\)</span> (if you ignore particle 1)</li>
+<li>But they're <strong>entangled</strong> (the correlations are built into the joint state)</li>
+</ul>
+<p>After Alice measures:</p>
+<ul>
+<li>The entangled state "collapses"</li>
+<li>Bob's particle is now in a definite state (opposite to Alice's result)</li>
+</ul>
+<p><strong>Is this spooky action at a distance?</strong></p>
+<p>Sort of! The correlations are nonlocal. But you can't use this to send signals faster than light (no information is transmitted by the collapse).</p>
+<p><strong>Who's right: Einstein or quantum mechanics?</strong></p>
+<p>For 30 years this was just philosophy. Then John Bell figured out how to test it experimentally...</p>
+<hr />
+<h2 id="bells-theorem-deriving-the-inequality">Bell's Theorem: Deriving the Inequality<a class="headerlink" href="#bells-theorem-deriving-the-inequality" title="Permanent link">&para;</a></h2>
+<p>John Bell (1964) showed that <strong>local hidden variable theories make different predictions than quantum mechanics</strong>. We can test who's right!</p>
+<h3 id="the-setup">The Setup<a class="headerlink" href="#the-setup" title="Permanent link">&para;</a></h3>
+<p>Instead of just measuring spin along one axis (say, z-axis), Alice and Bob can choose different measurement directions.</p>
+<p><strong>Measurement directions:</strong></p>
+<ul>
+<li>Alice chooses angle <span class="arithmatex">\(\theta_A\)</span> (direction to measure spin)</li>
+<li>Bob chooses angle <span class="arithmatex">\(\theta_B\)</span></li>
+<li>Each gets result: <span class="arithmatex">\(\pm 1\)</span> (spin up/down along that axis)</li>
+</ul>
+<p><strong>Correlation function:</strong> Average product of their results:</p>
+<div class="arithmatex">\[
+E(\theta_A, \theta_B) = \langle A \cdot B \rangle
+\]</div>
+<p>where <span class="arithmatex">\(A, B \in \{+1, -1\}\)</span>.</p>
+<h3 id="local-hidden-variables-prediction">Local Hidden Variables Prediction<a class="headerlink" href="#local-hidden-variables-prediction" title="Permanent link">&para;</a></h3>
+<p><strong>Assumption:</strong> Each particle carries hidden variable <span class="arithmatex">\(\lambda\)</span> that predetermines all measurement outcomes.</p>
+<p>For any <span class="arithmatex">\(\lambda\)</span>:</p>
+<ul>
+<li>Alice's result is <span class="arithmatex">\(A(\theta_A, \lambda) = \pm 1\)</span></li>
+<li>Bob's result is <span class="arithmatex">\(B(\theta_B, \lambda) = \pm 1\)</span></li>
+</ul>
+<p>These are <strong>predetermined functions</strong> (the results exist before measurement!).</p>
+<p><strong>Averaging over all possible <span class="arithmatex">\(\lambda\)</span> (with probability distribution <span class="arithmatex">\(\rho(\lambda)\)</span>):</strong></p>
+<div class="arithmatex">\[
+E(\theta_A, \theta_B) = \int A(\theta_A, \lambda) B(\theta_B, \lambda) \rho(\lambda) d\lambda
+\]</div>
+<h3 id="the-chsh-inequality">The CHSH Inequality<a class="headerlink" href="#the-chsh-inequality" title="Permanent link">&para;</a></h3>
+<p>Consider four measurement combinations with angles <span class="arithmatex">\(a, a', b, b'\)</span>:</p>
+<div class="arithmatex">\[
+S = E(a,b) - E(a,b') + E(a',b) + E(a',b')
+\]</div>
+<p><strong>Bell's mathematical result:</strong> For <strong>any</strong> local hidden variable theory:</p>
+<div class="arithmatex">\[
+|S| \leq 2
+\]</div>
+<p>This is called the <strong>CHSH inequality</strong> (Clauser-Horne-Shimony-Holt, a version of Bell's original).</p>
+<p><strong>Proof sketch:</strong> Since <span class="arithmatex">\(A, B \in \{-1, +1\}\)</span>, for any fixed <span class="arithmatex">\(\lambda\)</span>:</p>
+<div class="arithmatex">\[
+A(a,\lambda)[B(b,\lambda) - B(b',\lambda)] + A(a',\lambda)[B(b,\lambda) + B(b',\lambda)]
+\]</div>
+<p>Notice: <span class="arithmatex">\(B(b) - B(b') \in \{-2, 0, +2\}\)</span> and <span class="arithmatex">\(B(b) + B(b') \in \{-2, 0, +2\}\)</span>.</p>
+<p>When <span class="arithmatex">\(B(b) - B(b') = 0\)</span>, we have <span class="arithmatex">\(B(b) = B(b')\)</span>, so <span class="arithmatex">\(|B(b) + B(b')| = 2\)</span>.
+When <span class="arithmatex">\(B(b) + B(b') = 0\)</span>, we have <span class="arithmatex">\(B(b) = -B(b')\)</span>, so <span class="arithmatex">\(|B(b) - B(b')| = 2\)</span>.</p>
+<p>In either case: <span class="arithmatex">\(|A(a)[B(b)-B(b')]| + |A(a')[B(b)+B(b')]| \leq 2\)</span> (since <span class="arithmatex">\(|A| = 1\)</span>).</p>
+<p>Taking absolute value before averaging over <span class="arithmatex">\(\lambda\)</span> gives <span class="arithmatex">\(|S| \leq 2\)</span>.</p>
+<p><strong>Interpretation:</strong> Local realism <strong>constrains</strong> the correlations. You can't get too correlated across different measurement angles.</p>
+<h3 id="quantum-mechanics-violates-it">Quantum Mechanics Violates It!<a class="headerlink" href="#quantum-mechanics-violates-it" title="Permanent link">&para;</a></h3>
+<p>For the singlet state <span class="arithmatex">\(\frac{1}{\sqrt{2}}(|\uparrow\downarrow\rangle - |\downarrow\uparrow\rangle)\)</span>, quantum mechanics predicts:</p>
+<div class="arithmatex">\[
+E(\theta_A, \theta_B) = -\cos(\theta_A - \theta_B)
+\]</div>
+<p>The correlation depends on the <strong>relative angle</strong> between measurement directions!</p>
+<p><strong>Optimal angle choices:</strong> <span class="arithmatex">\(a = 0°\)</span>, <span class="arithmatex">\(a' = 90°\)</span>, <span class="arithmatex">\(b = 45°\)</span>, <span class="arithmatex">\(b' = 135°\)</span></p>
+<p>Calculate each term:</p>
+<ul>
+<li><span class="arithmatex">\(E(a,b) = E(0°, 45°) = -\cos(45°) = -\frac{1}{\sqrt{2}}\)</span></li>
+<li><span class="arithmatex">\(E(a,b') = E(0°, 135°) = -\cos(135°) = +\frac{1}{\sqrt{2}}\)</span></li>
+<li><span class="arithmatex">\(E(a',b) = E(90°, 45°) = -\cos(45°) = -\frac{1}{\sqrt{2}}\)</span></li>
+<li><span class="arithmatex">\(E(a',b') = E(90°, 135°) = -\cos(45°) = -\frac{1}{\sqrt{2}}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+S = -\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} = -\frac{4}{\sqrt{2}} = -2\sqrt{2} \approx -2.83
+\]</div>
+<p><strong>Result:</strong> <span class="arithmatex">\(|S| = 2.83 &gt; 2\)</span> (<strong>Bell's inequality is violated!</strong>)</p>
+<p>Quantum mechanics predicts correlations that are <strong>impossible</strong> for any local hidden variable theory.</p>
+<h3 id="what-this-means">What This Means<a class="headerlink" href="#what-this-means" title="Permanent link">&para;</a></h3>
+<p><strong>The verdict:</strong></p>
+<ul>
+<li>✗ <strong>Local realism is wrong</strong> (Nature doesn't have predetermined values)</li>
+<li>✓ <strong>Quantum mechanics is right</strong> (The correlations are genuinely nonlocal)</li>
+</ul>
+<p><strong>But wait:</strong> How do we know quantum mechanics is right? We need to do the experiment!</p>
+<hr />
+<h2 id="experimental-tests-bells-inequality-in-the-lab">Experimental Tests: Bell's Inequality in the Lab<a class="headerlink" href="#experimental-tests-bells-inequality-in-the-lab" title="Permanent link">&para;</a></h2>
+<p>Bell's theorem moved entanglement from philosophy to experimental science.</p>
+<h3 id="aspects-experiments-1981-1982">Aspect's Experiments (1981-1982)<a class="headerlink" href="#aspects-experiments-1981-1982" title="Permanent link">&para;</a></h3>
+<p>Alain Aspect and collaborators performed the definitive early tests:</p>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Source produces entangled photon pairs (polarization-entangled, analogous to spin-entangled electrons)</li>
+<li>Photons sent to Alice and Bob (13 meters apart)</li>
+<li>Each measures polarization along chosen angle</li>
+<li>Record correlations for different angle combinations</li>
+</ul>
+<p><strong>Key innovation:</strong> Rapidly switching measurement angles while photons are in flight → ensures measurements are space-like separated (no communication possible between detectors).</p>
+<p><strong>Result:</strong></p>
+<div class="arithmatex">\[
+S_{\text{measured}} = 2.70 \pm 0.05
+\]</div>
+<p><strong>Violates Bell's inequality!</strong> Quantum mechanics wins, local realism loses.</p>
+<h3 id="loopholes-and-how-they-were-closed">Loopholes and How They Were Closed<a class="headerlink" href="#loopholes-and-how-they-were-closed" title="Permanent link">&para;</a></h3>
+<p>Early experiments had potential loopholes Einstein fans could exploit:</p>
+<p><strong>1. Detection loophole:</strong></p>
+<ul>
+<li>Not all photons are detected (typical efficiency ~20-30%)</li>
+<li>Maybe hidden variables cleverly avoid being measured?</li>
+<li><strong>Closed:</strong> Use more efficient detectors (&gt;80% efficiency)</li>
+</ul>
+<p><strong>2. Locality loophole:</strong></p>
+<ul>
+<li>Detectors not far enough apart (maybe communication possible?)</li>
+<li><strong>Closed:</strong> Space-like separated measurements (detection events outside each other's light cones)</li>
+</ul>
+<p><strong>3. Freedom-of-choice loophole:</strong></p>
+<ul>
+<li>Measurement angles chosen by pseudo-random number generators</li>
+<li>Maybe hidden variables determine both outcomes and measurement choices?</li>
+<li><strong>Closed:</strong> Use cosmic photons or human choice to set angles</li>
+</ul>
+<h3 id="loophole-free-experiments-2015">Loophole-Free Experiments (2015)<a class="headerlink" href="#loophole-free-experiments-2015" title="Permanent link">&para;</a></h3>
+<p>Three independent groups simultaneously closed <strong>all major loopholes</strong>:</p>
+<p>• <strong>Delft</strong> (Hanson et al.): Entangled electron spins in diamond, 1.3 km separation</p>
+<p>• <strong>Vienna</strong> (Zeilinger et al.): Entangled photons, 60 meters, &gt;75% efficiency detectors</p>
+<p>• <strong>NIST</strong> (Shalm et al.): Entangled photons, efficient detectors, space-like separation</p>
+<p><strong>All found:</strong> Clear violation of Bell's inequality with all loopholes closed!</p>
+<div class="arithmatex">\[
+|S| &gt; 2 \quad \text{(with high statistical significance)}
+\]</div>
+<h3 id="the-2022-nobel-prize">The 2022 Nobel Prize<a class="headerlink" href="#the-2022-nobel-prize" title="Permanent link">&para;</a></h3>
+<p>The Nobel Prize in Physics was awarded to:</p>
+<p>• <strong>Alain Aspect</strong> (France): pioneering photon entanglement experiments</p>
+<p>• <strong>John Clauser</strong> (USA): first experimental test of Bell's inequality (1972)</p>
+<p>• <strong>Anton Zeilinger</strong> (Austria): quantum information and loophole-free tests</p>
+<p><strong>The citation:</strong> "for experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science"</p>
+<h3 id="what-weve-learned">What We've Learned<a class="headerlink" href="#what-weve-learned" title="Permanent link">&para;</a></h3>
+<p><strong>Nature is fundamentally nonlocal:</strong></p>
+<ul>
+<li>Measurement outcomes at one location are <strong>instantaneously</strong> correlated with distant measurements</li>
+<li>This isn't due to hidden variables or communication</li>
+<li>It's <strong>genuine quantum entanglement</strong></li>
+</ul>
+<p><strong>But information still can't travel faster than light:</strong></p>
+<ul>
+<li>Alice's individual results look random (50% up, 50% down)</li>
+<li>Only when Alice and Bob <strong>compare</strong> results do they see the correlations</li>
+<li>Comparing requires classical communication (limited by speed of light)</li>
+</ul>
+<p><strong>Einstein was wrong, but in the most interesting way:</strong></p>
+<ul>
+<li>Quantum mechanics really is complete (no hidden variables needed)</li>
+<li>"Spooky action at a distance" is real!</li>
+<li>But it doesn't violate relativity</li>
+</ul>
+<p>The universe is even weirder than Einstein thought!</p>
+<hr />
+<h2 id="matrix-representation-for-discrete-systems">Matrix Representation for Discrete Systems<a class="headerlink" href="#matrix-representation-for-discrete-systems" title="Permanent link">&para;</a></h2>
+<p>For systems with discrete spin states, we can represent everything using matrices (making entanglement very concrete).</p>
+<h3 id="single-spin-2d-hilbert-space">Single Spin: 2D Hilbert Space<a class="headerlink" href="#single-spin-2d-hilbert-space" title="Permanent link">&para;</a></h3>
+<p>A single spin-1/2 particle lives in a 2D Hilbert space:</p>
+<p><strong>Basis states:</strong></p>
+<div class="arithmatex">\[
+|\uparrow\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad |\downarrow\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\]</div>
+<p><strong>General state:</strong></p>
+<div class="arithmatex">\[
+|\psi\rangle = \alpha|\uparrow\rangle + \beta|\downarrow\rangle = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}
+\]</div>
+<h3 id="two-spins-4d-hilbert-space-tensor-product">Two Spins: 4D Hilbert Space (Tensor Product)<a class="headerlink" href="#two-spins-4d-hilbert-space-tensor-product" title="Permanent link">&para;</a></h3>
+<p>With two particles, the Hilbert space is the <strong>tensor product</strong>: <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span>.</p>
+<p><strong>Dimension:</strong> <span class="arithmatex">\(2 \times 2 = 4\)</span> (dimension multiplies!)</p>
+<p><strong>Basis states:</strong></p>
+<div class="arithmatex">\[
+|\uparrow\uparrow\rangle = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix}, \quad
+|\uparrow\downarrow\rangle = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}, \quad
+|\downarrow\uparrow\rangle = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}, \quad
+|\downarrow\downarrow\rangle = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \end{pmatrix}
+\]</div>
+<p><strong>Ordering convention:</strong> First entry is particle 1, second is particle 2.</p>
+<h3 id="product-states-vs-entangled-states">Product States vs Entangled States<a class="headerlink" href="#product-states-vs-entangled-states" title="Permanent link">&para;</a></h3>
+<p><strong>Product state example:</strong> <span class="arithmatex">\(|\uparrow\downarrow\rangle\)</span></p>
+<div class="arithmatex">\[
+|\uparrow\downarrow\rangle = |\uparrow\rangle \otimes |\downarrow\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}
+\]</div>
+<p>This is <strong>separable</strong> (particle 1 is definitely up, particle 2 is definitely down).</p>
+<p><strong>Singlet state (entangled):</strong></p>
+<div class="arithmatex">\[
+|\psi_{\text{singlet}}\rangle = \frac{1}{\sqrt{2}}(|\uparrow\downarrow\rangle - |\downarrow\uparrow\rangle) = \frac{1}{\sqrt{2}}\begin{pmatrix} 0 \\ 1 \\ -1 \\ 0 \end{pmatrix}
+\]</div>
+<p><strong>Check if separable:</strong> Can we write this as <span class="arithmatex">\((\alpha_1|\uparrow\rangle + \beta_1|\downarrow\rangle) \otimes (\alpha_2|\uparrow\rangle + \beta_2|\downarrow\rangle)\)</span>?</p>
+<p>Expanding the tensor product:</p>
+<div class="arithmatex">\[
+= \alpha_1\alpha_2|\uparrow\uparrow\rangle + \alpha_1\beta_2|\uparrow\downarrow\rangle + \beta_1\alpha_2|\downarrow\uparrow\rangle + \beta_1\beta_2|\downarrow\downarrow\rangle
+\]</div>
+<p>For the singlet: coefficient of <span class="arithmatex">\(|\uparrow\uparrow\rangle\)</span> is 0, so <span class="arithmatex">\(\alpha_1\alpha_2 = 0\)</span>.</p>
+<ul>
+<li>If <span class="arithmatex">\(\alpha_1 = 0\)</span>: then coefficient of <span class="arithmatex">\(|\uparrow\downarrow\rangle\)</span> is 0, so <span class="arithmatex">\(\alpha_1\beta_2 = 0\)</span> ✓</li>
+<li>But then coefficient of <span class="arithmatex">\(|\downarrow\uparrow\rangle\)</span> is <span class="arithmatex">\(\beta_1\alpha_2\)</span>, which must equal <span class="arithmatex">\(-1/\sqrt{2}\)</span></li>
+<li>And coefficient of <span class="arithmatex">\(|\downarrow\downarrow\rangle\)</span> is <span class="arithmatex">\(\beta_1\beta_2\)</span>, which must equal <span class="arithmatex">\(0\)</span></li>
+</ul>
+<p>So <span class="arithmatex">\(\beta_2 = 0\)</span> (to make last term zero), but then <span class="arithmatex">\(\beta_1\alpha_2 = -1/\sqrt{2}\)</span> requires <span class="arithmatex">\(\alpha_2 \neq 0\)</span>... but we needed <span class="arithmatex">\(\alpha_1\alpha_2 = 0\)</span> with <span class="arithmatex">\(\alpha_1 = 0\)</span> ✓, giving no constraint on <span class="arithmatex">\(\alpha_2\)</span>.</p>
+<p>Actually, let's be more careful: if <span class="arithmatex">\(\alpha_1 = 0\)</span>, then <span class="arithmatex">\(\beta_1 \neq 0\)</span> (normalized). Then <span class="arithmatex">\(\beta_1\beta_2 = 0\)</span> means <span class="arithmatex">\(\beta_2 = 0\)</span>. But <span class="arithmatex">\(\alpha_2\)</span> must be normalized: <span class="arithmatex">\(|\alpha_2|^2 + |\beta_2|^2 = 1\)</span>, so <span class="arithmatex">\(\alpha_2 = e^{i\phi}\)</span> for some phase.</p>
+<p>Then coefficient of <span class="arithmatex">\(|\downarrow\uparrow\rangle\)</span> is <span class="arithmatex">\(\beta_1 e^{i\phi} = -1/\sqrt{2}\)</span>.
+And coefficient of <span class="arithmatex">\(|\uparrow\downarrow\rangle\)</span> should be <span class="arithmatex">\(1/\sqrt{2}\)</span>, but <span class="arithmatex">\(\alpha_1\beta_2 = 0 \cdot 0 = 0 \neq 1/\sqrt{2}\)</span>. Contradiction!</p>
+<p><strong>Result:</strong> The singlet <strong>cannot</strong> be factored into a product state (it's genuinely entangled!).</p>
+<h3 id="measuring-entanglement-example-calculation">Measuring Entanglement: Example Calculation<a class="headerlink" href="#measuring-entanglement-example-calculation" title="Permanent link">&para;</a></h3>
+<p>Let's calculate what happens when Alice measures her spin in the singlet state.</p>
+<p><strong>Before measurement:</strong></p>
+<div class="arithmatex">\[
+|\psi\rangle = \frac{1}{\sqrt{2}}(|\uparrow\downarrow\rangle - |\downarrow\uparrow\rangle)
+\]</div>
+<p><strong>Alice measures particle 1 along z-axis:</strong></p>
+<p><strong>Case 1: Alice gets <span class="arithmatex">\(\uparrow\)</span></strong></p>
+<p>The state collapses to the part with particle 1 = <span class="arithmatex">\(|\uparrow\rangle\)</span>:</p>
+<div class="arithmatex">\[
+|\psi_{\text{after}}\rangle = |\uparrow\downarrow\rangle
+\]</div>
+<p>Bob's particle is <strong>definitely</strong> <span class="arithmatex">\(|\downarrow\rangle\)</span>!</p>
+<p><strong>Case 2: Alice gets <span class="arithmatex">\(\downarrow\)</span></strong></p>
+<p>The state collapses to:</p>
+<div class="arithmatex">\[
+|\psi_{\text{after}}\rangle = -|\downarrow\uparrow\rangle
+\]</div>
+<p>Bob's particle is <strong>definitely</strong> <span class="arithmatex">\(|\uparrow\rangle\)</span>!</p>
+<p>(The minus sign is an overall phase, physically irrelevant for Bob's local measurements.)</p>
+<p><strong>Probability:</strong> Each outcome occurs with 50% probability:</p>
+<div class="arithmatex">\[
+P(\uparrow) = \left|\frac{1}{\sqrt{2}}\right|^2 = \frac{1}{2}, \quad P(\downarrow) = \left|\frac{1}{\sqrt{2}}\right|^2 = \frac{1}{2}
+\]</div>
+<p><strong>Key insight:</strong> Alice's measurement <strong>instantaneously</strong> determines Bob's state, even though her result was random (50/50)!</p>
+<h3 id="operators-as-matrices">Operators as Matrices<a class="headerlink" href="#operators-as-matrices" title="Permanent link">&para;</a></h3>
+<p>For a single spin, the z-component spin operator is:</p>
+<div class="arithmatex">\[
+\hat{S}_z = \frac{\hbar}{2}\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}
+\]</div>
+<p>Eigenvalues: <span class="arithmatex">\(+\hbar/2\)</span> (spin up) and <span class="arithmatex">\(-\hbar/2\)</span> (spin down).</p>
+<p>For two spins, we can measure correlations. The operator <span class="arithmatex">\(\hat{S}_{1z} \otimes \hat{S}_{2z}\)</span> (product of individual spin measurements) becomes a 4×4 matrix:</p>
+<div class="arithmatex">\[
+\hat{S}_{1z} \otimes \hat{S}_{2z} = \frac{\hbar^2}{4}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}
+\]</div>
+<p><strong>Calculate expected value for singlet state:</strong></p>
+<div class="arithmatex">\[
+\langle \hat{S}_{1z} \otimes \hat{S}_{2z} \rangle = \langle\psi|\hat{S}_{1z} \otimes \hat{S}_{2z}|\psi\rangle
+\]</div>
+<div class="arithmatex">\[
+= \frac{1}{2}\begin{pmatrix} 0 &amp; 1 &amp; -1 &amp; 0 \end{pmatrix} \frac{\hbar^2}{4}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ -1 \\ 0 \end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \frac{\hbar^2}{8}\begin{pmatrix} 0 &amp; 1 &amp; -1 &amp; 0 \end{pmatrix} \begin{pmatrix} 0 \\ -1 \\ 1 \\ 0 \end{pmatrix} = \frac{\hbar^2}{8}(-1 - 1) = -\frac{\hbar^2}{4}
+\]</div>
+<p><strong>Result:</strong> Negative correlation! When particle 1 is up, particle 2 tends to be down (and vice versa).</p>
+<p>For a product state like <span class="arithmatex">\(|\uparrow\uparrow\rangle\)</span>, you'd get <span class="arithmatex">\(+\hbar^2/4\)</span> (positive correlation).</p>
+<p><strong>The singlet has maximum anticorrelation</strong> (the defining feature of this entangled state!).</p>
+<hr />
+<h2 id="summary-the-big-picture">Summary: The Big Picture<a class="headerlink" href="#summary-the-big-picture" title="Permanent link">&para;</a></h2>
+<p>We've journeyed through spin, entanglement, and the experimental tests that revealed the quantum nature of reality:</p>
+<h3 id="spin-as-a-quantum-property">Spin as a Quantum Property<a class="headerlink" href="#spin-as-a-quantum-property" title="Permanent link">&para;</a></h3>
+<p><strong>Intrinsic angular momentum:</strong> Electrons have spin-1/2 (two states: ↑ and ↓)</p>
+<p><strong>Complete state:</strong> Must specify both position AND spin: <span class="arithmatex">\(\Psi(x) = \psi_\uparrow(x)|\uparrow\rangle + \psi_\downarrow(x)|\downarrow\rangle\)</span></p>
+<p><strong>Two particles:</strong> 4D spin space (↑↑, ↑↓, ↓↑, ↓↓)</p>
+<h3 id="the-epr-paradox">The EPR Paradox<a class="headerlink" href="#the-epr-paradox" title="Permanent link">&para;</a></h3>
+<p><strong>Singlet state:</strong> <span class="arithmatex">\(\frac{1}{\sqrt{2}}(|\uparrow\downarrow\rangle - |\downarrow\uparrow\rangle)\)</span> - perfectly anticorrelated</p>
+<p><strong>Einstein's objection:</strong> Measuring one particle instantly affects the other → must be hidden variables!</p>
+<p><strong>Quantum response:</strong> No hidden variables - entanglement is real!</p>
+<h3 id="bells-theorem">Bell's Theorem<a class="headerlink" href="#bells-theorem" title="Permanent link">&para;</a></h3>
+<p><strong>Key insight:</strong> Local hidden variables predict <span class="arithmatex">\(|S| \leq 2\)</span></p>
+<p><strong>Quantum mechanics:</strong> Predicts <span class="arithmatex">\(|S| = 2\sqrt{2} \approx 2.83\)</span> (violates Bell's inequality!)</p>
+<p><strong>This is testable:</strong> Different theories make different experimental predictions!</p>
+<h3 id="experimental-verification">Experimental Verification<a class="headerlink" href="#experimental-verification" title="Permanent link">&para;</a></h3>
+<p><strong>Early tests (1972-1982):</strong> Clauser, Aspect - quantum mechanics wins!</p>
+<p><strong>Loophole-free (2015):</strong> All major loopholes closed - entanglement is real!</p>
+<p><strong>2022 Nobel Prize:</strong> Awarded for establishing quantum nonlocality</p>
+<h3 id="what-it-all-means">What It All Means<a class="headerlink" href="#what-it-all-means" title="Permanent link">&para;</a></h3>
+<p><strong>Nature is nonlocal:</strong>
+- Correlations are instantaneous
+- Not due to hidden variables
+- Genuine quantum entanglement</p>
+<p><strong>But no faster-than-light communication:</strong>
+- Individual results are random
+- Only comparison reveals correlations
+- Information limited by speed of light</p>
+<p><strong>Implications:</strong>
+- Quantum mechanics is complete
+- Reality is fundamentally different from classical intuition
+- Entanglement enables quantum technologies</p>
+<hr />
+<h2 id="applications-and-future">Applications and Future<a class="headerlink" href="#applications-and-future" title="Permanent link">&para;</a></h2>
+<p>Entanglement isn't just weird—it's <strong>useful</strong>:</p>
+<p>• <strong>Quantum computing:</strong> Entangled qubits for parallel computation</p>
+<p>• <strong>Quantum cryptography:</strong> Unhackable communication using entangled photons</p>
+<p>• <strong>Quantum teleportation:</strong> Transfer quantum states using entanglement</p>
+<p>• <strong>Quantum sensing:</strong> Entanglement-enhanced measurements</p>
+<p>The strangeness that troubled Einstein is now the foundation of quantum information science!</p>
+<hr />
+<h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
+<p><strong>Bell's original papers:</strong></p>
+<ul>
+<li>"On the Einstein Podolsky Rosen Paradox" (1964): the groundbreaking theorem</li>
+<li>"Bertlmann's socks and the nature of reality" (1981): wonderfully accessible explanation</li>
+</ul>
+<p><strong>Classic experiments:</strong></p>
+<ul>
+<li>Aspect, Dalibard, Roger, "Experimental test of Bell's inequalities..." (1982)</li>
+<li>Hensen et al., "Loophole-free Bell inequality violation..." (2015)</li>
+</ul>
+<p><strong>Books:</strong></p>
+<ul>
+<li>"Quantum Computation and Quantum Information" (Nielsen &amp; Chuang)</li>
+<li>"Entanglement" (Amir Aczel, popular science)</li>
+</ul>
+<p><strong>Next steps:</strong></p>
+<ul>
+<li>Density matrices (describing mixed states and partial information)</li>
+<li>Quantum information theory (quantifying entanglement)</li>
+<li>Many-body quantum mechanics (atoms, molecules, solids)</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

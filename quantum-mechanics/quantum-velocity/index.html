@@ -1,0 +1,2546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/quantum-mechanics/quantum-velocity/">
+      
+      
+        <link rel="prev" href="../quantum-spatial-entanglement/">
+      
+      
+        <link rel="next" href="../quantum-mass-localization/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Velocity in Quantum Mechanics - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#velocity-in-quantum-mechanics-a-complete-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Velocity in Quantum Mechanics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-why-is-velocity-confusing-in-quantum-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Why Is Velocity Confusing in Quantum Mechanics?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-foundationehrenfests-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The Foundation—Ehrenfest's Theorem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Foundation—Ehrenfest&#39;s Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-point-the-schrodinger-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting Point: The Schrödinger Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deriving-the-general-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deriving the General Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-deriving-the-velocity-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Deriving the Velocity Operator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Deriving the Velocity Operator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applying-to-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying to Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-1-free-particle-v-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 1: Free Particle (\(V = 0\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2-particle-in-a-potential-v-neq-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 2: Particle in a Potential (\(V \neq 0\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-velocity-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Velocity Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-wave-velocitiesphase-and-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Wave Velocities—Phase and Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Wave Velocities—Phase and Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-velocity-speed-of-the-crests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase Velocity: Speed of the Crests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-velocity-speed-of-the-envelope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Velocity: Speed of the Envelope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Key Relationship
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-when-does-each-velocity-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: When Does Each Velocity Apply?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: When Does Each Velocity Apply?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocity-operator-hatv-hatpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Velocity Operator \(\hat{v} = \hat{p}/m\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-velocity-v_g-domegadk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Velocity \(v_g = d\omega/dk\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-velocity-v_textph-omegak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase Velocity \(v_{\text{ph}} = \omega/k\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectation-velocity-langle-hatv-rangle-dlangle-x-rangledt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expectation Velocity \(\langle \hat{v} \rangle = d\langle x \rangle/dt\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-quick-reference-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Quick Reference Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Quick Reference Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-1-the-four-velocity-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 1: The Four Velocity Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-2-which-velocities-work-in-each-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 2: Which Velocities Work in Each System?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-3-concrete-numbers-electron-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 3: Concrete Numbers (Electron Example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-deep-divewhat-does-the-velocity-operator-actually-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: Deep Dive—What Does the Velocity Operator Actually Do?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Deep Dive—What Does the Velocity Operator Actually Do?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acting-on-an-eigenstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acting on an Eigenstate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acting-on-a-general-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acting on a General State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-intuition-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Intuition Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-extensions-to-crystals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Extensions to Crystals
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-why-is-velocity-confusing-in-quantum-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Why Is Velocity Confusing in Quantum Mechanics?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-foundationehrenfests-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The Foundation—Ehrenfest's Theorem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Foundation—Ehrenfest&#39;s Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-point-the-schrodinger-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting Point: The Schrödinger Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deriving-the-general-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deriving the General Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-deriving-the-velocity-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Deriving the Velocity Operator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Deriving the Velocity Operator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applying-to-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying to Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-1-free-particle-v-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 1: Free Particle (\(V = 0\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2-particle-in-a-potential-v-neq-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 2: Particle in a Potential (\(V \neq 0\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-velocity-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Velocity Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-wave-velocitiesphase-and-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Wave Velocities—Phase and Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Wave Velocities—Phase and Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-velocity-speed-of-the-crests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase Velocity: Speed of the Crests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-velocity-speed-of-the-envelope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Velocity: Speed of the Envelope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Key Relationship
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-when-does-each-velocity-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: When Does Each Velocity Apply?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: When Does Each Velocity Apply?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocity-operator-hatv-hatpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Velocity Operator \(\hat{v} = \hat{p}/m\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-velocity-v_g-domegadk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Velocity \(v_g = d\omega/dk\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-velocity-v_textph-omegak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase Velocity \(v_{\text{ph}} = \omega/k\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectation-velocity-langle-hatv-rangle-dlangle-x-rangledt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expectation Velocity \(\langle \hat{v} \rangle = d\langle x \rangle/dt\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-quick-reference-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Quick Reference Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Quick Reference Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-1-the-four-velocity-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 1: The Four Velocity Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-2-which-velocities-work-in-each-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 2: Which Velocities Work in Each System?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-3-concrete-numbers-electron-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table 3: Concrete Numbers (Electron Example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-deep-divewhat-does-the-velocity-operator-actually-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: Deep Dive—What Does the Velocity Operator Actually Do?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Deep Dive—What Does the Velocity Operator Actually Do?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acting-on-an-eigenstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acting on an Eigenstate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acting-on-a-general-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acting on a General State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-intuition-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Intuition Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-extensions-to-crystals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Extensions to Crystals
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="velocity-in-quantum-mechanics-a-complete-tutorial">Velocity in Quantum Mechanics: A Complete Tutorial<a class="headerlink" href="#velocity-in-quantum-mechanics-a-complete-tutorial" title="Permanent link">&para;</a></h1>
+<h2 id="introduction-why-is-velocity-confusing-in-quantum-mechanics">Introduction: Why Is Velocity Confusing in Quantum Mechanics?<a class="headerlink" href="#introduction-why-is-velocity-confusing-in-quantum-mechanics" title="Permanent link">&para;</a></h2>
+<p>In classical mechanics, velocity is simple: <span class="arithmatex">\(v = dx/dt\)</span>, a single number telling you how fast something moves. In quantum mechanics, things get messier because particles don't have definite positions or momenta—they have wavefunctions. This leads to <em>multiple</em> velocity concepts, each answering a different question.</p>
+<p>This tutorial will give you the intuition to immediately recognize which velocity concept applies to any situation. We'll derive everything from first principles so you understand <em>where</em> each definition comes from, not just memorize formulas.</p>
+<hr />
+<h2 id="part-1-the-foundationehrenfests-theorem">Part 1: The Foundation—Ehrenfest's Theorem<a class="headerlink" href="#part-1-the-foundationehrenfests-theorem" title="Permanent link">&para;</a></h2>
+<p>Everything starts here. Ehrenfest's theorem tells us how expectation values evolve in time, bridging quantum mechanics to classical intuition.</p>
+<h3 id="starting-point-the-schrodinger-equation">Starting Point: The Schrödinger Equation<a class="headerlink" href="#starting-point-the-schrodinger-equation" title="Permanent link">&para;</a></h3>
+<p>The time-dependent Schrödinger equation governs quantum evolution:</p>
+<div class="arithmatex">\[i\hbar \frac{\partial \psi}{\partial t} = \hat{H}\psi\]</div>
+<p>Taking the complex conjugate (and using that <span class="arithmatex">\(\hat{H}\)</span> is Hermitian, so <span class="arithmatex">\(\hat{H}^\dagger = \hat{H}\)</span>):</p>
+<div class="arithmatex">\[-i\hbar \frac{\partial \psi^*}{\partial t} = \hat{H}\psi^*\]</div>
+<h3 id="deriving-the-general-form">Deriving the General Form<a class="headerlink" href="#deriving-the-general-form" title="Permanent link">&para;</a></h3>
+<p>For any operator <span class="arithmatex">\(\hat{A}\)</span>, the expectation value is:</p>
+<div class="arithmatex">\[\langle A \rangle = \int \psi^* \hat{A} \psi \, dx\]</div>
+<p>Taking the time derivative (using the product rule on three terms):</p>
+<div class="arithmatex">\[\frac{d\langle A \rangle}{dt} = \int \left(\frac{\partial \psi^*}{\partial t} \hat{A} \psi + \psi^* \hat{A} \frac{\partial \psi}{\partial t} + \psi^* \frac{\partial \hat{A}}{\partial t} \psi \right) dx\]</div>
+<p>Substituting from the Schrödinger equation:</p>
+<div class="arithmatex">\[\frac{d\langle A \rangle}{dt} = \int \left(\frac{-\hat{H}\psi^*}{i\hbar} \hat{A} \psi + \psi^* \hat{A} \frac{\hat{H}\psi}{i\hbar} + \psi^* \frac{\partial \hat{A}}{\partial t} \psi \right) dx\]</div>
+<p>Rearranging:</p>
+<div class="arithmatex">\[\frac{d\langle A \rangle}{dt} = \frac{1}{i\hbar} \int \psi^* (\hat{A}\hat{H} - \hat{H}\hat{A}) \psi \, dx + \left\langle \frac{\partial \hat{A}}{\partial t} \right\rangle\]</div>
+<p>This gives us <strong>Ehrenfest's Theorem</strong>:</p>
+<div class="arithmatex">\[\boxed{\frac{d\langle A \rangle}{dt} = \frac{1}{i\hbar}\langle[\hat{A}, \hat{H}]\rangle + \left\langle \frac{\partial \hat{A}}{\partial t} \right\rangle}\]</div>
+<p><strong>Physical meaning</strong>: The rate of change of any expectation value depends on (1) how the operator fails to commute with the Hamiltonian, and (2) any explicit time dependence of the operator itself.</p>
+<hr />
+<h2 id="part-2-deriving-the-velocity-operator">Part 2: Deriving the Velocity Operator<a class="headerlink" href="#part-2-deriving-the-velocity-operator" title="Permanent link">&para;</a></h2>
+<p>Now let's apply Ehrenfest's theorem to the position operator <span class="arithmatex">\(\hat{x}\)</span> to find what "velocity" means quantum mechanically.</p>
+<h3 id="applying-to-position">Applying to Position<a class="headerlink" href="#applying-to-position" title="Permanent link">&para;</a></h3>
+<p>Set <span class="arithmatex">\(\hat{A} = \hat{x}\)</span>. Since <span class="arithmatex">\(\hat{x}\)</span> has no explicit time dependence (<span class="arithmatex">\(\frac{\partial \hat{x}}{\partial t} = 0\)</span>):</p>
+<div class="arithmatex">\[\frac{d\langle x \rangle}{dt} = \frac{1}{i\hbar}\langle[\hat{x}, \hat{H}]\rangle\]</div>
+<p>Now we need to compute the commutator <span class="arithmatex">\([\hat{x}, \hat{H}]\)</span> for different Hamiltonians.</p>
+<h3 id="case-1-free-particle-v-0">Case 1: Free Particle (<span class="arithmatex">\(V = 0\)</span>)<a class="headerlink" href="#case-1-free-particle-v-0" title="Permanent link">&para;</a></h3>
+<p>For a free particle: <span class="arithmatex">\(\hat{H} = \frac{\hat{p}^2}{2m}\)</span></p>
+<p>Calculate the commutator:</p>
+<div class="arithmatex">\[[\hat{x}, \hat{H}] = \left[\hat{x}, \frac{\hat{p}^2}{2m}\right] = \frac{1}{2m}[\hat{x}, \hat{p}^2]\]</div>
+<p>To evaluate <span class="arithmatex">\([\hat{x}, \hat{p}^2]\)</span>, use the identity <span class="arithmatex">\([\hat{A}, \hat{B}\hat{C}] = \hat{B}[\hat{A}, \hat{C}] + [\hat{A}, \hat{B}]\hat{C}\)</span>:</p>
+<div class="arithmatex">\[[\hat{x}, \hat{p}^2] = [\hat{x}, \hat{p}\cdot\hat{p}] = \hat{p}[\hat{x}, \hat{p}] + [\hat{x}, \hat{p}]\hat{p}\]</div>
+<p>Using the canonical commutation relation <span class="arithmatex">\([\hat{x}, \hat{p}] = i\hbar\)</span>:</p>
+<div class="arithmatex">\[[\hat{x}, \hat{p}^2] = \hat{p}(i\hbar) + (i\hbar)\hat{p} = 2i\hbar\hat{p}\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[[\hat{x}, \hat{H}] = \frac{1}{2m}(2i\hbar\hat{p}) = \frac{i\hbar\hat{p}}{m}\]</div>
+<p>Substituting back into Ehrenfest's theorem:</p>
+<div class="arithmatex">\[\frac{d\langle x \rangle}{dt} = \frac{1}{i\hbar} \cdot \frac{i\hbar\langle\hat{p}\rangle}{m} = \frac{\langle\hat{p}\rangle}{m}\]</div>
+<h3 id="case-2-particle-in-a-potential-v-neq-0">Case 2: Particle in a Potential (<span class="arithmatex">\(V \neq 0\)</span>)<a class="headerlink" href="#case-2-particle-in-a-potential-v-neq-0" title="Permanent link">&para;</a></h3>
+<p>For a particle in a potential: <span class="arithmatex">\(\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{x})\)</span></p>
+<div class="arithmatex">\[[\hat{x}, \hat{H}] = \left[\hat{x}, \frac{\hat{p}^2}{2m}\right] + [\hat{x}, V(\hat{x})]\]</div>
+<p>The first term we already calculated. For the second term:</p>
+<div class="arithmatex">\[[\hat{x}, V(\hat{x})] = \hat{x}V(\hat{x}) - V(\hat{x})\hat{x} = 0\]</div>
+<p><strong>This is zero because <span class="arithmatex">\(\hat{x}\)</span> commutes with any function of itself!</strong> Position doesn't care what potential it's in—it's still just position.</p>
+<p>Therefore:</p>
+<div class="arithmatex">\[[\hat{x}, \hat{H}] = \frac{i\hbar\hat{p}}{m}\]</div>
+<p>And again:</p>
+<div class="arithmatex">\[\frac{d\langle x \rangle}{dt} = \frac{\langle\hat{p}\rangle}{m}\]</div>
+<h3 id="the-velocity-operator">The Velocity Operator<a class="headerlink" href="#the-velocity-operator" title="Permanent link">&para;</a></h3>
+<p>Since <span class="arithmatex">\(\frac{d\langle x \rangle}{dt}\)</span> represents the average velocity, and we found it equals <span class="arithmatex">\(\frac{\langle\hat{p}\rangle}{m}\)</span>, we identify the <strong>velocity operator</strong>:</p>
+<div class="arithmatex">\[\boxed{\hat{v} = \frac{\hat{p}}{m}}\]</div>
+<p><strong>This is remarkable</strong>: The velocity operator is <span class="arithmatex">\(\hat{p}/m\)</span> whether the particle is free or in a potential—the potential doesn't appear!</p>
+<h3 id="physical-interpretation">Physical Interpretation<a class="headerlink" href="#physical-interpretation" title="Permanent link">&para;</a></h3>
+<p>This matches classical intuition perfectly:</p>
+<ul>
+<li>The velocity <em>at any instant</em> depends only on the momentum <em>at that instant</em></li>
+<li>The potential <span class="arithmatex">\(V(x)\)</span> affects the <strong>acceleration</strong> (how velocity changes over time), not the instantaneous velocity</li>
+<li>In classical mechanics: <span class="arithmatex">\(v = p/m\)</span> regardless of forces. Same in quantum mechanics!</li>
+</ul>
+<hr />
+<h2 id="part-3-wave-velocitiesphase-and-group">Part 3: Wave Velocities—Phase and Group<a class="headerlink" href="#part-3-wave-velocitiesphase-and-group" title="Permanent link">&para;</a></h2>
+<p>When we have propagating waves, two more velocity concepts emerge from the wave nature of the solutions.</p>
+<h3 id="phase-velocity-speed-of-the-crests">Phase Velocity: Speed of the Crests<a class="headerlink" href="#phase-velocity-speed-of-the-crests" title="Permanent link">&para;</a></h3>
+<p>For a plane wave <span class="arithmatex">\(\psi = Ae^{i(kx - \omega t)}\)</span>, surfaces of constant phase satisfy:</p>
+<div class="arithmatex">\[kx - \omega t = \text{constant}\]</div>
+<p>Differentiating: <span class="arithmatex">\(k\,dx - \omega\,dt = 0\)</span>, so:</p>
+<div class="arithmatex">\[v_{\text{ph}} = \frac{dx}{dt} = \frac{\omega}{k}\]</div>
+<p><strong>What it means</strong>: This is the speed at which a particular wave crest (or trough) moves through space.</p>
+<p>For a free quantum particle with <span class="arithmatex">\(E = \hbar\omega\)</span> and <span class="arithmatex">\(p = \hbar k\)</span>:</p>
+<div class="arithmatex">\[\omega = \frac{E}{\hbar} = \frac{p^2}{2m\hbar} = \frac{\hbar k^2}{2m}\]</div>
+<p>So:</p>
+<div class="arithmatex">\[v_{\text{ph}} = \frac{\omega}{k} = \frac{\hbar k}{2m} = \frac{p}{2m}\]</div>
+<p><strong>Note</strong>: This is <em>half</em> the classical velocity! Phase velocity alone doesn't tell you how fast the particle moves.</p>
+<h3 id="group-velocity-speed-of-the-envelope">Group Velocity: Speed of the Envelope<a class="headerlink" href="#group-velocity-speed-of-the-envelope" title="Permanent link">&para;</a></h3>
+<p>A wave packet is a superposition of many plane waves:</p>
+<div class="arithmatex">\[\psi(x,t) = \int A(k) e^{i(kx - \omega(k) t)} dk\]</div>
+<p>If the packet is peaked around <span class="arithmatex">\(k_0\)</span>, the envelope moves at:</p>
+<div class="arithmatex">\[v_g = \frac{d\omega}{dk}\bigg|_{k=k_0}\]</div>
+<p><strong>Derivation sketch</strong>: Expand <span class="arithmatex">\(\omega(k)\)</span> around <span class="arithmatex">\(k_0\)</span>: <span class="arithmatex">\(\omega(k) \approx \omega_0 + \omega'_0(k-k_0)\)</span>. The phase becomes:</p>
+<div class="arithmatex">\[kx - \omega t \approx k_0 x - \omega_0 t + (k-k_0)(x - \omega'_0 t)\]</div>
+<p>The envelope (the <span class="arithmatex">\(A(k)\)</span> contribution) depends on <span class="arithmatex">\((x - \omega'_0 t)\)</span>, so it moves at speed <span class="arithmatex">\(\omega'_0 = d\omega/dk\)</span>.</p>
+<p>For a free particle:</p>
+<div class="arithmatex">\[v_g = \frac{d\omega}{dk} = \frac{d}{dk}\left(\frac{\hbar k^2}{2m}\right) = \frac{\hbar k}{m} = \frac{p}{m}\]</div>
+<p><strong>This matches the classical velocity!</strong> The group velocity tells you how fast the probability "bump" actually moves.</p>
+<h3 id="the-key-relationship">The Key Relationship<a class="headerlink" href="#the-key-relationship" title="Permanent link">&para;</a></h3>
+<p>For a free particle:</p>
+<div class="arithmatex">\[v_g = 2 \, v_{\text{ph}} = \frac{p}{m} = \langle \hat{v} \rangle\]</div>
+<p>The group velocity equals the expectation value of the velocity operator—this is the "real" speed of the particle.</p>
+<hr />
+<h2 id="part-4-when-does-each-velocity-apply">Part 4: When Does Each Velocity Apply?<a class="headerlink" href="#part-4-when-does-each-velocity-apply" title="Permanent link">&para;</a></h2>
+<p>This is the crucial practical knowledge. Here's when each concept is meaningful:</p>
+<h3 id="velocity-operator-hatv-hatpm">Velocity Operator <span class="arithmatex">\(\hat{v} = \hat{p}/m\)</span><a class="headerlink" href="#velocity-operator-hatv-hatpm" title="Permanent link">&para;</a></h3>
+<p><strong>Always exists.</strong> It's an operator—a mathematical object that acts on wavefunctions.</p>
+<ul>
+<li><strong>What it does</strong>: When acting on <span class="arithmatex">\(\psi\)</span>, it transforms the wavefunction according to momentum/mass</li>
+<li><strong>Eigenvalue equation</strong>: <span class="arithmatex">\(\hat{v}\psi = v\psi\)</span> only when <span class="arithmatex">\(\psi\)</span> is a momentum eigenstate (plane wave)</li>
+<li><strong>General case</strong>: <span class="arithmatex">\(\hat{v}\psi\)</span> gives some other function, not a multiple of <span class="arithmatex">\(\psi\)</span></li>
+</ul>
+<h3 id="group-velocity-v_g-domegadk">Group Velocity <span class="arithmatex">\(v_g = d\omega/dk\)</span><a class="headerlink" href="#group-velocity-v_g-domegadk" title="Permanent link">&para;</a></h3>
+<p><strong>Requires</strong>: Propagating waves with a dispersion relation <span class="arithmatex">\(\omega(k)\)</span></p>
+<p>Works for:
+- Free particles (wave packets)
+- Bloch waves in crystals: <span class="arithmatex">\(v_g = \frac{1}{\hbar}\frac{dE_n}{dk}\)</span>
+- Waveguides, phonons, any dispersive medium</p>
+<p>Does <strong>NOT</strong> work for:
+- Standing waves (particle in a box)
+- Bound states with discrete spectra
+- Single plane waves (need a packet!)</p>
+<h3 id="phase-velocity-v_textph-omegak">Phase Velocity <span class="arithmatex">\(v_{\text{ph}} = \omega/k\)</span><a class="headerlink" href="#phase-velocity-v_textph-omegak" title="Permanent link">&para;</a></h3>
+<p><strong>Requires</strong>: A single plane wave with definite <span class="arithmatex">\(k\)</span></p>
+<ul>
+<li>More of a mathematical curiosity in quantum mechanics</li>
+<li>Doesn't represent particle motion</li>
+<li>Can exceed the speed of light without violating relativity (no information transfer)</li>
+</ul>
+<h3 id="expectation-velocity-langle-hatv-rangle-dlangle-x-rangledt">Expectation Velocity <span class="arithmatex">\(\langle \hat{v} \rangle = d\langle x \rangle/dt\)</span><a class="headerlink" href="#expectation-velocity-langle-hatv-rangle-dlangle-x-rangledt" title="Permanent link">&para;</a></h3>
+<p><strong>Requires</strong>: Normalizable wavefunction</p>
+<ul>
+<li>This is the "average velocity" from Ehrenfest's theorem</li>
+<li>Equals <span class="arithmatex">\(\langle \hat{p} \rangle / m\)</span> for any potential</li>
+<li>The closest quantum analog to classical velocity</li>
+</ul>
+<hr />
+<h2 id="part-5-quick-reference-tables">Part 5: Quick Reference Tables<a class="headerlink" href="#part-5-quick-reference-tables" title="Permanent link">&para;</a></h2>
+<h3 id="table-1-the-four-velocity-concepts">Table 1: The Four Velocity Concepts<a class="headerlink" href="#table-1-the-four-velocity-concepts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Type</th>
+<th>Definition</th>
+<th>Formula</th>
+<th>Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Velocity Operator</strong></td>
+<td>OPERATOR</td>
+<td>Heisenberg equation of motion</td>
+<td><span class="arithmatex">\(\hat{v} = \frac{\hat{p}}{m}\)</span></td>
+<td>None—always valid</td>
+</tr>
+<tr>
+<td><strong>Group Velocity</strong></td>
+<td>NUMBER</td>
+<td>Envelope speed of wave packet</td>
+<td><span class="arithmatex">\(v_g = \frac{d\omega}{dk}\big\|_{k_0}\)</span></td>
+<td>Dispersion relation, wave packet</td>
+</tr>
+<tr>
+<td><strong>Phase Velocity</strong></td>
+<td>NUMBER</td>
+<td>Crest speed of single wave</td>
+<td><span class="arithmatex">\(v_{\text{ph}} = \frac{\omega}{k}\)</span></td>
+<td>Single plane wave</td>
+</tr>
+<tr>
+<td><strong>Expectation Velocity</strong></td>
+<td>NUMBER</td>
+<td>Average position motion</td>
+<td><span class="arithmatex">\(v_{\text{exp}} = \frac{d\langle x \rangle}{dt} = \frac{\langle \hat{p} \rangle}{m}\)</span></td>
+<td>Normalizable <span class="arithmatex">\(\psi\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-2-which-velocities-work-in-each-system">Table 2: Which Velocities Work in Each System?<a class="headerlink" href="#table-2-which-velocities-work-in-each-system" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Wavefunction</th>
+<th>Operator <span class="arithmatex">\(\hat{v}\)</span></th>
+<th>Group <span class="arithmatex">\(v_g\)</span></th>
+<th>Phase <span class="arithmatex">\(v_{\text{ph}}\)</span></th>
+<th>Expectation <span class="arithmatex">\(\langle \hat{v} \rangle\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Plane wave</strong></td>
+<td><span class="arithmatex">\(e^{i(kx-\omega t)}\)</span></td>
+<td>✓ (eigenstate)</td>
+<td>✗ (need packet)</td>
+<td>✓</td>
+<td>✗ (not normalizable)</td>
+</tr>
+<tr>
+<td><strong>Free wave packet</strong></td>
+<td><span class="arithmatex">\(\int A(k)e^{ikx}dk\)</span></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (per mode)</td>
+<td>✓ (equals <span class="arithmatex">\(v_g\)</span>)</td>
+</tr>
+<tr>
+<td><strong>Particle in box</strong></td>
+<td><span class="arithmatex">\(\sin(n\pi x/L)\)</span></td>
+<td>✓</td>
+<td>✗ (discrete <span class="arithmatex">\(k\)</span>)</td>
+<td>—</td>
+<td>✓ (equals 0)</td>
+</tr>
+<tr>
+<td><strong>Harmonic oscillator</strong></td>
+<td><span class="arithmatex">\(\psi_n(x)\)</span></td>
+<td>✓</td>
+<td>✗ (no <span class="arithmatex">\(k\)</span>)</td>
+<td>—</td>
+<td>✓ (equals 0 for <span class="arithmatex">\(\psi_n\)</span>)</td>
+</tr>
+<tr>
+<td><strong>Bloch wave in crystal</strong></td>
+<td><span class="arithmatex">\(u_k(x)e^{ikx}\)</span></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3-concrete-numbers-electron-example">Table 3: Concrete Numbers (Electron Example)<a class="headerlink" href="#table-3-concrete-numbers-electron-example" title="Permanent link">&para;</a></h3>
+<p>Parameters: <span class="arithmatex">\(m = 9.1 \times 10^{-31}\)</span> kg, <span class="arithmatex">\(k = 5 \times 10^6\)</span> m<span class="arithmatex">\(^{-1}\)</span></p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Value</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Momentum</td>
+<td><span class="arithmatex">\(p = \hbar k = 5.3 \times 10^{-25}\)</span> kg·m/s</td>
+<td><span class="arithmatex">\(p = (1.055 \times 10^{-34})(5 \times 10^6)\)</span></td>
+</tr>
+<tr>
+<td>Classical/Group velocity</td>
+<td><span class="arithmatex">\(v_g = 5.8 \times 10^5\)</span> m/s</td>
+<td><span class="arithmatex">\(v_g = p/m = \hbar k/m\)</span></td>
+</tr>
+<tr>
+<td>Phase velocity</td>
+<td><span class="arithmatex">\(v_{\text{ph}} = 2.9 \times 10^5\)</span> m/s</td>
+<td><span class="arithmatex">\(v_{\text{ph}} = \hbar k/(2m) = v_g/2\)</span></td>
+</tr>
+<tr>
+<td>Eigenvalue of <span class="arithmatex">\(\hat{v}\)</span></td>
+<td><span class="arithmatex">\(5.8 \times 10^5\)</span> m/s</td>
+<td>Same as <span class="arithmatex">\(v_g\)</span> (for plane wave)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-6-deep-divewhat-does-the-velocity-operator-actually-do">Part 6: Deep Dive—What Does the Velocity Operator Actually Do?<a class="headerlink" href="#part-6-deep-divewhat-does-the-velocity-operator-actually-do" title="Permanent link">&para;</a></h2>
+<p>This is often confusing. Let's be precise:</p>
+<h3 id="acting-on-an-eigenstate">Acting on an Eigenstate<a class="headerlink" href="#acting-on-an-eigenstate" title="Permanent link">&para;</a></h3>
+<p>If <span class="arithmatex">\(\psi\)</span> is a momentum eigenstate (plane wave <span class="arithmatex">\(e^{ikx}\)</span>):</p>
+<div class="arithmatex">\[\hat{v}\psi = \frac{\hat{p}}{m}\psi = \frac{\hbar k}{m}\psi = v_{\text{eigen}}\psi\]</div>
+<p>The wavefunction just gets multiplied by a number—the velocity eigenvalue. This is the <em>only</em> case where the velocity "is" a definite number.</p>
+<h3 id="acting-on-a-general-state">Acting on a General State<a class="headerlink" href="#acting-on-a-general-state" title="Permanent link">&para;</a></h3>
+<p>For anything else (Gaussian packet, bound state, etc.):</p>
+<div class="arithmatex">\[\hat{v}\psi = \frac{\hat{p}}{m}\psi = \frac{-i\hbar}{m}\frac{\partial \psi}{\partial x}\]</div>
+<p>This gives a <em>different function</em>, not a multiple of <span class="arithmatex">\(\psi\)</span>. The particle doesn't have a definite velocity!</p>
+<h3 id="measurement">Measurement<a class="headerlink" href="#measurement" title="Permanent link">&para;</a></h3>
+<p>When you measure velocity:
+- You get one eigenvalue randomly
+- Probability of getting <span class="arithmatex">\(v\)</span> is <span class="arithmatex">\(|\langle v | \psi \rangle|^2\)</span>
+- After measurement, the state collapses to that eigenstate
+- Repeated measurements give the average <span class="arithmatex">\(\langle \hat{v} \rangle\)</span></p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p>Think of the velocity operator as a "velocity measuring machine recipe":
+- It transforms wavefunctions according to momentum
+- Only eigenstates give definite velocity values
+- For general states, you get probabilities and averages</p>
+<hr />
+<h2 id="part-7-intuition-summary">Part 7: Intuition Summary<a class="headerlink" href="#part-7-intuition-summary" title="Permanent link">&para;</a></h2>
+<p><strong>When you see "velocity" in a QM problem, ask:</strong></p>
+<ol>
+<li>
+<p><strong>Is it an operator?</strong> → Then it's <span class="arithmatex">\(\hat{v} = \hat{p}/m\)</span>, valid always</p>
+</li>
+<li>
+<p><strong>Is it a number describing wave propagation?</strong></p>
+</li>
+<li>Envelope speed → Group velocity <span class="arithmatex">\(v_g = d\omega/dk\)</span></li>
+<li>
+<p>Crest speed → Phase velocity <span class="arithmatex">\(v_{\text{ph}} = \omega/k\)</span></p>
+</li>
+<li>
+<p><strong>Is it "how fast is the particle moving on average"?</strong> → Expectation value <span class="arithmatex">\(\langle \hat{v} \rangle = \langle \hat{p} \rangle / m\)</span></p>
+</li>
+<li>
+<p><strong>Is the particle in a potential?</strong> → Doesn't matter! All these definitions still apply the same way.</p>
+</li>
+</ol>
+<p><strong>The elegant unity</strong>: For a free particle wave packet, all the "number" velocities agree:</p>
+<div class="arithmatex">\[v_g = \langle \hat{v} \rangle = \frac{p_0}{m}\]</div>
+<p>And this is exactly what classical mechanics says: <span class="arithmatex">\(v = p/m\)</span>.</p>
+<hr />
+<h2 id="appendix-extensions-to-crystals">Appendix: Extensions to Crystals<a class="headerlink" href="#appendix-extensions-to-crystals" title="Permanent link">&para;</a></h2>
+<p>In a periodic potential (crystal), electrons are described by Bloch waves with band structure <span class="arithmatex">\(E_n(k)\)</span>. The group velocity becomes:</p>
+<div class="arithmatex">\[v_g = \frac{1}{\hbar}\frac{dE_n}{dk}\]</div>
+<p>This is crucial in solid-state physics:
+- Near band edges, <span class="arithmatex">\(dE/dk \approx 0\)</span>, so electrons slow down
+- Effective mass: <span class="arithmatex">\(m^* = \hbar^2 / (d^2E/dk^2)\)</span> can be negative!
+- The velocity operator still applies, but now includes crystal momentum</p>
+<p>The key insight: <strong>group velocity works whenever you have propagating waves with a dispersion relation</strong>—not just free particles.</p>
+<hr />
+<p><em>This page was written with the assistance of Claude (Anthropic).</em></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

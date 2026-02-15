@@ -1,0 +1,2780 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/quantum-mechanics/electrons-in-metals/">
+      
+      
+        <link rel="prev" href="../band-theory-of-solids/">
+      
+      
+        <link rel="next" href="../phonons/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Electrons in Metals: From Bloch Waves to Wave Packets - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#electrons-in-metals-from-bloch-waves-to-wave-packets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Electrons in Metals: From Bloch Waves to Wave Packets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-problem-were-really-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Problem We're Really Solving
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-ideal-starting-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The Ideal Starting Point
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Ideal Starting Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-frozen-infinite-crystal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Frozen, Infinite Crystal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-bloch-waves-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Bloch Waves Exist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-bands-come-from-physically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Bands Come From Physically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filling-the-bands-electrons-in-equilibrium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filling the Bands: Electrons in Equilibrium
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-energy-eigenstates-are-stationary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Energy Eigenstates Are Stationary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-the-crucial-pivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: The Crucial Pivot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-reality-enters-lattice-motion-and-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Reality Enters — Lattice Motion and Phonons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Reality Enters — Lattice Motion and Phonons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-phonons-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Phonons Are
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-flavors-of-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Flavors of Phonons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-the-key-toy-model-particle-in-a-box-with-moving-walls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: The Key Toy Model — Particle in a Box with Moving Walls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: The Key Toy Model — Particle in a Box with Moving Walls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-box-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Box (Baseline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#now-make-the-walls-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Now Make the Walls Move
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-think-about-the-solution-no-heavy-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Think About the Solution (No Heavy Math)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-moving-walls-cause-energy-level-mixing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Moving Walls Cause Energy Level Mixing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resonance-when-things-actually-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resonance: When Things Actually Happen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-wavefunction-now-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Wavefunction Now Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-maps-directly-to-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Maps Directly to Phonons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-electron-phonon-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Electron-Phonon Coupling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Electron-Phonon Coupling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-electron-actually-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Electron Actually Sees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phonons-as-traveling-potential-waves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phonons as Traveling Potential Waves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-temperature-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Temperature Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-electron-phonon-scattering-increases-with-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Electron-Phonon Scattering Increases with Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-from-bloch-waves-to-wave-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: From Bloch Waves to Wave Packets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: From Bloch Waves to Wave Packets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-scattering-really-is-a-concrete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What "Scattering" Really Is — A Concrete Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-alphabet-vs-words-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Alphabet vs Words" Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-pauli-exclusion-and-deep-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Pauli Exclusion and Deep Electrons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-8-what-does-t-0-really-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 8: What Does T = 0 Really Mean?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-9-common-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 9: Common Misconceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-10-the-mental-model-to-keep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 10: The Mental Model to Keep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bottom-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Bottom Line
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-problem-were-really-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Problem We're Really Solving
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-ideal-starting-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The Ideal Starting Point
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Ideal Starting Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-frozen-infinite-crystal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Frozen, Infinite Crystal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-bloch-waves-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Bloch Waves Exist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-bands-come-from-physically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Bands Come From Physically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filling-the-bands-electrons-in-equilibrium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filling the Bands: Electrons in Equilibrium
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-energy-eigenstates-are-stationary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Energy Eigenstates Are Stationary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-the-crucial-pivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: The Crucial Pivot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-reality-enters-lattice-motion-and-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Reality Enters — Lattice Motion and Phonons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Reality Enters — Lattice Motion and Phonons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-phonons-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Phonons Are
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-flavors-of-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Flavors of Phonons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-the-key-toy-model-particle-in-a-box-with-moving-walls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: The Key Toy Model — Particle in a Box with Moving Walls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: The Key Toy Model — Particle in a Box with Moving Walls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-box-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Box (Baseline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#now-make-the-walls-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Now Make the Walls Move
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-think-about-the-solution-no-heavy-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Think About the Solution (No Heavy Math)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-moving-walls-cause-energy-level-mixing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Moving Walls Cause Energy Level Mixing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resonance-when-things-actually-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resonance: When Things Actually Happen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-wavefunction-now-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Wavefunction Now Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-maps-directly-to-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Maps Directly to Phonons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-electron-phonon-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Electron-Phonon Coupling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Electron-Phonon Coupling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-electron-actually-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Electron Actually Sees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phonons-as-traveling-potential-waves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phonons as Traveling Potential Waves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-temperature-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Temperature Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-electron-phonon-scattering-increases-with-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Electron-Phonon Scattering Increases with Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-from-bloch-waves-to-wave-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: From Bloch Waves to Wave Packets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: From Bloch Waves to Wave Packets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-scattering-really-is-a-concrete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What "Scattering" Really Is — A Concrete Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-alphabet-vs-words-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Alphabet vs Words" Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-pauli-exclusion-and-deep-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Pauli Exclusion and Deep Electrons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-8-what-does-t-0-really-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 8: What Does T = 0 Really Mean?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-9-common-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 9: Common Misconceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-10-the-mental-model-to-keep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 10: The Mental Model to Keep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bottom-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Bottom Line
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="electrons-in-metals-from-bloch-waves-to-wave-packets">Electrons in Metals: From Bloch Waves to Wave Packets<a class="headerlink" href="#electrons-in-metals-from-bloch-waves-to-wave-packets" title="Permanent link">&para;</a></h1>
+<h2 id="what-problem-were-really-solving">What Problem We're Really Solving<a class="headerlink" href="#what-problem-were-really-solving" title="Permanent link">&para;</a></h2>
+<p>You've encountered two conflicting stories about electrons in metals:</p>
+<p><strong>Classical story:</strong> Electrons are little charged particles that move, scatter off ions, and drift through a lattice like pinballs.</p>
+<p><strong>Quantum story:</strong> Electrons occupy Bloch states, fill energy bands, and have well-defined crystal momentum <span class="arithmatex">\(\mathbf{k}\)</span>.</p>
+<p>Both stories are <em>partly true</em>, but they apply in <strong>different limits</strong>. Confusion comes from mixing them without stating assumptions.</p>
+<p>Our goal is to build a <strong>single, unified picture</strong> that:</p>
+<ul>
+<li>Is fully quantum at its core</li>
+<li>Reduces to classical intuition when appropriate</li>
+<li>Makes sense of phonons, scattering, and wave packets</li>
+<li>Sets the stage for conductivity (without doing transport yet)</li>
+</ul>
+<p>We're building the <em>kinematic and quantum foundation</em> here.</p>
+<hr />
+<h2 id="part-1-the-ideal-starting-point">Part 1: The Ideal Starting Point<a class="headerlink" href="#part-1-the-ideal-starting-point" title="Permanent link">&para;</a></h2>
+<h3 id="a-frozen-infinite-crystal">A Frozen, Infinite Crystal<a class="headerlink" href="#a-frozen-infinite-crystal" title="Permanent link">&para;</a></h3>
+<p>We begin with a deliberately unrealistic but extremely clarifying limit.</p>
+<p><strong>Assumptions (state them explicitly):</strong></p>
+<ol>
+<li><strong>Infinite crystal</strong> — the ionic lattice extends forever in all directions, no surfaces</li>
+<li><strong>Perfect periodicity</strong> — the ionic potential satisfies <span class="arithmatex">\(V(\mathbf{r} + \mathbf{R}) = V(\mathbf{r})\)</span> for all lattice vectors <span class="arithmatex">\(\mathbf{R}\)</span></li>
+<li><strong>Ions are frozen</strong> — no thermal motion, no phonons, time-independent Hamiltonian</li>
+<li><strong>Single-electron picture</strong> — electron-electron interactions absorbed into an effective periodic potential</li>
+</ol>
+<p>Under these assumptions, the single-electron Hamiltonian is:</p>
+<div class="arithmatex">\[
+H = \frac{p^2}{2m} + V(\mathbf{r})
+\]</div>
+<p>This Hamiltonian has <strong>exact discrete translational symmetry</strong>.</p>
+<hr />
+<h3 id="why-bloch-waves-exist">Why Bloch Waves Exist<a class="headerlink" href="#why-bloch-waves-exist" title="Permanent link">&para;</a></h3>
+<p>Because of that symmetry, the Schrödinger equation admits solutions of the form:</p>
+<div class="arithmatex">\[
+\psi_{n\mathbf{k}}(\mathbf{r}) = e^{i\mathbf{k}\cdot\mathbf{r}} \, u_{n\mathbf{k}}(\mathbf{r})
+\]</div>
+<p>where <span class="arithmatex">\(u_{n\mathbf{k}}(\mathbf{r})\)</span> has the same periodicity as the lattice.</p>
+<p><strong>What matters conceptually:</strong></p>
+<ul>
+<li>Each <span class="arithmatex">\((n, \mathbf{k})\)</span> labels an <strong>exact energy eigenstate</strong></li>
+<li>Energy depends on <span class="arithmatex">\(\mathbf{k}\)</span>, forming <strong>bands</strong>: <span class="arithmatex">\(E = E_n(\mathbf{k})\)</span></li>
+<li>These eigenstates are <strong>stationary</strong>: their probability density doesn't change in time</li>
+<li>For a fixed <span class="arithmatex">\(\mathbf{k}\)</span>, the state evolves only by a global phase:</li>
+</ul>
+<div class="arithmatex">\[
+\psi_{n\mathbf{k}}(\mathbf{r},t) = \psi_{n\mathbf{k}}(\mathbf{r}) \, e^{-iE_n(\mathbf{k})t/\hbar}
+\]</div>
+<p><strong>Key insight:</strong> A Bloch state has a <em>perfectly defined</em> crystal momentum <span class="arithmatex">\(\mathbf{k}\)</span>. Here <span class="arithmatex">\(\mathbf{k}\)</span> is a symmetry label, not the electron's mechanical momentum. By Fourier duality:</p>
+<ul>
+<li>Perfectly sharp <span class="arithmatex">\(\mathbf{k}\)</span> <span class="arithmatex">\(\rightarrow\)</span> completely delocalized in space</li>
+</ul>
+<blockquote>
+<p>In this ideal limit, each electron literally extends across the entire crystal — a direct mathematical consequence of symmetry.</p>
+</blockquote>
+<hr />
+<h3 id="where-bands-come-from-physically">Where Bands Come From Physically<a class="headerlink" href="#where-bands-come-from-physically" title="Permanent link">&para;</a></h3>
+<p>While Bloch's theorem tells us bands must exist given perfect symmetry, it doesn't explain their <strong>origin or width</strong>.</p>
+<p>Physically, bands arise from <strong>atomic orbitals splitting</strong> when isolated atoms come together to form a crystal:</p>
+<p>• <strong>Isolated atom:</strong> Each electron occupies a discrete atomic orbital (e.g., 1s, 2s, 2p)
+• <strong>Bring atoms close:</strong> Orbitals on neighboring atoms overlap
+• <strong>Crystal forms:</strong> Each atomic level splits into <span class="arithmatex">\(N\)</span> slightly different energies (where <span class="arithmatex">\(N\)</span> is the number of atoms), forming a band</p>
+<p><strong>Key physical insight:</strong></p>
+<p>• <strong>Strong orbital overlap</strong> → wide bands → highly delocalized states (e.g., conduction electrons)
+• <strong>Weak orbital overlap</strong> → narrow bands → more atom-like behavior (e.g., core electrons, d-electrons in transition metals)</p>
+<p>This explains why:</p>
+<p>• Deep core electrons barely feel the crystal — their wavefunctions overlap weakly
+• Valence electrons form wide bands — their wavefunctions extend between atoms
+• Phonons disrupt some states more than others — delocalized states couple more strongly to lattice motion</p>
+<hr />
+<h3 id="filling-the-bands-electrons-in-equilibrium">Filling the Bands: Electrons in Equilibrium<a class="headerlink" href="#filling-the-bands-electrons-in-equilibrium" title="Permanent link">&para;</a></h3>
+<p>At zero temperature:</p>
+<ul>
+<li>Electrons fill the lowest available Bloch states</li>
+<li>Pauli exclusion enforces one electron per <span class="arithmatex">\((n, \mathbf{k}, \text{spin})\)</span></li>
+<li>The many-electron ground state is built from <strong>pure Bloch waves</strong></li>
+</ul>
+<p><strong>Important conceptual point:</strong> In this limit:</p>
+<ul>
+<li>Electrons are <strong>not particles moving through space</strong></li>
+<li>They are <strong>stationary quantum states</strong></li>
+<li>Talking about trajectories or collisions is meaningless</li>
+</ul>
+<p>This is the cleanest possible starting point.</p>
+<div class="admonition warning">
+<p class="admonition-title">Clarification used throughout this tutorial</p>
+<p>When we say "an electron occupies a Bloch state," we are using shorthand. The <em>many-electron ground state</em> has Bloch symmetry; individual electrons are not independently observable objects with fixed identities. "An electron in state <span class="arithmatex">\(\mathbf{k}\)</span>" really means: the single-particle excitations are labeled by Bloch quantum numbers.</p>
+</div>
+<hr />
+<h3 id="why-energy-eigenstates-are-stationary">Why Energy Eigenstates Are Stationary<a class="headerlink" href="#why-energy-eigenstates-are-stationary" title="Permanent link">&para;</a></h3>
+<p>You might wonder: why do electrons settle into pure energy eigenstates rather than arbitrary superpositions?</p>
+<p>The key is <strong>stationarity</strong>, not energetics.</p>
+<p>Consider a superposition of two energy eigenstates:</p>
+<div class="arithmatex">\[
+\Psi(x,t) = c_1 \phi_1(x) e^{-iE_1 t/\hbar} + c_2 \phi_2(x) e^{-iE_2 t/\hbar}
+\]</div>
+<p>The probability density <span class="arithmatex">\(|\Psi|^2\)</span> <strong>oscillates in time</strong> at frequency <span class="arithmatex">\((E_2 - E_1)/\hbar\)</span>. The state has internal time structure.</p>
+<p>But in the frozen crystal:</p>
+<ul>
+<li>There is nothing external oscillating at that frequency</li>
+<li>There is nothing for this time structure to couple to</li>
+<li>The superposition has no way to exchange energy with its environment</li>
+</ul>
+<blockquote>
+<p>The reason Bloch states dominate in the frozen crystal is not that superpositions are energetically forbidden, but that they introduce internal time dependence in a system with nothing to couple to that time structure.</p>
+</blockquote>
+<p>Superpositions are allowed and persist forever in a perfectly isolated system; they are simply not stationary because observables oscillate in time. Energy eigenstates are the natural "resting states" — not because other states are unstable, but because they are the only ones that are truly stationary.</p>
+<hr />
+<h2 id="part-2-the-crucial-pivot">Part 2: The Crucial Pivot<a class="headerlink" href="#part-2-the-crucial-pivot" title="Permanent link">&para;</a></h2>
+<p>This is the most important conceptual turn in the entire tutorial:</p>
+<blockquote>
+<p><strong>Bloch waves exist because of symmetry, not because of energetics.</strong></p>
+</blockquote>
+<p>Here is the canonical statement to remember:</p>
+<blockquote>
+<p><strong>Once translational symmetry is even weakly broken, exact Bloch eigenstates no longer exist; what survives are long-lived, Bloch-like quasiparticles.</strong></p>
+</blockquote>
+<p>And in the real world, symmetry is always broken — by lattice motion, defects, surfaces, and finite size.</p>
+<hr />
+<h2 id="part-3-reality-enters-lattice-motion-and-phonons">Part 3: Reality Enters — Lattice Motion and Phonons<a class="headerlink" href="#part-3-reality-enters-lattice-motion-and-phonons" title="Permanent link">&para;</a></h2>
+<h3 id="what-phonons-are">What Phonons Are<a class="headerlink" href="#what-phonons-are" title="Permanent link">&para;</a></h3>
+<p>At any finite temperature, ions vibrate. Even at absolute zero, quantum mechanics forces <strong>zero-point motion</strong>.</p>
+<p>These vibrations organize into <strong>normal modes</strong>: collective oscillations where each mode has a wavevector <span class="arithmatex">\(\mathbf{q}\)</span> and frequency <span class="arithmatex">\(\omega_{\mathbf{q}}\)</span>.</p>
+<p><strong>Critical distinction (guitar string analogy):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Guitar string</th>
+<th>Lattice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mode = sinusoidal vibration pattern</td>
+<td>Mode = collective oscillation pattern</td>
+</tr>
+<tr>
+<td>Energy is continuous</td>
+<td>Energy is quantized: <span class="arithmatex">\(E_n = \hbar\omega(n + \frac{1}{2})\)</span></td>
+</tr>
+<tr>
+<td>Amplitude is continuous</td>
+<td>Amplitude <span class="arithmatex">\(\propto \sqrt{n}\)</span> where <span class="arithmatex">\(n\)</span> is discrete</td>
+</tr>
+<tr>
+<td>Loud note = large amplitude</td>
+<td>Many phonons = large amplitude</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>phonon</strong> is one quantum of energy (<span class="arithmatex">\(\hbar\omega\)</span>) in a mode — not the wave itself. The word "phonon" is misleading: it sounds like the wave, but it's the <em>energy unit</em> in the wave.</p>
+<ul>
+<li>Mode with <span class="arithmatex">\(n = 0\)</span>: zero-point energy only, no phonons</li>
+<li>Mode with <span class="arithmatex">\(n = 3\)</span>: three phonons, energy <span class="arithmatex">\(3.5\hbar\omega\)</span></li>
+<li>Mode with <span class="arithmatex">\(n = 1000\)</span>: amplitude looks classical (large <span class="arithmatex">\(\sqrt{n}\)</span>)</li>
+</ul>
+<p>When many phonons occupy a mode coherently, you get a classical-looking wave. This is why "lattice vibrations" and "phonons" seem interchangeable — at high occupation, they look the same. But fundamentally, the phonon is the quantum, not the wave.</p>
+<p><strong>Where does <span class="arithmatex">\(E_n = \hbar\omega(n + \frac{1}{2})\)</span> come from?</strong></p>
+<p>Each lattice mode is atoms connected by springs — a harmonic oscillator. When you solve the Schrödinger equation for a harmonic oscillator potential <span class="arithmatex">\(V = \frac{1}{2}m\omega^2 x^2\)</span>, you get discrete energy levels spaced by <span class="arithmatex">\(\hbar\omega\)</span>. This is standard QM, nothing special to solids.</p>
+<p><strong>Coherent vs incoherent phonons (numerical example):</strong></p>
+<p>Consider three modes with <span class="arithmatex">\(\omega_1, \omega_2, \omega_3\)</span> and wavelengths <span class="arithmatex">\(\lambda_1, \lambda_2, \lambda_3\)</span>.</p>
+<p><em>Coherent phonons</em> — well-defined phases, gives a real traveling wave:</p>
+<div class="arithmatex">\[u(x,t) = A_1\cos(q_1 x - \omega_1 t) + A_2\cos(q_2 x - \omega_2 t) + A_3\cos(q_3 x - \omega_3 t)\]</div>
+<p>Example: <span class="arithmatex">\(A_1 = 0.1\)</span> nm, <span class="arithmatex">\(A_2 = 0.05\)</span> nm, <span class="arithmatex">\(A_3 = 0.02\)</span> nm. This is a wave packet — a localized pulse traveling through the lattice. The amplitudes relate to phonon number: <span class="arithmatex">\(A \propto \sqrt{n}\)</span>.</p>
+<p><em>Incoherent phonons</em> — random phases, no net wave:</p>
+<div class="arithmatex">\[\langle u(x,t) \rangle = 0\]</div>
+<p>But there's still jiggling! The mean-square displacement is nonzero:</p>
+<div class="arithmatex">\[\langle u^2 \rangle &gt; 0\]</div>
+<p>Example: thermal phonons at room temperature. Each mode has random phase, so there's no organized wave — just fluctuations. The atoms jitter around their equilibrium positions with no coherent pattern.</p>
+<p><strong>One-line summary:</strong></p>
+<ul>
+<li>Coherent: real wave with phase, like plucking a guitar string</li>
+<li>Incoherent: random jitter, <span class="arithmatex">\(\langle u \rangle = 0\)</span> but <span class="arithmatex">\(\langle u^2 \rangle &gt; 0\)</span>, like thermal noise</li>
+</ul>
+<hr />
+<h3 id="two-flavors-of-phonons">Two Flavors of Phonons<a class="headerlink" href="#two-flavors-of-phonons" title="Permanent link">&para;</a></h3>
+<p>Not all phonons are alike. The two main types behave very differently:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ACOUSTIC: neighbors move together         OPTICAL: neighbors move opposite
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ●  ○  ●  ○  ●  ○   equilibrium           ●  ○  ●  ○  ●  ○   equilibrium
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  → → → → → →                              → ← → ← → ←
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ●  ○  ●  ○  ●  ○   displaced             ●  ○  ●  ○  ●  ○   displaced
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>     \____/                                   \/    \/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   move together                           push apart
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>(● and ○ = two atom types; optical modes require 2+ atoms per unit cell)
+</code></pre></div>
+<p><strong>Acoustic phonons:</strong></p>
+<ul>
+<li>Neighboring atoms move <em>in phase</em> — the whole lattice compresses and stretches</li>
+<li>Called "acoustic" because long wavelengths behave like sound waves</li>
+<li>Linear dispersion at small <span class="arithmatex">\(q\)</span>: <span class="arithmatex">\(E \approx \hbar v_s q\)</span></li>
+<li>Dominate ordinary scattering at moderate temperatures</li>
+</ul>
+<p><strong>Optical phonons:</strong></p>
+<ul>
+<li>Neighboring atoms move <em>out of phase</em> — one sublattice against another</li>
+<li>Called "optical" because in ionic crystals, opposite motion of +/− ions creates an oscillating dipole that couples to infrared light</li>
+<li>Have a minimum energy even at <span class="arithmatex">\(q = 0\)</span> (typically tens of meV)</li>
+<li>Important for high-field transport: emitting an optical phonon is an efficient "energy dump"</li>
+</ul>
+<p>Both types scatter electrons, but through different mechanisms and at different energy scales.</p>
+<hr />
+<h2 id="part-4-the-key-toy-model-particle-in-a-box-with-moving-walls">Part 4: The Key Toy Model — Particle in a Box with Moving Walls<a class="headerlink" href="#part-4-the-key-toy-model-particle-in-a-box-with-moving-walls" title="Permanent link">&para;</a></h2>
+<p>This model captures the <em>essential physics</em> of how lattice motion affects electrons. It's the cleanest bridge between basic Schrödinger physics and electron-phonon intuition.</p>
+<hr />
+<h3 id="static-box-baseline">Static Box (Baseline)<a class="headerlink" href="#static-box-baseline" title="Permanent link">&para;</a></h3>
+<p><strong>Assumptions:</strong></p>
+<ul>
+<li>1D, one electron</li>
+<li>Infinite walls at <span class="arithmatex">\(x = 0\)</span> and <span class="arithmatex">\(x = L\)</span></li>
+<li>Walls do not move</li>
+<li>Time-independent Hamiltonian</li>
+</ul>
+<p>The Schrödinger equation inside the box:</p>
+<div class="arithmatex">\[
+-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} = E\psi
+\]</div>
+<p><strong>Solutions:</strong></p>
+<div class="arithmatex">\[
+\psi_n(x) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right)
+\]</div>
+<div class="arithmatex">\[
+E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}
+\]</div>
+<p><strong>What matters physically:</strong></p>
+<ul>
+<li>Each <span class="arithmatex">\(\psi_n\)</span> has a <strong>single, sharp energy</strong></li>
+<li>The probability density <span class="arithmatex">\(|\psi_n|^2\)</span> does not change in time</li>
+<li>This is the analog of a Bloch wave in a frozen crystal</li>
+</ul>
+<hr />
+<h3 id="now-make-the-walls-move">Now Make the Walls Move<a class="headerlink" href="#now-make-the-walls-move" title="Permanent link">&para;</a></h3>
+<p>Let:</p>
+<div class="arithmatex">\[
+L(t) = L_0 + \delta L \cos(\Omega t), \quad \delta L \ll L_0
+\]</div>
+<p>This does <strong>two critical things</strong>:</p>
+<ol>
+<li>The boundary conditions now depend on time</li>
+<li>The Hamiltonian now depends on time</li>
+</ol>
+<p>This immediately means:</p>
+<blockquote>
+<p><strong>Energy is no longer conserved for the electron alone.</strong></p>
+</blockquote>
+<hr />
+<h3 id="how-to-think-about-the-solution-no-heavy-math">How to Think About the Solution (No Heavy Math)<a class="headerlink" href="#how-to-think-about-the-solution-no-heavy-math" title="Permanent link">&para;</a></h3>
+<p>At each instant, the electron <em>tries</em> to look like one of the original box states. So we write:</p>
+<div class="arithmatex">\[
+\Psi(x,t) \approx c_1(t)\psi_1(x) + c_2(t)\psi_2(x) + c_3(t)\psi_3(x)
+\]</div>
+<p>You can imagine more terms, but three is enough for intuition.</p>
+<p><strong>What do these coefficients mean?</strong></p>
+<ul>
+<li><span class="arithmatex">\(|c_n(t)|^2\)</span> = probability of being in energy level <span class="arithmatex">\(n\)</span></li>
+<li>If walls are static: one <span class="arithmatex">\(c_n = 1\)</span>, the rest are zero</li>
+<li>If walls move: <strong>the <span class="arithmatex">\(c_n\)</span>'s change in time</strong></li>
+</ul>
+<hr />
+<h3 id="why-moving-walls-cause-energy-level-mixing">Why Moving Walls Cause Energy Level Mixing<a class="headerlink" href="#why-moving-walls-cause-energy-level-mixing" title="Permanent link">&para;</a></h3>
+<p>The key physical idea:</p>
+<ul>
+<li>Moving the walls changes the <em>shape</em> of the allowed wavefunctions</li>
+<li>The old eigenstates are no longer exact solutions</li>
+<li>The electron must "borrow" pieces of other states to stay consistent</li>
+</ul>
+<p>Mathematically (but gently):</p>
+<div class="arithmatex">\[
+\frac{dc_m}{dt} \propto \cos(\Omega t) \times (\text{overlap integrals})
+\]</div>
+<p><strong>What matters:</strong></p>
+<ul>
+<li>The cosine term is the <strong>energy pump</strong></li>
+<li>The overlaps determine <strong>which states can mix</strong></li>
+<li>Mixing is strongest when frequencies match</li>
+</ul>
+<hr />
+<h3 id="resonance-when-things-actually-happen">Resonance: When Things Actually Happen<a class="headerlink" href="#resonance-when-things-actually-happen" title="Permanent link">&para;</a></h3>
+<p>Each energy difference defines a natural frequency:</p>
+<div class="arithmatex">\[
+\omega_{mn} = \frac{E_m - E_n}{\hbar}
+\]</div>
+<p>If the wall oscillation frequency satisfies:</p>
+<div class="arithmatex">\[
+\Omega \approx \omega_{mn}
+\]</div>
+<p>then:</p>
+<ul>
+<li>Energy is transferred efficiently between levels</li>
+<li><span class="arithmatex">\(c_m(t)\)</span> grows significantly</li>
+<li>The electron enters a <strong>superposition of energies</strong></li>
+</ul>
+<p>This is generic behavior of driven quantum systems.</p>
+<hr />
+<h3 id="what-the-wavefunction-now-looks-like">What the Wavefunction Now Looks Like<a class="headerlink" href="#what-the-wavefunction-now-looks-like" title="Permanent link">&para;</a></h3>
+<p>Once multiple <span class="arithmatex">\(c_n\)</span>'s are nonzero:</p>
+<div class="arithmatex">\[
+\Psi(x,t) = c_1(t)\psi_1(x) + c_2(t)\psi_2(x)
+\]</div>
+<p>Then:</p>
+<div class="arithmatex">\[
+|\Psi(x,t)|^2 \text{ changes in time}
+\]</div>
+<p>This means:</p>
+<ul>
+<li>The electron no longer has a stationary probability cloud</li>
+<li>The electron is now a <strong>dynamic wave packet</strong></li>
+<li>Energy is genuinely uncertain</li>
+</ul>
+<p>This is the moment classical intuition starts to sneak back in.</p>
+<hr />
+<h3 id="why-this-maps-directly-to-phonons">Why This Maps Directly to Phonons<a class="headerlink" href="#why-this-maps-directly-to-phonons" title="Permanent link">&para;</a></h3>
+<p>Here is the <strong>exact conceptual mapping</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Moving Box</th>
+<th>Real Crystal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wall motion</td>
+<td>Ion motion</td>
+</tr>
+<tr>
+<td>Oscillation frequency <span class="arithmatex">\(\Omega\)</span></td>
+<td>Phonon frequency <span class="arithmatex">\(\omega_{\mathbf{q}}\)</span></td>
+</tr>
+<tr>
+<td>Energy pumped externally</td>
+<td>Energy exchanged internally</td>
+</tr>
+<tr>
+<td>No momentum exchange</td>
+<td>Phonon carries momentum <span class="arithmatex">\(\mathbf{q}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In a crystal:</p>
+<ul>
+<li>The potential minimum itself moves</li>
+<li>It moves <em>periodically</em> in both space and time</li>
+<li>That drives electrons into <strong>energy and momentum superpositions</strong></li>
+</ul>
+<hr />
+<h2 id="part-5-electron-phonon-coupling">Part 5: Electron-Phonon Coupling<a class="headerlink" href="#part-5-electron-phonon-coupling" title="Permanent link">&para;</a></h2>
+<h3 id="what-the-electron-actually-sees">What the Electron Actually Sees<a class="headerlink" href="#what-the-electron-actually-sees" title="Permanent link">&para;</a></h3>
+<p>When ions move, the electron experiences:</p>
+<div class="arithmatex">\[
+V(\mathbf{r}, t) = V_0(\mathbf{r}) + \delta V(\mathbf{r}, t)
+\]</div>
+<p>where <span class="arithmatex">\(V_0\)</span> is the periodic lattice potential and <span class="arithmatex">\(\delta V\)</span> is the time-dependent perturbation from lattice motion.</p>
+<hr />
+<h3 id="phonons-as-traveling-potential-waves">Phonons as Traveling Potential Waves<a class="headerlink" href="#phonons-as-traveling-potential-waves" title="Permanent link">&para;</a></h3>
+<p>A phonon creates a traveling deformation in the lattice:</p>
+<div class="arithmatex">\[
+\delta V(x,t) \approx A\cos(qx - \omega t)
+\]</div>
+<p>Think of it as a <strong>moving grating</strong> — a traveling Bragg reflector that diffracts the electron wave.</p>
+<p><strong>Key point:</strong> Phonons are quantized, like photons. In a scattering event, the electron either:</p>
+<ul>
+<li><strong>Absorbs</strong> the whole phonon: gains <span class="arithmatex">\(+\hbar q\)</span> momentum, gains <span class="arithmatex">\(+\hbar\omega\)</span> energy, phonon destroyed</li>
+<li><strong>Emits</strong> a whole phonon: loses <span class="arithmatex">\(\hbar q\)</span> momentum, loses <span class="arithmatex">\(\hbar\omega\)</span> energy, phonon created</li>
+</ul>
+<p>No partial absorption. The entire phonon's momentum and energy transfer to the electron (or vice versa). Conservation is exact.</p>
+<hr />
+<h3 id="why-temperature-matters">Why Temperature Matters<a class="headerlink" href="#why-temperature-matters" title="Permanent link">&para;</a></h3>
+<p><strong>Impurities:</strong> static perturbation → scattering rate independent of <span class="arithmatex">\(T\)</span>.</p>
+<p><strong>Phonons:</strong> dynamic perturbation → more phonons at higher <span class="arithmatex">\(T\)</span> → more scattering → resistivity <span class="arithmatex">\(\propto T\)</span>.</p>
+<p>At low <span class="arithmatex">\(T\)</span>, impurity scattering dominates (residual resistivity). At high <span class="arithmatex">\(T\)</span>, phonon scattering dominates.</p>
+<hr />
+<h3 id="why-electron-phonon-scattering-increases-with-temperature">Why Electron-Phonon Scattering Increases with Temperature<a class="headerlink" href="#why-electron-phonon-scattering-increases-with-temperature" title="Permanent link">&para;</a></h3>
+<p>As temperature rises, more phonon modes are populated and their amplitudes increase. This makes the lattice potential increasingly time-dependent and spatially distorted. Electrons are therefore driven into superpositions of nearby Bloch states more frequently, shortening quasiparticle lifetimes and increasing momentum relaxation.</p>
+<p>In wavefunction language, scattering increases because the electron's state is being reshaped more often, not because particles collide more violently.</p>
+<hr />
+<h2 id="part-6-from-bloch-waves-to-wave-packets">Part 6: From Bloch Waves to Wave Packets<a class="headerlink" href="#part-6-from-bloch-waves-to-wave-packets" title="Permanent link">&para;</a></h2>
+<p>A pure Bloch state has one sharp <span class="arithmatex">\(\mathbf{k}\)</span>. By Fourier duality: sharp <span class="arithmatex">\(\mathbf{k}\)</span> means delocalized in space — the electron is spread across the entire crystal. And because it's an energy eigenstate, it's <strong>stationary</strong> — the probability density doesn't move.</p>
+<p>So how does an electron ever get from A to B?</p>
+<p><strong>Answer:</strong> Phonons (and other symmetry-breakers) mix in multiple <span class="arithmatex">\(\mathbf{k}\)</span> components. A superposition of different <span class="arithmatex">\(\mathbf{k}\)</span>'s is a <strong>wave packet</strong> — localized in space, and it <strong>moves</strong> with group velocity <span class="arithmatex">\(v_g = \frac{1}{\hbar}\frac{dE}{dk}\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Pure Bloch state</th>
+<th>Wave packet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\mathbf{k}\)</span> content</td>
+<td>Single sharp <span class="arithmatex">\(\mathbf{k}\)</span></td>
+<td>Spread of <span class="arithmatex">\(\mathbf{k}\)</span>'s</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>Delocalized (entire crystal)</td>
+<td>Localized (<span class="arithmatex">\(\Delta x \sim 1/\Delta k\)</span>)</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>None — stationary</td>
+<td>Moves with group velocity</td>
+</tr>
+</tbody>
+</table>
+<p>This is exactly what the moving-walls toy model showed: oscillating walls → superposition of energy levels → probability density that sloshes around.</p>
+<hr />
+<h3 id="what-scattering-really-is-a-concrete-example">What "Scattering" Really Is — A Concrete Example<a class="headerlink" href="#what-scattering-really-is-a-concrete-example" title="Permanent link">&para;</a></h3>
+<p>Forget billiard balls. Here's what actually happens.</p>
+<p><strong>Notation:</strong> <span class="arithmatex">\(|k\rangle\)</span> is shorthand for a Bloch state with crystal momentum <span class="arithmatex">\(k\)</span> — the full wavefunction <span class="arithmatex">\(\psi_k(\mathbf{r}) = e^{ikx} u_k(\mathbf{r})\)</span> that extends across the crystal.</p>
+<p><strong>Before scattering:</strong> An electron wave packet is a superposition of Bloch states with different <span class="arithmatex">\(k\)</span> values:</p>
+<div class="arithmatex">\[|\psi_{\text{before}}\rangle = 0.8|k_1\rangle + 0.5|k_2\rangle + 0.3|k_3\rangle\]</div>
+<p>where <span class="arithmatex">\(k_1 = 5.0\)</span>, <span class="arithmatex">\(k_2 = 5.1\)</span>, <span class="arithmatex">\(k_3 = 4.9\)</span> nm<span class="arithmatex">\(^{-1}\)</span>. The packet is centered around <span class="arithmatex">\(k \approx 5\)</span> nm<span class="arithmatex">\(^{-1}\)</span>, with spread <span class="arithmatex">\(\Delta k \approx 0.1\)</span> nm<span class="arithmatex">\(^{-1}\)</span>, giving localization <span class="arithmatex">\(\sim 1/\Delta k \approx 10\)</span> nm.</p>
+<p><strong>A phonon arrives:</strong> wavevector <span class="arithmatex">\(q = 0.5\)</span> nm<span class="arithmatex">\(^{-1}\)</span>, energy <span class="arithmatex">\(\hbar\omega = 15\)</span> meV.</p>
+<p><strong>After scattering (phonon absorbed):</strong> Each <span class="arithmatex">\(k\)</span> component shifts by <span class="arithmatex">\(+q\)</span>:</p>
+<div class="arithmatex">\[|\psi_{\text{after}}\rangle = 0.6|k_1 + q\rangle + 0.7|k_2 + q\rangle + 0.4|k_3 + q\rangle + \text{new components}\]</div>
+<p>Now centered around <span class="arithmatex">\(k \approx 5.5\)</span> nm<span class="arithmatex">\(^{-1}\)</span>. The amplitudes changed, new <span class="arithmatex">\(k\)</span> components appeared, and the spread increased.</p>
+<p><strong>What happened to the phonon?</strong> It was destroyed — the electron absorbed the whole phonon (they're quantized, like photons). The electron gained its momentum (<span class="arithmatex">\(+\hbar q\)</span>) and energy (<span class="arithmatex">\(+\hbar\omega\)</span>). Conservation is exact.</p>
+<p><strong>For emission:</strong> reverse everything. The electron loses momentum (<span class="arithmatex">\(-\hbar q\)</span>) and energy (<span class="arithmatex">\(-\hbar\omega\)</span>), creating a new phonon.</p>
+<p><strong>Why is this irreversible (decoherence)?</strong> After scattering, the electron's phase information is now entangled with the phonon bath. The old amplitudes <span class="arithmatex">\(\{0.8, 0.5, 0.3\}\)</span> are gone — you can't interfere the "before" and "after" states because which-path information leaked into the environment. The electron has no memory of its previous <span class="arithmatex">\(k\)</span> distribution. This loss of phase coherence is what makes scattering effectively one-way, even though the underlying physics is time-reversible.</p>
+<p><strong>The point:</strong> "Scattering" is the amplitudes <span class="arithmatex">\(\{0.8, 0.5, 0.3, ...\}\)</span> being reshuffled into <span class="arithmatex">\(\{0.6, 0.7, 0.4, ...\}\)</span> with shifted <span class="arithmatex">\(k\)</span> values. No collision, no impact point — just Fourier components being added and removed, with phase information lost to the environment.</p>
+<hr />
+<h3 id="the-alphabet-vs-words-analogy">The "Alphabet vs Words" Analogy<a class="headerlink" href="#the-alphabet-vs-words-analogy" title="Permanent link">&para;</a></h3>
+<p>Think of Bloch states as letters in an alphabet:</p>
+<ul>
+<li>Individual letters (Bloch states) are building blocks</li>
+<li>Real electrons are words — specific combinations</li>
+<li>Phonons constantly "edit" the words by swapping letters in and out</li>
+</ul>
+<p>The alphabet remains fixed; only the combinations change.</p>
+<hr />
+<h2 id="part-7-pauli-exclusion-and-deep-electrons">Part 7: Pauli Exclusion and Deep Electrons<a class="headerlink" href="#part-7-pauli-exclusion-and-deep-electrons" title="Permanent link">&para;</a></h2>
+<p>Deep electrons are still wave packets — phonons perturb them into superpositions of <span class="arithmatex">\(\mathbf{k}\)</span> states just like any other electron. Pauli exclusion doesn't freeze them into pure Bloch states. But for transport, what matters is whether electrons can <em>change</em> their net momentum distribution. Deep electrons have all nearby states occupied — nowhere to go. Only electrons near the Fermi surface have empty states to scatter into, so they dominate conduction.</p>
+<hr />
+<h2 id="part-8-what-does-t-0-really-mean">Part 8: What Does T = 0 Really Mean?<a class="headerlink" href="#part-8-what-does-t-0-really-mean" title="Permanent link">&para;</a></h2>
+<p>Even at <span class="arithmatex">\(T = 0\)</span>, zero-point motion persists — ions still jiggle. But the <em>average</em> potential remains periodic, so band structure stays accurate. An electron starting near some <span class="arithmatex">\(\mathbf{k}\)</span> will eventually scatter to other <span class="arithmatex">\(\mathbf{k}\)</span> values; at lower <span class="arithmatex">\(T\)</span>, fewer phonons means it stays near that <span class="arithmatex">\(\mathbf{k}\)</span> longer before being reshuffled. But zero-point motion means some scattering always happens — electrons never sit in a pure Bloch state forever.</p>
+<hr />
+<h2 id="part-9-common-misconceptions">Part 9: Common Misconceptions<a class="headerlink" href="#part-9-common-misconceptions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Electrons bounce off ions like billiard balls"</td>
+<td>Wavefunctions reshape; there's no impact point</td>
+</tr>
+<tr>
+<td>"Only electrons near Fermi level are quantum"</td>
+<td>All electrons are quantum waves; deep ones just don't change occupancy</td>
+</tr>
+<tr>
+<td>"Phonons are fake mathematical particles"</td>
+<td>Phonons are as real as photons — quantized collective excitations</td>
+</tr>
+<tr>
+<td>"Bloch waves are just approximations"</td>
+<td>They're exact under symmetry; the approximation is assuming that symmetry holds</td>
+</tr>
+<tr>
+<td>"At T=0, electrons are perfect Bloch waves forever"</td>
+<td>Zero-point motion still breaks exact periodicity</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-10-the-mental-model-to-keep">Part 10: The Mental Model to Keep<a class="headerlink" href="#part-10-the-mental-model-to-keep" title="Permanent link">&para;</a></h2>
+<p>Carry this hierarchy with you:</p>
+<ol>
+<li>
+<p><strong>In a perfect crystal,</strong> electrons are stationary Bloch waves extending across the entire lattice</p>
+</li>
+<li>
+<p><strong>Real crystals break symmetry</strong> through:</p>
+</li>
+<li>Lattice motion (phonons) — always present</li>
+<li>Defects and impurities</li>
+<li>
+<p>Surfaces and finite size</p>
+</li>
+<li>
+<p><strong>Phonons are organized, quantized lattice motion</strong> — collective oscillations, not random jiggling</p>
+</li>
+<li>
+<p><strong>Phonons force electrons into superpositions</strong> of energies and momenta through time-dependent potentials</p>
+</li>
+<li>
+<p><strong>Momentum and energy are conserved</strong> — when an electron gains <span class="arithmatex">\(+\mathbf{q}\)</span>, a phonon loses <span class="arithmatex">\(-\mathbf{q}\)</span> (absorption), or vice versa (emission). Electrons can create and destroy phonons; the interaction is bidirectional, not electrons being pushed around by a fixed background</p>
+</li>
+<li>
+<p><strong>These superpositions form wave packets</strong> — spatially localized, with uncertain momentum</p>
+</li>
+<li>
+<p><strong>"Scattering" is wavefunction reshaping,</strong> not collisions — momentum components are added and removed</p>
+</li>
+<li>
+<p><strong>Classical behavior emerges</strong> only after phase coherence is lost over many scattering events</p>
+</li>
+</ol>
+<hr />
+<h2 id="the-bottom-line">The Bottom Line<a class="headerlink" href="#the-bottom-line" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Are electrons in metals Bloch waves or localized particles?</strong></p>
+<p><strong>A: Bloch waves are the alphabet. Real electrons are words.</strong></p>
+<p>Bloch states <span class="arithmatex">\(\psi_{n\mathbf{k}}\)</span> are exact solutions <em>only</em> for a perfect, frozen, infinite crystal — a mathematical idealization. They form a complete basis set. Real electrons are <em>superpositions</em> of Bloch states:</p>
+<div class="arithmatex">\[\Psi(\mathbf{r}) = \int a(\mathbf{k}) \, \psi_{n\mathbf{k}}(\mathbf{r}) \, d\mathbf{k}\]</div>
+<p><strong>What breaks the symmetry:</strong> Phonons, defects, surfaces — anything that makes <span class="arithmatex">\(V(\mathbf{r})\)</span> non-periodic. Phonons are always present (even zero-point motion at <span class="arithmatex">\(T=0\)</span>).</p>
+<p><strong>What "scattering" actually is:</strong> Not collisions. The electron wavefunction gains and loses <span class="arithmatex">\(\mathbf{k}\)</span> components. A sharp momentum state spreads into a distribution — that spread <em>is</em> localization.</p>
+<p><strong>The intuition pump:</strong> Remember the particle-in-a-box with moving walls. Static walls → electron sits in one energy eigenstate forever. Oscillating walls → the <span class="arithmatex">\(c_n(t)\)</span> coefficients change → electron enters superposition of energy levels. That's <em>exactly</em> what phonons do to Bloch states. A phonon is a moving wall — a traveling potential deformation that pumps the electron into superpositions of <span class="arithmatex">\(\mathbf{k}\)</span> and <span class="arithmatex">\(E\)</span>.</p>
+<p><strong>Why classical intuition eventually works:</strong> After many scattering events, phase coherence is lost. You can no longer track the delicate interference pattern — only the wave packet's average position and momentum. At that point, it behaves like a localized object bouncing around.</p>
+<p><strong>The one sentence version:</strong></p>
+<blockquote>
+<p>Phonons spread electrons across multiple <span class="arithmatex">\(\mathbf{k}\)</span> states; by Fourier duality, uncertainty in momentum <em>is</em> localization in space — that's why wave packets form and can scatter around like particles.</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

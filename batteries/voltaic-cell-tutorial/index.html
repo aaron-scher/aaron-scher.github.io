@@ -1,0 +1,3166 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/batteries/voltaic-cell-tutorial/">
+      
+      
+        <link rel="prev" href="../../microwave-engineering/resonant-coupling-networks/">
+      
+      
+        <link rel="next" href="../../arm-assembly/arm-assembly-fundamentals/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Voltaic Cells: How Batteries Work - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#voltaic-cells-how-batteries-work" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Voltaic Cells: How Batteries Work
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-key-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Key Players
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Key Players">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Electrons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Ions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-happens-when-metal-meets-electrolyte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. What Happens When Metal Meets Electrolyte?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. What Happens When Metal Meets Electrolyte?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-key-phenomenon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Key Phenomenon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does This Happen?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-electrode-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Electrode Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-oxidation-and-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Oxidation and Reduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Oxidation and Reduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-oilrig-mnemonic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The OILRIG Mnemonic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-origin-of-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical Origin of Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-our-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Our Battery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-does-the-energy-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Does the Energy Come From?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-zinc-and-not-copper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Why Zinc and Not Copper?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Why Zinc and Not Copper?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-galvanic-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Galvanic Series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zinc-vs-copper-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zinc vs Copper Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Difference?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-complete-voltaic-cell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The Complete Voltaic Cell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. The Complete Voltaic Cell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-basic-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Basic Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-the-furnace-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 The Furnace Metaphor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-circuit-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Circuit Representation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-why-must-electrodes-share-electrolyte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Why Must Electrodes Share Electrolyte?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-why-does-voltage-decrease-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Why Does Voltage Decrease Over Time?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-the-cathode-reaction-why-it-matters-and-how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 The Cathode Reaction: Why It Matters and How It Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 The Cathode Reaction: Why It Matters and How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-multi-step-mechanism-of-hydrogen-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Multi-Step Mechanism of Hydrogen Evolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-reduction-reaction-is-essential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Reduction Reaction is Essential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concentration-changes-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concentration Changes Over Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-our-cell-vs-lithium-ion-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Our Cell vs. Lithium-Ion Battery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery-vs-capacitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Battery vs. Capacitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-lemon-battery-revisited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The Lemon Battery Revisited
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-zinc-granules-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Zinc Granules Experiment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Zinc Granules Experiment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-do-bubbles-form-on-zinc-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Do Bubbles Form on Zinc Itself?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-historical-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Historical Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Historical Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-voltas-pile-1800" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Volta's Pile (1800)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-daniell-cell-1836" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Daniell Cell (1836)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-galvanic-corrosion-the-dark-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Galvanic Corrosion: The Dark Side
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#half-reaction-standard-potentials-25c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Half-Reaction Standard Potentials (25°C)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#video-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#academic-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Academic Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-key-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Key Players
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Key Players">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Electrons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Ions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-happens-when-metal-meets-electrolyte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. What Happens When Metal Meets Electrolyte?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. What Happens When Metal Meets Electrolyte?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-key-phenomenon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Key Phenomenon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does This Happen?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-electrode-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Electrode Potential
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-oxidation-and-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Oxidation and Reduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Oxidation and Reduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-oilrig-mnemonic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The OILRIG Mnemonic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-origin-of-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical Origin of Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-our-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Our Battery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-does-the-energy-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Does the Energy Come From?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-zinc-and-not-copper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Why Zinc and Not Copper?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Why Zinc and Not Copper?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-galvanic-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Galvanic Series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zinc-vs-copper-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zinc vs Copper Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Difference?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-complete-voltaic-cell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The Complete Voltaic Cell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. The Complete Voltaic Cell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-basic-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Basic Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-the-furnace-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 The Furnace Metaphor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-circuit-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Circuit Representation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-why-must-electrodes-share-electrolyte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Why Must Electrodes Share Electrolyte?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-why-does-voltage-decrease-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Why Does Voltage Decrease Over Time?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-the-cathode-reaction-why-it-matters-and-how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 The Cathode Reaction: Why It Matters and How It Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 The Cathode Reaction: Why It Matters and How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-multi-step-mechanism-of-hydrogen-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Multi-Step Mechanism of Hydrogen Evolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-reduction-reaction-is-essential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Reduction Reaction is Essential
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concentration-changes-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concentration Changes Over Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-our-cell-vs-lithium-ion-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Our Cell vs. Lithium-Ion Battery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery-vs-capacitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Battery vs. Capacitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-lemon-battery-revisited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The Lemon Battery Revisited
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-zinc-granules-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Zinc Granules Experiment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Zinc Granules Experiment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-do-bubbles-form-on-zinc-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Do Bubbles Form on Zinc Itself?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-historical-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Historical Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Historical Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-voltas-pile-1800" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Volta's Pile (1800)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-daniell-cell-1836" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Daniell Cell (1836)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-galvanic-corrosion-the-dark-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Galvanic Corrosion: The Dark Side
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#half-reaction-standard-potentials-25c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Half-Reaction Standard Potentials (25°C)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#video-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#academic-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Academic Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="voltaic-cells-how-batteries-work">Voltaic Cells: How Batteries Work<a class="headerlink" href="#voltaic-cells-how-batteries-work" title="Permanent link">&para;</a></h1>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>A lemon, a nail, and a penny can power an LED. How?</p>
+<p><img alt="Figure 1: A lemon battery - zinc nail and copper penny electrodes in citric acid" src="../Voltaic%20cell%20tutorial%20images/lemmon%20battery.png" />
+<em>Figure 1: The lemon battery demonstrates all the principles of electrochemistry. The lemon provides an acidic electrolyte, while the zinc nail and copper penny serve as electrodes.</em></p>
+<p>This tutorial explains the electrochemistry behind batteries using the lemon battery as our central example. We'll introduce the key players (electrons and ions), explain what happens when metal meets electrolyte, and build up to understanding complete voltaic cells.</p>
+<p><strong>Important:</strong> The lemon is NOT the energy source. The energy comes from zinc oxidation - the lemon just provides the acidic environment where the chemistry can happen.</p>
+<hr />
+<h2 id="2-the-key-players">2. The Key Players<a class="headerlink" href="#2-the-key-players" title="Permanent link">&para;</a></h2>
+<p>Before diving into batteries, let's meet our cast of characters and understand their movement rules.</p>
+<h3 id="21-electrons">2.1 Electrons<a class="headerlink" href="#21-electrons" title="Permanent link">&para;</a></h3>
+<p>Electrons are negatively charged particles found in the outer shells of atoms. In metals, the outermost electrons aren't bound to individual atoms - they form a "sea" of mobile electrons due to metallic bonding.</p>
+<p><strong>Critical rule:</strong> Electrons can travel through metals but CANNOT travel through electrolytes. Why? There's an energy barrier preventing electrons from leaving the metal and entering solution. This isn't just "difficult" - it's energetically forbidden under normal conditions.</p>
+<h3 id="22-ions">2.2 Ions<a class="headerlink" href="#22-ions" title="Permanent link">&para;</a></h3>
+<p>Ions are atoms that have gained or lost electrons:</p>
+<ul>
+<li><strong>Cations (+):</strong> Atoms that have lost electrons (positive charge)</li>
+<li><strong>Anions (-):</strong> Atoms that have gained electrons (negative charge)</li>
+</ul>
+<p>When ionic compounds dissolve in water, they dissociate into ions:</p>
+<p><img alt="Figure 2: Examples of electrolyte dissociation" src="../Voltaic%20cell%20tutorial%20images/Electrolyte%20cartoons.png" />
+<em>Figure 2: Common electrolytes dissociating into ions. NaCl → Na⁺ + Cl⁻, H₂SO₄ → 2H⁺ + SO₄²⁻, KCl → K⁺ + Cl⁻</em></p>
+<p><strong>Critical rule:</strong> Ions CAN travel through electrolytes but CANNOT travel through metals. The crystalline structure of metals doesn't allow ions to pass through.</p>
+<h3 id="summary-table">Summary Table<a class="headerlink" href="#summary-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Player</th>
+<th>What it is</th>
+<th>Where it moves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron (e⁻)</td>
+<td>Negative particle</td>
+<td>Metals ONLY</td>
+</tr>
+<tr>
+<td>Cation (+)</td>
+<td>Atom missing electrons</td>
+<td>Electrolyte only</td>
+</tr>
+<tr>
+<td>Anion (-)</td>
+<td>Atom with extra electrons</td>
+<td>Electrolyte only</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key insight:</strong> A battery works because electrons and ions have different "allowed paths." This separation is what creates useful current - electrons must go through an external wire while ions complete the circuit through the electrolyte.</p>
+</blockquote>
+<hr />
+<h2 id="3-what-happens-when-metal-meets-electrolyte">3. What Happens When Metal Meets Electrolyte?<a class="headerlink" href="#3-what-happens-when-metal-meets-electrolyte" title="Permanent link">&para;</a></h2>
+<p><strong>This is the most important section.</strong> Understanding what happens at the metal-electrolyte interface is the foundation of all electrochemistry.</p>
+<p><img alt="Figure 3: A metal bar immersed in an electrolyte solution" src="../Voltaic%20cell%20tutorial%20images/Metal%20bar%20in%20solution.png" />
+<em>Figure 3: When a metal bar is placed in an electrolyte, it spontaneously becomes negatively charged.</em></p>
+<h3 id="the-key-phenomenon">The Key Phenomenon<a class="headerlink" href="#the-key-phenomenon" title="Permanent link">&para;</a></h3>
+<p>When you place a zinc bar in sulfuric acid, <strong>the metal bar becomes negatively charged</strong>. This happens spontaneously, with no external power source.</p>
+<h3 id="why-does-this-happen">Why Does This Happen?<a class="headerlink" href="#why-does-this-happen" title="Permanent link">&para;</a></h3>
+<p>Let's trace through what happens when zinc meets sulfuric acid:</p>
+<p><strong>The starting point:</strong> The acid is already dissociated in water (this happens the moment you make the solution, before any metal is involved):</p>
+<div class="arithmatex">\[\text{H}_2\text{SO}_4 \rightarrow 2\text{H}^+ + \text{SO}_4^{2-}\]</div>
+<p><strong>When zinc enters the solution:</strong></p>
+<ol>
+<li><strong>Zinc oxidizes</strong> - Zinc atoms leave the metal surface and enter solution as Zn²⁺ ions:</li>
+</ol>
+<div class="arithmatex">\[\text{Zn}(s) \rightarrow \text{Zn}^{2+}(aq) + 2e^-\]</div>
+<p>Crucially, the electrons stay behind in the metal - they cannot enter the electrolyte.</p>
+<ol>
+<li>
+<p><strong>Negative charge builds</strong> - As more zinc atoms oxidize, electrons accumulate on the zinc surface. The metal becomes increasingly negatively charged.</p>
+</li>
+<li>
+<p><strong>Double layer forms</strong> - The negative surface attracts positive ions (Zn²⁺, H⁺) from solution, forming what's called the <strong>electric double layer</strong>.</p>
+</li>
+<li>
+<p><strong>Equilibrium reached</strong> - Eventually, the electric field from the accumulated charge opposes further oxidation. The system reaches equilibrium.</p>
+</li>
+</ol>
+<p><img alt="Figure 4: The electric double layer at the metal-electrolyte interface" src="../Voltaic%20cell%20tutorial%20images/Electric%20double%20layer.png" />
+<em>Figure 4: The electric double layer. Here's what you're seeing: The brown bar on the left is the metal (negatively charged). The blue ⊕ circles are </em><em>all the cations in solution</em><em> - this includes both the Zn²⁺ ions that dissolved from the metal AND the H⁺ ions that were already in the acid. The red ⊖ circles are anions (like SO₄²⁻). Because the metal surface is negative, positive ions (cations) cluster near it - these are called "counterions." The green curve shows how the electric potential drops from ψ₀ at the metal surface to zero in the bulk solution. The "Debye length" marks roughly where this transition happens.</em></p>
+<blockquote>
+<p><strong>Key analogy:</strong> Metal in electrolyte acts like a "self-charging capacitor." The oxidation reaction provides the energy to build up and maintain the negative charge on the metal surface.</p>
+</blockquote>
+<h3 id="the-electrode-potential">The Electrode Potential<a class="headerlink" href="#the-electrode-potential" title="Permanent link">&para;</a></h3>
+<p>Each metal-electrolyte interface develops a characteristic voltage called the <strong>standard electrode potential</strong>. For zinc, this is <span class="arithmatex">\(E_{0,\text{Zn}} = -0.76\)</span> V. The negative sign indicates zinc has a strong tendency to oxidize (lose electrons). We'll use this number later to calculate battery voltage.</p>
+<hr />
+<h2 id="4-oxidation-and-reduction">4. Oxidation and Reduction<a class="headerlink" href="#4-oxidation-and-reduction" title="Permanent link">&para;</a></h2>
+<p><img alt="Figure 5: Oxidation and reduction reactions" src="../Voltaic%20cell%20tutorial%20images/oxidation%20and%20reduction.png" />
+<em>Figure 5: Oxidation is loss of electrons; reduction is gain of electrons.</em></p>
+<h3 id="the-oilrig-mnemonic">The OILRIG Mnemonic<a class="headerlink" href="#the-oilrig-mnemonic" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>O</strong>xidation <strong>I</strong>s <strong>L</strong>oss (of electrons)</li>
+<li><strong>R</strong>eduction <strong>I</strong>s <strong>G</strong>ain (of electrons)</li>
+</ul>
+<h3 id="historical-origin-of-terms">Historical Origin of Terms<a class="headerlink" href="#historical-origin-of-terms" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>"Oxidation"</strong> - Originally meant "combining with oxygen." Why does oxygen take electrons? Oxygen atoms have 6 electrons in their outer shell but "want" 8 (a full shell). This makes oxygen highly <strong>electronegative</strong> - it strongly attracts electrons from other atoms. When iron rusts (Fe + O₂ → Fe₂O₃), the oxygen is pulling electrons away from the iron. Later, chemists realized the key event was <em>losing electrons</em>, whether oxygen was involved or not.</p>
+</li>
+<li>
+<p><strong>"Reduction"</strong> - Originally a metallurgy term. An <strong>ore</strong> is rock containing metal bonded to other elements (usually oxygen) - like iron ore (Fe₂O₃) or copper ore (CuO). Ancient metalworkers would heat ore with charcoal, and the pure metal would emerge. They called this "reduction" because the ore's mass <em>literally reduced</em> (the oxygen left as CO₂ gas). What's happening chemically? The oxygen had been hogging the metal's electrons. When oxygen leaves, the metal gets those electrons back. So "reduction" = gaining electrons.</p>
+</li>
+</ul>
+<h3 id="in-our-battery">In Our Battery<a class="headerlink" href="#in-our-battery" title="Permanent link">&para;</a></h3>
+<p><strong>At the anode (oxidation):</strong></p>
+<div class="arithmatex">\[\text{Zn}(s) \rightarrow \text{Zn}^{2+}(aq) + 2e^-\]</div>
+<p><strong>At the cathode (reduction):</strong></p>
+<div class="arithmatex">\[2\text{H}^+(aq) + 2e^- \rightarrow \text{H}_2(g)\]</div>
+<p><strong>Full reaction:</strong></p>
+<div class="arithmatex">\[\text{Zn}(s) + 2\text{H}^+(aq) \rightarrow \text{Zn}^{2+}(aq) + \text{H}_2(g)\]</div>
+<h3 id="where-does-the-energy-come-from">Where Does the Energy Come From?<a class="headerlink" href="#where-does-the-energy-come-from" title="Permanent link">&para;</a></h3>
+<p>Let's build up an analogy that captures what's really happening.</p>
+<p><strong>The Setup:</strong> Imagine a compressed spring that can launch balls up onto a ledge. The ledge sits above a turbine - when balls roll off, they spin the turbine and do useful work.</p>
+<p><strong>The Analogy:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Analogy</th>
+<th>Battery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compressed spring</td>
+<td>Chemical energy stored in zinc metal</td>
+</tr>
+<tr>
+<td>Spring releases, launches ball up</td>
+<td>Zinc oxidizes: Zn → Zn²⁺ + 2e⁻</td>
+</tr>
+<tr>
+<td>Ball lands on ledge</td>
+<td>Electron arrives at high electrical potential (in the double layer)</td>
+</tr>
+<tr>
+<td>Ball rolls off through turbine</td>
+<td>Electron flows through external circuit, doing work</td>
+</tr>
+</tbody>
+</table>
+<p>But here's what makes this analogy actually useful - <strong>the feedback mechanism:</strong></p>
+<ul>
+<li>As balls accumulate on the ledge, their weight presses on a lock that prevents the spring from firing</li>
+<li>When the ledge is "full," the spring is locked - no more balls can be launched</li>
+<li>This is equilibrium: zinc in acid with no circuit connected. Oxidation stops because electrons have accumulated.</li>
+</ul>
+<p>Now connect the circuit:</p>
+<ul>
+<li>Balls start rolling off the ledge (electrons flow through wire)</li>
+<li>The ledge gets lighter → the lock releases → the spring can fire again</li>
+<li>More balls get launched up (more zinc oxidizes)</li>
+<li>This sustains the current until the spring is exhausted (zinc consumed)</li>
+</ul>
+<p><strong>Where was the energy originally?</strong> In the compressed spring - which represents the chemical bonds of zinc metal. It took energy to produce metallic zinc in the first place (extracted from ore in a factory). That energy is now stored in the zinc, waiting to be released.</p>
+<p><strong>Where does the energy go?</strong></p>
+<ol>
+<li>First into <strong>electrical potential</strong> - the spring launches balls up to the ledge (electrons get pumped to high voltage)</li>
+<li>Then into <strong>useful work</strong> - balls roll through the turbine (electrons flow through your LED, motor, etc.)</li>
+<li>Some into <strong>heat</strong> - friction in the system (the battery warms slightly)</li>
+<li>Some into <strong>forming H₂</strong> - at the cathode, energy goes into making hydrogen gas</li>
+</ol>
+<p><strong>One more detail:</strong> Why can't the electron just follow the Zn²⁺ into solution? Because electrons cannot travel through electrolytes - there's an energy barrier. The electron is <em>trapped</em> in the metal. Its "parent" Zn²⁺ has left, and the electron "wants" to follow the positive charge, but it can only escape through the external wire. This is what creates voltage.</p>
+<p>(The Zn²⁺ does meet negative charges in solution - water molecules and anions surround and stabilize it. This "solvation energy" is part of why the reaction is favorable. But the electron can't follow - it's stuck.)</p>
+<p><img alt="Figure 6: Simple equivalent circuit showing energy flow" src="../Voltaic%20cell%20tutorial%20images/Simple%20equivlent%20circuit.png" />
+<em>Figure 6: The zinc oxidizing acts as an energy source (EMF), while hydrogen reduction acts as an energy sink.</em></p>
+<hr />
+<h2 id="5-why-zinc-and-not-copper">5. Why Zinc and Not Copper?<a class="headerlink" href="#5-why-zinc-and-not-copper" title="Permanent link">&para;</a></h2>
+<p>Not all metals behave the same in electrolytes. Why does zinc oxidize readily while copper doesn't react with dilute acid?</p>
+<h3 id="the-galvanic-series">The Galvanic Series<a class="headerlink" href="#the-galvanic-series" title="Permanent link">&para;</a></h3>
+<p><img alt="Figure 7: The galvanic series of metals" src="../Voltaic%20cell%20tutorial%20images/galvonic%203.png" />
+<em>Figure 7: The galvanic series ranks metals by their tendency to oxidize. Metals at the anodic end (top) oxidize easily; metals at the cathodic end (bottom) are "noble" and resist oxidation.</em></p>
+<ul>
+<li><strong>Anodic end (top):</strong> Mg, Zn, Al - more reactive, easily oxidize</li>
+<li><strong>Cathodic end (bottom):</strong> Cu, Ag, Au - less reactive, noble metals</li>
+</ul>
+<p><strong>Why the difference?</strong> It comes down to how tightly each metal holds its outer electrons:</p>
+<ul>
+<li>Every metal atom has a positive nucleus pulling on its electrons</li>
+<li>But outer electrons are <strong>shielded</strong> from the nucleus by inner electron shells</li>
+<li>The balance between nuclear pull and shielding determines how easily an electron can escape</li>
+</ul>
+<p>Zinc's outer electrons sit in orbitals that are relatively exposed and loosely held - they're easy to remove. Gold's outer electrons, despite gold having way more protons, are held very tightly due to how its many electron shells are arranged (plus relativistic effects that contract its orbitals). So gold stubbornly keeps its electrons while zinc readily gives them up.</p>
+<h3 id="zinc-vs-copper-comparison">Zinc vs Copper Comparison<a class="headerlink" href="#zinc-vs-copper-comparison" title="Permanent link">&para;</a></h3>
+<p><img alt="Figure 8: Zinc versus copper behavior in acid" src="../Voltaic%20cell%20tutorial%20images/Zinc%20versus%20Cu%20in%20solution.png" />
+<em>Figure 8: Zinc actively dissolves in dilute acid, forming a double layer and releasing electrons. Copper does not react.</em></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Zinc</th>
+<th>Copper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard potential E₀</td>
+<td>-0.76 V</td>
+<td>+0.34 V</td>
+</tr>
+<tr>
+<td>In H₂SO₄</td>
+<td>Oxidizes, forms double layer</td>
+<td>Does NOT react</td>
+</tr>
+<tr>
+<td>Battery role</td>
+<td>Anode (oxidizes)</td>
+<td>Cathode (reduction site)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-the-difference">Why the Difference?<a class="headerlink" href="#why-the-difference" title="Permanent link">&para;</a></h3>
+<p>This comes down to quantum mechanics and electron configuration. In metallic bonding, electrons move freely through the metal. However, there's an energy barrier preventing electrons from entering the electrolyte.</p>
+<p>Zinc's electronic structure makes it "want" to release electrons more readily than copper. This isn't simply about having more protons - it's about the energy levels of the valence electrons and how they interact with the metal's band structure.</p>
+<blockquote>
+<p><strong>Key insight:</strong> Battery voltage equals the difference in standard potentials:</p>
+<div class="arithmatex">\[V_{\text{batt}} = |\mathcal{E}_{\text{Zn,ox}}| - |\mathcal{E}_{\text{H,red}}| = 0.76 \text{ V}\]</div>
+</blockquote>
+<hr />
+<h2 id="6-the-complete-voltaic-cell">6. The Complete Voltaic Cell<a class="headerlink" href="#6-the-complete-voltaic-cell" title="Permanent link">&para;</a></h2>
+<h3 id="61-basic-setup">6.1 Basic Setup<a class="headerlink" href="#61-basic-setup" title="Permanent link">&para;</a></h3>
+<p><img alt="Figure 9: Glass container with zinc and copper electrodes" src="../Voltaic%20cell%20tutorial%20images/Glass%20with%20electrodes%20in%20solution.png" />
+<em>Figure 9: Basic voltaic cell setup with zinc and copper electrodes in sulfuric acid.</em></p>
+<p><img alt="Figure 10: Voltaic cell showing electron and ion flow" src="../Voltaic%20cell%20tutorial%20images/Voltaic%20cell%20in%20a%20glass%20cartoon.png" />
+<em>Figure 10: When the circuit closes, electrons flow from zinc through the wire to copper, while ions move through the electrolyte to complete the circuit.</em></p>
+<p>When the switch closes, three things happen <strong>simultaneously</strong> (not sequentially - they all enable each other):</p>
+<ul>
+<li><strong>Electrons flow</strong> through the wire: Zn → wire → Cu</li>
+<li><strong>Reduction occurs at Cu surface:</strong> H⁺ + e⁻ → ½H₂ (bubbles form!)</li>
+<li><strong>Ions move</strong> through the electrolyte to balance the charge</li>
+</ul>
+<p>Why simultaneous? Because each process depends on the others. Electrons can only keep flowing if reduction consumes them at copper. Reduction can only continue if electrons arrive. And ions must move to prevent charge buildup that would stop everything.</p>
+<p><img alt="Figure 11: Animation of ion movement in a simple cell" src="../Voltaic%20cell%20tutorial%20images/simple%20cell%20animation.png" />
+<em>Figure 11: Ion movement in the electrolyte completes the circuit. Cations move toward the cathode; anions move toward the anode.</em></p>
+<h3 id="62-the-furnace-metaphor">6.2 The Furnace Metaphor<a class="headerlink" href="#62-the-furnace-metaphor" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The voltaic cell is like a furnace where <strong>zinc is the fuel</strong> burned to furnish energy. The <strong>electrolyte is the fiery blaze</strong> facilitating transformation. <strong>Hydrogen bubbles are the exhaust</strong>. The <strong>copper electrode is the anvil</strong> - unyielding, providing structure to harness current, remaining chemically unchanged.</p>
+</blockquote>
+<h3 id="63-circuit-representation">6.3 Circuit Representation<a class="headerlink" href="#63-circuit-representation" title="Permanent link">&para;</a></h3>
+<p><img alt="Figure 12: Complete circuit diagram with external resistor" src="../Voltaic%20cell%20tutorial%20images/simple%20circuit%20resistor%20cartoon.png" />
+<em>Figure 12: The complete circuit has two parallel paths: electrons through the external wire/resistor (where useful work is done), and ions through the electrolyte (completing the circuit).</em></p>
+<p><strong>Two parallel paths:</strong>
+- <strong>External:</strong> Electrons through wire/resistor (where work is done)
+- <strong>Internal:</strong> Ions through electrolyte (completes the circuit)</p>
+<p><img alt="Figure 13: Equivalent circuit with energy flow" src="../Voltaic%20cell%20tutorial%20images/simple%20equivaelnt%20circuit%20bubbles.png" />
+<em>Figure 13: Energy flows from zinc oxidation through the external circuit to hydrogen reduction.</em></p>
+<h3 id="64-why-must-electrodes-share-electrolyte">6.4 Why Must Electrodes Share Electrolyte?<a class="headerlink" href="#64-why-must-electrodes-share-electrolyte" title="Permanent link">&para;</a></h3>
+<p>Imagine putting the electrodes in separate containers, connected only by a wire (no shared electrolyte):</p>
+<ul>
+<li><strong>At the zinc container:</strong> Zinc oxidizes, releasing Zn²⁺ ions into solution. The solution becomes increasingly positive.</li>
+<li><strong>At the copper container:</strong> H⁺ ions get reduced to H₂, depleting positive ions. The solution becomes increasingly negative.</li>
+<li><strong>Result:</strong> This charge imbalance creates a voltage that <em>opposes</em> electron flow. Current stops almost instantly!</li>
+</ul>
+<p>The electrolyte (or a salt bridge) solves this by allowing ions to flow between containers, neutralizing the charge buildup so electrons can keep flowing.</p>
+<h3 id="65-why-does-voltage-decrease-over-time">6.5 Why Does Voltage Decrease Over Time?<a class="headerlink" href="#65-why-does-voltage-decrease-over-time" title="Permanent link">&para;</a></h3>
+<p><strong>Le Chatelier's Principle:</strong> The system opposes changes to equilibrium.</p>
+<p>As the battery discharges:
+- [Zn²⁺] increases → zinc becomes less "willing" to oxidize → <span class="arithmatex">\(\mathcal{E}_{\text{Zn,ox}}\)</span> decreases
+- [H⁺] decreases → harder to reduce hydrogen → <span class="arithmatex">\(\mathcal{E}_{\text{H,red}}\)</span> decreases</p>
+<p>Net effect: <span class="arithmatex">\(V_{\text{batt}}\)</span> drops over time.</p>
+<h3 id="66-the-cathode-reaction-why-it-matters-and-how-it-works">6.6 The Cathode Reaction: Why It Matters and How It Works<a class="headerlink" href="#66-the-cathode-reaction-why-it-matters-and-how-it-works" title="Permanent link">&para;</a></h3>
+<p>This section answers three connected questions:
+1. Why does H₂ form at copper instead of zinc?
+2. Is the bubbling essential for the battery to work?
+3. What's the difference between a battery and a capacitor?</p>
+<h4 id="the-multi-step-mechanism-of-hydrogen-evolution">The Multi-Step Mechanism of Hydrogen Evolution<a class="headerlink" href="#the-multi-step-mechanism-of-hydrogen-evolution" title="Permanent link">&para;</a></h4>
+<p>Thermodynamics says H⁺ reduction is allowed on BOTH metals. The difference is <strong>kinetics</strong> - how fast it happens. Hydrogen evolution requires multiple steps:</p>
+<p><strong>Step 1 (Volmer):</strong> H⁺ approaches the metal, receives an electron, and adsorbs:</p>
+<div class="arithmatex">\[\text{H}^+ + e^- + \text{M} \rightarrow \text{M-H}\]</div>
+<p><strong>Step 2 (Tafel or Heyrovsky):</strong> Adsorbed hydrogen atoms combine to form H₂:
+- <em>Tafel:</em> M-H + M-H → H₂ + 2M
+- <em>Heyrovsky:</em> M-H + H⁺ + e⁻ → H₂ + M</p>
+<p>For this to work efficiently, the <strong>metal-hydrogen bond must be "just right"</strong> (Sabatier principle):
+- Too weak → H can't adsorb (Step 1 fails)
+- Too strong → H won't let go (Step 2 fails)</p>
+<p><strong>Zinc</strong> has the wrong bond strength. The Zn-H bond is too weak - hydrogen barely adsorbs. This gives zinc a high <strong>overpotential</strong> (~0.7 V): you'd need 0.7 V extra to force H₂ formation at any reasonable rate.</p>
+<p><strong>Copper</strong> is closer to optimal. The Cu-H bond is strong enough for adsorption but weak enough for release. Lower overpotential (~0.5 V).</p>
+<blockquote>
+<p>Think of it as matchmaking: zinc can't get H⁺ and electrons together properly. Copper holds hydrogen just long enough for the chemistry to happen.</p>
+</blockquote>
+<h4 id="why-the-reduction-reaction-is-essential">Why the Reduction Reaction is Essential<a class="headerlink" href="#why-the-reduction-reaction-is-essential" title="Permanent link">&para;</a></h4>
+<p>What if electrons arrived at copper but didn't react? They'd accumulate, the electrode would go negative, and current would stop. You'd have a capacitor, not a battery.</p>
+<p><strong>Double layer vs. chemical reaction - what's the difference?</strong></p>
+<p>In a double layer, electrons on the metal and H⁺ ions in solution sit nanometers apart. They're close but don't combine. This acts like a tiny capacitor:
+- Limited capacity (~microcoulombs)
+- Fills in microseconds
+- The built-up voltage opposes further current</p>
+<p>In the chemical reaction, electrons and H⁺ actually <strong>combine</strong> into neutral H₂ that floats away. The charge is gone from the system, making room for more electrons.</p>
+<p><strong>But isn't a neutral H₂ molecule just charges close together?</strong></p>
+<p>Yes, but three things make it fundamentally different from a double layer:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Double Layer</th>
+<th>Neutral H₂ Molecule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Separation</strong></td>
+<td>Nanometers</td>
+<td>Fractions of an Ångström (1000× closer)</td>
+</tr>
+<tr>
+<td><strong>Mobility</strong></td>
+<td>Stuck at interface</td>
+<td>Diffuses away, bubbles out</td>
+</tr>
+<tr>
+<td><strong>Field orientation</strong></td>
+<td>All aligned → fields add up</td>
+<td>Random tumbling → fields cancel</td>
+</tr>
+</tbody>
+</table>
+<p>The double layer creates a coherent voltage that blocks current. Neutral molecules have no net field and leave the system entirely.</p>
+<h4 id="concentration-changes-over-time">Concentration Changes Over Time<a class="headerlink" href="#concentration-changes-over-time" title="Permanent link">&para;</a></h4>
+<p>As the battery runs:
+- [H⁺] drops (consumed at copper) - diffusion from bulk replaces it
+- [Zn²⁺] rises (produced at zinc) - diffuses into bulk</p>
+<p>This is why voltage decreases over time (Nernst equation / Le Chatelier effects).</p>
+<h4 id="comparison-our-cell-vs-lithium-ion-battery">Comparison: Our Cell vs. Lithium-Ion Battery<a class="headerlink" href="#comparison-our-cell-vs-lithium-ion-battery" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Zn/Cu/Acid Cell</th>
+<th>Lithium-Ion Battery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cathode reaction</strong></td>
+<td>H⁺ + e⁻ → ½H₂</td>
+<td>Li⁺ + e⁻ + CoO₂ → LiCoO₂</td>
+</tr>
+<tr>
+<td><strong>Product fate</strong></td>
+<td>Gas escapes</td>
+<td>Stored in electrode</td>
+</tr>
+<tr>
+<td><strong>Rechargeable?</strong></td>
+<td>No</td>
+<td>Yes (reverse the reaction)</td>
+</tr>
+</tbody>
+</table>
+<p>Both require a reduction reaction that consumes electrons. The difference: our cell's product (H₂) leaves, so it's not rechargeable. Li-ion's product stays put, so you can reverse it.</p>
+<h4 id="battery-vs-capacitor">Battery vs. Capacitor<a class="headerlink" href="#battery-vs-capacitor" title="Permanent link">&para;</a></h4>
+<p>Could you skip the chemistry and just grow double layers? That's a <strong>capacitor</strong>:
+- Stores energy by charge separation
+- Low capacity, fills instantly
+- No sustained current</p>
+<p>Batteries store energy in chemical bonds. The reaction is what gives them high energy density and sustained current.</p>
+<hr />
+<h2 id="7-the-lemon-battery-revisited">7. The Lemon Battery Revisited<a class="headerlink" href="#7-the-lemon-battery-revisited" title="Permanent link">&para;</a></h2>
+<p>Let's return to our opening example (Figure 1) with new understanding.</p>
+<p><strong>Components:</strong>
+- <strong>Anode:</strong> Zinc nail (oxidizes)
+- <strong>Cathode:</strong> Copper penny (reduction site)
+- <strong>Electrolyte:</strong> Citric acid: <span class="arithmatex">\(\text{C}_6\text{H}_8\text{O}_7 \rightarrow \text{H}^+ + \text{C}_6\text{H}_5\text{O}_7^{3-}\)</span></p>
+<p><strong>The same principles apply:</strong>
+- Zinc oxidizes at the nail: <span class="arithmatex">\(\text{Zn} \rightarrow \text{Zn}^{2+} + 2e^-\)</span>
+- Electrons flow through external circuit
+- Hydrogen reduces at the copper: <span class="arithmatex">\(2\text{H}^+ + 2e^- \rightarrow \text{H}_2\)</span>
+- Voltage: ~0.5V typical (lower than theoretical 0.76V due to internal resistance)</p>
+<blockquote>
+<p><strong>Key insight:</strong> The lemon is NOT the energy source. The energy comes from zinc oxidation - essentially recovering some of the energy that was used in industrial zinc production. The lemon merely provides the acidic environment.</p>
+</blockquote>
+<hr />
+<h2 id="8-zinc-granules-experiment">8. Zinc Granules Experiment<a class="headerlink" href="#8-zinc-granules-experiment" title="Permanent link">&para;</a></h2>
+<p><img alt="Figure 14: Zinc granules dissolving in sulfuric acid" src="../Voltaic%20cell%20tutorial%20images/zinc%20granules%20disolving%20photo.png" />
+<em>Figure 14: Zinc granules dissolving in dilute sulfuric acid. Note the hydrogen bubbles forming directly on the zinc surface.</em></p>
+<p><strong>Observation:</strong> Zinc granules in H₂SO₄ dissolve with vigorous H₂ bubbling - but we just said zinc has high hydrogen overpotential!</p>
+<h3 id="why-do-bubbles-form-on-zinc-itself">Why Do Bubbles Form on Zinc Itself?<a class="headerlink" href="#why-do-bubbles-form-on-zinc-itself" title="Permanent link">&para;</a></h3>
+<p>The answer is <strong>impurities</strong>, and this connects back to everything we learned in Section 6.6.</p>
+<p><strong>What are impurities?</strong> Real zinc isn't pure. During mining and refining, tiny amounts of other metals get trapped in the zinc - typically iron (Fe) and copper (Cu) particles, sometimes just a few atoms wide, scattered throughout the zinc.</p>
+<p><strong>Why do impurities matter?</strong> Remember:
+- Zinc has HIGH hydrogen overpotential (bad at making H₂)
+- Copper and iron have LOWER hydrogen overpotential (better at making H₂)</p>
+<p>The impurity particles are like tiny copper or iron electrodes embedded in the zinc surface!</p>
+<p><img alt="Figure 15: Impurities in zinc granules create local galvanic cells" src="../Voltaic%20cell%20tutorial%20images/zinc%20granules%20impure%20diagram.png" />
+<em>Figure 15: Impurities create microscopic galvanic cells. Each impurity site is a tiny cathode where H₂ can form efficiently.</em></p>
+<p><strong>The mechanism:</strong></p>
+<p>Each impurity creates a <strong>local short-circuited galvanic cell</strong> right on the zinc surface:</p>
+<ol>
+<li><strong>At the zinc (anode):</strong> Zn → Zn²⁺ + 2e⁻ (zinc dissolves)</li>
+<li><strong>Electrons flow</strong> through the metal from zinc regions to impurity sites (no external wire needed - it's all connected!)</li>
+<li><strong>At the impurity (cathode):</strong> 2H⁺ + 2e⁻ → H₂ (bubbles form)</li>
+</ol>
+<p>The impurity site acts like a tiny copper electrode. It has the right Cu-H or Fe-H bond characteristics to catalyze the Volmer and Tafel/Heyrovsky steps efficiently. The hydrogen adsorbs, combines, and leaves as bubbles.</p>
+<p><img alt="Figure 16: Equivalent circuit for zinc granules dissolving" src="../Voltaic%20cell%20tutorial%20images/zinc%20granules%20in%20sulfuric%20acid%20equivalent%20circuit.png" />
+<em>Figure 16: Equivalent circuit: thousands of tiny short-circuited batteries on the zinc surface.</em></p>
+<p><strong>Why pure zinc reacts slowly:</strong> With no impurities, there's no good site for H₂ to form. The zinc can oxidize a little (building up the double layer), but without somewhere for electrons to go, it stops. The high hydrogen overpotential of pure zinc (~0.7 V) almost cancels out zinc's standard potential (-0.76 V), making the net driving force tiny.</p>
+<p><strong>The feedback loop that sustains the reaction:</strong></p>
+<ol>
+<li>H⁺ reduces at impurity sites, <strong>consuming electrons</strong> from the zinc metal</li>
+<li>This decreases the negative charge built up on zinc</li>
+<li>With less charge barrier, more zinc can oxidize, releasing more electrons</li>
+<li>These electrons flow to impurity sites and get consumed... cycle continues</li>
+</ol>
+<p><strong>This is why chemists use impure zinc for H₂ production in labs</strong> - pure zinc would barely react!</p>
+<hr />
+<h2 id="9-historical-development">9. Historical Development<a class="headerlink" href="#9-historical-development" title="Permanent link">&para;</a></h2>
+<h3 id="91-voltas-pile-1800">9.1 Volta's Pile (1800)<a class="headerlink" href="#91-voltas-pile-1800" title="Permanent link">&para;</a></h3>
+<p><img alt="Figure 17: Volta's original pile design" src="../Voltaic%20cell%20tutorial%20images/voltaic%20pile.png" />
+<em>Figure 17: Alessandro Volta's pile - the first true battery capable of producing continuous current.</em></p>
+<p>Alessandro Volta's invention revolutionized science:
+- Alternating discs of copper and zinc
+- Cardboard or cloth soaked in saltwater between each pair
+- Stacked to increase voltage</p>
+<p><strong>Problem:</strong> H₂ bubbles accumulated at copper surfaces, increasing internal resistance and causing unstable output.</p>
+<h3 id="92-daniell-cell-1836">9.2 Daniell Cell (1836)<a class="headerlink" href="#92-daniell-cell-1836" title="Permanent link">&para;</a></h3>
+<p><img alt="Figure 18: The Daniell cell with its salt bridge" src="../Voltaic%20cell%20tutorial%20images/Daniell%20cell.png" />
+<em>Figure 18: John Frederic Daniell's improved design using separate electrolytes connected by a salt bridge.</em></p>
+<p>John Frederic Daniell's solution:
+- <strong>Innovation:</strong> Separate electrolytes + salt bridge
+- ZnSO₄ solution on zinc side
+- CuSO₄ solution on copper side
+- Salt bridge allows ion flow without mixing solutions
+- Result: More stable, consistent voltage</p>
+<p>The copper ions in CuSO₄ get reduced instead of H⁺, depositing copper metal and eliminating the bubble problem entirely.</p>
+<hr />
+<h2 id="10-galvanic-corrosion-the-dark-side">10. Galvanic Corrosion: The Dark Side<a class="headerlink" href="#10-galvanic-corrosion-the-dark-side" title="Permanent link">&para;</a></h2>
+<p>The same electrochemistry that powers batteries can destroy structures when it happens where you don't want it.</p>
+<p><img alt="Figure 19: Galvanic corrosion mechanism" src="../Voltaic%20cell%20tutorial%20images/galvonic%201.png" />
+<em>Figure 19: When dissimilar metals contact in a wet environment, the more anodic metal corrodes.</em></p>
+<p><img alt="Figure 20: Aluminum corroding around a copper bolt" src="../Voltaic%20cell%20tutorial%20images/galvonic%202.png" />
+<em>Figure 20: Classic example: aluminum structure with copper bolt. Rainwater acts as electrolyte. Aluminum (anodic) corrodes while copper (cathodic) is protected.</em></p>
+<p><strong>Example:</strong> Aluminum sculpture with copper bolt
+- Rainwater = electrolyte
+- Al is anodic (corrodes) - white corrosion products appear
+- Cu is cathodic (protected)
+- Result: Structural failure at the joint</p>
+<p><img alt="Figure 21: Severe galvanic corrosion damage" src="../Voltaic%20cell%20tutorial%20images/galvonic%204.png" />
+<em>Figure 21: Severe galvanic corrosion damage where dissimilar metals were in contact in a marine environment.</em></p>
+<blockquote>
+<p><strong>Key insight:</strong> The same electrochemistry that powers batteries destroys structures when dissimilar metals contact in wet environments. The more anodic metal sacrifices itself. Engineers must carefully consider material compatibility!</p>
+</blockquote>
+<hr />
+<h2 id="11-summary">11. Summary<a class="headerlink" href="#11-summary" title="Permanent link">&para;</a></h2>
+<h3 id="component-comparison">Component Comparison<a class="headerlink" href="#component-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Lemon Battery</th>
+<th>Sulfuric Acid Cell</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anode</td>
+<td>Zinc nail</td>
+<td>Zinc strip</td>
+<td>Oxidizes: Zn → Zn²⁺ + 2e⁻</td>
+</tr>
+<tr>
+<td>Cathode</td>
+<td>Copper penny</td>
+<td>Copper strip</td>
+<td>Reduction site: 2H⁺ + 2e⁻ → H₂</td>
+</tr>
+<tr>
+<td>Electrolyte</td>
+<td>Citric acid</td>
+<td>H₂SO₄</td>
+<td>Provides H⁺, ion transport</td>
+</tr>
+<tr>
+<td>V_batt</td>
+<td>~0.5V</td>
+<td>~0.76V</td>
+<td>|<span class="arithmatex">\(\mathcal{E}_{\text{Zn,ox}}\)</span>| - |<span class="arithmatex">\(\mathcal{E}_{\text{H,red}}\)</span>|</td>
+</tr>
+</tbody>
+</table>
+<h3 id="half-reaction-standard-potentials-25c">Half-Reaction Standard Potentials (25°C)<a class="headerlink" href="#half-reaction-standard-potentials-25c" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Half-Reaction</th>
+<th>E° (V)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zn²⁺ + 2e⁻ ⇌ Zn(s)</td>
+<td>-0.7618</td>
+</tr>
+<tr>
+<td>2H⁺ + 2e⁻ ⇌ H₂(g)</td>
+<td>0.00 (by definition)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Metal really becomes negatively charged</strong> - electrons physically accumulate, creating a real surface charge and electric field</li>
+<li><strong>"Self-charging capacitor"</strong> - metal in electrolyte spontaneously builds up charge</li>
+<li><strong>Furnace metaphor</strong> - zinc is fuel, H₂ is exhaust, copper is the anvil</li>
+<li><strong>Thermodynamics vs kinetics</strong> - "is it allowed?" vs "how fast?"</li>
+<li><strong>H₂ on Cu is kinetics</strong> - copper has lower activation energy, not that zinc "can't" reduce H⁺</li>
+<li><strong>Le Chatelier's principle</strong> - explains voltage drop over time</li>
+<li><strong>Energy source is zinc</strong> - the lemon just provides acidic environment</li>
+<li><strong>Electrodes must share electrolyte</strong> - or charge buildup stops current</li>
+</ol>
+<hr />
+<h2 id="12-references">12. References<a class="headerlink" href="#12-references" title="Permanent link">&para;</a></h2>
+<h3 id="video-resources">Video Resources<a class="headerlink" href="#video-resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=example1">Reaction of Zinc with Dilute Sulfuric acid</a> - YouTube</li>
+<li><a href="https://www.youtube.com/watch?v=example2">Dilute acid, zinc and copper make an electric cell</a> - YouTube</li>
+<li><a href="https://www.youtube.com/watch?v=example3">Daniell Cell</a> - YouTube</li>
+</ul>
+<h3 id="interactive-resources">Interactive Resources<a class="headerlink" href="#interactive-resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://nationalmaglab.org/">Simple Electrical Cell Animation</a> - National MagLab</li>
+</ul>
+<h3 id="academic-resources">Academic Resources<a class="headerlink" href="#academic-resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://chem.libretexts.org/">Standard Potentials</a> - Chemistry LibreTexts</li>
+<li><a href="https://chem.libretexts.org/">Batteries and Electrolytic Cells</a> - Chemistry LibreTexts</li>
+<li>Electrochemistry Crash Course for Engineers - SpringerLink</li>
+</ul>
+<h3 id="general-references">General References<a class="headerlink" href="#general-references" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Lemon_battery">Lemon battery</a> - Wikipedia</li>
+<li><a href="https://www.canada.ca/">Understanding galvanic corrosion</a> - Canada.ca</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

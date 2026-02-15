@@ -1,0 +1,1867 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/microwave-engineering/positive-negative-coupling/">
+      
+      
+        <link rel="prev" href="../../quantum-mechanics/phonons/">
+      
+      
+        <link rel="next" href="../resonant-coupling-networks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Positive Coupling, Negative Coupling, and All That - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#positive-coupling-negative-coupling-and-all-that" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Positive Coupling, Negative Coupling, and All That
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchronously-tuned-coupled-resonator-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronously Tuned Coupled-Resonator Circuits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negative-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negative Coupling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-coupling-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Coupling Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-practical-way-to-extract-the-coupling-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Practical Way to Extract the Coupling Coefficient
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electric-coupling-is-negative-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electric Coupling is Negative Coupling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum-the-electric-and-magnetic-couplings-to-find-the-total-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sum the Electric and Magnetic Couplings to Find the Total Coupling
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchronously-tuned-coupled-resonator-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronously Tuned Coupled-Resonator Circuits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negative-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negative Coupling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-coupling-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Coupling Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-practical-way-to-extract-the-coupling-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Practical Way to Extract the Coupling Coefficient
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electric-coupling-is-negative-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electric Coupling is Negative Coupling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum-the-electric-and-magnetic-couplings-to-find-the-total-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sum the Electric and Magnetic Couplings to Find the Total Coupling
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="positive-coupling-negative-coupling-and-all-that">Positive Coupling, Negative Coupling, and All That<a class="headerlink" href="#positive-coupling-negative-coupling-and-all-that" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>In the world of microwave filter design you hear a lot about <em>coupling</em>:
+"coupling matrices", "dual-mode coupling", "cross-coupling", "coupled-lines", "coupling screws", etc.</p>
+<p>What is all this coupling going on? Generally speaking, the word "coupling" refers to the transfer of energy between two or more physical states or systems. This is a broad definition, and, as such, you could technically say your brain-eye is electromagnetically coupled to the distant stars when you look up on a clear starry night; or, for that matter, that you are coupled to the hand of Van Gogh when you enjoy his swirling painting <em>The Starry Night</em>. However, these are examples of one-way coupling. You have no effect on a distant star whatsoever - if it even still exists today - and you certainly have no effect on Van Gogh. Ordinarily, people use the word "coupling" to describe systems interacting more intimately with each other, pushing and pulling, exchanging energy back and forth. People generally talk about coupling between oscillators (or resonant systems).</p>
+<figure>
+<img alt="Starry Night by Van Gogh" src="../assets/positive-negative-coupling/starry_night.jpg" width="400" />
+
+<figcaption>Figure 1. <em>Starry Night</em> by Vincent van Gogh.</figcaption>
+</figure>
+<p>The classic example of coupling between oscillators is two simple mechanical pendula joined by a spring, as illustrated below. If you get one pendulum swinging it will push and pull on the connecting spring, giving the second pendulum a small tug. As a result, the second pendulum begins to swing too. If the two pendulums have the same length and mass, the second pendulum continues to swing with ever greater speed as the first pendulum slows down. Eventually, the first pendulum is brought to rest; it has transferred all of its energy to the second pendulum. But now the original situation is exactly reversed, and the first pendulum is positioned to steal back its energy from the second. The process repeats itself over and over, with energy being passed back and forth like a game of catch, until finally all the energy is dissipated as heat by friction and air resistance. When this happens all mechanical motion ceases.</p>
+<figure>
+<img alt="Two pendula joined by a spring" src="../assets/positive-negative-coupling/pendulum_spring.jpg" width="400" />
+
+<figcaption>Figure 2. Two pendula joined by a spring.</figcaption>
+</figure>
+<hr />
+<h2 id="synchronously-tuned-coupled-resonator-circuits">Synchronously Tuned Coupled-Resonator Circuits<a class="headerlink" href="#synchronously-tuned-coupled-resonator-circuits" title="Permanent link">&para;</a></h2>
+<p>The electronic analog of the two pendula joined by a spring is a circuit composed of two resonators joined by a coupling element. Energy is coupled in the circuit, not by mechanical springs of course, but by electric and magnetic fields, or a mixture thereof.</p>
+<p>Consider two lossless identical resonators, each with a self-inductance <span class="arithmatex">\(L\)</span> and self-capacitance <span class="arithmatex">\(C\)</span>, existing independently from one another as illustrated in Figure 3(a). The resonant frequency <span class="arithmatex">\(\omega_0\)</span> of each resonator is related to <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(C\)</span> by the well-known relation <span class="arithmatex">\(\omega_0 = 1/\sqrt{LC}\)</span>. As it stands, the resonators have nothing to do with each other, and are completely decoupled. Now suppose that the resonators are brought together to "share" a little piece of their self-inductance with one another. Suppose this little piece of shared inductance has value <span class="arithmatex">\(L_m\)</span> (where <span class="arithmatex">\(L_m \leq L\)</span>) as illustrated in Figure 3(b). In this new situation, the resonators are said to be <strong>shunt inductively coupled</strong>. Alternate forms of the equivalent circuit are illustrated in Figure 3(c); these are particularly convenient for design applications.</p>
+<figure>
+<img alt="Two separate resonators" src="../assets/positive-negative-coupling/decoupled_resonators.png" width="400" />
+
+<figcaption>(a) Two separate resonators existing independently from one another.</figcaption>
+</figure>
+<figure>
+<img alt="Coupled resonators" src="../assets/positive-negative-coupling/coupled_resonators.png" width="250" />
+
+<figcaption>(b) The resonators are brought together to "share" a piece of their inductance $L_m$, forming a coupled pair of $LC$ resonators.</figcaption>
+</figure>
+<figure>
+<img alt="Equivalent circuits" src="../assets/positive-negative-coupling/equiv_circuits1.png" width="800" />
+
+<figcaption>(c) Alternative forms of the equivalent circuit (all three have equal loop currents and resonant frequencies).</figcaption>
+</figure>
+<p><em>Figure 3. The formation of a shunt inductively coupled pair of LC resonators.</em></p>
+<p>While each isolated <span class="arithmatex">\(LC\)</span> resonator supports only one resonant mode individually, the coupled pair as a whole supports two - each with its own resonant frequency. To understand this, consider the form of the coupled pair shown in Figure 4, where we denote the currents in loops 1 and 2 as <span class="arithmatex">\(I_1\)</span> and <span class="arithmatex">\(I_2\)</span>, respectively. Here we use capital letters for current to remind us that we are dealing with phasor representations in the frequency domain; as usual, lower-case letters are reserved for time domain variables.</p>
+<figure>
+<img alt="Coupled pair with currents" src="../assets/positive-negative-coupling/couled_pair_w_currents.png" width="400" />
+
+<figcaption>Figure 4. Schematic of coupled pair showing currents $I_1$ and $I_2$ for deriving the coupling equations.</figcaption>
+</figure>
+<p>The coupling equations describing this network are:</p>
+<div class="arithmatex">\[
+j\omega L \, I_1 - j\frac{I_1}{\omega C} + \underbrace{j\omega L_m \, I_2}_{\text{coupling: } I_2 \text{ induces voltage in loop 1}} = 0 \tag{1}
+\]</div>
+<div class="arithmatex">\[
+j\omega L \, I_2 - j\frac{I_2}{\omega C} + \underbrace{j\omega L_m \, I_1}_{\text{coupling: } I_1 \text{ induces voltage in loop 2}} = 0 \tag{2}
+\]</div>
+<p>In matrix form, these equations become:</p>
+<div class="arithmatex">\[
+\begin{bmatrix} j\!\left(\omega L - \dfrac{1}{\omega C}\right) &amp; j\omega L_m \\[8pt] j\omega L_m &amp; j\!\left(\omega L - \dfrac{1}{\omega C}\right) \end{bmatrix} \begin{bmatrix} I_1 \\ I_2 \end{bmatrix} = 0 \tag{3}
+\]</div>
+<p>An easy and obvious solution to this matrix equation is simply <span class="arithmatex">\(I_1 = I_2 = 0\)</span>. However, this is not a very interesting solution. In fact, a resonant mode is precisely the situation when the currents are <em>not</em> zero. For this to be the case, the 2-by-2 square matrix on the left hand side of Eq. (3) must be non-invertible (i.e. it must be singular). Recall from basic linear algebra that a square matrix is singular if and only if its determinant is equal to zero. Singular matrices are rare in the sense that if you pick a random square matrix, it will almost surely not be singular. However, at certain frequencies (which we identify as the resonant frequencies) the matrix on the left hand side of Eq. (3) will indeed be singular. To find these resonant frequencies, we take the determinant and set it equal to zero:</p>
+<div class="arithmatex">\[
+\begin{vmatrix} j\!\left(\omega L - \dfrac{1}{\omega C}\right) &amp; j\omega L_m \\[8pt] j\omega L_m &amp; j\!\left(\omega L - \dfrac{1}{\omega C}\right) \end{vmatrix} = \left(\omega L - \frac{1}{\omega C}\right)^2 - (\omega L_m)^2 = 0 \tag{4}
+\]</div>
+<p>If you crank through the algebra, you will find that this equation has two positive real solutions <span class="arithmatex">\(\omega_m\)</span> and <span class="arithmatex">\(\omega_e\)</span>, where</p>
+<div class="arithmatex">\[
+\omega_e = \frac{1}{\sqrt{(L - L_m)\,C}} \tag{5}
+\]</div>
+<div class="arithmatex">\[
+\omega_m = \frac{1}{\sqrt{(L + L_m)\,C}} \tag{6}
+\]</div>
+<p>The larger the magnetic coupling <span class="arithmatex">\(L_m\)</span>, the greater the resonant frequencies <span class="arithmatex">\(\omega_e\)</span> and <span class="arithmatex">\(\omega_m\)</span> "split away" from that of an uncoupled resonator <span class="arithmatex">\(\omega_0\)</span>. On the other hand, in the limit that the coupling is zero, the solutions tend to that of an uncoupled single resonator, i.e. <span class="arithmatex">\(\omega_e = \omega_m = \omega_0 = 1/\sqrt{LC}\)</span> when <span class="arithmatex">\(L_m = 0\)</span>.</p>
+<p>What about the currents <span class="arithmatex">\(I_1\)</span> and <span class="arithmatex">\(I_2\)</span> in all of this? If you substitute <span class="arithmatex">\(\omega = \omega_e\)</span> into Eq. (1) or (2), you will find that <span class="arithmatex">\(I_1 = -I_2\)</span>. This means the common current through the "shared" inductance <span class="arithmatex">\(L_m\)</span> is <span class="arithmatex">\(I_1 + I_2 = I_1 - I_1 = 0\)</span>. From the point of view of the loop current voltages, this condition is equivalent to replacing the symmetry plane between the coupled pair with an <strong>electric wall</strong> (i.e. a short). The symmetry plane is illustrated in Fig. 5. The subscript "<span class="arithmatex">\(e\)</span>" in the symbol <span class="arithmatex">\(\omega_e\)</span> stands for "electric wall". This mode is referred to as the <em>odd</em> mode.</p>
+<p>On the other hand, if you substitute <span class="arithmatex">\(\omega = \omega_m\)</span> into Eq. (1) or (2), you will find that <span class="arithmatex">\(I_1 = I_2\)</span>. This means the common current through the "shared" inductance <span class="arithmatex">\(L_m\)</span> is <span class="arithmatex">\(I_1 + I_2 = 2I_1 = 2I_2\)</span>. This condition is equivalent to replacing the symmetry plane with a <strong>magnetic wall</strong> (i.e. an open). This mode is referred to as the <em>even</em> mode. The subscript "<span class="arithmatex">\(m\)</span>" in the symbol <span class="arithmatex">\(\omega_m\)</span> stands for "magnetic wall".</p>
+<div class="admonition info">
+<p class="admonition-title">Summary of Even/Odd Mode Properties</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Condition</th>
+<th>Symmetry Plane</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Odd (electric wall)</td>
+<td><span class="arithmatex">\(I_1 = -I_2\)</span></td>
+<td>Short circuit</td>
+<td><span class="arithmatex">\(\omega_e = 1/\sqrt{(L - L_m)C}\)</span></td>
+</tr>
+<tr>
+<td>Even (magnetic wall)</td>
+<td><span class="arithmatex">\(I_1 = +I_2\)</span></td>
+<td>Open circuit</td>
+<td><span class="arithmatex">\(\omega_m = 1/\sqrt{(L + L_m)C}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure>
+<img alt="Symmetry plane" src="../assets/positive-negative-coupling/couled_pair_w_currents.png" width="400" />
+
+<figcaption>Figure 5. Symmetry plane between the coupled resonant pair.</figcaption>
+</figure>
+<p>An important fact to take away from all this is that a coupled pair of resonators forms a composite system with two resonant modes of its own. The resonant frequencies of these modes are different from that of the uncoupled single resonators. You can say that the original mode has "split" into two. This is a general fact of coupled oscillators: a system composed of <span class="arithmatex">\(N\)</span> weakly coupled discrete oscillators will in general have <span class="arithmatex">\(N\)</span> independent states ("state" is a more general term for "mode"). If you increase <span class="arithmatex">\(N\)</span>, then the number of states goes up. Recall that a single pendulum swings back and forth with one frequency only - its resonant frequency. Here we have <span class="arithmatex">\(N = 1\)</span>. On the other hand, consider a guitar string fixed on both ends. Such a structure basically consists of an infinite number of coupled oscillators (i.e. the atoms in the string coupled together by electrostatic forces). As you may know, an ideal vibrating string fixed on both ends has an infinite number of sine waves (i.e. modes or harmonics) it can support. Strum an acoustic guitar to hear some of them.</p>
+<figure>
+<img alt="Old Guitar Player by Pablo Picasso" src="../assets/positive-negative-coupling/old_guitar_player.jpg" width="300" />
+
+<figcaption>Figure 6. <em>The Old Guitarist</em> by Pablo Picasso.</figcaption>
+</figure>
+<hr />
+<h2 id="negative-coupling">Negative Coupling<a class="headerlink" href="#negative-coupling" title="Permanent link">&para;</a></h2>
+<p>The mutual inductance <span class="arithmatex">\(L_M\)</span> can be either positive or negative depending on the polarity of the mutual voltage in reference to the direction of the inducing current. Figure 7 shows two magnetically coupled coils with both positive and negative coupling. Note that the mutual voltage in the second coil can be positive or negative based on the orientation of the coils. The figures assume the <strong>dot convention</strong>: if a current <em>enters</em> the dotted terminal of a coil, the reference polarity of the voltage induced in the other coil is positive at its dotted terminal. If a current <em>leaves</em> the dotted terminal of a coil, the reference polarity of the voltage induced in the other coil is negative at its dotted terminal.</p>
+<figure>
+<img alt="Positive and negative coupling" src="../assets/positive-negative-coupling/positive_and_negative_coupling.jpg" width="500" />
+
+<figcaption>Figure 7. Illustration of sign convention for the mutual inductance $L_m$. (a) $L_m &gt; 0$, (b) $L_m &lt; 0$. In these illustrations, the terminals at port 2 are open so no current flows through them.</figcaption>
+</figure>
+<p>As it turns out, we are not so much interested in the mutual inductance <span class="arithmatex">\(L_m\)</span> itself as we are in the ratio of mutual inductance to self-inductance: <span class="arithmatex">\(L_m / L\)</span>. This ratio is a measure of the coupling strength, and is known as the <strong>coupling coefficient</strong> <span class="arithmatex">\(k_M\)</span> for a pair of synchronously tuned shunt inductive coupled resonators. From energy considerations, it can be shown that the mutual inductance of a pair of coils cannot be greater than the geometric mean of the self-inductances of the coils:</p>
+<div class="arithmatex">\[
+|L_M| \leq \sqrt{L_1 L_2}
+\]</div>
+<p>In this manner, the coupling coefficient <span class="arithmatex">\(k_M\)</span> specifies the extent to which <span class="arithmatex">\(L_M\)</span> approaches the upper limit, and satisfies the inequality:</p>
+<div class="arithmatex">\[
+-1 \leq k_M \leq 1
+\]</div>
+<p>The general coupling coefficient <span class="arithmatex">\(k\)</span> between any two resonators is defined based on the ratio of coupled energy to stored energy of the electromagnetic field. The coupling coefficient shows up all the time in filter theory. When people talk about "coupling matrices" of microwave bandpass filters, they really mean a matrix (as in a two-dimensional array of numbers) filled with the coupling coefficients between the various resonators of the filter.</p>
+<p>A nice feature of the coupling coefficient is that it can be found from the even and odd mode resonant frequencies, <span class="arithmatex">\(\omega_m\)</span> and <span class="arithmatex">\(\omega_e\)</span>. From Eqs. (5) and (6) we have:</p>
+<div class="arithmatex">\[
+k_M \equiv \frac{L_m}{L} = \frac{\omega_e^2 - \omega_m^2}{\omega_e^2 + \omega_m^2} \tag{7}
+\]</div>
+<p>So, by our chosen sign convention, if <span class="arithmatex">\(\omega_e &gt; \omega_m\)</span> then <span class="arithmatex">\(k_M\)</span> is positive, and if <span class="arithmatex">\(\omega_e &lt; \omega_m\)</span> then <span class="arithmatex">\(k_M\)</span> is negative. This sign convention is as arbitrary as assigning a <em>negative</em> electric charge to an electron and a <em>positive</em> electric charge to a proton. But once the sign convention has been made, you must stick with it or else you will lose your way. In order to ensure this sign convention is satisfied every time, we define the general coupling coefficient <span class="arithmatex">\(k\)</span> to be:</p>
+<div class="arithmatex">\[
+k \equiv \frac{\omega_e^2 - \omega_m^2}{\omega_e^2 + \omega_m^2} \tag{8}
+\]</div>
+<p>Equation (8) satisfies the strict definition of <span class="arithmatex">\(k\)</span> (see Hong and Lancaster <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>). This is a powerful equation that can be used to experimentally or numerically determine the coupling coefficient between any two synchronously tuned pair of resonators - no matter what the type of coupling.</p>
+<hr />
+<h2 id="basic-coupling-mechanisms">Basic Coupling Mechanisms<a class="headerlink" href="#basic-coupling-mechanisms" title="Permanent link">&para;</a></h2>
+<p>The basic coupling mechanisms between synchronously tuned pairs of resonators are summarized below. For each type of coupling, we show the coupling equations, the even and odd resonant frequencies (denoted <span class="arithmatex">\(\omega_e\)</span> and <span class="arithmatex">\(\omega_m\)</span>, respectively), and the coupling coefficient - all in terms of the lumped element values.</p>
+<figure>
+<img alt="Shunt inductive coupling" src="../assets/positive-negative-coupling/shunt_inductive.png" width="750" />
+</figure>
+<figure>
+<img alt="Series capacitive coupling" src="../assets/positive-negative-coupling/Series_capacitive.png" width="750" />
+</figure>
+<figure>
+<img alt="Mixed coupling" src="../assets/positive-negative-coupling/mixed_coupling.png" width="750" />
+
+<figcaption>Figure 8. Basic coupling mechanisms: shunt inductive (top), series capacitive (middle), and mixed (bottom).</figcaption>
+</figure>
+<hr />
+<h2 id="a-practical-way-to-extract-the-coupling-coefficient">A Practical Way to Extract the Coupling Coefficient<a class="headerlink" href="#a-practical-way-to-extract-the-coupling-coefficient" title="Permanent link">&para;</a></h2>
+<p>Suppose you had two coupled resonators and you wanted to know the value of the coupling coefficient. We can use Eq. (8) to extract <span class="arithmatex">\(k\)</span> if we know the two eigenfrequencies <span class="arithmatex">\(\omega_m\)</span> and <span class="arithmatex">\(\omega_e\)</span>. One easy way to determine the eigenfrequencies is to very lightly "excite" the system with a voltage source like that shown in Figure 9, and then measure the voltage or current at some other point in the circuit. The eigenfrequencies will be apparent.</p>
+<p>Figure 9 shows a SPICE schematic with two LC resonators inductively coupled with <span class="arithmatex">\(k_M = 0.1\)</span>. We loosely couple a voltage source to resonator 1 (via a small capacitor) and loosely couple a resistor to resonator 2 (via a second small capacitor). Figure 10 shows the measured voltage across R1. Here we clearly see two resonant peaks at <span class="arithmatex">\(f_1 = 49.364\)</span> kHz and <span class="arithmatex">\(f_2 = 54.573\)</span> kHz. The phase of the voltage is positive 90 degrees, which tells us that the coupling is positive, and therefore inductive (more on that in the next section). Substituting <span class="arithmatex">\(f_1\)</span> and <span class="arithmatex">\(f_2\)</span> into Equation (8) yields:</p>
+<div class="arithmatex">\[
+k = \frac{f_2^2 - f_1^2}{f_2^2 + f_1^2} = \frac{54.573^2 - 49.364^2}{54.573^2 + 49.364^2} = 0.1000
+\]</div>
+<p>which is equal to the known value of <span class="arithmatex">\(k_M\)</span>. Note that the stronger the coupling, the wider the frequency gap between the resonant peaks. This translates to the language of bandpass filter design as: "the wider the bandwidth, the tighter the required coupling between resonators."</p>
+<figure>
+<img alt="SPICE schematic" src="../assets/positive-negative-coupling/coupling_spice_circuit.jpg" width="500" />
+
+<figcaption>Figure 9. LTspice schematic depicting measurement setup for extracting coupling coefficient.</figcaption>
+</figure>
+<figure>
+<img alt="Coupling response magnitude" src="../assets/positive-negative-coupling/coupling_response_example.jpg" width="400" />
+<img alt="Coupling response phase" src="../assets/positive-negative-coupling/coupling_phase_example.jpg" width="400" />
+
+<figcaption>Figure 10. SPICE simulation results. Magnitude and phase of voltage across 100 &Omega; load resistor.</figcaption>
+</figure>
+<hr />
+<h2 id="electric-coupling-is-negative-coupling">Electric Coupling is Negative Coupling<a class="headerlink" href="#electric-coupling-is-negative-coupling" title="Permanent link">&para;</a></h2>
+<p>Or is it positive? Some people refer to electric (aka "series capacitive") coupling as "negative" coupling. To get a better understanding of this, refer to Figure 11. Here we see that two LC resonant circuits capacitively coupled are equivalent to two LC resonant circuits inductively coupled with a negative mutual inductance (here we consider the mutual inductance as negative because the "dotted" terminals are on opposite sides). We say these two circuits are equivalent in the sense that they have the same eigenfrequencies (resonant frequencies) and almost identical phase response near resonance. Figure 12 shows a SPICE schematic and simulation to illustrate how well this equivalence holds in a typical situation. The sign of coupling is rather relative. It's similar to how we assign an electron as being "negatively" charged.</p>
+<p>Notice how the phase in Figure 13 is <span class="arithmatex">\(-90°\)</span> between the resonant peaks. This "gives away" the sign of the coupling as negative. If the phase were <span class="arithmatex">\(+90°\)</span> then the sign of coupling would be considered "positive". Some people reverse what is positive and negative. Luckily, it makes no difference so long as a convention is established and you stick with that convention.</p>
+<figure>
+<img alt="Capacitive coupling equivalence" src="../assets/positive-negative-coupling/yay.jpg" width="500" />
+
+<figcaption>Figure 11. Capacitive coupling is equivalent to negative inductive coupling. Note: This equality is not exact! It works best with light loading (high Q) and loose coupling.</figcaption>
+</figure>
+<figure>
+<img alt="SPICE comparison schematic" src="../assets/positive-negative-coupling/spice_comparison.jpg" width="700" />
+
+<figcaption>Figure 12. SPICE schematic to demonstrate the equivalence shown in Figure 11.</figcaption>
+</figure>
+<figure>
+<img alt="Magnitude comparison" src="../assets/positive-negative-coupling/mag_comparison.jpg" width="400" />
+<img alt="Phase comparison" src="../assets/positive-negative-coupling/phase_comparison.jpg" width="400" />
+
+<figcaption>Figure 13. SPICE simulation results. Magnitude and phase of voltage across 0.5 &Omega; load resistor.</figcaption>
+</figure>
+<hr />
+<h2 id="sum-the-electric-and-magnetic-couplings-to-find-the-total-coupling">Sum the Electric and Magnetic Couplings to Find the Total Coupling<a class="headerlink" href="#sum-the-electric-and-magnetic-couplings-to-find-the-total-coupling" title="Permanent link">&para;</a></h2>
+<p>Two coupled resonators with mixed coupling are approximately equivalent to two coupled resonators with purely capacitive or purely inductive coupling. This is illustrated in Figures 14 and 15. This equivalence only holds for very loose coupling (which is assumed in narrowband microwave filter design). To illustrate this, Figure 16 shows SPICE schematics comparing the mixed coupling case to the pure inductive and pure capacitive cases. Figure 17 shows simulated output voltage. Note the very good agreement between the mixed coupling case and that of pure inductive and pure capacitive coupling.</p>
+<figure>
+<img alt="Mixed equals inductive" src="../assets/positive-negative-coupling/Slide10.jpg" width="700" />
+
+<figcaption>Figure 14. Mixed coupling is equal to inductive coupling near resonance (loose coupling assumed).</figcaption>
+</figure>
+<figure>
+<img alt="Mixed equals capacitive" src="../assets/positive-negative-coupling/Slide11.jpg" width="700" />
+
+<figcaption>Figure 15. Mixed coupling is equal to capacitive coupling near resonance (loose coupling assumed).</figcaption>
+</figure>
+<figure>
+<img alt="SPICE comparison schematics" src="../assets/positive-negative-coupling/Slide15.jpg" width="600" />
+
+<figcaption>Figure 16. SPICE schematics demonstrating the equivalences shown in Figures 14 and 15.</figcaption>
+</figure>
+<figure>
+<img alt="SPICE simulation results" src="../assets/positive-negative-coupling/Slide14.jpg" width="700" />
+
+<figcaption>Figure 17. SPICE simulation results.</figcaption>
+</figure>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>J.-S. Hong and M. J. Lancaster, <em>Microstrip Filters for RF/Microwave Applications</em>, Wiley, 2001.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

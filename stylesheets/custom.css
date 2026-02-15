@@ -1,0 +1,18 @@
+/* Hide the git revision date footer */
+.md-source-file {
+    display: none;
+}
+
+/* Make Home navigation item bold */
+.md-nav__item:first-of-type .md-nav__link {
+    font-weight: bold;
+}
+
+/* Ensure site title is clickable */
+.md-header__title {
+    cursor: pointer;
+}
+
+.md-header__button.md-logo {
+    cursor: pointer;
+}

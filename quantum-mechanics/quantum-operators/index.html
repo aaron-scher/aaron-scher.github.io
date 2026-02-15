@@ -1,0 +1,2685 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/quantum-mechanics/quantum-operators/">
+      
+      
+        <link rel="prev" href="../quantum-basis-representation/">
+      
+      
+        <link rel="next" href="../quantum-spatial-entanglement/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Quantum Operators and Measurement - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quantum-operators-and-measurement" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quantum Operators and Measurement
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-momentum-operator-and-plane-waves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Momentum Operator and Plane Waves
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Momentum Operator and Plane Waves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extracting-momentum-the-spatial-derivative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extracting Momentum: The Spatial Derivative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-1-single-plane-wave-eigenstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Single Plane Wave (Eigenstate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-superposition-of-two-plane-waves-not-an-eigenstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Superposition of Two Plane Waves (NOT an Eigenstate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#another-superposition-unequal-amplitudes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Another Superposition: Unequal Amplitudes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-value-the-average-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Value: The Average Measurement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#momentum-space-flipping-the-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Momentum Space: Flipping the Picture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Momentum Space: Flipping the Picture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position-space-vs-momentum-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Space vs Momentum Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#momentum-eigenstates-in-momentum-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Momentum Eigenstates in Momentum Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-momentum-operator-in-momentum-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Momentum Operator in Momentum Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superposition-in-momentum-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Superposition in Momentum Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-operators-extract-observable-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: Operators Extract Observable Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-energy-operator-and-schrodingers-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Energy Operator and Schrödinger's Equation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Energy Operator and Schrödinger&#39;s Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schrodingers-equation-as-an-eigenvalue-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schrödinger's Equation as an Eigenvalue Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-insight-eigenvalue-equation-for-time-independent-potentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Key Insight: Eigenvalue Equation for Time-Independent Potentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-1-single-plane-wave-energy-eigenstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Single Plane Wave (Energy Eigenstate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-superposition-of-two-plane-waves-not-an-eigenstate_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Superposition of Two Plane Waves (NOT an Eigenstate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confined-particles-and-discrete-energy-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confined Particles and Discrete Energy Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Confined Particles and Discrete Energy Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-continuous-to-discrete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Continuous to Discrete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-particle-in-a-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Particle in a Box
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-representation-of-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matrix Representation of Operators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Representation of Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discrete-basis-operators-become-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete Basis → Operators Become Matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-hamiltonian-in-the-energy-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hamiltonian in the Energy Basis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-two-level-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Two-Level System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-position-operator-in-energy-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Position Operator in Energy Basis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-energy-schrodingers-equation-and-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: Energy, Schrödinger's Equation, and Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changes-with-problem-vs-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changes With Problem vs Basis?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-momentum-operator-and-plane-waves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Momentum Operator and Plane Waves
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Momentum Operator and Plane Waves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extracting-momentum-the-spatial-derivative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extracting Momentum: The Spatial Derivative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-1-single-plane-wave-eigenstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Single Plane Wave (Eigenstate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-superposition-of-two-plane-waves-not-an-eigenstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Superposition of Two Plane Waves (NOT an Eigenstate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#another-superposition-unequal-amplitudes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Another Superposition: Unequal Amplitudes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-value-the-average-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Value: The Average Measurement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#momentum-space-flipping-the-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Momentum Space: Flipping the Picture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Momentum Space: Flipping the Picture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position-space-vs-momentum-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Space vs Momentum Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#momentum-eigenstates-in-momentum-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Momentum Eigenstates in Momentum Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-momentum-operator-in-momentum-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Momentum Operator in Momentum Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superposition-in-momentum-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Superposition in Momentum Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-operators-extract-observable-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: Operators Extract Observable Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-energy-operator-and-schrodingers-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Energy Operator and Schrödinger's Equation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Energy Operator and Schrödinger&#39;s Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schrodingers-equation-as-an-eigenvalue-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schrödinger's Equation as an Eigenvalue Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-insight-eigenvalue-equation-for-time-independent-potentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Key Insight: Eigenvalue Equation for Time-Independent Potentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-1-single-plane-wave-energy-eigenstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Single Plane Wave (Energy Eigenstate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-superposition-of-two-plane-waves-not-an-eigenstate_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Superposition of Two Plane Waves (NOT an Eigenstate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confined-particles-and-discrete-energy-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confined Particles and Discrete Energy Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Confined Particles and Discrete Energy Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-continuous-to-discrete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Continuous to Discrete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-particle-in-a-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Particle in a Box
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-representation-of-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matrix Representation of Operators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Representation of Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discrete-basis-operators-become-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete Basis → Operators Become Matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-hamiltonian-in-the-energy-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hamiltonian in the Energy Basis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-two-level-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Two-Level System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-position-operator-in-energy-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Position Operator in Energy Basis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-energy-schrodingers-equation-and-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: Energy, Schrödinger's Equation, and Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changes-with-problem-vs-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changes With Problem vs Basis?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="quantum-operators-and-measurement">Quantum Operators and Measurement<a class="headerlink" href="#quantum-operators-and-measurement" title="Permanent link">&para;</a></h1>
+<h2 id="the-momentum-operator-and-plane-waves">The Momentum Operator and Plane Waves<a class="headerlink" href="#the-momentum-operator-and-plane-waves" title="Permanent link">&para;</a></h2>
+<p>Let's start where we left off in <a href="../quantum-foundations/">Foundations</a>: plane waves. A plane wave solution to Schrödinger's equation with definite momentum <span class="arithmatex">\(p = \hbar k\)</span> and energy <span class="arithmatex">\(E = \hbar\omega\)</span> looks like:</p>
+<div class="arithmatex">\[
+\psi(x,t) = A e^{i(kx - \omega t)}
+\]</div>
+<p>We can use the exponential property to write this as a <strong>product</strong> of spatial and temporal parts:</p>
+<div class="arithmatex">\[
+\psi(x,t) = \underbrace{A e^{ikx}}_{\text{spatial part}} \cdot \underbrace{e^{-i\omega t}}_{\text{time part}}
+\]</div>
+<p>This separation is crucial! The spatial part encodes momentum information, while the time part encodes energy information. They're independent — a key feature of <strong>stationary states</strong>.</p>
+<p><strong>What's a stationary state?</strong> A stationary state is a quantum state with definite energy (an energy eigenstate). The "stationary" name comes from the fact that all measurable properties (like probability density <span class="arithmatex">\(|\psi|^2\)</span>) are constant in time. The wavefunction oscillates as <span class="arithmatex">\(e^{-iEt/\hbar}\)</span>, but this is just a global phase that doesn't affect any measurements.</p>
+<p>Stationary states arise when the system's Hamiltonian doesn't depend on time — meaning all potentials are time-independent: <span class="arithmatex">\(V(x)\)</span> not <span class="arithmatex">\(V(x,t)\)</span>. This includes free particles (no potential), particles in static external fields, and even interacting particles (like two electrons) as long as all interactions are time-independent (e.g., Coulomb repulsion between electrons doesn't change with time). Plane waves are examples of stationary states for free particles.</p>
+<p><strong>Looking ahead:</strong> Later we'll see that taking the <strong>time derivative</strong> ∂ψ/∂t extracts <strong>energy</strong> from the time part, just like the spatial derivative extracts momentum! But for now, let's focus on momentum.</p>
+<h3 id="extracting-momentum-the-spatial-derivative">Extracting Momentum: The Spatial Derivative<a class="headerlink" href="#extracting-momentum-the-spatial-derivative" title="Permanent link">&para;</a></h3>
+<p>Focus on the spatial part:</p>
+<div class="arithmatex">\[
+\psi(x) = A e^{ikx}
+\]</div>
+<p>This is what we derived from de Broglie's relation. Now let's ask: <strong>what happens when we take the spatial derivative?</strong></p>
+<p><strong>Key property of exponentials:</strong> Taking the derivative with respect to <span class="arithmatex">\(x\)</span> brings down the exponent:</p>
+<div class="arithmatex">\[
+\frac{d}{dx}e^{ikx} = (ik) \cdot e^{ikx}
+\]</div>
+<p>The factor <span class="arithmatex">\(ik\)</span> (whatever was multiplying <span class="arithmatex">\(x\)</span> in the exponent) gets pulled out front. This simple property is what makes the momentum operator work!</p>
+<p>Applying this to our plane wave:</p>
+<div class="arithmatex">\[
+\frac{d\psi}{dx} = A(ik)e^{ikx} = ik\psi = \frac{i}{\hbar}p\psi
+\]</div>
+<p>Multiply both sides by <span class="arithmatex">\(-i\hbar\)</span>:</p>
+<div class="arithmatex">\[
+-i\hbar\frac{d\psi}{dx} = p\psi
+\]</div>
+<p><strong>This is huge!</strong> Look at what just happened:</p>
+<p>• We applied the mathematical operation <span class="arithmatex">\(-i\hbar\frac{d}{dx}\)</span> to the wavefunction
+• We got back the momentum <span class="arithmatex">\(p\)</span> times the wavefunction</p>
+<p>We call this operation "applying <strong>the momentum operator</strong>" and give it the symbol <span class="arithmatex">\(\hat{p}\)</span>. So we can write:</p>
+<div class="arithmatex">\[
+\hat{p}\psi(x) = -i\hbar\frac{d\psi}{dx} = p\psi
+\]</div>
+<p><strong>Important distinction:</strong> This form <span class="arithmatex">\(-i\hbar\frac{d}{dx}\)</span> is specific to <strong>position representation</strong> (when the wavefunction is written as <span class="arithmatex">\(\psi(x)\)</span>). It tells you <em>how</em> the momentum operator acts on functions of <span class="arithmatex">\(x\)</span>.</p>
+<p>More generally, without referring to a specific representation, we write this in <strong>abstract notation</strong> (ket notation):</p>
+<div class="arithmatex">\[
+\hat{p}|\psi\rangle = p|\psi\rangle
+\]</div>
+<p>This says the same physics — "applying the momentum operator gives back the state multiplied by the momentum value <span class="arithmatex">\(p\)</span>" — but now without specifying <em>how</em> you calculate it.</p>
+<p><strong>Important:</strong> This equation <span class="arithmatex">\(\hat{p}|\psi\rangle = p|\psi\rangle\)</span> is NOT true for all states! It only holds for special wavefunctions called <strong>momentum eigenstates</strong> (like plane waves). For general superpositions, applying <span class="arithmatex">\(\hat{p}\)</span> gives a more complicated result — we'll see examples of this below.</p>
+<p><strong>The key point:</strong> <span class="arithmatex">\(\hat{p}\)</span> is the operator itself (abstract concept), while <span class="arithmatex">\(-i\hbar\frac{d}{dx}\)</span> is how that operator acts when you're working with wavefunctions in position space <span class="arithmatex">\(\psi(x)\)</span>.</p>
+<p><strong>Connection to real measurements:</strong> In the lab, one straightforward way to measure momentum is to measure wavelength <span class="arithmatex">\(\lambda\)</span> (via diffraction or interference patterns). For a free particle, de Broglie tells us <span class="arithmatex">\(p = h/\lambda = \hbar k\)</span> where <span class="arithmatex">\(k = 2\pi/\lambda\)</span>. So wavelength describes "how rapidly the wave oscillates in space," which is exactly what the spatial derivative <span class="arithmatex">\(d/dx\)</span> captures. The operator <span class="arithmatex">\(-i\hbar\frac{d}{dx}\)</span> mathematically packages up this measurement process: different wavelengths → different <span class="arithmatex">\(k\)</span> values → different rates of spatial oscillation → different values when you take <span class="arithmatex">\(d/dx\)</span>.</p>
+<p>When a state satisfies this equation, we say it's a <strong>momentum eigenstate</strong> with <strong>eigenvalue</strong> <span class="arithmatex">\(p\)</span>.</p>
+<h3 id="example-1-single-plane-wave-eigenstate">Example 1: Single Plane Wave (Eigenstate)<a class="headerlink" href="#example-1-single-plane-wave-eigenstate" title="Permanent link">&para;</a></h3>
+<p>Consider a particle in a single plane wave state:</p>
+<div class="arithmatex">\[
+\psi(x) = A e^{ikx} \quad \text{where } k = 5\text{ nm}^{-1}
+\]</div>
+<p>Apply the momentum operator:</p>
+<div class="arithmatex">\[
+\hat{p}\psi = -i\hbar\frac{d}{dx}\left(Ae^{ikx}\right) = -i\hbar(ik)Ae^{ikx} = \hbar k\psi = p\psi
+\]</div>
+<p>We get back <strong>the same wavefunction</strong> multiplied by a number (<span class="arithmatex">\(p = \hbar k\)</span>).</p>
+<p><strong>Physical meaning:</strong> If you measure momentum, you get <span class="arithmatex">\(p = 5\hbar\)</span> nm⁻¹ with <strong>100% certainty</strong>. Every single measurement gives the same result. The particle has <strong>definite momentum</strong>.</p>
+<h3 id="example-2-superposition-of-two-plane-waves-not-an-eigenstate">Example 2: Superposition of Two Plane Waves (NOT an Eigenstate)<a class="headerlink" href="#example-2-superposition-of-two-plane-waves-not-an-eigenstate" title="Permanent link">&para;</a></h3>
+<p>Now consider a particle in a superposition of two plane waves:</p>
+<div class="arithmatex">\[
+\psi(x) = \frac{1}{\sqrt{2}}\left(e^{ik_1 x} + e^{ik_2 x}\right)
+\]</div>
+<p>Let's say <span class="arithmatex">\(k_1 = 3\)</span> nm⁻¹ and <span class="arithmatex">\(k_2 = 7\)</span> nm⁻¹. Apply the momentum operator:</p>
+<div class="arithmatex">\[
+\hat{p}\psi = -i\hbar\frac{d}{dx}\left[\frac{1}{\sqrt{2}}\left(e^{ik_1 x} + e^{ik_2 x}\right)\right]
+\]</div>
+<div class="arithmatex">\[
+= \frac{1}{\sqrt{2}}\left(\hbar k_1 e^{ik_1 x} + \hbar k_2 e^{ik_2 x}\right)
+\]</div>
+<div class="arithmatex">\[
+= \frac{1}{\sqrt{2}}\left(p_1 e^{ik_1 x} + p_2 e^{ik_2 x}\right)
+\]</div>
+<p><strong>This is NOT equal to <span class="arithmatex">\(p\psi\)</span> for any single number <span class="arithmatex">\(p\)</span>!</strong> We don't get the same wavefunction back.</p>
+<p><strong>Physical meaning:</strong> This state is <strong>not a momentum eigenstate</strong>. If you measure momentum, you get:</p>
+<p>• <span class="arithmatex">\(p_1 = 3\hbar\)</span> nm⁻¹ with probability <span class="arithmatex">\(|\frac{1}{\sqrt{2}}|^2 = 50\%\)</span>
+• <span class="arithmatex">\(p_2 = 7\hbar\)</span> nm⁻¹ with probability <span class="arithmatex">\(|\frac{1}{\sqrt{2}}|^2 = 50\%\)</span></p>
+<p>The particle does <strong>not</strong> have a definite momentum! This is why quantum measurements are probabilistic.</p>
+<h3 id="another-superposition-unequal-amplitudes">Another Superposition: Unequal Amplitudes<a class="headerlink" href="#another-superposition-unequal-amplitudes" title="Permanent link">&para;</a></h3>
+<p>Let's make it more interesting with unequal amplitudes:</p>
+<div class="arithmatex">\[
+\psi(x) = \frac{1}{2}e^{ik_1 x} + \frac{\sqrt{3}}{2}e^{ik_2 x}
+\]</div>
+<p>Now the probabilities are:</p>
+<p>• <span class="arithmatex">\(p_1 = k_1\hbar\)</span> with probability <span class="arithmatex">\(|\frac{1}{2}|^2 = 25\%\)</span>
+• <span class="arithmatex">\(p_2 = k_2\hbar\)</span> with probability <span class="arithmatex">\(|\frac{\sqrt{3}}{2}|^2 = 75\%\)</span></p>
+<p>The <strong>key insight:</strong> When <span class="arithmatex">\(\psi\)</span> is a superposition, applying <span class="arithmatex">\(\hat{p}\)</span> gives different eigenvalues multiplied by their respective components. The measurement outcome is probabilistic, with probabilities given by <span class="arithmatex">\(|c_n|^2\)</span> where <span class="arithmatex">\(c_n\)</span> is the coefficient of each momentum eigenstate.</p>
+<hr />
+<h2 id="expected-value-the-average-measurement">Expected Value: The Average Measurement<a class="headerlink" href="#expected-value-the-average-measurement" title="Permanent link">&para;</a></h2>
+<p>What if we repeat the momentum measurement many times on identically prepared systems? We get an <strong>average</strong> or <strong>expected value</strong>.</p>
+<p>For the unequal superposition above:</p>
+<div class="arithmatex">\[
+\langle p \rangle = 25\% \cdot p_1 + 75\% \cdot p_2 = \frac{1}{4}(k_1\hbar) + \frac{3}{4}(k_2\hbar)
+\]</div>
+<p>There's a beautiful mathematical formula for this. For a superposition <span class="arithmatex">\(\psi = c_1\psi_1 + c_2\psi_2\)</span>:</p>
+<div class="arithmatex">\[
+\langle p \rangle = \langle\psi|\hat{p}|\psi\rangle = (c_1^*\langle\psi_1| + c_2^*\langle\psi_2|) \hat{p} (c_1|\psi_1\rangle + c_2|\psi_2\rangle)
+\]</div>
+<p>Expanding this out gives <strong>four terms</strong>:</p>
+<div class="arithmatex">\[
+\langle p \rangle = |c_1|^2 \langle\psi_1|\hat{p}|\psi_1\rangle + |c_2|^2 \langle\psi_2|\hat{p}|\psi_2\rangle + c_1^*c_2 \langle\psi_1|\hat{p}|\psi_2\rangle + c_2^*c_1 \langle\psi_2|\hat{p}|\psi_1\rangle
+\]</div>
+<p>The last two terms are <strong>cross terms</strong> (mixing different states). Here's the key: when <span class="arithmatex">\(\psi_1\)</span> and <span class="arithmatex">\(\psi_2\)</span> are momentum eigenstates, these cross terms vanish:</p>
+<div class="arithmatex">\[
+\langle\psi_1|\hat{p}|\psi_2\rangle = \langle\psi_1|p_2|\psi_2\rangle = p_2\langle\psi_1|\psi_2\rangle = 0
+\]</div>
+<p>The eigenvalue <span class="arithmatex">\(p_2\)</span> comes out, leaving just the overlap <span class="arithmatex">\(\langle\psi_1|\psi_2\rangle = 0\)</span> (eigenstates are orthogonal).</p>
+<p><strong>Let's see this explicitly:</strong> For plane waves <span class="arithmatex">\(\psi_1 = e^{ik_1 x}\)</span> and <span class="arithmatex">\(\psi_2 = e^{ik_2 x}\)</span>:</p>
+<div class="arithmatex">\[
+\langle\psi_1|\hat{p}|\psi_2\rangle = \int_{-\infty}^{\infty} e^{-ik_1 x} \cdot \left(-i\hbar\frac{d}{dx}e^{ik_2 x}\right) dx = -i\hbar(ik_2) \int_{-\infty}^{\infty} e^{-ik_1 x} e^{ik_2 x} dx
+\]</div>
+<div class="arithmatex">\[
+= \hbar k_2 \int_{-\infty}^{\infty} e^{i(k_2-k_1)x} dx = 0 \quad \text{(for } k_1 \neq k_2\text{)}
+\]</div>
+<p>The integral vanishes because plane waves with different wavenumbers are orthogonal. So we get:</p>
+<div class="arithmatex">\[
+\langle p \rangle = |c_1|^2 p_1 + |c_2|^2 p_2
+\]</div>
+<p>In position space, this becomes:</p>
+<div class="arithmatex">\[
+\langle p \rangle = \int_{-\infty}^{\infty} \psi^*(x)\left(-i\hbar\frac{d\psi}{dx}\right)dx
+\]</div>
+<p><strong>Why this form?</strong> Break it down:</p>
+<ol>
+<li><span class="arithmatex">\(-i\hbar\frac{d\psi}{dx}\)</span> applies the momentum operator to <span class="arithmatex">\(\psi\)</span></li>
+<li>Multiply by <span class="arithmatex">\(\psi^*(x)\)</span> (gives <span class="arithmatex">\(|\text{amplitude}|^2\)</span> weighting)</li>
+<li>Integrate over all space (average over the distribution)</li>
+</ol>
+<p>In abstract notation (works in any basis):</p>
+<div class="arithmatex">\[
+\langle p \rangle = \langle\psi|\hat{p}|\psi\rangle
+\]</div>
+<p>This is called the <strong>expectation value</strong> or <strong>quantum average</strong> of the operator <span class="arithmatex">\(\hat{p}\)</span> in state <span class="arithmatex">\(|\psi\rangle\)</span>.</p>
+<p><strong>Two cases to remember:</strong></p>
+<p>• <strong>Eigenstate</strong> (definite momentum): If <span class="arithmatex">\(|\psi\rangle\)</span> is a momentum eigenstate with momentum <span class="arithmatex">\(p\)</span>, then <span class="arithmatex">\(\langle\psi|\hat{p}|\psi\rangle = p\)</span>. You get exactly the eigenvalue — 100% certainty.</p>
+<p>• <strong>Superposition</strong> (indefinite momentum): If <span class="arithmatex">\(|\psi\rangle = c_1|\psi_1\rangle + c_2|\psi_2\rangle\)</span> is a superposition of different momentum eigenstates, then <span class="arithmatex">\(\langle\psi|\hat{p}|\psi\rangle = |c_1|^2 p_1 + |c_2|^2 p_2\)</span> is a weighted average. Individual measurements give either <span class="arithmatex">\(p_1\)</span> or <span class="arithmatex">\(p_2\)</span>, but the average over many measurements is this probabilistic mix.</p>
+<p><strong>Key point:</strong> Even though individual measurements give discrete eigenvalues (<span class="arithmatex">\(p_1\)</span> or <span class="arithmatex">\(p_2\)</span>), the <em>average</em> over many measurements can be any value between them!</p>
+<hr />
+<h2 id="momentum-space-flipping-the-picture">Momentum Space: Flipping the Picture<a class="headerlink" href="#momentum-space-flipping-the-picture" title="Permanent link">&para;</a></h2>
+<p>So far we've worked in <strong>position space</strong> where <span class="arithmatex">\(\psi(x)\)</span> tells us about position. But we can also work in <strong>momentum space</strong> where <span class="arithmatex">\(\tilde{\psi}(p)\)</span> tells us about momentum!</p>
+<h3 id="position-space-vs-momentum-space">Position Space vs Momentum Space<a class="headerlink" href="#position-space-vs-momentum-space" title="Permanent link">&para;</a></h3>
+<p>Remember from <a href="../quantum-foundations/">Foundations</a> that a wave packet can be written as:</p>
+<div class="arithmatex">\[
+\psi(x) = \int_{-\infty}^{\infty} \tilde{\psi}(p) e^{ipx/\hbar} \frac{dp}{2\pi\hbar}
+\]</div>
+<p>Here <span class="arithmatex">\(\tilde{\psi}(p)\)</span> is the <strong>momentum space wavefunction</strong>. It tells you "how much of momentum <span class="arithmatex">\(p\)</span>" is in your state.</p>
+<p><strong>Connection to plane waves:</strong> Each <span class="arithmatex">\(e^{ipx/\hbar}\)</span> is a momentum eigenstate. We're building <span class="arithmatex">\(\psi(x)\)</span> by adding up momentum eigenstates weighted by <span class="arithmatex">\(\tilde{\psi}(p)\)</span>.</p>
+<h3 id="momentum-eigenstates-in-momentum-space">Momentum Eigenstates in Momentum Space<a class="headerlink" href="#momentum-eigenstates-in-momentum-space" title="Permanent link">&para;</a></h3>
+<p>For a momentum eigenstate (single plane wave), what does <span class="arithmatex">\(\tilde{\psi}(p)\)</span> look like?</p>
+<p>If <span class="arithmatex">\(\psi(x) = Ae^{ip_0 x/\hbar}\)</span> (definite momentum <span class="arithmatex">\(p_0\)</span>), then:</p>
+<div class="arithmatex">\[
+\tilde{\psi}(p) = A' \delta(p - p_0)
+\]</div>
+<p>A <strong>delta function!</strong> All the "weight" is concentrated at exactly <span class="arithmatex">\(p = p_0\)</span>.</p>
+<p><strong>Physical meaning:</strong> Measuring momentum gives <span class="arithmatex">\(p_0\)</span> with 100% certainty. The momentum space wavefunction is infinitely sharp at that value.</p>
+<p><strong>Compare to position space:</strong> A plane wave <span class="arithmatex">\(e^{ipx/\hbar}\)</span> is spread uniformly over all space (definite <span class="arithmatex">\(p\)</span>, completely uncertain <span class="arithmatex">\(x\)</span>). Its momentum representation is a delta spike (completely certain <span class="arithmatex">\(p\)</span>).</p>
+<p>This is the uncertainty principle in action: sharp in one space means spread in the other!</p>
+<h3 id="the-momentum-operator-in-momentum-space">The Momentum Operator in Momentum Space<a class="headerlink" href="#the-momentum-operator-in-momentum-space" title="Permanent link">&para;</a></h3>
+<p>Here's something beautiful. The <em>same operator</em> <span class="arithmatex">\(\hat{p}\)</span> acts differently depending on which representation you use.</p>
+<p><strong>In position representation:</strong></p>
+<div class="arithmatex">\[
+\hat{p}\psi(x) = -i\hbar\frac{d\psi}{dx}
+\]</div>
+<p>The operator acts as a derivative.</p>
+<p><strong>In momentum representation:</strong></p>
+<div class="arithmatex">\[
+\hat{p}\tilde{\psi}(p) = p\tilde{\psi}(p)
+\]</div>
+<p>The operator just multiplies by <span class="arithmatex">\(p\)</span>. No derivatives needed!</p>
+<p><strong>Why the difference?</strong> We're working in the momentum basis, where momentum eigenstates are the basis states <span class="arithmatex">\(|p\rangle\)</span> themselves. Acting on an eigenstate just returns its eigenvalue.</p>
+<p>Compare to position: in position space, <span class="arithmatex">\(\hat{x}\psi(x) = x\psi(x)\)</span> (multiply by <span class="arithmatex">\(x\)</span>), but in momentum space, <span class="arithmatex">\(\hat{x}\)</span> would be <span class="arithmatex">\(i\hbar\frac{d}{dp}\)</span> (a derivative!).</p>
+<p><strong>The key insight:</strong> The abstract operator <span class="arithmatex">\(\hat{p}\)</span> is always the same physics. How it acts mathematically depends on which basis you've chosen to work in.</p>
+<h3 id="superposition-in-momentum-space">Superposition in Momentum Space<a class="headerlink" href="#superposition-in-momentum-space" title="Permanent link">&para;</a></h3>
+<p>For the two-plane-wave superposition:</p>
+<div class="arithmatex">\[
+\psi(x) = c_1 e^{ip_1 x/\hbar} + c_2 e^{ip_2 x/\hbar}
+\]</div>
+<p>The momentum space wavefunction is:</p>
+<div class="arithmatex">\[
+\tilde{\psi}(p) = c_1\delta(p-p_1) + c_2\delta(p-p_2)
+\]</div>
+<p>Two delta spikes! One at <span class="arithmatex">\(p_1\)</span> with weight <span class="arithmatex">\(c_1\)</span>, one at <span class="arithmatex">\(p_2\)</span> with weight <span class="arithmatex">\(c_2\)</span>.</p>
+<p>Apply the momentum operator in momentum space:</p>
+<div class="arithmatex">\[
+\hat{p}\tilde{\psi}(p) = p_1 c_1\delta(p-p_1) + p_2 c_2\delta(p-p_2)
+\]</div>
+<p>Different eigenvalues (<span class="arithmatex">\(p_1\)</span> and <span class="arithmatex">\(p_2\)</span>) multiply their respective components. This is exactly what we saw in position space, but now it's crystal clear: <strong>the delta spikes are the momentum eigenstates!</strong></p>
+<p>The expected value becomes:</p>
+<div class="arithmatex">\[
+\langle p \rangle = \int_{-\infty}^{\infty} \tilde{\psi}^*(p) \cdot p \cdot \tilde{\psi}(p) dp = |c_1|^2 p_1 + |c_2|^2 p_2
+\]</div>
+<p>The delta functions do the integration for us, picking out the eigenvalues weighted by their probabilities.</p>
+<hr />
+<h2 id="summary-operators-extract-observable-information">Summary: Operators Extract Observable Information<a class="headerlink" href="#summary-operators-extract-observable-information" title="Permanent link">&para;</a></h2>
+<p><strong>What we've learned:</strong></p>
+<ol>
+<li>
+<p><strong>Operators extract information:</strong> <span class="arithmatex">\(\hat{p} = -i\hbar\frac{d}{dx}\)</span> extracts momentum from <span class="arithmatex">\(\psi(x)\)</span></p>
+</li>
+<li>
+<p><strong>Eigenstates have definite values:</strong> If <span class="arithmatex">\(\hat{p}|\psi\rangle = p|\psi\rangle\)</span>, measuring momentum gives <span class="arithmatex">\(p\)</span> with 100% certainty</p>
+</li>
+<li>
+<p><strong>Superpositions give probabilistic results:</strong> If <span class="arithmatex">\(|\psi\rangle = c_1|p_1\rangle + c_2|p_2\rangle\)</span>, you get <span class="arithmatex">\(p_1\)</span> or <span class="arithmatex">\(p_2\)</span> with probabilities <span class="arithmatex">\(|c_1|^2\)</span> and <span class="arithmatex">\(|c_2|^2\)</span></p>
+</li>
+<li>
+<p><strong>Expected values average over many measurements:</strong> <span class="arithmatex">\(\langle p\rangle = \langle\psi|\hat{p}|\psi\rangle\)</span></p>
+</li>
+<li>
+<p><strong>Different bases, same physics:</strong> In momentum space, eigenstates are delta functions <span class="arithmatex">\(\delta(p-p_0)\)</span> and <span class="arithmatex">\(\hat{p}\)</span> simply multiplies by <span class="arithmatex">\(p\)</span></p>
+</li>
+</ol>
+<p>This framework applies to <strong>all quantum operators</strong>: position, energy, angular momentum, etc. The mathematics is always the same — only the specific operator and basis change!</p>
+<hr />
+<h2 id="the-energy-operator-and-schrodingers-equation">The Energy Operator and Schrödinger's Equation<a class="headerlink" href="#the-energy-operator-and-schrodingers-equation" title="Permanent link">&para;</a></h2>
+<h3 id="schrodingers-equation-as-an-eigenvalue-problem">Schrödinger's Equation as an Eigenvalue Problem<a class="headerlink" href="#schrodingers-equation-as-an-eigenvalue-problem" title="Permanent link">&para;</a></h3>
+<p>Remember from <a href="../quantum-foundations/">Foundations</a> we derived Schrödinger's equation from the time and spatial derivatives of a plane wave. We found:</p>
+<div class="arithmatex">\[
+i\hbar\frac{\partial\psi}{\partial t} = \hat{H}\psi
+\]</div>
+<p>where the <strong>Hamiltonian operator</strong> <span class="arithmatex">\(\hat{H}\)</span> represents the total energy:</p>
+<div class="arithmatex">\[
+\hat{H} = \underbrace{\frac{\hat{p}^2}{2m}}_{\text{kinetic}} + \underbrace{V(x)}_{\text{potential}}
+\]</div>
+<p><strong>Why <span class="arithmatex">\(\hat{H}\)</span> instead of <span class="arithmatex">\(\hat{E}\)</span>?</strong> Pure historical convention from classical mechanics, where the Hamiltonian function represents total energy. We could have used <span class="arithmatex">\(\hat{E}\)</span> just like we use <span class="arithmatex">\(\hat{p}\)</span> for momentum, but "Hamiltonian" (named after physicist William Hamilton) became the standard term.</p>
+<p><strong>What's the difference between <span class="arithmatex">\(\hat{H}\)</span> and <span class="arithmatex">\(E\)</span>?</strong></p>
+<p>• <span class="arithmatex">\(\hat{H}\)</span> is an <strong>operator</strong> — it acts on wavefunctions. When <span class="arithmatex">\(\psi\)</span> is an energy eigenstate, applying <span class="arithmatex">\(\hat{H}\)</span> gives <span class="arithmatex">\(\hat{H}\psi = E\psi\)</span> (the wavefunction back times a number). Like <span class="arithmatex">\(\hat{p}\)</span>, it's used to calculate expectation values: <span class="arithmatex">\(\langle E \rangle = \langle\psi|\hat{H}|\psi\rangle\)</span>.</p>
+<p>• <span class="arithmatex">\(E\)</span> is a <strong>scalar</strong> (just a number) — the energy eigenvalue. It's the actual total energy value you'd measure.</p>
+<p><strong>Important:</strong> When you see "energy <span class="arithmatex">\(E\)</span>" in quantum mechanics, it means <strong>total energy</strong> (kinetic + potential) unless otherwise specified. This is different from classical mechanics where we often track kinetic and potential energy separately.</p>
+<p><strong>For a free particle</strong> (no forces, so <span class="arithmatex">\(V = 0\)</span>), the energy is purely kinetic:</p>
+<div class="arithmatex">\[
+\hat{H} = \frac{\hat{p}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
+\]</div>
+<p>This is why plane wave energy <span class="arithmatex">\(E = \frac{\hbar^2k^2}{2m}\)</span> is just the kinetic energy formula <span class="arithmatex">\(E = \frac{p^2}{2m}\)</span> — there's nothing else!</p>
+<h3 id="the-key-insight-eigenvalue-equation-for-time-independent-potentials">The Key Insight: Eigenvalue Equation for Time-Independent Potentials<a class="headerlink" href="#the-key-insight-eigenvalue-equation-for-time-independent-potentials" title="Permanent link">&para;</a></h3>
+<p>Here's what we didn't emphasize in Foundations: <strong>for time-independent potentials</strong> (systems where <span class="arithmatex">\(V(x)\)</span> doesn't change with time), we can separate variables:</p>
+<div class="arithmatex">\[
+\psi(x,t) = \psi(x)e^{-iEt/\hbar}
+\]</div>
+<p>Plugging this into Schrödinger's equation, the time part cancels out and we get:</p>
+<div class="arithmatex">\[
+\hat{H}\psi(x) = E\psi(x)
+\]</div>
+<p><strong>This is literally an eigenvalue equation!</strong></p>
+<p>Think about what you're solving for:</p>
+<p>• You <strong>know</strong> the operator: <span class="arithmatex">\(\hat{H}\)</span> (you specify the potential <span class="arithmatex">\(V(x)\)</span> and mass <span class="arithmatex">\(m\)</span>)
+• You <strong>don't know</strong> the function: <span class="arithmatex">\(\psi(x)\)</span> (this is what you're solving for!)
+• You <strong>don't know</strong> the constant: <span class="arithmatex">\(E\)</span> (what energies are allowed?)</p>
+<p>You're looking for functions <span class="arithmatex">\(\psi(x)\)</span> that, when you apply <span class="arithmatex">\(\hat{H}\)</span> to them, give back the same function multiplied by a constant. Those special functions are the <strong>eigenfunctions</strong> (energy eigenstates) and those special constants are the <strong>eigenvalues</strong> (energy levels).</p>
+<p><strong>What "solving Schrödinger's equation" really means:</strong> You're finding eigenfunctions and eigenvalues of the Hamiltonian operator! Every solution <span class="arithmatex">\(\psi(x)\)</span> you find is automatically an energy eigenstate with a definite energy eigenvalue <span class="arithmatex">\(E\)</span>.</p>
+<p><strong>For a free particle:</strong> Plane waves <span class="arithmatex">\(\psi(x) = Ae^{ikx}\)</span> are the energy eigenfunctions with eigenvalues <span class="arithmatex">\(E = \frac{\hbar^2k^2}{2m}\)</span>. The energy spectrum is <strong>continuous</strong> — any <span class="arithmatex">\(E \geq 0\)</span> is allowed.</p>
+<h3 id="example-1-single-plane-wave-energy-eigenstate">Example 1: Single Plane Wave (Energy Eigenstate)<a class="headerlink" href="#example-1-single-plane-wave-energy-eigenstate" title="Permanent link">&para;</a></h3>
+<p>Consider an electron (mass <span class="arithmatex">\(m_e = 9.11 \times 10^{-31}\)</span> kg) in a single plane wave state:</p>
+<div class="arithmatex">\[
+\psi(x) = A e^{ikx} \quad \text{where } k = 5 \times 10^{10}\text{ m}^{-1}
+\]</div>
+<p>The energy is:</p>
+<div class="arithmatex">\[
+E = \frac{\hbar^2 k^2}{2m_e} = \frac{(1.055 \times 10^{-34})^2 (5 \times 10^{10})^2}{2(9.11 \times 10^{-31})} \approx 1.53 \times 10^{-18}\text{ J} \approx 9.6\text{ eV}
+\]</div>
+<p>Apply the Hamiltonian operator:</p>
+<div class="arithmatex">\[
+\hat{H}\psi = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\left(Ae^{ikx}\right) = -\frac{\hbar^2}{2m}(ik)^2 Ae^{ikx} = \frac{\hbar^2k^2}{2m}\psi = E\psi
+\]</div>
+<p>We get back <strong>the same wavefunction</strong> multiplied by the energy eigenvalue <span class="arithmatex">\(E\)</span>.</p>
+<p><strong>Physical meaning:</strong> If you measure energy, you get <span class="arithmatex">\(E = 9.6\)</span> eV with <strong>100% certainty</strong>. Every single measurement gives the same result. The particle has <strong>definite energy</strong>.</p>
+<h3 id="example-2-superposition-of-two-plane-waves-not-an-eigenstate_1">Example 2: Superposition of Two Plane Waves (NOT an Eigenstate)<a class="headerlink" href="#example-2-superposition-of-two-plane-waves-not-an-eigenstate_1" title="Permanent link">&para;</a></h3>
+<p>Now consider a superposition of two plane waves with different wavenumbers:</p>
+<div class="arithmatex">\[
+\psi(x) = \frac{1}{\sqrt{2}}\left(e^{ik_1 x} + e^{ik_2 x}\right)
+\]</div>
+<p>Let's use <span class="arithmatex">\(k_1 = 3 \times 10^{10}\)</span> m⁻¹ and <span class="arithmatex">\(k_2 = 7 \times 10^{10}\)</span> m⁻¹. These give different energies:</p>
+<div class="arithmatex">\[
+E_1 = \frac{\hbar^2k_1^2}{2m_e} \approx 3.5\text{ eV}
+\]</div>
+<div class="arithmatex">\[
+E_2 = \frac{\hbar^2k_2^2}{2m_e} \approx 18.8\text{ eV}
+\]</div>
+<p>Apply the Hamiltonian:</p>
+<div class="arithmatex">\[
+\hat{H}\psi = \frac{1}{\sqrt{2}}\left(\hat{H}e^{ik_1 x} + \hat{H}e^{ik_2 x}\right) = \frac{1}{\sqrt{2}}\left(E_1 e^{ik_1 x} + E_2 e^{ik_2 x}\right)
+\]</div>
+<p><strong>This is NOT equal to <span class="arithmatex">\(E\psi\)</span> for any single energy <span class="arithmatex">\(E\)</span>!</strong> Different eigenvalues (<span class="arithmatex">\(E_1\)</span> and <span class="arithmatex">\(E_2\)</span>) multiply their respective components.</p>
+<p><strong>Physical meaning:</strong> This state is <strong>not an energy eigenstate</strong>. If you measure energy, you get:</p>
+<p>• <span class="arithmatex">\(E_1 = 3.5\)</span> eV with probability <span class="arithmatex">\(|\frac{1}{\sqrt{2}}|^2 = 50\%\)</span>
+• <span class="arithmatex">\(E_2 = 18.8\)</span> eV with probability <span class="arithmatex">\(|\frac{1}{\sqrt{2}}|^2 = 50\%\)</span></p>
+<p>The particle does <strong>not</strong> have definite energy! This is the same probabilistic measurement story we saw with the momentum operator.</p>
+<p>Let's calculate the <strong>expected value</strong> explicitly using the expectation value formula. For our superposition <span class="arithmatex">\(\psi = \frac{1}{\sqrt{2}}|E_1\rangle + \frac{1}{\sqrt{2}}|E_2\rangle\)</span>:</p>
+<div class="arithmatex">\[
+\langle E \rangle = \langle\psi|\hat{H}|\psi\rangle = \left(\frac{1}{\sqrt{2}}\langle E_1| + \frac{1}{\sqrt{2}}\langle E_2|\right) \hat{H} \left(\frac{1}{\sqrt{2}}|E_1\rangle + \frac{1}{\sqrt{2}}|E_2\rangle\right)
+\]</div>
+<p>Expanding this gives four terms:</p>
+<div class="arithmatex">\[
+\langle E \rangle = \frac{1}{2}\langle E_1|\hat{H}|E_1\rangle + \frac{1}{2}\langle E_2|\hat{H}|E_2\rangle + \frac{1}{2}\langle E_1|\hat{H}|E_2\rangle + \frac{1}{2}\langle E_2|\hat{H}|E_1\rangle
+\]</div>
+<p>The cross terms vanish (just like the momentum case):</p>
+<div class="arithmatex">\[
+\langle E_1|\hat{H}|E_2\rangle = \langle E_1|E_2|E_2\rangle = E_2 \langle E_1|E_2\rangle = 0
+\]</div>
+<p>So we're left with:</p>
+<div class="arithmatex">\[
+\langle E \rangle = \frac{1}{2}(3.5\text{ eV}) + \frac{1}{2}(18.8\text{ eV}) = 11.15\text{ eV}
+\]</div>
+<p>Even though individual measurements give either 3.5 eV or 18.8 eV, the <em>average</em> is 11.15 eV!</p>
+<hr />
+<h2 id="confined-particles-and-discrete-energy-levels">Confined Particles and Discrete Energy Levels<a class="headerlink" href="#confined-particles-and-discrete-energy-levels" title="Permanent link">&para;</a></h2>
+<h3 id="from-continuous-to-discrete">From Continuous to Discrete<a class="headerlink" href="#from-continuous-to-discrete" title="Permanent link">&para;</a></h3>
+<p>So far, we've looked at <strong>free particles</strong> where the energy spectrum is continuous — any energy <span class="arithmatex">\(E \geq 0\)</span> is allowed. But what happens when we <strong>confine</strong> the particle?</p>
+<p><strong>Boundary conditions change everything:</strong></p>
+<p>• Add walls (particle in a box)
+• Add a potential well
+• Confine in an atom or molecule</p>
+<p>When you confine a particle, the wavefunction must satisfy boundary conditions (like being zero at walls). This restricts which wavelengths — and therefore which wavenumbers <span class="arithmatex">\(k\)</span> — are allowed.</p>
+<p><strong>Result:</strong> Only certain discrete values of <span class="arithmatex">\(k\)</span> are permitted, which means only certain energies are allowed!</p>
+<div class="arithmatex">\[
+E_1, E_2, E_3, \ldots \quad \text{(a discrete ladder of energy levels)}
+\]</div>
+<h3 id="example-particle-in-a-box">Example: Particle in a Box<a class="headerlink" href="#example-particle-in-a-box" title="Permanent link">&para;</a></h3>
+<p>The simplest confined system is a particle trapped in a 1D box of length <span class="arithmatex">\(L\)</span> with infinitely high walls. The boundary conditions force the wavefunction to be zero at the walls.</p>
+<p><strong>Energy eigenvalues:</strong></p>
+<div class="arithmatex">\[
+E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}, \quad n = 1, 2, 3, \ldots
+\]</div>
+<p><strong>Energy eigenfunctions:</strong></p>
+<div class="arithmatex">\[
+\psi_n(x) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right), \quad 0 \leq x \leq L
+\]</div>
+<p>The quantum number <span class="arithmatex">\(n\)</span> labels the energy levels. The first few levels:</p>
+<p>• <span class="arithmatex">\(n=1\)</span> (ground state): <span class="arithmatex">\(E_1 = \frac{\pi^2\hbar^2}{2mL^2}\)</span>
+• <span class="arithmatex">\(n=2\)</span> (first excited state): <span class="arithmatex">\(E_2 = 4E_1\)</span>
+• <span class="arithmatex">\(n=3\)</span> (second excited state): <span class="arithmatex">\(E_3 = 9E_1\)</span></p>
+<p>Notice the energies grow as <span class="arithmatex">\(n^2\)</span> — the spacing between levels gets larger as you go up!</p>
+<p><strong>For a concrete example:</strong> An electron in a box of length <span class="arithmatex">\(L = 1\)</span> nm:</p>
+<div class="arithmatex">\[
+E_1 = \frac{\pi^2(1.055 \times 10^{-34})^2}{2(9.11 \times 10^{-31})(10^{-9})^2} \approx 6.0 \times 10^{-20}\text{ J} \approx 0.38\text{ eV}
+\]</div>
+<p>Then <span class="arithmatex">\(E_2 \approx 1.5\)</span> eV, <span class="arithmatex">\(E_3 \approx 3.4\)</span> eV, etc.</p>
+<p><strong>Key insight:</strong> Confinement creates discrete energy levels. The smaller the box, the larger the energy spacing!</p>
+<hr />
+<h2 id="matrix-representation-of-operators">Matrix Representation of Operators<a class="headerlink" href="#matrix-representation-of-operators" title="Permanent link">&para;</a></h2>
+<h3 id="discrete-basis-operators-become-matrices">Discrete Basis → Operators Become Matrices<a class="headerlink" href="#discrete-basis-operators-become-matrices" title="Permanent link">&para;</a></h3>
+<p>We've now seen two very different situations:</p>
+<p><strong>Continuous basis (position <span class="arithmatex">\(x\)</span>, momentum <span class="arithmatex">\(p\)</span>):</strong>
+• Basis labels are continuous variables
+• States are functions of continuous variables: <span class="arithmatex">\(\psi(x)\)</span> or <span class="arithmatex">\(\tilde{\psi}(p)\)</span>
+• Operators are differential operators (involve derivatives)</p>
+<p><strong>Discrete basis (energy levels, quantum numbers):</strong>
+• Basis labels are discrete: <span class="arithmatex">\(n = 1, 2, 3, \ldots\)</span>
+• States written as sums over discrete basis states: <span class="arithmatex">\(|E_1\rangle, |E_2\rangle, |E_3\rangle, \ldots\)</span>
+• <strong>Common examples:</strong> energy levels, spin states (↑/↓), photon polarization (H/V)
+• <strong>Operators become matrices!</strong></p>
+<p><strong>Why matrices?</strong> Any quantum state can be written as a superposition of basis states:</p>
+<div class="arithmatex">\[
+|\psi\rangle = c_1|E_1\rangle + c_2|E_2\rangle + c_3|E_3\rangle + \cdots
+\]</div>
+<p>We can represent this state as a <strong>column vector</strong> of coefficients:</p>
+<div class="arithmatex">\[
+|\psi\rangle \leftrightarrow \begin{pmatrix} c_1 \\ c_2 \\ c_3 \\ \vdots \end{pmatrix}
+\]</div>
+<p>When an operator acts on a state, it becomes <strong>matrix multiplication</strong>!</p>
+<h3 id="the-hamiltonian-in-the-energy-basis">The Hamiltonian in the Energy Basis<a class="headerlink" href="#the-hamiltonian-in-the-energy-basis" title="Permanent link">&para;</a></h3>
+<p>Here's something beautiful: in its <strong>own eigenbasis</strong>, an operator is always <strong>diagonal</strong>.</p>
+<p>The Hamiltonian in the energy basis is:</p>
+<div class="arithmatex">\[
+\hat{H} = \begin{pmatrix}
+E_1 &amp; 0 &amp; 0 &amp; \cdots \\
+0 &amp; E_2 &amp; 0 &amp; \cdots \\
+0 &amp; 0 &amp; E_3 &amp; \cdots \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots
+\end{pmatrix}
+\]</div>
+<p>The energy eigenvalues sit on the diagonal. All off-diagonal elements are zero.</p>
+<p><strong>Why?</strong> When you apply <span class="arithmatex">\(\hat{H}\)</span> to an eigenstate <span class="arithmatex">\(|E_n\rangle\)</span>, you get <span class="arithmatex">\(E_n|E_n\rangle\)</span> — it just multiplies by the eigenvalue. No mixing with other states!</p>
+<h3 id="example-two-level-system">Example: Two-Level System<a class="headerlink" href="#example-two-level-system" title="Permanent link">&para;</a></h3>
+<p>Let's work with the simplest discrete system: <strong>two energy levels</strong>. This could represent:</p>
+<p>• The first two levels of a particle in a box
+• Two electronic states in an atom
+• A spin-1/2 particle (coming later!)</p>
+<p><strong>Setup:</strong> Two energy eigenstates with energies <span class="arithmatex">\(E_1 = 1\)</span> eV and <span class="arithmatex">\(E_2 = 3\)</span> eV.</p>
+<p>Basis states: <span class="arithmatex">\(|E_1\rangle\)</span> and <span class="arithmatex">\(|E_2\rangle\)</span></p>
+<p>The Hamiltonian as a 2×2 matrix:</p>
+<div class="arithmatex">\[
+\hat{H} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 3 \end{pmatrix} \text{ eV}
+\]</div>
+<p><strong>Example A: Energy Eigenstate</strong></p>
+<p>Consider the particle in the second excited state:</p>
+<div class="arithmatex">\[
+|\psi\rangle = |E_2\rangle
+\]</div>
+<p>As a column vector:</p>
+<div class="arithmatex">\[
+|\psi\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\]</div>
+<p>Apply the Hamiltonian (matrix multiplication):</p>
+<div class="arithmatex">\[
+\hat{H}|\psi\rangle = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 3 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 3 \end{pmatrix} = 3 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = E_2|\psi\rangle
+\]</div>
+<p>We get back <strong>the same state</strong> multiplied by the eigenvalue <span class="arithmatex">\(E_2 = 3\)</span> eV.</p>
+<p><strong>Physical meaning:</strong> Measure energy → get 3 eV with <strong>100% certainty</strong>.</p>
+<p><strong>Example B: Superposition State</strong></p>
+<p>Now consider an equal superposition:</p>
+<div class="arithmatex">\[
+|\psi\rangle = \frac{1}{\sqrt{2}}|E_1\rangle + \frac{1}{\sqrt{2}}|E_2\rangle
+\]</div>
+<p>As a column vector:</p>
+<div class="arithmatex">\[
+|\psi\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}
+\]</div>
+<p>Apply the Hamiltonian:</p>
+<div class="arithmatex">\[
+\hat{H}|\psi\rangle = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 3 \end{pmatrix} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 3 \end{pmatrix}
+\]</div>
+<p><strong>This is NOT equal to <span class="arithmatex">\(E|\psi\rangle\)</span> for any single energy!</strong> The components get multiplied by different eigenvalues (1 and 3).</p>
+<p><strong>Physical meaning:</strong> This is <strong>not an energy eigenstate</strong>. If you measure energy, you get:</p>
+<p>• <span class="arithmatex">\(E_1 = 1\)</span> eV with probability <span class="arithmatex">\(|\frac{1}{\sqrt{2}}|^2 = 50\%\)</span>
+• <span class="arithmatex">\(E_2 = 3\)</span> eV with probability <span class="arithmatex">\(|\frac{1}{\sqrt{2}}|^2 = 50\%\)</span></p>
+<p>The <strong>expected value</strong> (average over many measurements):</p>
+<div class="arithmatex">\[
+\langle E \rangle = 50\% \cdot 1 + 50\% \cdot 3 = 2\text{ eV}
+\]</div>
+<p>Individual measurements give 1 eV or 3 eV, but the average is 2 eV!</p>
+<p><strong>Using the matrix formula:</strong></p>
+<div class="arithmatex">\[
+\langle E \rangle = \langle\psi|\hat{H}|\psi\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 &amp; 1 \end{pmatrix} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 3 \end{pmatrix} = \frac{1}{2}(1 + 3) = 2\text{ eV}
+\]</div>
+<p>The row vector <span class="arithmatex">\(\langle\psi|\)</span> is the conjugate transpose of <span class="arithmatex">\(|\psi\rangle\)</span>.</p>
+<h3 id="example-position-operator-in-energy-basis">Example: Position Operator in Energy Basis<a class="headerlink" href="#example-position-operator-in-energy-basis" title="Permanent link">&para;</a></h3>
+<p>We saw that the Hamiltonian is diagonal in the energy basis. But what about other operators?</p>
+<p><strong>Key principle:</strong> An operator is diagonal <strong>only in its own eigenbasis</strong>. In other bases, it has off-diagonal elements.</p>
+<p>Let's see this by calculating the expected position for a particle in a box in a superposition of energy states:</p>
+<div class="arithmatex">\[
+|\psi\rangle = \frac{1}{\sqrt{2}}|E_1\rangle + \frac{1}{\sqrt{2}}|E_2\rangle
+\]</div>
+<p>Using the expectation value formula (same structure as before):</p>
+<div class="arithmatex">\[
+\langle x \rangle = \langle\psi|\hat{x}|\psi\rangle = \frac{1}{2}\langle E_1|\hat{x}|E_1\rangle + \frac{1}{2}\langle E_2|\hat{x}|E_2\rangle + \frac{1}{2}\langle E_1|\hat{x}|E_2\rangle + \frac{1}{2}\langle E_2|\hat{x}|E_1\rangle
+\]</div>
+<p><strong>But this time the cross terms don't vanish!</strong> Why? Because <span class="arithmatex">\(|E_1\rangle\)</span> and <span class="arithmatex">\(|E_2\rangle\)</span> are not position eigenstates. We can't pull out an eigenvalue, so orthogonality doesn't help us.</p>
+<p><strong>What is <span class="arithmatex">\(\langle E_m|\hat{x}|E_n\rangle\)</span> mathematically?</strong></p>
+<p>Here's the key: We're working in the <strong>energy basis</strong> (discrete, column vectors), but to <strong>calculate</strong> the matrix elements, we need to convert to position representation where we know the explicit forms of the energy eigenstates.</p>
+<p>The energy eigenstate <span class="arithmatex">\(|E_n\rangle\)</span> (an abstract ket in energy basis) corresponds to a specific wavefunction <span class="arithmatex">\(\psi_n(x)\)</span> in position representation. For particle in a box:</p>
+<div class="arithmatex">\[
+\psi_n(x) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right)
+\]</div>
+<p>These are the same states — just written in different representations! To calculate the matrix element <span class="arithmatex">\(\langle E_m|\hat{x}|E_n\rangle\)</span>, we convert to position space:</p>
+<div class="arithmatex">\[
+\langle E_m|\hat{x}|E_n\rangle = \int_0^L \psi_m^*(x) \cdot x \cdot \psi_n(x) \, dx = \frac{2}{L}\int_0^L x \sin\left(\frac{m\pi x}{L}\right) \sin\left(\frac{n\pi x}{L}\right) dx
+\]</div>
+<p><strong>Result of the integrals:</strong></p>
+<p>• <strong>Diagonal elements</strong> (<span class="arithmatex">\(m=n\)</span>): By symmetry, <span class="arithmatex">\(\langle E_n|\hat{x}|E_n\rangle = \frac{L}{2}\)</span> (expected position at center of box)</p>
+<p>• <strong>Off-diagonal elements</strong> (<span class="arithmatex">\(m \neq n\)</span>): These integrals are generally <strong>non-zero</strong>! Each integral gives you a single number.</p>
+<p>These numbers become the entries in our matrix when we return to the energy basis representation (column vectors).</p>
+<p><strong>Contrast with the Hamiltonian:</strong></p>
+<div class="arithmatex">\[
+\langle E_m|\hat{H}|E_n\rangle = \int_0^L \psi_m^*(x) \hat{H}\psi_n(x) \, dx = E_n \int_0^L \psi_m^*(x) \psi_n(x) \, dx = E_n \cdot 0 = 0
+\]</div>
+<p>The eigenvalue <span class="arithmatex">\(E_n\)</span> comes out, leaving orthogonality → zero. But for <span class="arithmatex">\(\hat{x}\)</span>, there's no eigenvalue to extract!</p>
+<p><strong>Matrix representation:</strong> These <span class="arithmatex">\(\langle E_m|\hat{x}|E_n\rangle\)</span> values are the matrix elements. For a 2-level system:</p>
+<div class="arithmatex">\[
+\hat{x} \approx \begin{pmatrix} L/2 &amp; x_{12} \\ x_{21} &amp; L/2 \end{pmatrix}
+\]</div>
+<p>where <span class="arithmatex">\(x_{12}\)</span> and <span class="arithmatex">\(x_{21}\)</span> are the off-diagonal matrix elements.</p>
+<p><strong>The key insight:</strong> Every operator is diagonal in its own eigenbasis, but appears as a more complex matrix in other bases.</p>
+<hr />
+<h2 id="summary-energy-schrodingers-equation-and-matrices">Summary: Energy, Schrödinger's Equation, and Matrices<a class="headerlink" href="#summary-energy-schrodingers-equation-and-matrices" title="Permanent link">&para;</a></h2>
+<p><strong>What we've learned:</strong></p>
+<ol>
+<li>
+<p><strong>Time derivative extracts energy:</strong> Just like spatial derivative <span class="arithmatex">\(\frac{\partial}{\partial x}\)</span> extracts momentum, time derivative <span class="arithmatex">\(\frac{\partial}{\partial t}\)</span> extracts energy: <span class="arithmatex">\(i\hbar\frac{\partial\psi}{\partial t} = E\psi\)</span></p>
+</li>
+<li>
+<p><strong>Hamiltonian = total energy operator:</strong> <span class="arithmatex">\(\hat{H} = \frac{\hat{p}^2}{2m} + V(x)\)</span> represents kinetic + potential energy. Energy eigenvalue <span class="arithmatex">\(E\)</span> always means total energy (unlike classical mechanics where we often separate KE and PE).</p>
+</li>
+<li>
+<p><strong>Schrödinger's equation is an eigenvalue equation:</strong> For time-independent potentials, "solving Schrödinger's equation" means finding energy eigenfunctions and eigenvalues: <span class="arithmatex">\(\hat{H}\psi(x) = E\psi(x)\)</span></p>
+</li>
+<li>
+<p><strong>Free particles: continuous spectrum:</strong> Plane wave solutions <span class="arithmatex">\(\psi(x) = Ae^{ikx}\)</span> with <span class="arithmatex">\(E = \frac{\hbar^2k^2}{2m}\)</span> (purely kinetic). Any energy <span class="arithmatex">\(E \geq 0\)</span> is allowed.</p>
+</li>
+<li>
+<p><strong>Confined particles: discrete spectrum:</strong> Boundary conditions restrict allowed wavelengths, creating discrete energy levels <span class="arithmatex">\(E_1, E_2, E_3, \ldots\)</span> (Example: particle in box with <span class="arithmatex">\(E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}\)</span>)</p>
+</li>
+<li>
+<p><strong>Discrete basis → matrix representation:</strong> When working with discrete energy levels:
+   • States become column vectors: <span class="arithmatex">\(|\psi\rangle = c_1|E_1\rangle + c_2|E_2\rangle \rightarrow \begin{pmatrix} c_1 \\ c_2 \end{pmatrix}\)</span>
+   • Operators become matrices
+   • Operator action = matrix multiplication</p>
+</li>
+<li>
+<p><strong>Operators are diagonal in their own eigenbasis:</strong> <span class="arithmatex">\(\hat{H}\)</span> in energy basis has eigenvalues on diagonal. In other bases (like position operator in energy basis), matrices have off-diagonal elements.</p>
+</li>
+<li>
+<p><strong>Same probabilistic measurement framework:</strong> Whether continuous (plane waves) or discrete (energy levels), superposition states give probabilistic measurement outcomes with probabilities <span class="arithmatex">\(|c_n|^2\)</span>.</p>
+</li>
+</ol>
+<p><strong>The big picture:</strong> Quantum operators extract observable quantities through eigenvalue equations. The mathematical form changes (derivatives vs matrices) depending on whether you're working with continuous or discrete bases, but the physics — eigenstates, eigenvalues, and probabilistic measurements — remains the same!</p>
+<hr />
+<h2 id="what-changes-with-problem-vs-basis">What Changes With Problem vs Basis?<a class="headerlink" href="#what-changes-with-problem-vs-basis" title="Permanent link">&para;</a></h2>
+<p>The Hamiltonian <span class="arithmatex">\(\hat{H}\)</span> changes for different physical systems (free particle, hydrogen atom, etc.), giving different energy eigenvalues. Other operators like <span class="arithmatex">\(\hat{x}\)</span> and <span class="arithmatex">\(\hat{p}\)</span> are the same for all problems, but their <strong>mathematical form</strong> changes depending on which basis you choose:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Position Basis <span class="arithmatex">\(\psi(x)\)</span></th>
+<th>Momentum Basis <span class="arithmatex">\(\tilde{\psi}(p)\)</span></th>
+<th>Energy Basis <span class="arithmatex">\(c_n\)</span> (discrete)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\hat{x}\)</span></td>
+<td>multiply by <span class="arithmatex">\(x\)</span></td>
+<td><span class="arithmatex">\(i\hbar\frac{d}{dp}\)</span></td>
+<td>off-diagonal matrix</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\hat{p}\)</span></td>
+<td><span class="arithmatex">\(-i\hbar\frac{d}{dx}\)</span></td>
+<td>multiply by <span class="arithmatex">\(p\)</span></td>
+<td>off-diagonal matrix</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\hat{H}\)</span></td>
+<td><span class="arithmatex">\(-\frac{\hbar^2}{2m}\frac{d^2}{dx^2} + V(x)\)</span></td>
+<td><span class="arithmatex">\(\frac{p^2}{2m} + V(i\hbar\frac{d}{dp})\)</span></td>
+<td>diagonal matrix (eigenvalues <span class="arithmatex">\(E_n\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Same operator, different mathematical form. The physics doesn't change—only how you calculate it. Pick whichever basis makes your calculation easiest!</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

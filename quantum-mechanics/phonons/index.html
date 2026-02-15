@@ -1,0 +1,3165 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/quantum-mechanics/phonons/">
+      
+      
+        <link rel="prev" href="../electrons-in-metals/">
+      
+      
+        <link rel="next" href="../../microwave-engineering/positive-negative-coupling/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Phonons: What They Are and How They Hit Electrons - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phonons-what-they-are-and-how-they-hit-electrons" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Phonons: What They Are and How They Hit Electrons
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-layer-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Two-Layer Picture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Two-Layer Picture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mental-model-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental Model Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-1d-monatomic-chain-where-phonons-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The 1D Monatomic Chain — Where Phonons Come From
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The 1D Monatomic Chain — Where Phonons Come From">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-toy-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Toy Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newtons-law-for-atom-j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Newton's Law for Atom \(j\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-traveling-wave-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Traveling Wave Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example-copper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Example: Copper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-phase-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Phase Does
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-quantization-from-waves-to-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Quantization — From Waves to Phonons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Quantization — From Waves to Phonons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-critical-clarification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Critical Clarification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-quantum-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Quantum Step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-photon-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Photon Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example-how-many-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Example: How Many Phonons?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-longitudinal-vs-transverse-this-is-about-polarization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Longitudinal vs Transverse — This is About Polarization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-acoustic-vs-optical-the-real-distinction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Acoustic vs Optical — The REAL Distinction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Acoustic vs Optical — The REAL Distinction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-1d-diatomic-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 1D Diatomic Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acoustic-branch-lower-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACOUSTIC Branch (Lower Energy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optical-branch-higher-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPTICAL Branch (Higher Energy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example-gaas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Example: GaAs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Full Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-phonon-dispersion-the-phonon-band-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Phonon Dispersion — The Phonon "Band Structure"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-the-moving-walls-model-how-phonons-affect-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: The Moving Walls Model — How Phonons Affect Electrons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: The Moving Walls Model — How Phonons Affect Electrons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-box-frozen-lattice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Box = Frozen Lattice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oscillating-walls-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oscillating Walls = Phonons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mapping-to-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mapping to Phonons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-electron-phonon-scattering-the-actual-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Electron-Phonon Scattering — The Actual Physics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: Electron-Phonon Scattering — The Actual Physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-electron-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Electron Sees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-views-of-the-same-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Views of the Same Physics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conservation-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conservation Laws
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umklapp-zone-folding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Umklapp (Zone Folding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example-scattering-in-copper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Example: Scattering in Copper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-8-physical-consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 8: Physical Consequences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 8: Physical Consequences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acoustic-phonon-scattering-low-fields-moderate-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic Phonon Scattering (Low Fields, Moderate T)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optical-phonon-scattering-high-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optical Phonon Scattering (High Fields)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature Dependence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-classical-vs-quantum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Classical vs Quantum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phonon-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phonon Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acoustic-vs-optical-memorize-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic vs Optical (Memorize This)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longitudinal-vs-transverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Longitudinal vs Transverse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electron-phonon-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electron-Phonon Interaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-layer-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Two-Layer Picture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Two-Layer Picture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mental-model-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental Model Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-1d-monatomic-chain-where-phonons-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: The 1D Monatomic Chain — Where Phonons Come From
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The 1D Monatomic Chain — Where Phonons Come From">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-toy-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Toy Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newtons-law-for-atom-j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Newton's Law for Atom \(j\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-traveling-wave-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Traveling Wave Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example-copper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Example: Copper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-phase-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Phase Does
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-quantization-from-waves-to-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Quantization — From Waves to Phonons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Quantization — From Waves to Phonons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-critical-clarification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Critical Clarification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-quantum-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Quantum Step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-photon-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Photon Analogy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example-how-many-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Example: How Many Phonons?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-longitudinal-vs-transverse-this-is-about-polarization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Longitudinal vs Transverse — This is About Polarization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-acoustic-vs-optical-the-real-distinction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Acoustic vs Optical — The REAL Distinction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Acoustic vs Optical — The REAL Distinction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-1d-diatomic-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 1D Diatomic Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acoustic-branch-lower-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACOUSTIC Branch (Lower Energy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optical-branch-higher-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPTICAL Branch (Higher Energy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example-gaas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Example: GaAs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Full Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-phonon-dispersion-the-phonon-band-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Phonon Dispersion — The Phonon "Band Structure"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-the-moving-walls-model-how-phonons-affect-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: The Moving Walls Model — How Phonons Affect Electrons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: The Moving Walls Model — How Phonons Affect Electrons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-box-frozen-lattice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Box = Frozen Lattice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oscillating-walls-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oscillating Walls = Phonons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mapping-to-phonons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mapping to Phonons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-electron-phonon-scattering-the-actual-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Electron-Phonon Scattering — The Actual Physics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: Electron-Phonon Scattering — The Actual Physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-electron-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Electron Sees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-views-of-the-same-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Views of the Same Physics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conservation-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conservation Laws
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umklapp-zone-folding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Umklapp (Zone Folding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-example-scattering-in-copper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Example: Scattering in Copper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-8-physical-consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 8: Physical Consequences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 8: Physical Consequences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acoustic-phonon-scattering-low-fields-moderate-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic Phonon Scattering (Low Fields, Moderate T)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optical-phonon-scattering-high-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optical Phonon Scattering (High Fields)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature Dependence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-classical-vs-quantum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Classical vs Quantum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phonon-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phonon Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acoustic-vs-optical-memorize-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic vs Optical (Memorize This)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longitudinal-vs-transverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Longitudinal vs Transverse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electron-phonon-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electron-Phonon Interaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="phonons-what-they-are-and-how-they-hit-electrons">Phonons: What They Are and How They Hit Electrons<a class="headerlink" href="#phonons-what-they-are-and-how-they-hit-electrons" title="Permanent link">&para;</a></h1>
+<h2 id="the-two-layer-picture">The Two-Layer Picture<a class="headerlink" href="#the-two-layer-picture" title="Permanent link">&para;</a></h2>
+<p>Solid-state physics is built on a sneaky trick: we solve for electrons assuming the ions are frozen in place, <em>then</em> we let the ions move and treat it as a perturbation.</p>
+<p><strong>Layer 1 — Frozen lattice (idealization):</strong>
+You solve Schrödinger's equation for an electron in a perfectly periodic potential <span class="arithmatex">\(V(\mathbf{r})\)</span>. The solutions are Bloch states <span class="arithmatex">\(|n,\mathbf{k}\rangle\)</span> — the "alphabet" for describing electrons. These are exact eigenstates, and in this frozen world, electrons never scatter.</p>
+<blockquote>
+<p><strong>Notation:</strong> <span class="arithmatex">\(|n,\mathbf{k}\rangle\)</span> is Dirac notation for a Bloch wavefunction. Here <span class="arithmatex">\(n\)</span> is the band index (which energy band) and <span class="arithmatex">\(\mathbf{k}\)</span> is the crystal momentum (wavevector in the Brillouin zone). In position space, this state has the form <span class="arithmatex">\(\psi_{n\mathbf{k}}(\mathbf{r}) = e^{i\mathbf{k}\cdot\mathbf{r}} u_{n\mathbf{k}}(\mathbf{r})\)</span>, where <span class="arithmatex">\(u\)</span> has the periodicity of the lattice. (Note: this <span class="arithmatex">\(n\)</span> is the band index; later we'll use <span class="arithmatex">\(n\)</span> for phonon occupation number — context will make clear which is which.)</p>
+</blockquote>
+<p><strong>Layer 2 — Moving lattice (reality):</strong>
+Ions vibrate. The potential becomes time-dependent: <span class="arithmatex">\(V(\mathbf{r},t) = V_0(\mathbf{r}) + \delta V(\mathbf{r},t)\)</span>. That <span class="arithmatex">\(\delta V\)</span> is made of normal modes. Quantize those modes → phonons. Electrons scatter: <span class="arithmatex">\(|\mathbf{k}\rangle \rightarrow |\mathbf{k} \pm \mathbf{q}\rangle\)</span>.</p>
+<blockquote>
+<p><strong>Notation:</strong> When we write <span class="arithmatex">\(|\mathbf{k}\rangle\)</span> (dropping the band index <span class="arithmatex">\(n\)</span>), we're assuming the electron stays in the same band during scattering. The arrow <span class="arithmatex">\(|\mathbf{k}\rangle \rightarrow |\mathbf{k} \pm \mathbf{q}\rangle\)</span> means the electron's crystal momentum changes by <span class="arithmatex">\(\pm\mathbf{q}\)</span> (the phonon's wavevector) — plus for absorption, minus for emission.</p>
+</blockquote>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│ Layer 1: Frozen lattice (idealization)                       │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ions fixed → V(r) periodic → Bloch states |n,k⟩            │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   (alphabet for electrons)                                   │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└──────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                 ↓ now un-freeze the ions
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>┌──────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│ Layer 2: Moving lattice (reality)                            │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ions wiggle → V(r,t) = V₀(r) + δV(r,t)                     │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   δV is made of normal modes → quantize → phonons            │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   electrons scatter: |k⟩ → |k±q⟩                             │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└──────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<blockquote>
+<p><strong>Scope note:</strong> This tutorial is metal-first. Many simple metals (Cu, Al, Na) are monatomic Bravais lattices with only acoustic phonon branches. Optical phonons are most important in polar semiconductors (GaAs), ionic crystals (NaCl), and high-field transport.</p>
+</blockquote>
+<h3 id="mental-model-map">Mental Model Map<a class="headerlink" href="#mental-model-map" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Frozen lattice (idealization)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  └─→ Schrödinger equation → Bloch states (alphabet for electrons)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Allow ions to move (reality)
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  └─→ Newton&#39;s equations → normal modes (CLASSICAL waves)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      └─→ Quantization → phonons (energy quanta ℏω)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Phonons present
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  └─→ Time-dependent potential perturbation
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      └─→ Electrons scatter (Δk, ΔE conserved with phonon)
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Macroscopic result
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  └─→ Resistivity, velocity limits, thermal conductivity
+</code></pre></div>
+<hr />
+<h2 id="part-1-the-1d-monatomic-chain-where-phonons-come-from">Part 1: The 1D Monatomic Chain — Where Phonons Come From<a class="headerlink" href="#part-1-the-1d-monatomic-chain-where-phonons-come-from" title="Permanent link">&para;</a></h2>
+<h3 id="the-toy-model">The Toy Model<a class="headerlink" href="#the-toy-model" title="Permanent link">&para;</a></h3>
+<p>Picture a line of identical atoms, each with mass <span class="arithmatex">\(M\)</span>, connected by springs of stiffness <span class="arithmatex">\(K\)</span>, spaced by lattice constant <span class="arithmatex">\(a\)</span>:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    K       K       K       K
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>○───⊏⊐⊏⊐───○───⊏⊐⊏⊐───○───⊏⊐⊏⊐───○───⊏⊐⊏⊐───○
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>   M        M        M        M        M
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>   |&lt;--a--&gt;|
+</code></pre></div>
+<p>Let <span class="arithmatex">\(u_j(t)\)</span> be the displacement of atom <span class="arithmatex">\(j\)</span> from its equilibrium position.</p>
+<h3 id="newtons-law-for-atom-j">Newton's Law for Atom <span class="arithmatex">\(j\)</span><a class="headerlink" href="#newtons-law-for-atom-j" title="Permanent link">&para;</a></h3>
+<p>Each atom feels spring forces from its two neighbors:</p>
+<div class="arithmatex">\[
+M\frac{d^2 u_j}{dt^2} = K(u_{j+1} - u_j) - K(u_j - u_{j-1}) = K(u_{j+1} - 2u_j + u_{j-1})
+\]</div>
+<p>This is Newton's second law (<span class="arithmatex">\(F = M \times \text{acceleration}\)</span>) with Hooke's law springs on both sides. (Note: don't confuse the acceleration with <span class="arithmatex">\(a\)</span> the lattice constant!)</p>
+<h3 id="the-traveling-wave-solution">The Traveling Wave Solution<a class="headerlink" href="#the-traveling-wave-solution" title="Permanent link">&para;</a></h3>
+<p>Try a plane wave:</p>
+<div class="arithmatex">\[
+u_j(t) = A \, e^{i(kx_j - \omega t)} = A \, e^{i(kja - \omega t)}
+\]</div>
+<p>where <span class="arithmatex">\(x_j = ja\)</span> is the equilibrium position of atom <span class="arithmatex">\(j\)</span> (the <span class="arithmatex">\(j\)</span>th atom sits at position <span class="arithmatex">\(j \times a\)</span> along the chain). Here <span class="arithmatex">\(j\)</span> is the <strong>atom index</strong> — an integer labeling which atom.</p>
+<p>Plug into Newton's law, do some algebra (the <span class="arithmatex">\(e^{i(kja-\omega t)}\)</span> cancels), and you get the <strong>dispersion relation</strong>:</p>
+<div class="arithmatex">\[
+\omega(k) = 2\sqrt{\frac{K}{M}} \left|\sin\left(\frac{ka}{2}\right)\right|
+\]</div>
+<p>This tells you how frequency depends on wavevector — the phonon's "E vs k" curve.</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ω
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│            ⌢⌢⌢
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│         ⌢&#39;     &#39;⌢         v_g = dω/dk
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│      ⌢&#39;           &#39;⌢      (slope of curve)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   ⌢&#39;                 &#39;⌢
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├──┼─────────┼──────────┼──── k
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  -π/a       0         +π/a
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>       First Brillouin Zone
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Near k≈0: slope ≈ speed of sound in the material (linear dispersion)
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Near zone edge: slope → 0  (group velocity vanishes, standing-wave-like)
+</code></pre></div>
+<h3 id="numerical-example-copper">Numerical Example: Copper<a class="headerlink" href="#numerical-example-copper" title="Permanent link">&para;</a></h3>
+<p>Let's plug in real numbers:</p>
+<ul>
+<li><span class="arithmatex">\(M = 63.5\)</span> amu <span class="arithmatex">\(= 1.05 \times 10^{-25}\)</span> kg</li>
+<li><span class="arithmatex">\(a = 0.36\)</span> nm (lattice constant)</li>
+<li><span class="arithmatex">\(K \approx 14\)</span> N/m (effective spring constant from elastic modulus)</li>
+</ul>
+<p>Maximum frequency (at zone edge <span class="arithmatex">\(k = \pi/a\)</span>):</p>
+<div class="arithmatex">\[
+\omega_{\max} = 2\sqrt{\frac{K}{M}} = 2\sqrt{\frac{14}{1.05 \times 10^{-25}}} \approx 2.3 \times 10^{13} \text{ rad/s}
+\]</div>
+<p>Converting:
+- <span class="arithmatex">\(f_{\max} = \omega_{\max}/2\pi \approx 3.7\)</span> THz
+- <span class="arithmatex">\(\hbar\omega_{\max} \approx 15\)</span> meV</p>
+<p>So the highest-energy acoustic phonons in copper carry about 15 meV — compare this to room temperature thermal energy <span class="arithmatex">\(k_B T \approx 26\)</span> meV.</p>
+<h3 id="what-the-phase-does">What the Phase Does<a class="headerlink" href="#what-the-phase-does" title="Permanent link">&para;</a></h3>
+<p>A normal mode means <em>every atom oscillates at the same frequency</em>, but with a phase that shifts along the chain:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Equilibrium positions:
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>|----a----|----a----|----a----|----a----|
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>○         ○         ○         ○         ○
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Traveling wave u_j(t) = A cos(kja - ωt) for wavelength λ = 4a:
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>t = 0:      ↑     →     ↓     ←     ↑     (phase shifts by 90° per atom)
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>t = T/4:    →     ↓     ←     ↑     →     (pattern has moved right)
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>t = T/2:    ↓     ←     ↑     →     ↓
+</code></pre></div>
+<p>The pattern travels to the right — that's what makes it a traveling wave. For longer wavelengths (smaller <span class="arithmatex">\(k\)</span>), adjacent atoms are more in phase; for shorter wavelengths (larger <span class="arithmatex">\(k\)</span>), the phase shifts more rapidly.</p>
+<hr />
+<h2 id="part-2-quantization-from-waves-to-phonons">Part 2: Quantization — From Waves to Phonons<a class="headerlink" href="#part-2-quantization-from-waves-to-phonons" title="Permanent link">&para;</a></h2>
+<h3 id="the-critical-clarification">The Critical Clarification<a class="headerlink" href="#the-critical-clarification" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>The normal modes and dispersion relation are CLASSICAL.</strong> They come from Newton's equations, not Schrödinger. Quantization does NOT change the mode shapes or dispersion; it only discretizes the <strong>energy</strong> in each mode.</p>
+</blockquote>
+<h3 id="the-quantum-step">The Quantum Step<a class="headerlink" href="#the-quantum-step" title="Permanent link">&para;</a></h3>
+<p>Here's how we bridge from Newton to quantum — no Schrödinger equation for atom positions!</p>
+<p><strong>Step 1: Rewrite in normal mode coordinates.</strong> The displacements <span class="arithmatex">\(u_j(t)\)</span> can be decomposed into independent normal modes. Define a collective coordinate <span class="arithmatex">\(Q_k(t)\)</span> for each mode:</p>
+<div class="arithmatex">\[
+u_j(t) = \frac{1}{\sqrt{N}} \sum_k Q_k(t) \, e^{ikja}
+\]</div>
+<blockquote>
+<p><strong>What is <span class="arithmatex">\(Q_k(t)\)</span>?</strong> It's the time-dependent amplitude of mode <span class="arithmatex">\(k\)</span>. Remember our classical traveling wave solution <span class="arithmatex">\(u_j = A e^{i(kja - \omega t)}\)</span>? Here we've separated the spatial part (<span class="arithmatex">\(e^{ikja}\)</span>) from the time part. The time dependence lives in <span class="arithmatex">\(Q_k(t)\)</span>, which oscillates as:
+$<span class="arithmatex">\(Q_k(t) = Q_k(0) \, e^{-i\omega_k t}\)</span>$
+This comes from solving Newton's equation for mode <span class="arithmatex">\(k\)</span>: <span class="arithmatex">\(\ddot{Q}_k = -\omega_k^2 Q_k\)</span> gives simple harmonic motion at frequency <span class="arithmatex">\(\omega_k\)</span>.</p>
+<p><strong>Why a discrete sum, not an integral?</strong> With <span class="arithmatex">\(N\)</span> atoms in your chain, there are exactly <span class="arithmatex">\(N\)</span> independent ways to wiggle them — hence <span class="arithmatex">\(N\)</span> normal modes with <span class="arithmatex">\(N\)</span> allowed <span class="arithmatex">\(k\)</span> values. This comes from boundary conditions (periodic: <span class="arithmatex">\(u_{j+N} = u_j\)</span>, which forces <span class="arithmatex">\(e^{ikNa} = 1\)</span>, so <span class="arithmatex">\(k = 2\pi m / Na\)</span> for <span class="arithmatex">\(m = 0, 1, ..., N-1\)</span>). In the thermodynamic limit <span class="arithmatex">\(N \to \infty\)</span>, the spacing between <span class="arithmatex">\(k\)</span> values shrinks to zero and the sum becomes an integral: <span class="arithmatex">\(\frac{1}{N}\sum_k \to \frac{a}{2\pi}\int dk\)</span>.</p>
+<p><strong>Why complex exponentials?</strong> This is shorthand. The physical displacement <span class="arithmatex">\(u_j\)</span> must be real. To get a real <span class="arithmatex">\(u_j\)</span> from this sum, we need <span class="arithmatex">\(Q_{-k} = Q_k^*\)</span> (complex conjugate). Then <span class="arithmatex">\(Q_k e^{ikja} + Q_{-k} e^{-ikja} = 2\text{Re}[Q_k e^{ikja}]\)</span>, which is real. The complex form is mathematically cleaner than writing cosines with phases.</p>
+<p><strong>What does a single mode look like?</strong> Combining <span class="arithmatex">\(Q_k(t) = Q_k(0) e^{-i\omega_k t}\)</span> with <span class="arithmatex">\(e^{ikja}\)</span>:
+$<span class="arithmatex">\(Q_k(t) \, e^{ikja} = Q_k(0) \, e^{i(kja - \omega_k t)}\)</span>$
+Taking the real part (using Euler: <span class="arithmatex">\(e^{i\theta} = \cos\theta + i\sin\theta\)</span>), a single mode is a sinusoidal pattern:
+$<span class="arithmatex">\(u_j^{(k)}(t) \propto \cos(kja - \omega_k t + \phi_k)\)</span>$
+Each atom oscillates at frequency <span class="arithmatex">\(\omega_k\)</span>, but with a phase shift <span class="arithmatex">\(kja\)</span> that increases along the chain — this is what makes it a <em>traveling</em> wave.</p>
+<p><strong>What's <span class="arithmatex">\(ja\)</span>?</strong> It's the position of atom <span class="arithmatex">\(j\)</span> along the chain. In a continuous medium you'd write <span class="arithmatex">\(e^{ikx}\)</span>; here we only have atoms at discrete positions <span class="arithmatex">\(x_j = ja\)</span> (where <span class="arithmatex">\(a\)</span> is the lattice spacing), so we write <span class="arithmatex">\(e^{ikja}\)</span>.</p>
+<p><strong>Why is <span class="arithmatex">\(k\)</span> limited to <span class="arithmatex">\([-\pi/a, \pi/a]\)</span>?</strong> This is aliasing from discrete sampling! A wave with wavevector <span class="arithmatex">\(k\)</span> and a wave with <span class="arithmatex">\(k + 2\pi/a\)</span> look <em>identical</em> when sampled only at positions <span class="arithmatex">\(ja\)</span>:
+$<span class="arithmatex">\(e^{i(k + 2\pi/a)ja} = e^{ikja} \cdot e^{i 2\pi j} = e^{ikja} \cdot 1 = e^{ikja}\)</span>$
+So there's no point considering <span class="arithmatex">\(k\)</span> outside the first Brillouin zone <span class="arithmatex">\([-\pi/a, \pi/a]\)</span> — those waves are just aliases of waves inside. This is the same math as the Nyquist limit in signal processing: with spacing <span class="arithmatex">\(a\)</span>, you can only distinguish wavelengths <span class="arithmatex">\(\lambda &gt; 2a\)</span>.</p>
+</blockquote>
+<p>Each <span class="arithmatex">\(Q_k\)</span> evolves independently: <span class="arithmatex">\(\ddot{Q}_k = -\omega_k^2 Q_k\)</span>. This is just a harmonic oscillator equation for <span class="arithmatex">\(Q_k\)</span>.</p>
+<p><strong>Step 2: Quantize each oscillator.</strong> The energy (Hamiltonian) for mode <span class="arithmatex">\(k\)</span> is:</p>
+<div class="arithmatex">\[
+H_k = \frac{P_k^2}{2M_{\text{eff}}} + \frac{1}{2}M_{\text{eff}}\omega_k^2 Q_k^2
+\]</div>
+<blockquote>
+<p><strong>What's the Hamiltonian?</strong> It's just total energy = kinetic + potential. This formula exists in classical mechanics too (Hamilton wrote it down in the 1830s, before quantum mechanics). The first term is kinetic energy, the second is potential energy of a spring. <span class="arithmatex">\(M_{\text{eff}}\)</span> is an effective mass that comes from the coordinate transformation — for our simple chain it's just <span class="arithmatex">\(M\)</span>, the atomic mass.</p>
+</blockquote>
+<p>Now we <em>do</em> use Schrödinger — but for the collective coordinate <span class="arithmatex">\(Q_k\)</span>, not for individual atom positions. Since <span class="arithmatex">\(H_k\)</span> has the form of a harmonic oscillator, we know the answer: promote <span class="arithmatex">\(Q_k\)</span> and <span class="arithmatex">\(P_k\)</span> to operators, and the energy eigenvalues are <span class="arithmatex">\((n + \frac{1}{2})\hbar\omega\)</span>.</p>
+<blockquote>
+<p><strong>Key insight:</strong> There <em>is</em> a wavefunction — it's <span class="arithmatex">\(\Psi(Q_k)\)</span>, a function of the collective coordinate (like the Gaussian ground state of a harmonic oscillator). But we almost never write it. Instead, we just track the occupation number <span class="arithmatex">\(n_k\)</span> (how many phonons in mode <span class="arithmatex">\(k\)</span>).</p>
+</blockquote>
+<p>Each normal mode (each <span class="arithmatex">\(k\)</span>) is mathematically a harmonic oscillator. When you quantize it (standard QM harmonic oscillator), you get discrete energy levels:</p>
+<div class="arithmatex">\[
+E_n = \left(n + \frac{1}{2}\right)\hbar\omega
+\]</div>
+<p>where <span class="arithmatex">\(n = 0, 1, 2, 3, \ldots\)</span> is the <strong>occupation number</strong> (number of phonons in that mode). Note: <span class="arithmatex">\(n\)</span> here is the quantum number, not the atom index <span class="arithmatex">\(j\)</span> from earlier.</p>
+<p><strong>A phonon is one quantum of energy <span class="arithmatex">\(\hbar\omega\)</span> in that mode</strong> — not the wave itself.</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Harmonic oscillator levels for one mode (wavevector k):
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>E
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>│        (5)  (n+½)ℏω
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>│        (4)
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>│        (3)
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│        (2)
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>│        (1)
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>│        (0)  zero-point = ½ℏω
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>├──────────────────────────────→ n
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>      each step = ℏω = one phonon
+</code></pre></div>
+<blockquote>
+<p><strong>Important — Amplitude is subtle!</strong> You might think: classically <span class="arithmatex">\(E = \frac{1}{2}m\omega^2 A^2\)</span>, so if energy is discrete, shouldn't amplitude be discrete too?</p>
+<p><strong>Partly yes, partly no.</strong> In an energy eigenstate <span class="arithmatex">\(|n\rangle\)</span>:</p>
+<ul>
+<li>The <strong>average displacement</strong> <span class="arithmatex">\(\langle Q \rangle = 0\)</span> (always — the wavefunction is symmetric about the origin)</li>
+<li>The <strong>RMS amplitude</strong> <span class="arithmatex">\(\sqrt{\langle Q^2 \rangle} = \sqrt{n + \frac{1}{2}} \times \sqrt{\frac{\hbar}{M_{\text{eff}}\omega}}\)</span> — this IS quantized!</li>
+<li>But if you <strong>measure</strong> <span class="arithmatex">\(Q\)</span>, you can get any real value (continuous outcomes, drawn from <span class="arithmatex">\(|\Psi(Q)|^2\)</span>)</li>
+</ul>
+<p>So more energy does mean larger RMS amplitude, and since energy is quantized, the RMS amplitude only takes discrete values. What's NOT quantized is the measurement outcome — the oscillator isn't sitting at one specific displacement.</p>
+<p><strong>The deeper point:</strong> You can't have both sharp energy AND sharp amplitude. An energy eigenstate has definite energy but fuzzy position. A coherent state (classical-like oscillation with definite amplitude <span class="arithmatex">\(A\cos(\omega t)\)</span>) has fuzzy energy — it's a superposition of many <span class="arithmatex">\(|n\rangle\)</span> states.</p>
+</blockquote>
+<h3 id="the-photon-analogy">The Photon Analogy<a class="headerlink" href="#the-photon-analogy" title="Permanent link">&para;</a></h3>
+<p>In the table below, <span class="arithmatex">\(n\)</span> is the occupation number — how many quanta (photons or phonons) are in that mode:</p>
+<table>
+<thead>
+<tr>
+<th>Electromagnetic Field</th>
+<th>Lattice Vibrations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EM mode (k, polarization)</td>
+<td>Vibration mode (q, branch)</td>
+</tr>
+<tr>
+<td>Photon = 1 quantum of EM energy</td>
+<td>Phonon = 1 quantum of vibrational energy</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(n\)</span> photons → E-field amplitude <span class="arithmatex">\(\propto \sqrt{n}\)</span></td>
+<td><span class="arithmatex">\(n\)</span> phonons → displacement amplitude <span class="arithmatex">\(\propto \sqrt{n}\)</span></td>
+</tr>
+<tr>
+<td>Large <span class="arithmatex">\(n\)</span> → classical EM wave</td>
+<td>Large <span class="arithmatex">\(n\)</span> → classical sound wave</td>
+</tr>
+</tbody>
+</table>
+<p>When many quanta occupy a mode, it looks like a classical wave. When <span class="arithmatex">\(n\)</span> is small (or zero), quantum effects dominate.</p>
+<h3 id="numerical-example-how-many-phonons">Numerical Example: How Many Phonons?<a class="headerlink" href="#numerical-example-how-many-phonons" title="Permanent link">&para;</a></h3>
+<p>Consider a mode at <span class="arithmatex">\(\omega = 2\pi \times 1\)</span> THz:</p>
+<ul>
+<li>One phonon energy: <span class="arithmatex">\(\hbar\omega = 4.1\)</span> meV</li>
+<li>Thermal energy at 300K: <span class="arithmatex">\(k_B T = 26\)</span> meV</li>
+</ul>
+<p>The average number of phonons in this mode at thermal equilibrium (Bose-Einstein statistics):</p>
+<div class="arithmatex">\[
+\langle n \rangle = \frac{1}{e^{\hbar\omega/k_B T} - 1} = \frac{1}{e^{4.1/26} - 1} \approx 5.3 \text{ phonons}
+\]</div>
+<p>Here <span class="arithmatex">\(\langle n \rangle\)</span> is the thermal average of the occupation number — how many phonons are typically in this mode at temperature <span class="arithmatex">\(T\)</span>.</p>
+<p>So at room temperature, this mode has about 5 phonons on average — firmly in the "classical-looking" regime.</p>
+<hr />
+<h2 id="part-3-longitudinal-vs-transverse-this-is-about-polarization">Part 3: Longitudinal vs Transverse — This is About Polarization<a class="headerlink" href="#part-3-longitudinal-vs-transverse-this-is-about-polarization" title="Permanent link">&para;</a></h2>
+<p>This classification is about the <strong>direction of displacement</strong> relative to propagation:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Propagation direction:  ─────&gt;  k
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>LA (longitudinal acoustic): compression / dilation
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>○───&gt; ○───&gt; ○───&gt; ○───&gt; ○───&gt;
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>(atoms move parallel to wave propagation)
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>TA (transverse acoustic): shear-like wiggle
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>○  ^  ○  v  ○  ^  ○  v  ○  ^
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>(atoms move perpendicular to wave propagation)
+</code></pre></div>
+<p><strong>In 3D crystals:</strong>
+- 1 longitudinal branch (compression wave)
+- 2 transverse branches (two perpendicular shear directions)
+- Total: 3 acoustic branches for a monatomic crystal</p>
+<p><strong>Key point:</strong> Longitudinal/transverse is a <strong>separate concept</strong> from acoustic/optical. You can have:
+- Longitudinal acoustic (LA)
+- Transverse acoustic (TA)
+- Longitudinal optical (LO)
+- Transverse optical (TO)</p>
+<hr />
+<h2 id="part-4-acoustic-vs-optical-the-real-distinction">Part 4: Acoustic vs Optical — The REAL Distinction<a class="headerlink" href="#part-4-acoustic-vs-optical-the-real-distinction" title="Permanent link">&para;</a></h2>
+<p>This is where most tutorials fail you. Here's the clean version:</p>
+<blockquote>
+<p><strong>Optical phonons exist ONLY if the unit cell has more than one atom.</strong></p>
+</blockquote>
+<h3 id="the-rule">The Rule<a class="headerlink" href="#the-rule" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Crystal Type</th>
+<th>Example</th>
+<th>Phonon Branches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monatomic</td>
+<td>Cu, Al, Na</td>
+<td>Acoustic only (LA + 2×TA)</td>
+</tr>
+<tr>
+<td>Diatomic</td>
+<td>Si, GaAs, NaCl</td>
+<td>Acoustic + Optical</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-1d-diatomic-chain">The 1D Diatomic Chain<a class="headerlink" href="#the-1d-diatomic-chain" title="Permanent link">&para;</a></h3>
+<p>Now put <em>two different</em> atoms in each unit cell:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    K       K       K       K       K
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>●───⊏⊐⊏⊐───○───⊏⊐⊏⊐───●───⊏⊐⊏⊐───○───⊏⊐⊏⊐───●
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  M₁       M₂       M₁       M₂       M₁
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  |&lt;──────── a ────────&gt;|
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>       primitive unit cell
+</code></pre></div>
+<p>Now you get <strong>two solutions</strong> — two branches in the dispersion:</p>
+<h3 id="acoustic-branch-lower-energy">ACOUSTIC Branch (Lower Energy)<a class="headerlink" href="#acoustic-branch-lower-energy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Equilibrium:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>A   B   A   B   A   B
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>●   ○   ●   ○   ●   ○
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>ACOUSTIC (long wavelength): all atoms move IN PHASE
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>→   →   →   →   →   →
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>●   ○   ●   ○   ●   ○
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>The whole lattice sloshes together like a sound wave.
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>At k→0: ω→0 (this is the defining property!)
+</code></pre></div>
+<blockquote>
+<p><strong>"Acoustic" means <span class="arithmatex">\(\omega \to 0\)</span> as <span class="arithmatex">\(k \to 0\)</span></strong> — NOT "always low frequency." (Note: physicists use <span class="arithmatex">\(k\)</span> and <span class="arithmatex">\(q\)</span> interchangeably for phonon wavevector; <span class="arithmatex">\(q\)</span> is more common when discussing electron-phonon scattering.)
+Near the zone edge, acoustic phonons can have very high frequencies!</p>
+</blockquote>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Acoustic branch: ω→0 at k→0  (that&#39;s the definition)
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>ω
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>│         acoustic can be HIGH here
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>│                 ^
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>│                 │
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>│              ⌢&#39; &#39;⌢
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>│           ⌢&#39;       &#39;⌢
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>│        ⌢&#39;             &#39;⌢
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>├───────┼───────────────────┼──── k
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        0                 π/a
+</code></pre></div>
+<h3 id="optical-branch-higher-energy">OPTICAL Branch (Higher Energy)<a class="headerlink" href="#optical-branch-higher-energy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Equilibrium:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>A   B   A   B   A   B
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>●   ○   ●   ○   ●   ○
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>OPTICAL (any wavelength): basis atoms move OUT OF PHASE
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>→   ←   →   ←   →   ←
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>●   ○   ●   ○   ●   ○
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>The two atoms in each unit cell push against each other.
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>At k=0: ω ≠ 0! (finite minimum energy)
+</code></pre></div>
+<p><strong>Why "optical"?</strong> In ionic crystals like NaCl, the + and − ions moving against each other creates an oscillating electric dipole. This couples directly to electromagnetic radiation (infrared light) — hence "optical."</p>
+<h3 id="numerical-example-gaas">Numerical Example: GaAs<a class="headerlink" href="#numerical-example-gaas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>LO phonon at k=0: <span class="arithmatex">\(\hbar\omega_{LO} = 36\)</span> meV</li>
+<li>TO phonon at k=0: <span class="arithmatex">\(\hbar\omega_{TO} = 33\)</span> meV</li>
+<li>Thermal energy at 300K: <span class="arithmatex">\(k_B T = 26\)</span> meV</li>
+</ul>
+<p>Optical phonons require significant energy to excite — they're not easily populated at room temperature.</p>
+<h3 id="the-full-picture">The Full Picture<a class="headerlink" href="#the-full-picture" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Diatomic chain (two atoms per unit cell):  ... A B A B A B ...
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Equilibrium:
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>A   B   A   B   A   B
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>●   ○   ●   ○   ●   ○
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>ACOUSTIC (k→0): in-phase (whole lattice sloshes together)
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>→   →   →   →   →   →
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>●   ○   ●   ○   ●   ○
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>ω → 0 as k → 0
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>OPTICAL (k→0): out-of-phase within the unit cell
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>→   ←   →   ←   →   ←
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>●   ○   ●   ○   ●   ○
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>ω ≠ 0 at k = 0
+</code></pre></div>
+<hr />
+<h2 id="part-5-phonon-dispersion-the-phonon-band-structure">Part 5: Phonon Dispersion — The Phonon "Band Structure"<a class="headerlink" href="#part-5-phonon-dispersion-the-phonon-band-structure" title="Permanent link">&para;</a></h2>
+<p>Just like electrons have <span class="arithmatex">\(E(\mathbf{k})\)</span> curves, phonons have <span class="arithmatex">\(\omega(\mathbf{q})\)</span> curves. For a diatomic crystal:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ℏω
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>│    ____________________   Optical branches (LO, TO)
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>│   /                    \    ← gap (if M₁ ≠ M₂)
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>│  │                      │
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>│──┼──────────────────────┼──
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>│   \                    /   Acoustic branches (LA, TA)
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>│    \__________________/
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>│
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>├─────────┼───────────┼───────→ k
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>       -π/a          π/a
+</code></pre></div>
+<p>Key features:
+- <strong>Acoustic branches</strong> touch zero at <span class="arithmatex">\(k=0\)</span>
+- <strong>Optical branches</strong> have finite frequency at <span class="arithmatex">\(k=0\)</span>
+- <strong>Gap between branches</strong> (in diatomic crystals with <span class="arithmatex">\(M_1 \neq M_2\)</span>)
+- <strong>Group velocity</strong> <span class="arithmatex">\(v_g = d\omega/dk\)</span> → zero at zone boundaries</p>
+<hr />
+<h2 id="part-6-the-moving-walls-model-how-phonons-affect-electrons">Part 6: The Moving Walls Model — How Phonons Affect Electrons<a class="headerlink" href="#part-6-the-moving-walls-model-how-phonons-affect-electrons" title="Permanent link">&para;</a></h2>
+<p>Here's the key intuition for electron-phonon coupling, borrowed from basic quantum mechanics.</p>
+<h3 id="static-box-frozen-lattice">Static Box = Frozen Lattice<a class="headerlink" href="#static-box-frozen-lattice" title="Permanent link">&para;</a></h3>
+<p>A particle in a box with fixed walls:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Static box: sharp energy levels
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>0 │====================│ L₀
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    ψ_n fits cleanly
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Electron sits in eigenstate ψ_n forever.
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Energy sharp. Position delocalized.
+</code></pre></div>
+<h3 id="oscillating-walls-phonons">Oscillating Walls = Phonons<a class="headerlink" href="#oscillating-walls-phonons" title="Permanent link">&para;</a></h3>
+<p>Now let the walls move:</p>
+<div class="arithmatex">\[
+L(t) = L_0 + \delta L \cos(\Omega t)
+\]</div>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Moving wall: L(t) = L₀ + δL cos(Ωt)
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>0 │==================│ L(t)
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    boundary shakes → ψ_n mixes with ψ_m
+</code></pre></div>
+<p>The oscillating boundary forces the electron into a <strong>superposition of energy levels</strong>. It can no longer sit quietly in a single eigenstate.</p>
+<h3 id="the-mapping-to-phonons">The Mapping to Phonons<a class="headerlink" href="#the-mapping-to-phonons" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Moving Box</th>
+<th>Crystal with Phonons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wall oscillation frequency <span class="arithmatex">\(\Omega\)</span></td>
+<td>Phonon frequency <span class="arithmatex">\(\omega_q\)</span></td>
+</tr>
+<tr>
+<td>Energy pumped by walls</td>
+<td>Energy exchanged with phonon (<span class="arithmatex">\(\hbar\omega\)</span>)</td>
+</tr>
+<tr>
+<td>No momentum exchange (1D box)</td>
+<td>Phonon carries crystal momentum <span class="arithmatex">\(\hbar q\)</span></td>
+</tr>
+<tr>
+<td>Resonance at <span class="arithmatex">\(\Omega = (E_2-E_1)/\hbar\)</span></td>
+<td>Resonance when energy/momentum conserved</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-7-electron-phonon-scattering-the-actual-physics">Part 7: Electron-Phonon Scattering — The Actual Physics<a class="headerlink" href="#part-7-electron-phonon-scattering-the-actual-physics" title="Permanent link">&para;</a></h2>
+<h3 id="what-the-electron-sees">What the Electron Sees<a class="headerlink" href="#what-the-electron-sees" title="Permanent link">&para;</a></h3>
+<p>You might wonder: if a phonon is just atoms moving, and in a traveling wave they all move the same direction, how does that create a potential that electrons scatter off?</p>
+<p>The key is that atoms <strong>don't all move the same amount at the same time</strong>. The phase shift along the chain creates regions of <strong>compression</strong> and <strong>rarefaction</strong>:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Equilibrium (uniform spacing):
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>○     ○     ○     ○     ○     ○
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>|--a--|--a--|--a--|--a--|--a--|
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>Snapshot of longitudinal wave (atoms displaced by different amounts):
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>○   ○○    ○      ○○   ○     ○
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>   ↑              ↑
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a> compressed    compressed
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a> (atoms closer)
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>         ↑              ↑
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>      stretched      stretched
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>      (atoms farther)
+</code></pre></div>
+<p><strong>Where atoms are bunched together:</strong> higher ion density → deeper potential well for electrons</p>
+<p><strong>Where atoms are spread apart:</strong> lower ion density → shallower potential</p>
+<p>This creates a traveling potential ripple. Crucially, it's the <strong>strain</strong> (local compression/stretching) that matters, not the displacement itself:</p>
+<div class="arithmatex">\[
+\delta V(x,t) \propto -\frac{\partial u}{\partial x} = \text{strain}
+\]</div>
+<p>For a displacement wave <span class="arithmatex">\(u(x,t) = A\cos(qx - \omega t)\)</span>:
+$$
+\frac{\partial u}{\partial x} = -qA\sin(qx - \omega t)
+$$</p>
+<p>So the potential perturbation is also a traveling wave (phase-shifted by 90°):</p>
+<div class="arithmatex">\[
+\delta V(x,t) \propto \sin(qx - \omega t)
+\]</div>
+<p>Think of it as a <strong>moving diffraction grating</strong> — a traveling Bragg reflector that diffracts the electron wave.</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Phonon makes the potential look like a moving ripple:
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>x →
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>   ─┐  ┌─    ─┐  ┌─    ─┐  ┌─
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    └──┘      └──┘      └──┘     (potential wells travel right)
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>     ↑ compressed  ↑ compressed
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>Electron sees a moving diffraction grating:
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>k  →  k ± q   (plus possibly +G)
+</code></pre></div>
+<blockquote>
+<p><strong>Wavelength matters:</strong> Long wavelength (small <span class="arithmatex">\(q\)</span>) means gentle, gradual compression — weak potential gradient, weak scattering. Short wavelength (large <span class="arithmatex">\(q\)</span>) means rapid compression/stretching — stronger potential gradient, stronger scattering.</p>
+</blockquote>
+<h3 id="two-views-of-the-same-physics">Two Views of the Same Physics<a class="headerlink" href="#two-views-of-the-same-physics" title="Permanent link">&para;</a></h3>
+<p>Here's something important: "scattering off the potential ripple" and "absorbing/emitting a phonon" are <strong>the same event</strong> viewed through different lenses:</p>
+<table>
+<thead>
+<tr>
+<th>Classical View</th>
+<th>Quantum View</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron scatters off traveling potential <span class="arithmatex">\(\delta V(x,t)\)</span></td>
+<td>Electron absorbs or emits a phonon</td>
+</tr>
+<tr>
+<td>Energy/momentum transfer seems continuous</td>
+<td>Discrete: <span class="arithmatex">\(\hbar\omega\)</span> energy, <span class="arithmatex">\(\hbar q\)</span> momentum</td>
+</tr>
+<tr>
+<td>Wave with amplitude <span class="arithmatex">\(A\)</span></td>
+<td>Mode with occupation number <span class="arithmatex">\(n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>scattering strength</strong> (matrix element) comes from the classical <span class="arithmatex">\(\delta V\)</span>. The <strong>quantization</strong> tells you the energy/momentum exchange comes in discrete chunks — each chunk is one phonon.</p>
+<p>This is exactly like light: an electromagnetic wave scattering an electron (classical) is the same as a photon being absorbed/emitted (quantum). Same physics, two descriptions.</p>
+<h3 id="conservation-laws">Conservation Laws<a class="headerlink" href="#conservation-laws" title="Permanent link">&para;</a></h3>
+<p>When an electron absorbs or emits a phonon:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Phonon absorption:           Phonon emission:
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>k&#39; = k + q                   k&#39; = k - q
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>E&#39; = E + ℏω                  E&#39; = E - ℏω
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>(phonon destroyed)           (phonon created)
+</code></pre></div>
+<p>Phonons are quantized — you absorb or emit the <em>whole</em> phonon, not a piece of it.</p>
+<h3 id="umklapp-zone-folding">Umklapp (Zone Folding)<a class="headerlink" href="#umklapp-zone-folding" title="Permanent link">&para;</a></h3>
+<p>Sometimes <span class="arithmatex">\(k + q\)</span> lands outside the first Brillouin zone. No problem — fold it back:</p>
+<div class="arithmatex">\[
+k' = k \pm q + G
+\]</div>
+<p>where <span class="arithmatex">\(G\)</span> is a <strong>reciprocal lattice vector</strong> (<span class="arithmatex">\(G = 2\pi/a\)</span> in 1D). "Umklapp" is German for "flip over" — the electron's momentum flips back into the first zone. This is crucial for thermal resistance: Umklapp processes can transfer momentum to the lattice, while normal processes cannot.</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>k-space (1D):
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>... │───│───│───│───│───│───│ ...
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    -2π/a  -π/a  0  +π/a +2π/a
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>1st Brillouin zone: [-π/a, +π/a]
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>Normal:    k&#39; = k + q      stays in same zone
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>Umklapp:   k&#39; = k + q - G  folds back into 1st zone
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>k+q  (lands outside zone)  ───&gt;  subtract G  ───&gt;  folded k&#39;
+</code></pre></div>
+<h3 id="numerical-example-scattering-in-copper">Numerical Example: Scattering in Copper<a class="headerlink" href="#numerical-example-scattering-in-copper" title="Permanent link">&para;</a></h3>
+<p>Electron near the Fermi surface:
+- <span class="arithmatex">\(k_F \approx 13.6\)</span> nm<span class="arithmatex">\(^{-1}\)</span>
+- <span class="arithmatex">\(E_F \approx 7\)</span> eV</p>
+<p>Acoustic phonon:
+- <span class="arithmatex">\(q \approx 1\)</span> nm<span class="arithmatex">\(^{-1}\)</span>
+- <span class="arithmatex">\(\hbar\omega \approx 5\)</span> meV</p>
+<p>After absorbing the phonon:
+- New wavevector: <span class="arithmatex">\(k' \approx 14.6\)</span> nm<span class="arithmatex">\(^{-1}\)</span>
+- Momentum change: <strong>significant</strong> (<span class="arithmatex">\(\Delta k/k \sim 7\%\)</span>)
+- Energy change: <strong>tiny</strong> (5 meV vs 7000 meV, or 0.07%)</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>E
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>│     E_F  _______________________
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>│         /                       \
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>│        /                         \
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>│_______/___________________________\_____ k
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>          k_F
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>phonon scattering mostly changes direction on the Fermi surface
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>(energy shift is small: meV vs eV)
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>ΔE:  │·│      Δk: │──────────│
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>     meV           big
+</code></pre></div>
+<p><strong>This is why acoustic phonon scattering randomizes direction but barely changes speed.</strong></p>
+<hr />
+<h2 id="part-8-physical-consequences">Part 8: Physical Consequences<a class="headerlink" href="#part-8-physical-consequences" title="Permanent link">&para;</a></h2>
+<h3 id="acoustic-phonon-scattering-low-fields-moderate-t">Acoustic Phonon Scattering (Low Fields, Moderate T)<a class="headerlink" href="#acoustic-phonon-scattering-low-fields-moderate-t" title="Permanent link">&para;</a></h3>
+<p>Acoustic phonons modulate the lattice spacing → compression/dilation → band edges shift locally. Electrons scatter off these potential variations.</p>
+<ul>
+<li>Small energy transfer per scattering event</li>
+<li>Large angle scattering (momentum randomized)</li>
+<li>Dominates resistivity at moderate temperatures: <span class="arithmatex">\(\rho \propto T\)</span> at high <span class="arithmatex">\(T\)</span></li>
+</ul>
+<h3 id="optical-phonon-scattering-high-fields">Optical Phonon Scattering (High Fields)<a class="headerlink" href="#optical-phonon-scattering-high-fields" title="Permanent link">&para;</a></h3>
+<p>Optical phonons have a <strong>minimum energy</strong> (<span class="arithmatex">\(\sim\)</span>30-60 meV). An electron needs at least this much kinetic energy to emit one.</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>E_electron
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>│
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>│     /  ← electron gains energy from field
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>│    /
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>│───/────ℏω_opt──── threshold
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>│  /     ↓ emit optical phonon, lose energy
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>│ /
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>│/__________________ k
+</code></pre></div>
+<p>Once an electron reaches the threshold, it can efficiently dump energy by emitting optical phonons. This causes <strong>velocity saturation</strong> in semiconductors — no matter how hard you push, the electron can't go faster because it keeps emitting optical phonons.</p>
+<h3 id="temperature-dependence">Temperature Dependence<a class="headerlink" href="#temperature-dependence" title="Permanent link">&para;</a></h3>
+<p>Higher <span class="arithmatex">\(T\)</span> → more phonons → more scattering → lower mobility</p>
+<p>At high temperature (<span class="arithmatex">\(k_B T \gg \hbar\omega\)</span>), the Bose-Einstein distribution simplifies:
+$$
+\langle n \rangle = \frac{1}{e^{\hbar\omega/k_B T} - 1} \approx \frac{k_B T}{\hbar\omega}
+$$</p>
+<p>So phonon occupation — and hence scattering rate and resistivity — grows roughly linearly with <span class="arithmatex">\(T\)</span>.</p>
+<hr />
+<h2 id="quick-reference-summary">Quick Reference Summary<a class="headerlink" href="#quick-reference-summary" title="Permanent link">&para;</a></h2>
+<h3 id="whats-classical-vs-quantum">What's Classical vs Quantum<a class="headerlink" href="#whats-classical-vs-quantum" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Classical or Quantum?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal modes, shapes, dispersion <span class="arithmatex">\(\omega(k)\)</span></td>
+<td><strong>Classical</strong> (Newton)</td>
+</tr>
+<tr>
+<td>Energy quantization <span class="arithmatex">\(E = (n+\frac{1}{2})\hbar\omega\)</span></td>
+<td><strong>Quantum</strong></td>
+</tr>
+<tr>
+<td>RMS amplitude in energy eigenstate</td>
+<td><strong>Quantized</strong> (scales with <span class="arithmatex">\(\sqrt{n+1/2}\)</span>)</td>
+</tr>
+<tr>
+<td>Measurement outcome of displacement</td>
+<td>Continuous (any value from $</td>
+</tr>
+<tr>
+<td>Energy in a mode</td>
+<td>Discrete (<span class="arithmatex">\(\hbar\omega\)</span> chunks)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phonon-basics">Phonon Basics<a class="headerlink" href="#phonon-basics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mode</strong> = collective oscillation with wavevector <span class="arithmatex">\(k\)</span> (or <span class="arithmatex">\(q\)</span>), frequency <span class="arithmatex">\(\omega(k)\)</span></li>
+<li><strong>Phonon</strong> = one quantum of energy <span class="arithmatex">\(\hbar\omega\)</span> in that mode (NOT the wave itself)</li>
+<li><strong>Large amplitude</strong> ≈ many phonons (classical limit)</li>
+</ul>
+<h3 id="acoustic-vs-optical-memorize-this">Acoustic vs Optical (Memorize This)<a class="headerlink" href="#acoustic-vs-optical-memorize-this" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Acoustic</th>
+<th>Optical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atoms move...</td>
+<td>In phase (together)</td>
+<td>Out of phase (against each other)</td>
+</tr>
+<tr>
+<td>At <span class="arithmatex">\(k \to 0\)</span>...</td>
+<td><span class="arithmatex">\(\omega \to 0\)</span></td>
+<td><span class="arithmatex">\(\omega \neq 0\)</span> (finite minimum)</td>
+</tr>
+<tr>
+<td>Exists in...</td>
+<td>ALL crystals</td>
+<td>Only if &gt;1 atom per unit cell</td>
+</tr>
+<tr>
+<td>Common misconception</td>
+<td>"Low frequency" — <strong>wrong!</strong> Can be high near zone edge</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="longitudinal-vs-transverse">Longitudinal vs Transverse<a class="headerlink" href="#longitudinal-vs-transverse" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Longitudinal:</strong> displacement parallel to propagation (compression wave)</li>
+<li><strong>Transverse:</strong> displacement perpendicular to propagation (shear wave)</li>
+<li><strong>SEPARATE concept from acoustic/optical!</strong></li>
+</ul>
+<h3 id="electron-phonon-interaction">Electron-Phonon Interaction<a class="headerlink" href="#electron-phonon-interaction" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Bloch states</strong> = exact solutions for frozen lattice (the alphabet)</li>
+<li><strong>Phonon</strong> = traveling potential perturbation on that frozen-lattice solution</li>
+<li><strong>Transfers:</strong> energy <span class="arithmatex">\(\hbar\omega\)</span> and crystal momentum <span class="arithmatex">\(\hbar q\)</span> (mod <span class="arithmatex">\(G\)</span>)</li>
+<li><strong>Acoustic scattering:</strong> randomizes direction, small <span class="arithmatex">\(\Delta E\)</span></li>
+<li><strong>Optical scattering:</strong> large <span class="arithmatex">\(\Delta E\)</span>, velocity saturation mechanism</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

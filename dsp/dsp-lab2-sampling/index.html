@@ -1,0 +1,2489 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/dsp/dsp-lab2-sampling/">
+      
+      
+        <link rel="prev" href="../dsp-lab1-signals/">
+      
+      
+        <link rel="next" href="../dsp-lab3-convolution/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Lab 2: Sampling and Aliasing - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dsp-lab-2-sampling-and-aliasing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 2: Sampling and Aliasing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-sampling-and-aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Sampling and Aliasing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction: Sampling and Aliasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-sampling-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Sampling Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-theorem-nyquist-shannon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling Theorem (Nyquist-Shannon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-sampling-higher-than-nyquist-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Sampling Higher Than Nyquist Rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1: Sampling Higher Than Nyquist Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-domain-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Domain Plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequency-domain-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Domain Plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-sampling-lower-than-nyquist-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Sampling Lower Than Nyquist Rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2: Sampling Lower Than Nyquist Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aliasing-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aliasing Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#report-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-1-sampling-higher-than-nyquist-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Sampling Higher Than Nyquist Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-sampling-lower-than-nyquist-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Sampling Lower Than Nyquist Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-anti-aliasing-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Anti-Aliasing Filter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-the-atari-wrap-around-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: The Atari (Wrap-Around) Effect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 4: The Atari (Wrap-Around) Effect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-a-complex-signal-aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part A: Complex Signal Aliasing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-b-real-signal-aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part B: Real Signal Aliasing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-c-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part C: Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sampling-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aliasing-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aliasing Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matlab-functions-for-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MATLAB Functions for Sampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevention-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prevention Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloadable-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloadable Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-sampling-and-aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Sampling and Aliasing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction: Sampling and Aliasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-sampling-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Sampling Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-theorem-nyquist-shannon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling Theorem (Nyquist-Shannon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-sampling-higher-than-nyquist-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Sampling Higher Than Nyquist Rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1: Sampling Higher Than Nyquist Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-domain-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Domain Plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequency-domain-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Domain Plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-sampling-lower-than-nyquist-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Sampling Lower Than Nyquist Rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2: Sampling Lower Than Nyquist Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aliasing-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aliasing Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#report-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-1-sampling-higher-than-nyquist-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Sampling Higher Than Nyquist Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-sampling-lower-than-nyquist-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Sampling Lower Than Nyquist Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-anti-aliasing-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Anti-Aliasing Filter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-the-atari-wrap-around-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: The Atari (Wrap-Around) Effect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 4: The Atari (Wrap-Around) Effect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-a-complex-signal-aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part A: Complex Signal Aliasing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-b-real-signal-aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part B: Real Signal Aliasing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-c-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part C: Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sampling-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aliasing-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aliasing Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matlab-functions-for-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MATLAB Functions for Sampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevention-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prevention Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloadable-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloadable Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="dsp-lab-2-sampling-and-aliasing">DSP Lab 2: Sampling and Aliasing<a class="headerlink" href="#dsp-lab-2-sampling-and-aliasing" title="Permanent link">&para;</a></h1>
+<p><strong>Authors:</strong> Mateo Aboy, Aaron Scher, and Joel Sprunger
+<em>Oregon Institute of Technology</em></p>
+<div class="admonition info">
+<p class="admonition-title">Lab Materials</p>
+<p>This lab was developed based on coursework for EE 430. It explores the fundamental concepts of sampling and reconstruction of analog signals, with a focus on understanding and preventing aliasing.</p>
+</div>
+<h2 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">&para;</a></h2>
+<p>The objective of this lab is to explore the concepts of sampling and reconstruction of analog signals. Specifically, we will:</p>
+<ul>
+<li>Simulate the sampling process of an analog signal using MATLAB</li>
+<li>Investigate the effect of sampling in the time and frequency domains</li>
+<li>Introduce and understand the concept of aliasing</li>
+<li>Apply the Nyquist sampling theorem</li>
+</ul>
+<h2 id="introduction-sampling-and-aliasing">Introduction: Sampling and Aliasing<a class="headerlink" href="#introduction-sampling-and-aliasing" title="Permanent link">&para;</a></h2>
+<p>An <strong>analog-to-digital converter (ADC)</strong> converts an analog signal to a digital form. An ADC produces a stream of binary numbers from analog signals by taking the samples of the analog signal and digitizing the amplitude at these discrete times.</p>
+<p>Prior to the ADC conversion, an analog filter called the <strong>prefilter</strong> or <strong>antialiasing filter</strong> is applied to the analog signal in order to deal with an effect known as <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a>. Aliasing causes multiple continuous time signals to yield the exact same sampled discrete time signal.</p>
+<h3 id="the-sampling-process">The Sampling Process<a class="headerlink" href="#the-sampling-process" title="Permanent link">&para;</a></h3>
+<p>During sampling, an analog signal <span class="arithmatex">\(x_a(t)\)</span> is periodically measured every <span class="arithmatex">\(T_s\)</span> seconds:</p>
+<div class="arithmatex">\[t = nT_s, \quad n = 0, 1, 2, \ldots\]</div>
+<p>where <span class="arithmatex">\(T_s\)</span> is called the <strong>sampling period</strong>, and is the fixed time interval between samples (here we assume a uniform sampling rate that does not change with time). The inverse of <span class="arithmatex">\(T_s\)</span> is called the <strong>sampling frequency</strong>, that is, the samples per second:</p>
+<div class="arithmatex">\[f_s = \frac{1}{T_s}\]</div>
+<p>When sampling an analog signal we must sample fast enough (i.e. be sure <span class="arithmatex">\(f_s\)</span> is sufficiently high), so that the samples are a good representation of the original analog signal. If the sampling frequency <span class="arithmatex">\(f_s\)</span> is not fast enough then too much information is lost, and it becomes impossible to reconstruct our original analog signal using a digital-to-analog converter (DAC). However, if you do sample fast enough, then, theoretically, it is possible to exactly reconstruct the original signal.</p>
+<h3 id="sampling-theorem-nyquist-shannon">Sampling Theorem (Nyquist-Shannon)<a class="headerlink" href="#sampling-theorem-nyquist-shannon" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Sampling Theorem</p>
+<p>For accurate representation of signal <span class="arithmatex">\(x_a(t)\)</span> by its time samples <span class="arithmatex">\(x[nT]\)</span>, two conditions must be met:</p>
+<ol>
+<li>
+<p>The signal <span class="arithmatex">\(x_a(t)\)</span> must be <strong>bandlimited</strong>, that is, its frequency content (spectrum) must be limited to contain frequencies up to some maximum frequency <span class="arithmatex">\(f_{max}\)</span> and no frequencies beyond that.</p>
+</li>
+<li>
+<p>The sampling rate <span class="arithmatex">\(f_s\)</span> must be chosen to be at least twice the maximum frequency <span class="arithmatex">\(f_{max}\)</span>, that is:</p>
+</li>
+</ol>
+<div class="arithmatex">\[f_s \geq 2f_{max}\]</div>
+</div>
+<p>According to the sampling theorem, before sampling we must make sure the signal is bandlimited (this is the function of the analog prefilter) and that the sampling frequency is at least twice the maximum frequency.</p>
+<div class="admonition info">
+<p class="admonition-title">Beyond Traditional Nyquist</p>
+<p>The traditional Nyquist sampling theorem presented above is true for <strong>real-valued</strong> (i.e. not complex), <strong>lowpass</strong> (i.e. baseband) signals.</p>
+<ul>
+<li>For <strong>complex lowpass</strong> signals, the sampling theorem states that the ultimate minimum sampling rate to avoid aliasing is actually <span class="arithmatex">\(f_s = B\)</span>, where <span class="arithmatex">\(B\)</span> is the double-sided bandwidth.</li>
+<li>For <strong>bandpass</strong> signals, things get even more interesting. You can subsample (i.e. sample below the Nyquist rate) to achieve frequency translation to lower frequencies and recover the original signal.</li>
+</ul>
+</div>
+<h2 id="example-1-sampling-higher-than-nyquist-rate">Example 1: Sampling Higher Than Nyquist Rate<a class="headerlink" href="#example-1-sampling-higher-than-nyquist-rate" title="Permanent link">&para;</a></h2>
+<p>Consider the following continuous time signal:</p>
+<div class="arithmatex">\[x_a(t) = 3\sin(2\pi 0.5t) + 2\sin(2\pi 2.5t)\]</div>
+<p>The signal contains two frequency components at <span class="arithmatex">\(f_1 = 0.5\)</span> Hz and <span class="arithmatex">\(f_2 = 2.5\)</span> Hz. The maximum frequency is <span class="arithmatex">\(f_{max} = 2.5\)</span> Hz.</p>
+<p>We explore the effect of aliasing by sampling <span class="arithmatex">\(x_a(t)\)</span> at <span class="arithmatex">\(f_s = 2.5f_{max} = 6.25\)</span> Hz. This sampling frequency <strong>meets</strong> the sampling theorem requirement.</p>
+<h3 id="time-domain-plots">Time Domain Plots<a class="headerlink" href="#time-domain-plots" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">% Example 1: Sampling above Nyquist rate</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">f1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span><span class="w">         </span><span class="c">% First frequency (Hz)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">f2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span><span class="w">         </span><span class="c">% Second frequency (Hz)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">fmax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span><span class="w">       </span><span class="c">% Maximum frequency (Hz)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">fs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fmax</span><span class="p">;</span><span class="w">  </span><span class="c">% Sampling frequency = 6.25 Hz</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c">% Create continuous time signal (for visualization)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">t_cont</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">10</span><span class="p">;</span><span class="w">  </span><span class="c">% Fine time resolution</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">xa</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">t_cont</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">t_cont</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c">% Sample the signal</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">Ts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="nb">floor</span><span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="n">Ts</span><span class="p">);</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">t_samp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ts</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">x_samp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">t_samp</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">t_samp</span><span class="p">);</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c">% Reconstruct signal (ideal reconstruction)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">x_recon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_samp</span><span class="p">;</span><span class="w">  </span><span class="c">% For ideal reconstruction</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">t_recon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">t_samp</span><span class="p">;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c">% Plot</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t_cont</span><span class="p">,</span><span class="w"> </span><span class="n">xa</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Original Continuous Signal x_a(t)&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="nb">stem</span><span class="p">(</span><span class="n">t_samp</span><span class="p">,</span><span class="w"> </span><span class="n">x_samp</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;filled&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="nb">title</span><span class="p">([</span><span class="s">&#39;Sampled Signal x[n], f_s = &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">fs</span><span class="p">),</span><span class="w"> </span><span class="s">&#39; Hz&#39;</span><span class="p">]);</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t_cont</span><span class="p">,</span><span class="w"> </span><span class="n">xa</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;b-&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="nb">stem</span><span class="p">(</span><span class="n">t_samp</span><span class="p">,</span><span class="w"> </span><span class="n">x_samp</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;filled&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Sampled Signal Superimposed on Reconstructed Signal&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="nb">legend</span><span class="p">(</span><span class="s">&#39;Reconstructed&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Samples&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="Sampling above Nyquist" src="../assets/dsp-lab2/dsplab_2_fig3.png" />
+<strong>Figure 1:</strong> First plot shows the original continuous time signal <span class="arithmatex">\(x_a(t)\)</span>. Second plot shows the sampled discrete time signal <span class="arithmatex">\(x[n]\)</span> with <span class="arithmatex">\(f_s = 2.5f_{max} = 6.25\)</span> Hz. Third plot shows the sampled discrete time signal superimposed on top of the reconstructed time-domain signal.</p>
+<h3 id="frequency-domain-plots">Frequency Domain Plots<a class="headerlink" href="#frequency-domain-plots" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">% Compute FFT of signals</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">N</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2048</span><span class="p">;</span><span class="w">  </span><span class="c">% FFT length</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">freq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="n">N</span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c">% FFT of original signal (using high sampling rate)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">fs_high</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w">  </span><span class="c">% High sampling for &quot;continuous&quot; approximation</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">t_high</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">fs_high</span><span class="p">:</span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">xa_high</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">t_high</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">t_high</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">Xa</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fftshift</span><span class="p">(</span><span class="nb">fft</span><span class="p">(</span><span class="n">xa_high</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">));</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c">% FFT of sampled signal</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">Xs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fftshift</span><span class="p">(</span><span class="nb">fft</span><span class="p">(</span><span class="n">x_samp</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">));</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c">% Plot spectra</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nb">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">Xa</span><span class="p">)</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Xa</span><span class="p">)),</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Frequency (Hz)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Normalized Magnitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Spectrum of Original Signal&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"> </span><span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="w"> </span><span class="mi">10</span><span class="p">]);</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="nb">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Xs</span><span class="p">)),</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Frequency (Hz)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Normalized Magnitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="nb">title</span><span class="p">([</span><span class="s">&#39;Spectrum of Sampled Signal, f_s = &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">fs</span><span class="p">),</span><span class="w"> </span><span class="s">&#39; Hz&#39;</span><span class="p">]);</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"> </span><span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="w"> </span><span class="mi">10</span><span class="p">]);</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="nb">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">Xa</span><span class="p">)</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Xa</span><span class="p">)),</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Frequency (Hz)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Normalized Magnitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Spectrum of Reconstructed Signal&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"> </span><span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="w"> </span><span class="mi">10</span><span class="p">]);</span>
+</code></pre></div>
+<p><img alt="Spectrum above Nyquist" src="../assets/dsp-lab2/dsplab_2_fig4.png" />
+<strong>Figure 2:</strong> First plot shows the two-sided amplitude spectrum of the original time signal. Second plot shows the two-sided amplitude spectrum of the sampled discrete time signal with <span class="arithmatex">\(f_s = 2.5f_{max} = 6.25\)</span> Hz. Third plot shows the two-sided amplitude spectrum of the reconstructed time-domain signal.</p>
+<div class="admonition success">
+<p class="admonition-title">Perfect Reconstruction</p>
+<p>Note that the reconstructed time-domain signal is equal to the original time-domain signal, because the sampling theorem is met.</p>
+</div>
+<h2 id="example-2-sampling-lower-than-nyquist-rate">Example 2: Sampling Lower Than Nyquist Rate<a class="headerlink" href="#example-2-sampling-lower-than-nyquist-rate" title="Permanent link">&para;</a></h2>
+<p>Consider the same continuous time signal as in Example 1:</p>
+<div class="arithmatex">\[x_a(t) = 3\sin(2\pi 0.5t) + 2\sin(2\pi 2.5t)\]</div>
+<p>The signal contains two frequency components at <span class="arithmatex">\(f_1 = 0.5\)</span> Hz and <span class="arithmatex">\(f_2 = 2.5\)</span> Hz. We explore the effect of aliasing by sampling <span class="arithmatex">\(x_a(t)\)</span> at <span class="arithmatex">\(f_s = 1\)</span> Hz. This sampling frequency <strong>does not meet</strong> the sampling theorem requirement (<span class="arithmatex">\(f_s &lt; 2f_{max}\)</span>).</p>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">% Example 2: Sampling below Nyquist rate (undersampling)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">fs_under</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c">% Sampling frequency = 1 Hz (violates Nyquist!)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c">% Sample the signal</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">Ts_under</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">fs_under</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">n_under</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="nb">floor</span><span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="n">Ts_under</span><span class="p">);</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">t_under</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">n_under</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ts_under</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">x_under</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">t_under</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">t_under</span><span class="p">);</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c">% What we actually reconstruct (aliased version)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c">% The 2.5 Hz component aliases to 0.5 Hz!</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">x_recon_aliased</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mf">0.5</span><span class="o">*</span><span class="n">t_cont</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mf">0.5</span><span class="o">*</span><span class="n">t_cont</span><span class="p">);</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">x_recon_aliased</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mf">0.5</span><span class="o">*</span><span class="n">t_cont</span><span class="p">);</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c">% Plot</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t_cont</span><span class="p">,</span><span class="w"> </span><span class="n">xa</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Original Signal x_a(t)&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="nb">stem</span><span class="p">(</span><span class="n">t_under</span><span class="p">,</span><span class="w"> </span><span class="n">x_under</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;filled&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="nb">title</span><span class="p">([</span><span class="s">&#39;Sampled Signal x[n], f_s = &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">fs_under</span><span class="p">),</span><span class="w"> </span><span class="s">&#39; Hz&#39;</span><span class="p">]);</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t_cont</span><span class="p">,</span><span class="w"> </span><span class="n">xa</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;b-&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="nb">stem</span><span class="p">(</span><span class="n">t_under</span><span class="p">,</span><span class="w"> </span><span class="n">x_under</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;filled&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Sampled Signal on Original Signal&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="nb">legend</span><span class="p">(</span><span class="s">&#39;Original&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Samples&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t_cont</span><span class="p">,</span><span class="w"> </span><span class="n">x_recon_aliased</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;g-&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="nb">stem</span><span class="p">(</span><span class="n">t_under</span><span class="p">,</span><span class="w"> </span><span class="n">x_under</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;filled&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Sampled Signal on Reconstructed Signal (Aliased!)&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="nb">legend</span><span class="p">(</span><span class="s">&#39;Reconstructed (Wrong!)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Samples&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="Sampling below Nyquist" src="../assets/dsp-lab2/new_fig.png" />
+<strong>Figure 3:</strong> First plot shows the original continuous time signal <span class="arithmatex">\(x_a(t)\)</span>. Second plot shows the sampled discrete time signal <span class="arithmatex">\(x[n]\)</span> with <span class="arithmatex">\(f_s = f_{max}/2.5 = 1\)</span> Hz. Third plot shows the sampled discrete time signal superimposed on top of the original time-domain signal. Fourth plot shows the sampled discrete time signal superimposed on top of the reconstructed time-domain signal.</p>
+<h3 id="aliasing-effect">Aliasing Effect<a class="headerlink" href="#aliasing-effect" title="Permanent link">&para;</a></h3>
+<p>Note that the reconstructed time-domain signal is <strong>not equal</strong> to the original time-domain signal, because the sampling theorem is not met. The reconstructed signal is:</p>
+<div class="arithmatex">\[x_r(t) = 3\sin(2\pi 0.5t) + 2\sin(2\pi 0.5t) = 5\sin(2\pi 0.5t)\]</div>
+<p>The above equation results because a 0.5 Hz sinusoid is an <strong>alias</strong> of a 2.5 Hz sinusoid.</p>
+<div class="admonition danger">
+<p class="admonition-title">Aliasing Explained</p>
+<p>When sampling at <span class="arithmatex">\(f_s = 1\)</span> Hz, the 2.5 Hz component appears as a 0.5 Hz component in the sampled signal. This is because:</p>
+<div class="arithmatex">\[2.5 \mod 1 = 0.5\]</div>
+<p>The high-frequency component "wraps around" and masquerades as a low-frequency component. This is <strong>aliasing</strong> - different continuous-time signals produce identical discrete-time sequences.</p>
+</div>
+<p><img alt="Spectrum below Nyquist" src="../assets/dsp-lab2/dsplab_2_fig2.png" />
+<strong>Figure 4:</strong> Frequency domain plots showing aliasing. The spectrum of the sampled signal shows how the 2.5 Hz component has aliased to 0.5 Hz.</p>
+<h2 id="lab-tasks">Lab Tasks<a class="headerlink" href="#lab-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="report-guidelines">Report Guidelines<a class="headerlink" href="#report-guidelines" title="Permanent link">&para;</a></h3>
+<p>For the lab report, you will create a PowerPoint presentation (or use a similar presentation program), save it as a PDF, and submit it online according to the instructions given in class. All submitted MATLAB code should be well organized and commented with clear comments for easy readability. All submitted plots should be easy to see and well-labeled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Independent Work</p>
+<p>You are to work independently. This is not a team assignment. Feel free to help your fellow classmates understand principles and concepts, but please do not share your work.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Subplot Formatting</p>
+<p>This lab involves generating many plots using MATLAB's <code>subplot</code> function. This will likely result in figures which are "squashed" together. To unsquash the images, please manually stretch (resize) the figure window before placing the figures in your presentation.</p>
+</div>
+<p>Your presentation will have 11 slides. Please include a slide number in the footer of each slide. To earn full credit your presentation must contain the slides in the order asked for in this lab. If you miss a slide, please leave a blank slide in its place so that you still have exactly 11 slides total.</p>
+<p><strong>Slide 1:</strong> Title slide with your name, student ID number, date, lab name, class number/title.</p>
+<h3 id="task-1-sampling-higher-than-nyquist-rate">Task 1: Sampling Higher Than Nyquist Rate<a class="headerlink" href="#task-1-sampling-higher-than-nyquist-rate" title="Permanent link">&para;</a></h3>
+<p>Consider a continuous time domain signal:</p>
+<div class="arithmatex">\[x_a(t) = 2\cos(2\pi 0.5t) + \sin(2\pi 1.5t) + \cos(2\pi 2.5t) + 1.5\cos(2\pi 3.5t)\]</div>
+<p><strong>a)</strong> Suppose we sample <span class="arithmatex">\(x_a(t)\)</span> with a sampling frequency <span class="arithmatex">\(f_s = 10f_{max}\)</span>. Create a 3-by-1 plot like Example 1 where you plot the original continuous time signal <span class="arithmatex">\(x_a(t)\)</span>, the sampled discrete time signal <span class="arithmatex">\(x[n]\)</span>, and the sampled discrete time signal superimposed over the reconstructed signal. Present your plot and your MATLAB code in <strong>Slides 2-5</strong>. Please program MATLAB to display your name as the title of the plot (e.g. The MATLAB command would be something like: <code>title('Jane Doe')</code>).</p>
+<h3 id="task-2-sampling-lower-than-nyquist-rate">Task 2: Sampling Lower Than Nyquist Rate<a class="headerlink" href="#task-2-sampling-lower-than-nyquist-rate" title="Permanent link">&para;</a></h3>
+<p><strong>a)</strong> Consider the continuous time signal <span class="arithmatex">\(x_a(t)\)</span> expressed in the equation above (Task 1). Suppose we sample <span class="arithmatex">\(x_a(t)\)</span> with a sampling frequency <span class="arithmatex">\(f_s = f_{max}\)</span>. Create a 4-by-1 plot like Example 2 where you plot the original continuous time signal <span class="arithmatex">\(x_a(t)\)</span>, the sampled discrete time signal <span class="arithmatex">\(x[n]\)</span>, the sampled discrete time signal superimposed over the original continuous time signal, and the sampled discrete time signal superimposed over the reconstructed signal. Present your plot in <strong>Slide 6</strong>. Please program MATLAB to display your name as the title of the plot.</p>
+<h3 id="task-3-anti-aliasing-filter">Task 3: Anti-Aliasing Filter<a class="headerlink" href="#task-3-anti-aliasing-filter" title="Permanent link">&para;</a></h3>
+<p><strong>a)</strong> Consider the continuous time signal <span class="arithmatex">\(x_a(t)\)</span> from Task 1. Consider again a sampling frequency <span class="arithmatex">\(f_s = f_{max}\)</span>. Suppose you first process <span class="arithmatex">\(x_a(t)\)</span> with an ideal anti-aliasing low-pass prefilter and then sample the signal. What is the signal after the anti-aliasing low-pass prefilter? Present your expression in <strong>Slide 7</strong>.</p>
+<p>Create a 4-by-1 plot where you plot:
+1. The original continuous time signal <span class="arithmatex">\(x_a(t)\)</span>
+2. The continuous time signal after it has been processed by the prefilter
+3. The sampled discrete time signal <span class="arithmatex">\(x[n]\)</span>
+4. The sampled discrete time signal superimposed over the reconstructed signal</p>
+<p>Present your plot in <strong>Slide 8</strong>. Please program MATLAB to display your name as the title of the plot.</p>
+<div class="admonition info">
+<p class="admonition-title">Anti-Aliasing Filter Design</p>
+<p>An ideal anti-aliasing filter is a low-pass filter with cutoff frequency <span class="arithmatex">\(f_c = f_s/2\)</span>. It removes all frequency components above the Nyquist frequency before sampling.</p>
+</div>
+<h3 id="task-4-the-atari-wrap-around-effect">Task 4: The Atari (Wrap-Around) Effect<a class="headerlink" href="#task-4-the-atari-wrap-around-effect" title="Permanent link">&para;</a></h3>
+<h4 id="part-a-complex-signal-aliasing">Part A: Complex Signal Aliasing<a class="headerlink" href="#part-a-complex-signal-aliasing" title="Permanent link">&para;</a></h4>
+<p>Consider a continuous time domain <strong>complex</strong> signal:</p>
+<div class="arithmatex">\[x_a(t) = e^{j2\pi 10t}\]</div>
+<p>Create a 4-by-1 plot where you plot the double-sided spectrum of the sampled signal for the following sampling frequencies: <span class="arithmatex">\(f_s = 25\)</span> Hz, <span class="arithmatex">\(f_s = 21\)</span> Hz, <span class="arithmatex">\(f_s = 19\)</span> Hz, <span class="arithmatex">\(f_s = 15\)</span> Hz.</p>
+<p>Present your plot in <strong>Slide 9</strong>. Please program MATLAB to display your name as the title of the plot. When creating your signal, sample your signal for a total of 10 seconds or more (this large sampling window will result in "sharp" spectral peaks). For your plot make sure to set <code>axis tight</code>.</p>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% Complex signal aliasing example</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">f0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">          </span><span class="c">% Signal frequency (Hz)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">T_window</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">    </span><span class="c">% Long window for sharp peaks</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">fs_values</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">];</span><span class="w">  </span><span class="c">% Different sampling rates</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">fs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fs_values</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">:</span><span class="n">T_window</span><span class="p">;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">j</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f0</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="c">% Compute FFT</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">N</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fftshift</span><span class="p">(</span><span class="nb">fft</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="n">N</span><span class="p">);</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">i</span><span class="p">);</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Frequency (Hz)&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Magnitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="nb">title</span><span class="p">([</span><span class="s">&#39;f_s = &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">fs</span><span class="p">),</span><span class="w"> </span><span class="s">&#39; Hz&#39;</span><span class="p">]);</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="n">axis</span><span class="w"> </span><span class="s">tight</span><span class="p">;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="k">end</span>
+</code></pre></div>
+<h4 id="part-b-real-signal-aliasing">Part B: Real Signal Aliasing<a class="headerlink" href="#part-b-real-signal-aliasing" title="Permanent link">&para;</a></h4>
+<p>Consider a continuous time domain signal:</p>
+<div class="arithmatex">\[x_a(t) = \cos(2\pi 10t)\]</div>
+<p>Create a 4-by-1 plot where you plot the double-sided spectrum of the sampled signal for the following sampling frequencies: <span class="arithmatex">\(f_s = 25\)</span> Hz, <span class="arithmatex">\(f_s = 21\)</span> Hz, <span class="arithmatex">\(f_s = 19\)</span> Hz, <span class="arithmatex">\(f_s = 15\)</span> Hz.</p>
+<p>Present your plot in <strong>Slide 10</strong>. Please program MATLAB to display your name as the title of the plot. When creating your signal, sample your signal for a total of 10 seconds or more. For your plot make sure to set <code>axis tight</code>.</p>
+<h4 id="part-c-explanation">Part C: Explanation<a class="headerlink" href="#part-c-explanation" title="Permanent link">&para;</a></h4>
+<p>In <strong>Slide 11</strong> explain what is meant by the <strong>Atari (wrap-around) effect</strong> in terms of sampling and aliasing.</p>
+<div class="admonition question">
+<p class="admonition-title">The Atari Effect</p>
+<p>The "Atari effect" or "wagon wheel effect" is a visual manifestation of aliasing. When a rotating object is sampled (filmed) at a rate close to its rotation frequency, it can appear to rotate slowly backwards, stand still, or rotate at the wrong speed. This is because the sampling rate is too low relative to the motion, causing aliasing in the temporal domain.</p>
+<p>In the frequency domain, when the sampling rate is below Nyquist, high-frequency components "wrap around" the Nyquist frequency and appear as low-frequency components in the sampled signal.</p>
+</div>
+<h2 id="key-concepts-summary">Key Concepts Summary<a class="headerlink" href="#key-concepts-summary" title="Permanent link">&para;</a></h2>
+<h3 id="sampling-theorem">Sampling Theorem<a class="headerlink" href="#sampling-theorem" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Requirement</th>
+<th>Effect if Violated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bandlimited signal</strong></td>
+<td><span class="arithmatex">\(f_{max}\)</span> must be finite</td>
+<td>Cannot sample properly</td>
+</tr>
+<tr>
+<td><strong>Nyquist rate</strong></td>
+<td><span class="arithmatex">\(f_s \geq 2f_{max}\)</span></td>
+<td>Aliasing occurs</td>
+</tr>
+<tr>
+<td><strong>Reconstruction</strong></td>
+<td>Ideal low-pass filter</td>
+<td>Perfect recovery (if Nyquist met)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aliasing-formula">Aliasing Formula<a class="headerlink" href="#aliasing-formula" title="Permanent link">&para;</a></h3>
+<p>For a sinusoid at frequency <span class="arithmatex">\(f_0\)</span> sampled at rate <span class="arithmatex">\(f_s\)</span>, the aliased frequency is:</p>
+<div class="arithmatex">\[f_{alias} = |f_0 - k \cdot f_s|\]</div>
+<p>where <span class="arithmatex">\(k\)</span> is chosen such that <span class="arithmatex">\(0 \leq f_{alias} &lt; f_s/2\)</span>.</p>
+<h3 id="matlab-functions-for-sampling">MATLAB Functions for Sampling<a class="headerlink" href="#matlab-functions-for-sampling" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stem</code></td>
+<td>Plot discrete samples</td>
+<td><code>stem(n, x)</code></td>
+</tr>
+<tr>
+<td><code>fft</code></td>
+<td>Frequency analysis</td>
+<td><code>X = fft(x)</code></td>
+</tr>
+<tr>
+<td><code>fftshift</code></td>
+<td>Center zero frequency</td>
+<td><code>fftshift(X)</code></td>
+</tr>
+<tr>
+<td><code>resample</code></td>
+<td>Change sampling rate</td>
+<td><code>y = resample(x, p, q)</code></td>
+</tr>
+<tr>
+<td><code>decimate</code></td>
+<td>Downsample with filtering</td>
+<td><code>y = decimate(x, r)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="prevention-strategies">Prevention Strategies<a class="headerlink" href="#prevention-strategies" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Preventing Aliasing</p>
+<ol>
+<li><strong>Analog anti-aliasing filter</strong>: Apply low-pass filter before ADC</li>
+<li><strong>Oversample</strong>: Sample at <span class="arithmatex">\(f_s \gg 2f_{max}\)</span> (typically 5-10× Nyquist rate)</li>
+<li><strong>Bandlimit the signal</strong>: Remove high-frequency components before sampling</li>
+<li><strong>Use appropriate ADC</strong>: Select ADC with sufficient sampling rate</li>
+</ol>
+</div>
+<h2 id="downloadable-resources">Downloadable Resources<a class="headerlink" href="#downloadable-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../assets/dsp-lab2/Complex-Signals-and-Radios-short-2pp.pdf">📥 Complex Signals and Radios (PDF)</a></li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>J. Sprunger and M. Aboy, <em>Computer Explorations in DSP Laboratory 2 - Signals and Aliasing</em>, prepared for EE 430, Oregon Institute of Technology, 2013.</li>
+<li>M. Valkama, <em>Complex valued signals and systems - Basic principles and applications to radio communications and radio signal processing</em>, Tampere University of Technology.</li>
+<li>Oppenheim &amp; Schafer, <em>Discrete-Time Signal Processing</em> (textbook)</li>
+<li>MATLAB Signal Processing Toolbox Documentation</li>
+</ol>
+<hr />
+<p><em>Lab created January 2016 | Updated for modern context February 2026</em></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

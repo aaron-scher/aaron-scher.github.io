@@ -1,0 +1,2449 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/dsp/dsp-lab1-signals/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../dsp-lab2-sampling/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Lab 1: Working with Signals - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dsp-lab-1-working-with-signals-in-matlab" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 1: Working with Signals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-basis-representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum-mechanics/phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-why-study-sinusoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Why Study Sinusoids?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spectrum-of-periodic-and-quasi-periodic-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum of Periodic and Quasi-Periodic Signals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spectrum of Periodic and Quasi-Periodic Signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-sided-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single-Sided Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-sided-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double-Sided Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamental-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fundamental Frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-plotting-a-sinusoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Plotting a Sinusoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1: Plotting a Sinusoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choice-1-choose-the-time-span-of-the-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choice 1: Choose the Time-Span of the Plot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choice-2-choose-the-sampling-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choice 2: Choose the Sampling Frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-eulers-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Euler's Identity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-signals-as-a-sum-of-sinusoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Signals as a Sum of Sinusoids
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3: Signals as a Sum of Sinusoids">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summing-four-harmonics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summing Four Harmonics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summing-1000-harmonics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summing 1000 Harmonics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-4-using-matlabs-fft-function-to-find-the-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Using MATLAB's FFT Function to Find the Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#report-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-1-sinusoids-and-eulers-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Sinusoids and Euler's Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-composing-signals-using-sinusoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Composing Signals Using Sinusoids
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-periodic-and-quasi-periodic-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Periodic and Quasi-Periodic Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-spectral-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: Spectral Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signal-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Representation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spectrum-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matlab-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MATLAB Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-why-study-sinusoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Why Study Sinusoids?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spectrum-of-periodic-and-quasi-periodic-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum of Periodic and Quasi-Periodic Signals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spectrum of Periodic and Quasi-Periodic Signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-sided-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single-Sided Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-sided-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double-Sided Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fundamental-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fundamental Frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-plotting-a-sinusoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Plotting a Sinusoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1: Plotting a Sinusoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choice-1-choose-the-time-span-of-the-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choice 1: Choose the Time-Span of the Plot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choice-2-choose-the-sampling-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choice 2: Choose the Sampling Frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-eulers-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Euler's Identity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-signals-as-a-sum-of-sinusoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Signals as a Sum of Sinusoids
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3: Signals as a Sum of Sinusoids">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summing-four-harmonics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summing Four Harmonics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summing-1000-harmonics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summing 1000 Harmonics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-4-using-matlabs-fft-function-to-find-the-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Using MATLAB's FFT Function to Find the Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#report-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-1-sinusoids-and-eulers-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Sinusoids and Euler's Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-composing-signals-using-sinusoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Composing Signals Using Sinusoids
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-periodic-and-quasi-periodic-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Periodic and Quasi-Periodic Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-spectral-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: Spectral Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signal-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Representation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spectrum-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectrum Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matlab-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MATLAB Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="dsp-lab-1-working-with-signals-in-matlab">DSP Lab 1: Working with Signals in MATLAB<a class="headerlink" href="#dsp-lab-1-working-with-signals-in-matlab" title="Permanent link">&para;</a></h1>
+<p><strong>Authors:</strong> Mateo Aboy, Aaron Scher, and Joel Sprunger
+<em>Oregon Institute of Technology</em></p>
+<div class="admonition info">
+<p class="admonition-title">Lab Materials</p>
+<p>This lab was developed based on coursework for EE 430. It provides hands-on experience with creating, visualizing, and analyzing signals using MATLAB.</p>
+</div>
+<h2 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">&para;</a></h2>
+<p>The objectives of this lab are to learn how to visualize signals in MATLAB. This requires two tasks:</p>
+<ol>
+<li>Use the functions in MATLAB to create or import signals</li>
+<li>Plot the signals as functions of time, with appropriate scales for the x and y axis so that the plot is meaningful and easy to see</li>
+</ol>
+<h2 id="introduction-why-study-sinusoids">Introduction: Why Study Sinusoids?<a class="headerlink" href="#introduction-why-study-sinusoids" title="Permanent link">&para;</a></h2>
+<p>Sinusoids are the "building blocks" of all (reasonably well-behaved) signals. By adding enough sinusoids - sometimes an infinite number - with the correct amplitudes, frequencies, and relative phase angles, we can create any signal. Sinusoids are described in mathematics using the cosine function (or sin function) or by complex exponentials <span class="arithmatex">\(e^{j\theta}\)</span>.</p>
+<p>In engineering, many systems, such as RLC circuits and small signal amplifiers, can be accurately described as linear time-invariant (LTI) systems. It is straightforward to show that if a sinusoidal signal is input to an LTI system, the output will always be a sinusoid with the same frequency (though, in general, the output will have a different amplitude and phase). This is illustrated in Figure 1 for a cosine function.</p>
+<p><img alt="LTI System" src="../assets/dsp-lab1/LTI_description1.png" />
+<strong>Figure 1:</strong> LTI System - Sinusoid in, Sinusoid out</p>
+<p>This means that a 100 Hz sinusoidal signal input to an LTI system will always result in a 100 Hz sinusoid output (zero output would be regarded as a 100 Hz sinusoid with zero amplitude). If a 100 Hz sinusoid input results in a 300 Hz output then the system is not LTI. If a 100 Hz sinusoid input results in a square wave output then the system is not LTI.</p>
+<div class="admonition success">
+<p class="admonition-title">Why LTI Systems Matter</p>
+<p>LTI systems are generally much easier to analyze and characterize than nonlinear and time-varying systems. Thus if we can determine how an LTI system will affect sinusoids, we can determine how the system will affect any other signal by first describing the signal as a sum of sinusoids and then determining the effect of the system on the sinusoids separately. This is the motivation for working with sinusoids.</p>
+</div>
+<h2 id="spectrum-of-periodic-and-quasi-periodic-signals">Spectrum of Periodic and Quasi-Periodic Signals<a class="headerlink" href="#spectrum-of-periodic-and-quasi-periodic-signals" title="Permanent link">&para;</a></h2>
+<p>The <strong>frequency spectrum</strong> of a signal is the frequency content of a signal. Spectral analysis is a widely used and powerful method of data analysis, which determines the spectrum of a time-varying signal.</p>
+<p>The spectrum of periodic signals is usually represented as vertical lines, called <strong>line spectra</strong>, whose frequencies and amplitudes are indicated on the x and y axes, respectively. For example, suppose a signal is represented by:</p>
+<div class="arithmatex">\[x(t) = \cos(2\pi 10t) + 0.5\cos(2\pi 15t)\]</div>
+<h3 id="single-sided-spectrum">Single-Sided Spectrum<a class="headerlink" href="#single-sided-spectrum" title="Permanent link">&para;</a></h3>
+<p>The frequency spectrum can be plotted either as single-sided or double-sided. In the <strong>single-sided spectrum</strong>, the vertical lines represent the amplitudes of the sinusoids (cosines) that comprise a function.</p>
+<p><img alt="Single-sided spectrum" src="../assets/dsp-lab1/Stem1.png" />
+<strong>Figure 2:</strong> Single-sided spectrum of <span class="arithmatex">\(x(t) = \cos(2\pi 10t) + 0.5\cos(2\pi 15t)\)</span></p>
+<h3 id="double-sided-spectrum">Double-Sided Spectrum<a class="headerlink" href="#double-sided-spectrum" title="Permanent link">&para;</a></h3>
+<p>The <strong>double-sided spectrum</strong> is more general than the single-sided spectrum in that it can represent the spectra of both real and complex signals. In the double-sided spectrum, the vertical lines represent the amplitudes of the complex exponentials (<span class="arithmatex">\(e^{j2\pi f_0t}\)</span>) that comprise a function. It results from Euler's Equation, which says that we can decompose a sinusoid into a sum of two complex exponential functions:</p>
+<div class="arithmatex">\[A\cos(2\pi f_0t) = A\frac{e^{j2\pi f_0t} + e^{-j2\pi f_0t}}{2}\]</div>
+<p>Looking at the equation above, we see that the amplitude of the double-sided spectrum for <span class="arithmatex">\(A\cos(2\pi f_0t)\)</span> is <span class="arithmatex">\(A/2\)</span> at frequencies <span class="arithmatex">\(f_0\)</span> and <span class="arithmatex">\(-f_0\)</span>.</p>
+<p><img alt="Double-sided spectrum" src="../assets/dsp-lab1/Stem2.png" />
+<strong>Figure 3:</strong> Double-sided spectrum of <span class="arithmatex">\(x(t) = \cos(2\pi 10t) + 0.5\cos(2\pi 15t)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Spectrum Comparison</p>
+<p>The double-sided spectra for a general function <span class="arithmatex">\(x(t)\)</span> looks just like the single-sided spectra at positive frequencies (<span class="arithmatex">\(f &gt; 0\)</span>). The only difference is that the amplitudes of the double-sided spectrum are one-half as large (i.e. the vertical lines are one-half as long) compared to the single-sided spectrum. If a DC component exists (i.e. a component at <span class="arithmatex">\(f = 0\)</span>) then this spectral component is identical for both single-sided and double-sided spectra.</p>
+</div>
+<h3 id="fundamental-frequency">Fundamental Frequency<a class="headerlink" href="#fundamental-frequency" title="Permanent link">&para;</a></h3>
+<p>The <strong>fundamental frequency</strong> is the greatest common divisor of all the frequencies present in the signal. The fundamental frequency of the signal given above is 5 Hz, so <span class="arithmatex">\(x(t)\)</span> will repeat every 1/5 = 0.2 seconds.</p>
+<p><strong>Quasi-Periodic Signals:</strong></p>
+<p>Non-periodic signals can have discrete line spectrum as well. These types of signals are called "quasi-periodic" (or sometimes "non-periodic" or "almost periodic"). If in our previous example we change the 15 Hz component to <span class="arithmatex">\(\sqrt{8}\)</span> Hz it will never repeat, since <span class="arithmatex">\(\sqrt{8}\)</span> and 10 do not share a common divisor. However, this signal is still composed of two sinusoids, which are represented as line spectra.</p>
+<p>On the other hand, if in our previous example we change the 15 Hz component to 15.21 Hz it will repeat, since 15.21 and 10 share 0.01 as the common divisor. In this case <span class="arithmatex">\(x(t)\)</span> would repeat every 1/0.01 = 100 seconds.</p>
+<h2 id="sampling">Sampling<a class="headerlink" href="#sampling" title="Permanent link">&para;</a></h2>
+<p>In this lab we will be creating (simulating) analog signals on a computer using MATLAB. This takes a bit of careful thinking. True analog signals are continuous signals (continuous in both amplitude and time). However, computers deal with <strong>digital signals</strong> that are both discrete in time and amplitude.</p>
+<p>Discrete amplitudes aren't usually a problem, since MATLAB can handle large floating point numbers. However the time instances for a signal are not selected automatically in MATLAB. Meaning that if we chose too few points in time to define our signal, it will not be plotted smoothly.</p>
+<div class="admonition warning">
+<p class="admonition-title">Sampling Rate Selection</p>
+<p>Soon you will learn that the minimum sampling frequency that you can have for a signal is <span class="arithmatex">\(2f_{max}\)</span>, where <span class="arithmatex">\(f_{max}\)</span> = the maximum frequency of the signal being sampled. This prevents aliasing. You need not worry about aliasing yet, just remember to select enough time samples for your signal so that the plots appear smooth. For a sinusoid a smooth plot will have a sampling frequency 25 - 100 times the frequency of the signal.</p>
+</div>
+<h2 id="example-1-plotting-a-sinusoid">Example 1: Plotting a Sinusoid<a class="headerlink" href="#example-1-plotting-a-sinusoid" title="Permanent link">&para;</a></h2>
+<p>Consider the following sinusoidal signal:</p>
+<div class="arithmatex">\[x(t) = A\cos(2\pi f_0t + \phi)\]</div>
+<p>We will simulate the signal with the following parameters:</p>
+<ul>
+<li><span class="arithmatex">\(A = 2\)</span></li>
+<li><span class="arithmatex">\(f_0 = 100\)</span> Hz</li>
+<li><span class="arithmatex">\(\phi = 0\)</span></li>
+</ul>
+<h3 id="choice-1-choose-the-time-span-of-the-plot">Choice 1: Choose the Time-Span of the Plot<a class="headerlink" href="#choice-1-choose-the-time-span-of-the-plot" title="Permanent link">&para;</a></h3>
+<p>A true sinusoid is everlasting - it started at negative infinity (before the Age of the Dinosaurs) and will continue into the indefinite future forever (long after the Sun consumes the Earth). It is impossible to plot an everlasting signal, so let us choose to plot the sinusoid starting at <span class="arithmatex">\(t = 0\)</span> and end at 3 periods (<span class="arithmatex">\(3T\)</span>).</p>
+<p>This is a reasonable time span for the purposes of visual communication (it is not too "zoomed in" nor too "zoomed out"). Since <span class="arithmatex">\(f_0 = 100\)</span> Hz, the period <span class="arithmatex">\(T = 1/f_0 = 0.01\)</span> seconds. Hence we will plot the signal between 0 seconds and 0.03 seconds.</p>
+<h3 id="choice-2-choose-the-sampling-frequency">Choice 2: Choose the Sampling Frequency<a class="headerlink" href="#choice-2-choose-the-sampling-frequency" title="Permanent link">&para;</a></h3>
+<p>As mentioned above, <span class="arithmatex">\(x(t)\)</span> is a continuous time-waveform. MATLAB cannot plot continuous-time signals directly. Instead it plots the waveform at isolated (discrete) points in time. By default, MATLAB's <code>plot</code> function then automatically connects those points with straight lines.</p>
+<p>Here we will choose a sampling rate that is 100 times the frequency of the signal: <span class="arithmatex">\(f_s = (100)(100) = 10000\)</span> Hz. In other words, we choose to plot the sampled continuous-time signal <span class="arithmatex">\(x(t)\)</span> at equally spaced time instances <span class="arithmatex">\(T_s = 1/f_s = 0.0001\)</span> seconds. With this choice, our plot will appear to the eye continuous (more-or-less).</p>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">% Example 1: Plotting a sinusoid</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">           </span><span class="c">% Amplitude</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">f0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">        </span><span class="c">% Frequency (Hz)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">phi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">         </span><span class="c">% Phase (radians)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">fs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w">      </span><span class="c">% Sampling frequency (Hz)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">T</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">f0</span><span class="p">;</span><span class="w">        </span><span class="c">% Period</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">:</span><span class="mi">3</span><span class="o">*</span><span class="n">T</span><span class="p">;</span><span class="w">  </span><span class="c">% Time vector (3 periods)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c">% Generate sinusoid</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f0</span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">phi</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c">% Plot</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Sinusoidal Signal&#39;</span><span class="p">);</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="Sinusoid plot" src="../assets/dsp-lab1/Cosine_plot.png" />
+<strong>Figure 4:</strong> Plot of sinusoidal signal</p>
+<h2 id="example-2-eulers-identity">Example 2: Euler's Identity<a class="headerlink" href="#example-2-eulers-identity" title="Permanent link">&para;</a></h2>
+<p>In this example we will simulate and plot two signals to demonstrate Euler's equation:</p>
+<div class="arithmatex">\[e^{j\theta} = \cos(\theta) + j\sin(\theta)\]</div>
+<p>We will simulate the signal with the following parameters:</p>
+<ul>
+<li><span class="arithmatex">\(\theta = 2\pi f_0t + \phi\)</span></li>
+<li><span class="arithmatex">\(f_0 = 3\)</span> Hz</li>
+<li><span class="arithmatex">\(\phi = 0\)</span></li>
+</ul>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">% Example 2: Euler&#39;s Identity</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">f0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">              </span><span class="c">% Frequency (Hz)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">fs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">            </span><span class="c">% Sampling frequency (Hz)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span><span class="w">        </span><span class="c">% Time vector</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c">% Generate signals</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">theta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f0</span><span class="o">*</span><span class="n">t</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">complex_exp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">j</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">euler_sum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>1<span class="nb">j</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c">% Plot</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="nb">real</span><span class="p">(</span><span class="n">complex_exp</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;b-&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="nb">real</span><span class="p">(</span><span class="n">euler_sum</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;r.&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;MarkerSize&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="nb">imag</span><span class="p">(</span><span class="n">complex_exp</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;g-&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="nb">imag</span><span class="p">(</span><span class="n">euler_sum</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;m.&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;MarkerSize&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nb">legend</span><span class="p">(</span><span class="s">&#39;Real(e^{j\theta})&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Real(cos+jsin)&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">       </span><span class="s">&#39;Imag(e^{j\theta})&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Imag(cos+jsin)&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Euler&#39;&#39;s Identity Demonstration&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="Euler's identity" src="../assets/dsp-lab1/Eulers_example.png" />
+<strong>Figure 5:</strong> This plot shows the complex signal <span class="arithmatex">\(e^{j\theta} = \cos(\theta) + j\sin(\theta)\)</span> with <span class="arithmatex">\(\theta = 2\pi ft = \omega t\)</span>. The complex exponential <span class="arithmatex">\(e^{j\theta}\)</span> is plotted as solid lines for real and imaginary parts, and <span class="arithmatex">\(\cos(\theta) + j\sin(\theta)\)</span> as dots for real and imaginary parts. The solid lines and dotted lines overlap exactly, demonstrating the validity of Euler's Identity.</p>
+<h2 id="example-3-signals-as-a-sum-of-sinusoids">Example 3: Signals as a Sum of Sinusoids<a class="headerlink" href="#example-3-signals-as-a-sum-of-sinusoids" title="Permanent link">&para;</a></h2>
+<p>In this example we demonstrate the linear combination of sinusoids that are present in a square wave. The Fourier Series of a square wave is shown below in Figure 6. Using this Fourier Series, we simulate in MATLAB how adding up various numbers of sinusoids approximates a square wave.</p>
+<p><img alt="Fourier series square wave" src="../assets/dsp-lab1/Fourier_series_square_wave.png" />
+<strong>Figure 6:</strong> Fourier Series of a square wave</p>
+<h3 id="summing-four-harmonics">Summing Four Harmonics<a class="headerlink" href="#summing-four-harmonics" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">% Example 3: Square wave approximation</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">f0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="c">% Fundamental frequency (Hz)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">fs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w">        </span><span class="c">% Sampling frequency (Hz)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span><span class="w">     </span><span class="c">% Time vector</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c">% Sum first 4 harmonics</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="w">     </span><span class="c">% n = 1, 3, 5, 7</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="nb">pi</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">f0</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">end</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Square Wave Approximation (4 harmonics)&#39;</span><span class="p">);</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mf">1.5</span><span class="w"> </span><span class="mf">1.5</span><span class="p">]);</span>
+</code></pre></div>
+<p><img alt="First four harmonics" src="../assets/dsp-lab1/sine_wave_series1.png" />
+<strong>Figure 7:</strong> Summing the first four harmonics of a square wave</p>
+<h3 id="summing-1000-harmonics">Summing 1000 Harmonics<a class="headerlink" href="#summing-1000-harmonics" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% Sum first 1000 harmonics</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">1999</span><span class="w">  </span><span class="c">% n = 1, 3, 5, ..., 1999</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="nb">pi</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">f0</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">end</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Square Wave Approximation (1000 harmonics)&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mf">1.5</span><span class="w"> </span><span class="mf">1.5</span><span class="p">]);</span>
+</code></pre></div>
+<p><img alt="First 1000 harmonics" src="../assets/dsp-lab1/sine_wave_series2.png" />
+<strong>Figure 8:</strong> Summing the first 1000 harmonics of a square wave</p>
+<div class="admonition note">
+<p class="admonition-title">Gibbs Phenomenon</p>
+<p>Even with 1000 harmonics, you can see small ripples near the discontinuities. This is called the Gibbs phenomenon and occurs when approximating discontinuous functions with Fourier series.</p>
+</div>
+<h2 id="example-4-using-matlabs-fft-function-to-find-the-spectrum">Example 4: Using MATLAB's FFT Function to Find the Spectrum<a class="headerlink" href="#example-4-using-matlabs-fft-function-to-find-the-spectrum" title="Permanent link">&para;</a></h2>
+<p>Later in this course we will study the Discrete Fourier Transform (DFT) and Fast Fourier Transform (FFT) in detail. For now, let's take an initial look at how to use MATLAB's <code>fft</code> function for spectral analysis.</p>
+<p>Consider the sinusoidal signal:</p>
+<div class="arithmatex">\[x(t) = \cos(2\pi 10t) + 0.5\cos(2\pi 15t)\]</div>
+<div class="highlight"><span class="filename">Matlab</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c">% Example 4: FFT spectrum</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">f1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">          </span><span class="c">% First frequency (Hz)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">f2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w">          </span><span class="c">% Second frequency (Hz)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">fs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w">        </span><span class="c">% Sampling frequency (Hz)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">T_window</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.3333</span><span class="p">;</span><span class="w"> </span><span class="c">% Time window (s)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">:</span><span class="n">T_window</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c">% Generate signal</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c">% Compute FFT</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">N</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fft</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="n">N</span><span class="p">);</span><span class="w">  </span><span class="c">% Frequency vector</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">X_shifted</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fftshift</span><span class="p">(</span><span class="n">X</span><span class="p">);</span><span class="w">   </span><span class="c">% Shift zero frequency to center</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c">% Plot double-sided magnitude spectrum</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nb">figure</span><span class="p">;</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nb">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">X_shifted</span><span class="p">)</span><span class="o">/</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Frequency (Hz)&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Magnitude&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;Double-Sided Spectrum using FFT&#39;</span><span class="p">);</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">30</span><span class="w"> </span><span class="mi">30</span><span class="p">]);</span>
+</code></pre></div>
+<p><img alt="FFT example" src="../assets/dsp-lab1/FFT_example.png" />
+<strong>Figure 9:</strong> Spectrum of <span class="arithmatex">\(x(t) = \cos(2\pi 10t) + 0.5\cos(2\pi 15t)\)</span> computed with MATLAB's FFT function</p>
+<div class="admonition info">
+<p class="admonition-title">Windowing Effects</p>
+<p>Compare the double-sided spectrum shown in Figure 9 with that shown in Figure 3. Qualitatively, they are very similar. The ripples and "signal spread" exhibited in Figure 9 are due to windowing, which we will study more about later in this course. A true sinusoid is everlasting, but with MATLAB we can only simulate a sinusoid that exists for a finite time. Hence the FFT of a sinusoid gives the spectrum of a <strong>truncated</strong> sinusoid (not an ideal everlasting sinusoid). If we increase the time window, the spectra will be "sharper" (approaching that shown in Figure 3).</p>
+</div>
+<h2 id="lab-tasks">Lab Tasks<a class="headerlink" href="#lab-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="report-guidelines">Report Guidelines<a class="headerlink" href="#report-guidelines" title="Permanent link">&para;</a></h3>
+<p>For the lab report, you will create a PowerPoint presentation (or use a similar presentation program), save it as a PDF, and submit it online according to the instructions given in class. All submitted MATLAB code should be well organized and commented with clear comments for easy readability. All submitted plots should be easy to see and well-labeled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Independent Work</p>
+<p>You are to work independently. This is not a team assignment. Feel free to help your fellow classmates understand principles and concepts, but please do not share your work.</p>
+</div>
+<p>Your presentation will have 23 slides. Please include a slide number in the footer of each slide. To earn full credit your presentation must contain the slides in the order asked for in this lab. If you miss a slide, please leave a blank slide in its place so that you still have exactly 23 slides total.</p>
+<p><strong>Slide 1:</strong> Title slide with your name, student ID number, date, lab name, class number/title.</p>
+<h3 id="task-1-sinusoids-and-eulers-equation">Task 1: Sinusoids and Euler's Equation<a class="headerlink" href="#task-1-sinusoids-and-eulers-equation" title="Permanent link">&para;</a></h3>
+<p>Consider the following continuous time signal:</p>
+<div class="arithmatex">\[x_1(t) = (1 + \cos(2\pi 20t))\cos(2\pi 100t)\]</div>
+<p><strong>a)</strong> Use Euler's Identity to re-write the previous signal <span class="arithmatex">\(x_1(t)\)</span> as a new signal <span class="arithmatex">\(x_2(t)\)</span> that is a sum of three sinusoids. Show your derivation and final result in <strong>Slides 2-3</strong>.</p>
+<p><strong>b)</strong> Plot <span class="arithmatex">\(x_1(t)\)</span> in blue and <span class="arithmatex">\(x_2(t)\)</span> in red dots on the same plot to confirm that they are the same. In your plot, choose a sampling frequency of 600 Hz over the time interval <span class="arithmatex">\(0 \leq t \leq 0.6\)</span> seconds. Present your plot and accompanying MATLAB script in <strong>Slides 4-6</strong>.</p>
+<p><strong>c)</strong> Use the <code>stem</code> command in MATLAB to plot the double-sided spectrum of <span class="arithmatex">\(x_2(t)\)</span>. Present your stem plot in <strong>Slide 7</strong>.</p>
+<p><strong>d)</strong> Use the <code>fft</code> command in MATLAB to plot the double-sided spectrum of <span class="arithmatex">\(x_1(t)\)</span>. Present your plot in <strong>Slide 8</strong>. Compare your stem plot with your fft plot. They should be similar (in the sense that Figure 9 is similar to Figure 3).</p>
+<h3 id="task-2-composing-signals-using-sinusoids">Task 2: Composing Signals Using Sinusoids<a class="headerlink" href="#task-2-composing-signals-using-sinusoids" title="Permanent link">&para;</a></h3>
+<p>The Fourier Series for a triangle wave is presented in Figure 10 below.</p>
+<p><img alt="Fourier series triangle wave" src="../assets/dsp-lab1/Fourier_series_triangle_wave.png" />
+<strong>Figure 10:</strong> Fourier Series of a triangle wave</p>
+<p><strong>a)</strong> Similarly to what we did in creating Figure 7, use the <code>subplot</code> function in MATLAB to show the effect of combining the first, second, third, and fourth harmonics individually. These harmonics correspond to index values <em>n</em> = 1, 2, 3, and 4 in the series (in Figure 10), respectively. For this problem, choose the fundamental frequency <span class="arithmatex">\(f_0 = 100\)</span> Hz. Plot over three periods (i.e. plot over the time interval <span class="arithmatex">\(0 \leq t \leq 3T\)</span> where <span class="arithmatex">\(T = 1/f_0\)</span>). Present your plot and accompanying MATLAB script in <strong>Slides 9-11</strong>.</p>
+<p><strong>b)</strong> Use a for loop to approximate the triangle wave with 1000 harmonics. Present your plot and accompanying MATLAB script in <strong>Slides 12-13</strong>.</p>
+<h3 id="task-3-periodic-and-quasi-periodic-signals">Task 3: Periodic and Quasi-Periodic Signals<a class="headerlink" href="#task-3-periodic-and-quasi-periodic-signals" title="Permanent link">&para;</a></h3>
+<p>Consider the following continuous time signal:</p>
+<div class="arithmatex">\[x(t) = \cos(2\pi f_1t) + \cos(2\pi f_2t)\]</div>
+<p><strong>a)</strong> If <span class="arithmatex">\(f_1 = 8\)</span> Hz and <span class="arithmatex">\(f_2 = 10\)</span> Hz, what is the fundamental frequency <span class="arithmatex">\(f_0\)</span> of this periodic signal? Present your derivation and answer in <strong>Slide 14</strong>. Plot this function over three periods to prove your answer. Present your plot in <strong>Slide 15</strong>.</p>
+<p><strong>b)</strong> Now change the first frequency component to <span class="arithmatex">\(f_1 = 5\pi/2\)</span> Hz (however, let's keep <span class="arithmatex">\(f_2 = 10\)</span> Hz the same as before). This new signal is not periodic since <span class="arithmatex">\(f_1\)</span> and <span class="arithmatex">\(f_2\)</span> do not share a common divisor. Plot this new signal over the same time span as in your previous plot. Present your plot in <strong>Slide 16</strong>.</p>
+<h3 id="task-4-spectral-analysis">Task 4: Spectral Analysis<a class="headerlink" href="#task-4-spectral-analysis" title="Permanent link">&para;</a></h3>
+<p><a href="../assets/dsp-lab1/mystery_tone.mat">📥 Download: mystery_tone.mat</a></p>
+<p><strong>a)</strong> Download the file <code>mystery_tone.mat</code>. This file contains a "mystery tone", which is just a simple sinusoidal tone with an amplitude of 2 and a yet-unknown frequency and time duration. The easiest way to load the file into MATLAB is to download the file to your desktop and then manually drag the file icon into MATLAB's workspace. MATLAB should then load the file. The more "traditional" way of loading the file is by using the <code>load</code> command.</p>
+<p><strong>b)</strong> Once the file is loaded into MATLAB, you can see what variables are saved in the .mat file by simply typing <code>whos</code> in the MATLAB Workspace. You should see that there is a single variable <code>y</code> saved in the file. This variable <code>y</code> is an array of numbers - it is the "mystery tone"! Make a simple plot of the signal by entering in the command <code>plot(y)</code>. Present your plot in <strong>Slide 17</strong>. Since <code>plot(y)</code> does not say anything about the x-axis, the x-axis will simply be a sequence of increasing integers starting from 1 and ending at the integer corresponding to the length of the signal itself.</p>
+<p><strong>c)</strong> The reason why I've been referring to this as the "mystery tone" is that the frequency is unknown. Right now, I have not given you enough information to determine the frequency of the tone. This signal could be a 1 Hz sinusoid or a 100 GHz sinusoid. We just don't know. As of yet, the signal is just a sequence of numbers stored in a computer that looks like a sinusoid when you plot it. The key piece of information missing is the sample rate. So let me tell you the sample rate now: <strong>the sample rate is <span class="arithmatex">\(f_s = 3\)</span> kHz</strong>.</p>
+<p><strong>d)</strong> Given the sample rate <span class="arithmatex">\(f_s = 3\)</span> kHz, you are to plot the signal over time (using <code>plot(t,y)</code>) and determine the frequency of the tone from this plot (the time between peaks is the period T and the frequency is equal to 1/T). This will involve you creating an array <code>t</code>, which contains the discrete points in time at which the signal has been sampled. Present the frequency and accompanying plot and MATLAB script in <strong>Slides 18-20</strong>.</p>
+<p><strong>e)</strong> Use MATLAB's <code>fft</code> function to determine the frequency of the tone. How does this answer compare to that determined using the method above? Present your results (including a plot of the FFT and accompanying MATLAB script) in <strong>Slides 21-23</strong>.</p>
+<h2 id="key-concepts-summary">Key Concepts Summary<a class="headerlink" href="#key-concepts-summary" title="Permanent link">&para;</a></h2>
+<h3 id="signal-representation">Signal Representation<a class="headerlink" href="#signal-representation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sinusoids</strong> are the fundamental building blocks of signals</li>
+<li>Any signal can be represented as a sum of sinusoids (Fourier series)</li>
+<li>Complex exponentials (<span class="arithmatex">\(e^{j\theta}\)</span>) and sinusoids are related through Euler's identity</li>
+</ul>
+<h3 id="spectrum-analysis">Spectrum Analysis<a class="headerlink" href="#spectrum-analysis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single-sided</strong></td>
+<td>Shows positive frequencies only</td>
+<td>Real-valued signals, easier visualization</td>
+</tr>
+<tr>
+<td><strong>Double-sided</strong></td>
+<td>Shows both positive and negative frequencies</td>
+<td>Complex signals, more general representation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="matlab-functions">MATLAB Functions<a class="headerlink" href="#matlab-functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plot</code></td>
+<td>Time domain plotting</td>
+<td><code>plot(t, x)</code></td>
+</tr>
+<tr>
+<td><code>stem</code></td>
+<td>Discrete spectrum plotting</td>
+<td><code>stem(f, X)</code></td>
+</tr>
+<tr>
+<td><code>fft</code></td>
+<td>Fast Fourier Transform</td>
+<td><code>X = fft(x)</code></td>
+</tr>
+<tr>
+<td><code>fftshift</code></td>
+<td>Shift zero frequency to center</td>
+<td><code>fftshift(X)</code></td>
+</tr>
+<tr>
+<td><code>cos</code>, <code>sin</code></td>
+<td>Generate sinusoids</td>
+<td><code>cos(2*pi*f*t)</code></td>
+</tr>
+<tr>
+<td><code>exp</code></td>
+<td>Generate complex exponentials</td>
+<td><code>exp(1j*theta)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>J. Sprunger and M. Aboy, <em>Computer Explorations in DSP Laboratory 1 - Working with Signals in MATLAB</em>, prepared for EE 430, Oregon Institute of Technology, 2013.</li>
+<li>Oppenheim &amp; Schafer, <em>Discrete-Time Signal Processing</em> (textbook)</li>
+<li>MATLAB Signal Processing Toolbox Documentation</li>
+</ol>
+<hr />
+<p><em>Lab created January 2016 | Updated for modern context February 2026</em></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

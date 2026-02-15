@@ -1,0 +1,3004 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal knowledge base and study notes">
+      
+      
+      
+        <link rel="canonical" href="https://aaron-scher.github.io/home/quantum-mechanics/quantum-basis-representation/">
+      
+      
+        <link rel="prev" href="../quantum-foundations/">
+      
+      
+        <link rel="next" href="../quantum-operators/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Quantum Basis Representation - Aaron's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quantum-mechanics-basis-representation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-header__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aaron's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quantum Basis Representation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aaron&#39;s Notes" class="md-nav__button md-logo" aria-label="Aaron's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aaron's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aaron-scher/home" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron-scher/home
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics & Quantum
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics & Quantum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basis Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-harmonic-oscillator-one-state-three-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Harmonic Oscillator: One State, Three Representations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Harmonic Oscillator: One State, Three Representations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-energy-rotation-phasor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Energy Rotation Phasor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-choose-different-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Choose Different Representations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-quantum-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What IS the Quantum State?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What IS the Quantum State?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-abstract-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Abstract State |ψ⟩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projecting-the-state-into-different-realms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projecting the State into Different "Realms"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-discrete-case-energy-basis-complete-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        THE DISCRETE CASE: Energy Basis (Complete Treatment)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-states-start-with-column-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building States: Start With Column Vectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building States: Start With Column Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#our-running-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Our Running Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Column Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-addition-with-concrete-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector Addition With Concrete Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-ket-notation-as-shorthand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducing Ket Notation as Shorthand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-note-on-hilbert-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Note on "Hilbert Space"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extracting-components-bras-and-inner-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extracting Components: Bras and Inner Products
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extracting Components: Bras and Inner Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-the-3d-dot-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review: The 3D Dot Product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthonormal-basis-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthonormal Basis Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probabilities-and-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probabilities and Normalization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Probabilities and Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-coefficients-to-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Coefficients to Probabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-average-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Average Energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization-probabilities-must-sum-to-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization: Probabilities Must Sum to 100%
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-evolution-and-phase-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Evolution and Phase Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Time Evolution and Phase Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applying-to-our-running-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying to Our Running Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means-physically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Means Physically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deep-physics-rotation-and-interference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Deep Physics: Rotation and Interference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-position-space-the-state-sloshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Position Space: The State "Sloshes"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-continuous-case-position-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        THE CONTINUOUS CASE: Position Basis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-discrete-to-continuous-the-natural-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Discrete to Continuous: The Natural Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From Discrete to Continuous: The Natural Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-with-discrete-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start With Discrete Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-the-lattice-finer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make the Lattice Finer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-continuous-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Continuous Limit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#position-basis-the-complete-machinery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Basis: The Complete Machinery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Position Basis: The Complete Machinery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orthonormality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthonormality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-the-wavefunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extracting the Wavefunction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-delta-function-sifting-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Delta Function Sifting Property
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-complete-parallel-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Complete Parallel Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-our-running-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to Our Running Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naked-vs-ket-now-its-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naked ψ vs Ket |ψ⟩: Now It's Clear
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-punchline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Punchline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Punchline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Ideas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Operators and Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-spatial-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement Isn't Just for Spin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity in Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-mass-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Massive Particles Stay Localized
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../band-theory-of-solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Theory of Solids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrons-in-metals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrons in Metals: From Bloch Waves to Wave Packets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phonons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonons: What They Are and How They Hit Electrons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microwave Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Microwave Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/positive-negative-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positive Coupling, Negative Coupling, and All That
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microwave-engineering/resonant-coupling-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resonant Coupling Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronics & Energy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electronics & Energy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/voltaic-cell-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voltaic Cells: How Batteries Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming & Low-Level Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming & Low-Level Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm-assembly/arm-assembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARM Assembly: Control Flow & Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Toolchain: From Source to Binary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-memory-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Memory Model: Objects & Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/c-program-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing C Programs: Scope, Linkage & Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c-programming/visual-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Reference: ASCII Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dsp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP Teaching Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DSP Teaching Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab1-signals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Working with Signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab2-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Sampling and Aliasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab3-convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Discrete Time Systems and Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab4-dtmf-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: DTMF Tone and Song Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsp/dsp-lab5-dtmf-detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: DTMF Tone Sequence Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-harmonic-oscillator-one-state-three-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Harmonic Oscillator: One State, Three Representations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Harmonic Oscillator: One State, Three Representations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-energy-rotation-phasor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Energy Rotation Phasor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-choose-different-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Choose Different Representations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-quantum-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What IS the Quantum State?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What IS the Quantum State?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-abstract-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Abstract State |ψ⟩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projecting-the-state-into-different-realms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projecting the State into Different "Realms"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-discrete-case-energy-basis-complete-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        THE DISCRETE CASE: Energy Basis (Complete Treatment)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-states-start-with-column-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building States: Start With Column Vectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building States: Start With Column Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#our-running-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Our Running Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Column Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-addition-with-concrete-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector Addition With Concrete Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introducing-ket-notation-as-shorthand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducing Ket Notation as Shorthand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-note-on-hilbert-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Note on "Hilbert Space"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extracting-components-bras-and-inner-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extracting Components: Bras and Inner Products
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extracting Components: Bras and Inner Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-the-3d-dot-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review: The 3D Dot Product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthonormal-basis-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthonormal Basis Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probabilities-and-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probabilities and Normalization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Probabilities and Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-coefficients-to-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Coefficients to Probabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-average-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Average Energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization-probabilities-must-sum-to-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization: Probabilities Must Sum to 100%
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-evolution-and-phase-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Evolution and Phase Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Time Evolution and Phase Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applying-to-our-running-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying to Our Running Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means-physically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Means Physically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deep-physics-rotation-and-interference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Deep Physics: Rotation and Interference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-position-space-the-state-sloshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Position Space: The State "Sloshes"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-continuous-case-position-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        THE CONTINUOUS CASE: Position Basis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-discrete-to-continuous-the-natural-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Discrete to Continuous: The Natural Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From Discrete to Continuous: The Natural Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-with-discrete-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start With Discrete Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-the-lattice-finer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make the Lattice Finer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-continuous-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Continuous Limit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#position-basis-the-complete-machinery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Basis: The Complete Machinery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Position Basis: The Complete Machinery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orthonormality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthonormality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-the-wavefunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extracting the Wavefunction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-delta-function-sifting-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Delta Function Sifting Property
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-complete-parallel-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Complete Parallel Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-our-running-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to Our Running Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naked-vs-ket-now-its-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naked ψ vs Ket |ψ⟩: Now It's Clear
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-punchline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Punchline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Punchline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Ideas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="quantum-mechanics-basis-representation">Quantum Mechanics: Basis Representation<a class="headerlink" href="#quantum-mechanics-basis-representation" title="Permanent link">&para;</a></h1>
+<p><strong>Prerequisites:</strong> This builds on <a href="../quantum-foundations/">Quantum Foundations</a> where we derived Schrödinger's equation and explored the harmonic oscillator. If you haven't read that yet, start there first!</p>
+<hr />
+<h2 id="the-harmonic-oscillator-one-state-three-representations">The Harmonic Oscillator: One State, Three Representations<a class="headerlink" href="#the-harmonic-oscillator-one-state-three-representations" title="Permanent link">&para;</a></h2>
+<p>In Part 1, we found that the harmonic oscillator has discrete energy levels <span class="arithmatex">\(E_n = \hbar\omega(n + \frac{1}{2})\)</span> with corresponding energy eigenstates <span class="arithmatex">\(\psi_n(x)\)</span> (Gaussians with increasing nodes). Here's the key insight: <strong>we can describe the same quantum state in three different "languages"</strong> depending on what we want to measure.</p>
+<h3 id="the-solutions">The Solutions<a class="headerlink" href="#the-solutions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Representation</strong></th>
+<th><strong>Variable</strong></th>
+<th><strong>Expression</strong></th>
+<th><strong>Domain</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Position</strong></td>
+<td><span class="arithmatex">\(x\)</span></td>
+<td><span class="arithmatex">\(\psi(x,t) = \sum_n c_n e^{-iE_n t/\hbar} \psi_n(x)\)</span></td>
+<td>continuous</td>
+</tr>
+<tr>
+<td><strong>Momentum</strong></td>
+<td><span class="arithmatex">\(p\)</span></td>
+<td><span class="arithmatex">\(\psi(p,t) = \sum_n c_n e^{-iE_n t/\hbar} \phi_n(p)\)</span></td>
+<td>continuous</td>
+</tr>
+<tr>
+<td><strong>Energy (index)</strong></td>
+<td><span class="arithmatex">\(n\)</span></td>
+<td><span class="arithmatex">\(\psi_E[n,t] = c_n e^{-iE_n t/\hbar} = \sum_m c_m e^{-iE_m t/\hbar} \delta_{n,m}\)</span></td>
+<td>discrete</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Think of these as:</strong></p>
+<ul>
+<li><span class="arithmatex">\(\psi(x,t)\)</span> — amplitudes in <strong>space</strong></li>
+<li><span class="arithmatex">\(\psi(p,t)\)</span> — amplitudes in <strong>momentum</strong></li>
+<li><span class="arithmatex">\(\psi_E[n,t]\)</span> — amplitudes in <strong>energy index (n)</strong></li>
+</ul>
+<p>The position and momentum representations are continuous functions (infinitely many values), while the energy representation is a discrete list of coefficients <span class="arithmatex">\(c_0, c_1, c_2, ...\)</span> (one for each energy level).</p>
+<h3 id="the-energy-rotation-phasor">The Energy Rotation Phasor<a class="headerlink" href="#the-energy-rotation-phasor" title="Permanent link">&para;</a></h3>
+<p>The factor <span class="arithmatex">\(e^{-iE_n t/\hbar}\)</span> is the <strong>energy rotation phasor</strong>. Each energy level rotates in the complex plane at its own rate:</p>
+<ul>
+<li>Higher energy → faster rotation (higher <span class="arithmatex">\(E_n\)</span> means faster <span class="arithmatex">\(\omega_n = E_n/\hbar\)</span>)</li>
+<li>Lower energy → slower rotation</li>
+<li>The phase <span class="arithmatex">\(\phi_n(t) = -E_n t/\hbar\)</span> advances linearly in time</li>
+</ul>
+<p>This phase rotation is fundamental to quantum dynamics, but for now, we'll work at <span class="arithmatex">\(t=0\)</span> for simplicity. The spatial structure doesn't change with time—only these phases rotate. Understanding basis representation at <span class="arithmatex">\(t=0\)</span> captures all the key concepts.</p>
+<h3 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h3>
+<p>The energy eigenstates <span class="arithmatex">\(\psi_0(x), \psi_1(x), \psi_2(x), ...\)</span> in the position representation are all <strong>normalized</strong>, meaning:</p>
+<div class="arithmatex">\[\int_{-\infty}^{\infty} |\psi_n(x)|^2 dx = 1\]</div>
+<p>This ensures the total probability of finding the particle somewhere is 100%. When we write a general state as a sum <span class="arithmatex">\(\psi(x) = \sum_n c_n \psi_n(x)\)</span>, each <span class="arithmatex">\(\psi_n(x)\)</span> already satisfies this normalization condition.</p>
+<p><strong>The coefficients <span class="arithmatex">\(c_n\)</span> are ALSO normalized</strong>. Since <span class="arithmatex">\(|c_n|^2\)</span> represents the probability of measuring energy <span class="arithmatex">\(E_n\)</span>, all probabilities must sum to 1:</p>
+<div class="arithmatex">\[\sum_{n=0}^{\infty} |c_n|^2 = 1\]</div>
+<p>For our running example with <span class="arithmatex">\(c_0 = \frac{1}{2}\)</span>, <span class="arithmatex">\(c_1 = \frac{\sqrt{2}}{2}\)</span>, <span class="arithmatex">\(c_2 = \frac{1}{2}\)</span> (all others zero), let's verify:</p>
+<div class="arithmatex">\[|c_0|^2 + |c_1|^2 + |c_2|^2 = \left|\frac{1}{2}\right|^2 + \left|\frac{\sqrt{2}}{2}\right|^2 + \left|\frac{1}{2}\right|^2 = \frac{1}{4} + \frac{1}{2} + \frac{1}{4} = 1 \,\checkmark\]</div>
+<p>This holds for any valid quantum state—the probability of measuring <em>something</em> must always be 100%.</p>
+<h3 id="why-choose-different-representations">Why Choose Different Representations?<a class="headerlink" href="#why-choose-different-representations" title="Permanent link">&para;</a></h3>
+<p>Each representation makes certain questions trivial:</p>
+<p><strong>"What's the probability of energy <span class="arithmatex">\(E_1\)</span>?"</strong> → Energy basis: just <span class="arithmatex">\(|c_1|^2\)</span>. One number!</p>
+<p><strong>"Where is the particle most likely to be found?"</strong> → Position basis: find max of <span class="arithmatex">\(|\psi(x)|^2\)</span></p>
+<p><strong>"What's the momentum distribution?"</strong> → Momentum basis: <span class="arithmatex">\(|\psi(p)|^2\)</span> directly tells you the probability density in momentum space. Useful for scattering problems, particle physics, and understanding wave packets.</p>
+<p>The art of quantum mechanics is choosing the right tool for the job. Let's see how this works!</p>
+<hr />
+<h2 id="what-is-the-quantum-state">What IS the Quantum State?<a class="headerlink" href="#what-is-the-quantum-state" title="Permanent link">&para;</a></h2>
+<p>Here's the deeper question: <strong>What IS the quantum state?</strong> Is it the function <span class="arithmatex">\(\psi(x)\)</span>? The coefficients <span class="arithmatex">\([c_0, c_1, c_2, ...]\)</span>? The momentum function <span class="arithmatex">\(\psi(p)\)</span>? Or something more fundamental?</p>
+<p>The answer: there's an <strong>abstract quantum state</strong> <span class="arithmatex">\(|\psi\rangle\)</span> (called a "ket") that exists independent of how we describe it. The different functions we use are just different ways of writing down the same underlying thing:</p>
+<ul>
+<li><span class="arithmatex">\(\psi(x)\)</span> = position representation (a function of position)</li>
+<li><span class="arithmatex">\(\psi(p)\)</span> = momentum representation (a function of momentum)</li>
+<li><span class="arithmatex">\([c_0, c_1, c_2, ...]\)</span> = energy representation (a list of coefficients)</li>
+</ul>
+<p>Same state, different descriptions! Like how a 3D vector doesn't change whether you use Cartesian or spherical coordinates. The vector itself is the same; only the numbers you write change.</p>
+<h3 id="the-abstract-state">The Abstract State |ψ⟩<a class="headerlink" href="#the-abstract-state" title="Permanent link">&para;</a></h3>
+<p>The ket <span class="arithmatex">\(|\psi\rangle\)</span> is the complete quantum state—the thing itself before you choose how to describe it.</p>
+<p><strong>The vector analogy:</strong> An arrow in 3D space doesn't change if you describe it using Cartesian coordinates <span class="arithmatex">\((x, y, z)\)</span> or cylindrical coordinates <span class="arithmatex">\((r, \theta, z)\)</span>. It's the same arrow, same length, same direction. Only the numbers you write down change. The arrow itself is <strong>basis-independent</strong>.</p>
+<p>Similarly, <span class="arithmatex">\(|\psi\rangle\)</span> exists independent of whether you ask about position, momentum, or energy. It contains all the information; you just need to choose which representation to use.</p>
+<h3 id="projecting-the-state-into-different-realms">Projecting the State into Different "Realms"<a class="headerlink" href="#projecting-the-state-into-different-realms" title="Permanent link">&para;</a></h3>
+<p>Here's how we extract different representations from the abstract state <span class="arithmatex">\(|\psi\rangle\)</span>. We <strong>project</strong> it into the realm of whatever physical property we want to observe:</p>
+<div class="arithmatex">\[\langle x|\psi\rangle = \psi(x) \quad \text{(position wavefunction)}\]</div>
+<div class="arithmatex">\[\langle p|\psi\rangle = \tilde{\psi}(p) \quad \text{(momentum wavefunction)}\]</div>
+<div class="arithmatex">\[\langle n|\psi\rangle = c_n \quad \text{(energy coefficient)}\]</div>
+<p>Don't worry about the <span class="arithmatex">\(\langle\)</span> <span class="arithmatex">\(|\)</span> notation yet—we'll explain it thoroughly in the next section. For now, the key idea is:</p>
+<ul>
+<li>The abstract state <span class="arithmatex">\(|\psi\rangle\)</span> contains everything</li>
+<li><strong>Projections</strong> extract specific aspects we care about</li>
+<li>Want to know about position? Project onto position basis with <span class="arithmatex">\(\langle x|\)</span></li>
+<li>Want to know about energy? Project onto energy basis with <span class="arithmatex">\(\langle n|\)</span></li>
+<li>Want to know about momentum? Project onto momentum basis with <span class="arithmatex">\(\langle p|\)</span></li>
+</ul>
+<p>The state itself doesn't change—only our view of it changes. Just like the arrow in 3D space stays the same whether you describe it in Cartesian, cylindrical, or spherical coordinates.</p>
+<hr />
+<h2 id="the-discrete-case-energy-basis-complete-treatment">THE DISCRETE CASE: Energy Basis (Complete Treatment)<a class="headerlink" href="#the-discrete-case-energy-basis-complete-treatment" title="Permanent link">&para;</a></h2>
+<p>Let's master the discrete case completely before moving to continuous variables. We'll build everything from column vectors (which you already know from linear algebra) to the full quantum formalism.</p>
+<hr />
+<h2 id="building-states-start-with-column-vectors">Building States: Start With Column Vectors<a class="headerlink" href="#building-states-start-with-column-vectors" title="Permanent link">&para;</a></h2>
+<h3 id="our-running-example">Our Running Example<a class="headerlink" href="#our-running-example" title="Permanent link">&para;</a></h3>
+<p>Throughout this section, we'll work with one concrete quantum state:</p>
+<p><strong>A superposition of three energy levels (n=0, n=1, n=2) with coefficients:</strong></p>
+<ul>
+<li><span class="arithmatex">\(c_0 = \frac{1}{2}\)</span></li>
+<li><span class="arithmatex">\(c_1 = \frac{\sqrt{2}}{2}\)</span></li>
+<li><span class="arithmatex">\(c_2 = \frac{1}{2}\)</span></li>
+<li>All others zero</li>
+</ul>
+<p>This isn't random—these coefficients are normalized (we'll verify this soon), and this state will help us see all the key ideas concretely.</p>
+<h3 id="column-vectors">Column Vectors<a class="headerlink" href="#column-vectors" title="Permanent link">&para;</a></h3>
+<p>We can represent our three energy levels as <strong>basis vectors</strong>—these are "one-hot" column vectors with a 1 in one position and 0 everywhere else:</p>
+<p><strong>Energy level 0:</strong></p>
+<div class="arithmatex">\[\begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \\ \vdots \end{pmatrix}\]</div>
+<p><strong>Energy level 1:</strong></p>
+<div class="arithmatex">\[\begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \\ \vdots \end{pmatrix}\]</div>
+<p><strong>Energy level 2:</strong></p>
+<div class="arithmatex">\[\begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \\ \vdots \end{pmatrix}\]</div>
+<p>Each basis vector represents "definitely in energy level n". The first entry corresponds to n=0, second to n=1, third to n=2, and so on.</p>
+<h3 id="vector-addition-with-concrete-numbers">Vector Addition With Concrete Numbers<a class="headerlink" href="#vector-addition-with-concrete-numbers" title="Permanent link">&para;</a></h3>
+<p>Now here's the key: our quantum state is built by <strong>adding scaled basis vectors</strong>, just like in 3D where <span class="arithmatex">\(\vec{v} = 2\hat{x} + 3\hat{y} + 1\hat{z}\)</span>:</p>
+<div class="arithmatex">\[
+\text{state} = \frac{1}{2}\begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \\ \vdots \end{pmatrix} + \frac{\sqrt{2}}{2}\begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \\ \vdots \end{pmatrix} + \frac{1}{2}\begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \\ \vdots \end{pmatrix}
+\]</div>
+<p>Let's do the addition explicitly:</p>
+<div class="arithmatex">\[
+\text{state} = \begin{pmatrix}
+\frac{1}{2} \cdot 1 + \frac{\sqrt{2}}{2} \cdot 0 + \frac{1}{2} \cdot 0 \\
+\frac{1}{2} \cdot 0 + \frac{\sqrt{2}}{2} \cdot 1 + \frac{1}{2} \cdot 0 \\
+\frac{1}{2} \cdot 0 + \frac{\sqrt{2}}{2} \cdot 0 + \frac{1}{2} \cdot 1 \\
+0 \\
+\vdots
+\end{pmatrix} = \begin{pmatrix}
+\frac{1}{2} \\
+\frac{\sqrt{2}}{2} \\
+\frac{1}{2} \\
+0 \\
+\vdots
+\end{pmatrix}
+\]</div>
+<p>This is just vector addition! We're scaling each basis vector by its coefficient and adding them together. The result is a column vector whose entries are exactly our coefficients <span class="arithmatex">\(c_0, c_1, c_2, ...\)</span></p>
+<h3 id="introducing-ket-notation-as-shorthand">Introducing Ket Notation as Shorthand<a class="headerlink" href="#introducing-ket-notation-as-shorthand" title="Permanent link">&para;</a></h3>
+<p>Writing out full column vectors gets tedious, so physicists invented a compact notation called <strong>ket notation</strong>. The symbol <span class="arithmatex">\(|n\rangle\)</span> is shorthand for the column vector we just wrote:</p>
+<ul>
+<li><span class="arithmatex">\(|0\rangle\)</span> means <span class="arithmatex">\(\begin{pmatrix} 1 \\ 0 \\ 0 \\ \vdots \end{pmatrix}\)</span></li>
+<li><span class="arithmatex">\(|1\rangle\)</span> means <span class="arithmatex">\(\begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \end{pmatrix}\)</span></li>
+<li><span class="arithmatex">\(|2\rangle\)</span> means <span class="arithmatex">\(\begin{pmatrix} 0 \\ 0 \\ 1 \\ \vdots \end{pmatrix}\)</span></li>
+</ul>
+<p>The ket <span class="arithmatex">\(|\psi\rangle\)</span> <strong>IS</strong> the column vector—it's just cleaner notation. Our state becomes:</p>
+<div class="arithmatex">\[|\psi\rangle = \frac{1}{2}|0\rangle + \frac{\sqrt{2}}{2}|1\rangle + \frac{1}{2}|2\rangle\]</div>
+<p>In general, we write this compactly as:</p>
+<div class="arithmatex">\[|\psi\rangle = \sum_{n=0}^{\infty} c_n |n\rangle\]</div>
+<p>where the sum <span class="arithmatex">\(\sum c_n |n\rangle\)</span> just means "add up all the scaled basis vectors"—exactly what we did above!</p>
+<p><strong>Key insight:</strong> The ket notation <span class="arithmatex">\(|n\rangle\)</span> and <span class="arithmatex">\(|\psi\rangle\)</span> is just shorthand for column vectors. Everything you know about vectors from linear algebra applies directly.</p>
+<h3 id="a-note-on-hilbert-space">A Note on "Hilbert Space"<a class="headerlink" href="#a-note-on-hilbert-space" title="Permanent link">&para;</a></h3>
+<p>You might hear quantum mechanics described as taking place in a "Hilbert space" and think it sounds intimidating. It's not! <strong>Hilbert space is just the fancy mathematical name for the vector space we're working in.</strong></p>
+<p>Think of it this way:
+- In 3D, vectors live in <span class="arithmatex">\(\mathbb{R}^3\)</span> (three-dimensional real space)
+- In quantum mechanics, state vectors live in Hilbert space</p>
+<p>Hilbert space is just:
+1. A vector space (you can add vectors and multiply by scalars)
+2. With an inner product (you can compute <span class="arithmatex">\(\langle\phi|\psi\rangle\)</span>)
+3. That's complete (technical detail: every Cauchy sequence converges - don't worry about this)</p>
+<p>For our energy basis with states like <span class="arithmatex">\(|\psi\rangle = \sum_n c_n |n\rangle\)</span>, the Hilbert space is just the space of all possible sequences <span class="arithmatex">\((c_0, c_1, c_2, ...)\)</span> where <span class="arithmatex">\(\sum_n |c_n|^2 &lt; \infty\)</span>. That's it!</p>
+<p><strong>Bottom line:</strong> "Hilbert space" = "vector space with inner product". Same linear algebra you know, just with a fancier name. Nothing to be scared of!</p>
+<hr />
+<h2 id="extracting-components-bras-and-inner-products">Extracting Components: Bras and Inner Products<a class="headerlink" href="#extracting-components-bras-and-inner-products" title="Permanent link">&para;</a></h2>
+<p>We have our state <span class="arithmatex">\(|\psi\rangle = \frac{1}{2}|0\rangle + \frac{\sqrt{2}}{2}|1\rangle + \frac{1}{2}|2\rangle\)</span> as a column vector. But suppose someone just hands you the abstract state <span class="arithmatex">\(|\psi\rangle\)</span>—how do you GET the coefficients <span class="arithmatex">\(c_0, c_1, c_2\)</span> from it?</p>
+<p>The answer: <strong>inner products</strong> (quantum dot products).</p>
+<h3 id="review-the-3d-dot-product">Review: The 3D Dot Product<a class="headerlink" href="#review-the-3d-dot-product" title="Permanent link">&para;</a></h3>
+<p>In 3D, how do we extract a specific component like <span class="arithmatex">\(v_y\)</span> from a vector <span class="arithmatex">\(\vec{v}\)</span>? We use the <strong>dot product</strong>, which projects the vector onto an axis.</p>
+<p><strong>Concrete example:</strong> Suppose <span class="arithmatex">\(\vec{v} = 2\hat{x} + 3\hat{y} + 1\hat{z}\)</span>. To extract the y-component:</p>
+<div class="arithmatex">\[v_y = \vec{v} \cdot \hat{y} = (2\hat{x} + 3\hat{y} + 1\hat{z}) \cdot \hat{y}\]</div>
+<p>The dot product picks out just the y-component because:
+- <span class="arithmatex">\(\hat{x} \cdot \hat{y} = 0\)</span> (perpendicular)
+- <span class="arithmatex">\(\hat{y} \cdot \hat{y} = 1\)</span> (parallel)
+- <span class="arithmatex">\(\hat{z} \cdot \hat{y} = 0\)</span> (perpendicular)</p>
+<p>So: <span class="arithmatex">\(v_y = 2(0) + 3(1) + 1(0) = 3\)</span></p>
+<p>The dot product "projects" <span class="arithmatex">\(\vec{v}\)</span> onto the y-axis and tells you how much of <span class="arithmatex">\(\vec{v}\)</span> points in that direction. Quantum mechanics works the same way!</p>
+<p>We introduce <strong>bras</strong> <span class="arithmatex">\(\langle\psi|\)</span> (think "row vectors") to pair with <strong>kets</strong> <span class="arithmatex">\(|\psi\rangle\)</span> (think "column vectors"):</p>
+<div class="arithmatex">\[\langle\phi|\psi\rangle = \text{"bra-ket"} = \text{"bracket"} = \text{inner product}\]</div>
+<p><strong>What's a bra exactly?</strong> It's the conjugate transpose of the ket. If:</p>
+<div class="arithmatex">\[|\psi\rangle = \begin{pmatrix} 1/2 \\ \sqrt{2}/2 \\ 1/2 \end{pmatrix}\]</div>
+<p>Then the bra is:</p>
+<div class="arithmatex">\[\langle\psi| = \begin{pmatrix} 1/2 &amp; \sqrt{2}/2 &amp; 1/2 \end{pmatrix}\]</div>
+<p>(For real numbers, it's just transpose. For complex numbers, you also take complex conjugates.)</p>
+<p><strong>Concrete inner product example:</strong> Let's compute <span class="arithmatex">\(\langle 1|\psi\rangle\)</span> to extract the coefficient <span class="arithmatex">\(c_1\)</span>:</p>
+<div class="arithmatex">\[\langle 1| = \begin{pmatrix} 0 &amp; 1 &amp; 0 \end{pmatrix}, \quad |\psi\rangle = \begin{pmatrix} 1/2 \\ \sqrt{2}/2 \\ 1/2 \end{pmatrix}\]</div>
+<div class="arithmatex">\[\langle 1|\psi\rangle = \begin{pmatrix} 0 &amp; 1 &amp; 0 \end{pmatrix} \begin{pmatrix} 1/2 \\ \sqrt{2}/2 \\ 1/2 \end{pmatrix} = 0 \cdot \frac{1}{2} + 1 \cdot \frac{\sqrt{2}}{2} + 0 \cdot \frac{1}{2} = \frac{\sqrt{2}}{2}\]</div>
+<p>This is just row-times-column matrix multiplication! The inner product picks out the second entry.</p>
+<h3 id="orthonormal-basis-vectors">Orthonormal Basis Vectors<a class="headerlink" href="#orthonormal-basis-vectors" title="Permanent link">&para;</a></h3>
+<p>Energy eigenstates are orthonormal:</p>
+<div class="arithmatex">\[\langle m|n\rangle = \begin{cases} 1 &amp; \text{if } m = n \\ 0 &amp; \text{if } m \neq n \end{cases}\]</div>
+<p>Just like <span class="arithmatex">\(\hat{x} \cdot \hat{y} = 0\)</span> and <span class="arithmatex">\(\hat{x} \cdot \hat{x} = 1\)</span> in 3D! Let's verify with our basis vectors:</p>
+<p><strong>Case 1: Different states (m ≠ n).</strong> Compute <span class="arithmatex">\(\langle 0|1\rangle\)</span>:</p>
+<div class="arithmatex">\[\langle 0|1\rangle = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; \cdots \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \end{pmatrix} = 1(0) + 0(1) + 0(0) + \cdots = 0\]</div>
+<p>They're orthogonal (perpendicular)!</p>
+<p><strong>Case 2: Same state (m = n).</strong> Compute <span class="arithmatex">\(\langle 1|1\rangle\)</span>:</p>
+<div class="arithmatex">\[\langle 1|1\rangle = \begin{pmatrix} 0 &amp; 1 &amp; 0 &amp; \cdots \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \end{pmatrix} = 0(0) + 1(1) + 0(0) + \cdots = 1\]</div>
+<p>The state is normalized (length 1)!</p>
+<p>Now we can use this to extract components. To extract <span class="arithmatex">\(c_1\)</span> from our state:</p>
+<div class="arithmatex">\[\langle 1|\psi\rangle = \langle 1|\left(\frac{1}{2}|0\rangle + \frac{\sqrt{2}}{2}|1\rangle + \frac{1}{2}|2\rangle\right)\]</div>
+<div class="arithmatex">\[= \frac{1}{2}\langle 1|0\rangle + \frac{\sqrt{2}}{2}\langle 1|1\rangle + \frac{1}{2}\langle 1|2\rangle\]</div>
+<div class="arithmatex">\[= \frac{1}{2}(0) + \frac{\sqrt{2}}{2}(1) + \frac{1}{2}(0) = \frac{\sqrt{2}}{2}\]</div>
+<p>Perfect! The formula is simply:</p>
+<div class="arithmatex">\[\boxed{c_n = \langle n|\psi\rangle}\]</div>
+<p>The inner product extracts the coefficient c_n, which is a complex number. Don't confuse c_n (the coefficient) with |n⟩ (the basis vector)!</p>
+<hr />
+<h2 id="probabilities-and-normalization">Probabilities and Normalization<a class="headerlink" href="#probabilities-and-normalization" title="Permanent link">&para;</a></h2>
+<p>Now that we can extract coefficients, let's use them to calculate physical quantities. We'll use our running example throughout.</p>
+<h3 id="from-coefficients-to-probabilities">From Coefficients to Probabilities<a class="headerlink" href="#from-coefficients-to-probabilities" title="Permanent link">&para;</a></h3>
+<p>The Born rule tells us: <strong>the probability of measuring energy <span class="arithmatex">\(E_n\)</span> is the squared magnitude of coefficient <span class="arithmatex">\(c_n\)</span></strong>:</p>
+<div class="arithmatex">\[P(E_n) = |c_n|^2\]</div>
+<p>For our state with <span class="arithmatex">\(c_0 = \frac{1}{2}\)</span>, <span class="arithmatex">\(c_1 = \frac{\sqrt{2}}{2}\)</span>, <span class="arithmatex">\(c_2 = \frac{1}{2}\)</span>:</p>
+<div class="arithmatex">\[P(E_0) = \left|\frac{1}{2}\right|^2 = \frac{1}{4} = 25\%\]</div>
+<div class="arithmatex">\[P(E_1) = \left|\frac{\sqrt{2}}{2}\right|^2 = \frac{1}{2} = 50\%\]</div>
+<div class="arithmatex">\[P(E_2) = \left|\frac{1}{2}\right|^2 = \frac{1}{4} = 25\%\]</div>
+<p>So if we measure the energy, we have a 25% chance of finding <span class="arithmatex">\(E_0 = \frac{1}{2}\hbar\omega\)</span>, a 50% chance of finding <span class="arithmatex">\(E_1 = \frac{3}{2}\hbar\omega\)</span>, and a 25% chance of finding <span class="arithmatex">\(E_2 = \frac{5}{2}\hbar\omega\)</span>.</p>
+<h3 id="the-average-energy">The Average Energy<a class="headerlink" href="#the-average-energy" title="Permanent link">&para;</a></h3>
+<p>What's the <strong>average (expected) energy</strong> if we measure many identical systems? It's the weighted average:</p>
+<div class="arithmatex">\[\langle E \rangle = \sum_n P(E_n) \cdot E_n\]</div>
+<p>For our example:</p>
+<div class="arithmatex">\[\langle E \rangle = \frac{1}{4}\left(\frac{1}{2}\hbar\omega\right) + \frac{1}{2}\left(\frac{3}{2}\hbar\omega\right) + \frac{1}{4}\left(\frac{5}{2}\hbar\omega\right)\]</div>
+<div class="arithmatex">\[= \frac{1}{8}\hbar\omega + \frac{3}{4}\hbar\omega + \frac{5}{8}\hbar\omega = \frac{1 + 6 + 5}{8}\hbar\omega = \frac{12}{8}\hbar\omega = \frac{3}{2}\hbar\omega\]</div>
+<p>This makes sense—the average energy is between <span class="arithmatex">\(E_1\)</span> and <span class="arithmatex">\(E_2\)</span>, weighted toward <span class="arithmatex">\(E_1\)</span> since that's the most probable outcome.</p>
+<h3 id="normalization-probabilities-must-sum-to-100">Normalization: Probabilities Must Sum to 100%<a class="headerlink" href="#normalization-probabilities-must-sum-to-100" title="Permanent link">&para;</a></h3>
+<p>Here's a fundamental requirement: <strong>all probabilities must add up to 1</strong> (100%). The particle must be found in <em>some</em> energy state when we measure!</p>
+<p>In bra-ket notation, this is written as:</p>
+<div class="arithmatex">\[\langle\psi|\psi\rangle = 1\]</div>
+<p>This is the <strong>inner product</strong> of the state with itself. In the energy basis, this expands to:</p>
+<div class="arithmatex">\[\langle\psi|\psi\rangle = \sum_n |c_n|^2 = 1\]</div>
+<p>Let's verify this for our example:</p>
+<div class="arithmatex">\[|c_0|^2 + |c_1|^2 + |c_2|^2 = \frac{1}{4} + \frac{1}{2} + \frac{1}{4} = 1 \quad \checkmark\]</div>
+<p>Perfect! This is what we mean when we say a state is <strong>normalized</strong>. If someone gives you arbitrary coefficients, you need to rescale them so this condition holds.</p>
+<p><strong>Physical meaning:</strong> Normalization ensures conservation of probability. When you measure, you're guaranteed to get <em>some</em> result—the probabilities of all possible outcomes must sum to certainty.</p>
+<hr />
+<h2 id="time-evolution-and-phase-rotation">Time Evolution and Phase Rotation<a class="headerlink" href="#time-evolution-and-phase-rotation" title="Permanent link">&para;</a></h2>
+<p>Quantum time evolution is beautifully simple in the energy basis. Each coefficient picks up a rotating phase:</p>
+<div class="arithmatex">\[\boxed{c_n(t) = c_n(0) \cdot e^{-iE_n t/\hbar}}\]</div>
+<p>This is the energy rotation phasor we saw in the summary table earlier. Higher energy means faster rotation.</p>
+<h3 id="applying-to-our-running-example">Applying to Our Running Example<a class="headerlink" href="#applying-to-our-running-example" title="Permanent link">&para;</a></h3>
+<p>For our state, time evolution looks like:</p>
+<div class="arithmatex">\[|\psi(t)\rangle = \frac{1}{2}|0\rangle e^{-iE_0 t/\hbar} + \frac{\sqrt{2}}{2}|1\rangle e^{-iE_1 t/\hbar} + \frac{1}{2}|2\rangle e^{-iE_2 t/\hbar}\]</div>
+<p>Higher energy means faster rotation in the complex plane (<span class="arithmatex">\(E_2\)</span> rotates fastest, <span class="arithmatex">\(E_0\)</span> slowest).</p>
+<h3 id="what-this-means-physically">What This Means Physically<a class="headerlink" href="#what-this-means-physically" title="Permanent link">&para;</a></h3>
+<p>The <strong>magnitudes</strong> <span class="arithmatex">\(|c_n(t)| = |c_n(0)|\)</span> never change! Only the <strong>phases</strong> rotate. This means:</p>
+<ul>
+<li>Energy probabilities <span class="arithmatex">\(P(E_n) = |c_n|^2\)</span> are <strong>constant in time</strong></li>
+<li>The average energy <span class="arithmatex">\(\langle E \rangle\)</span> never changes</li>
+<li>Only <strong>relative phases</strong> between different energy levels evolve</li>
+</ul>
+<p>This is why energy is conserved in quantum mechanics—the energy basis is special!</p>
+<h3 id="the-deep-physics-rotation-and-interference">The Deep Physics: Rotation and Interference<a class="headerlink" href="#the-deep-physics-rotation-and-interference" title="Permanent link">&para;</a></h3>
+<p>Different numbers of energy levels create fundamentally different dynamics:</p>
+<p><strong>One energy level:</strong> <span class="arithmatex">\(|\psi\rangle = |n\rangle\)</span>
+- Just picks up overall phase: <span class="arithmatex">\(|n\rangle \to |n\rangle e^{-iE_n t/\hbar}\)</span>
+- Overall phase has <strong>no observable effect</strong> (it factors out of all measurements)
+- These are <strong>stationary states</strong>—nothing changes!
+- No dynamics at all</p>
+<p><strong>Two energy levels:</strong> Like a qubit
+- <span class="arithmatex">\(|\psi\rangle = c_0|0\rangle e^{-i\omega_0 t} + c_1|1\rangle e^{-i\omega_1 t}\)</span> (with <span class="arithmatex">\(\omega_n = E_n/\hbar\)</span>)
+- <strong>Relative phase</strong> <span class="arithmatex">\(\Delta\phi = (\omega_1 - \omega_0)t\)</span> creates oscillations
+- This is fundamentally what makes qubits interesting!
+- Like Bloch sphere dynamics—interference between two levels
+- <strong>Energy probabilities stay constant</strong> (<span class="arithmatex">\(|c_0|^2\)</span> and <span class="arithmatex">\(|c_1|^2\)</span> never change)
+- But <strong>other</strong> observables (position, momentum, etc.) oscillate at beat frequency <span class="arithmatex">\(\omega_1 - \omega_0\)</span></p>
+<p><strong>Multiple energy levels:</strong> Our example
+- Many frequencies beating against each other
+- Multi-dimensional phase space
+- Complex interference patterns</p>
+<h3 id="in-position-space-the-state-sloshes">In Position Space: The State "Sloshes"<a class="headerlink" href="#in-position-space-the-state-sloshes" title="Permanent link">&para;</a></h3>
+<p>What does this look like in position space? For our state:</p>
+<div class="arithmatex">\[\psi(x,t) = \frac{1}{2}\psi_0(x)e^{-iE_0 t/\hbar} + \frac{\sqrt{2}}{2}\psi_1(x)e^{-iE_1 t/\hbar} + \frac{1}{2}\psi_2(x)e^{-iE_2 t/\hbar}\]</div>
+<p>Different energy levels oscillate at different frequencies. When you compute the probability density <span class="arithmatex">\(|\psi(x,t)|^2\)</span>, these different frequencies <strong>interfere</strong>, creating oscillating patterns in space.</p>
+<p>The quantum state "sloshes" back and forth in position space, while maintaining constant energy probabilities. Energy eigenstates don't change shape—only their relative phases rotate, creating interference when viewed in other bases.</p>
+<p><strong>This is the origin of quantum dynamics!</strong> Superpositions create time evolution. Pure energy eigenstates are static ("stationary"). Only mixing different energies creates observable change.</p>
+<hr />
+<h2 id="the-continuous-case-position-basis">THE CONTINUOUS CASE: Position Basis<a class="headerlink" href="#the-continuous-case-position-basis" title="Permanent link">&para;</a></h2>
+<p>Now we've mastered the discrete case. Let's extend these ideas to <strong>continuous</strong> variables like position. The key insight: position is just like energy, except the labels are continuous real numbers instead of discrete integers.</p>
+<hr />
+<h2 id="from-discrete-to-continuous-the-natural-path">From Discrete to Continuous: The Natural Path<a class="headerlink" href="#from-discrete-to-continuous-the-natural-path" title="Permanent link">&para;</a></h2>
+<h3 id="start-with-discrete-position">Start With Discrete Position<a class="headerlink" href="#start-with-discrete-position" title="Permanent link">&para;</a></h3>
+<p>Imagine a particle that can only be at N specific locations: <span class="arithmatex">\(x_1, x_2, ..., x_N\)</span> (like beads on a wire with fixed positions).</p>
+<p>This is just like the energy basis! We have basis vectors:</p>
+<div class="arithmatex">\[
+|x_1\rangle = \begin{pmatrix} 1 \\ 0 \\ 0 \\ \vdots \end{pmatrix} \quad
+|x_2\rangle = \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \end{pmatrix} \quad
+|x_3\rangle = \begin{pmatrix} 0 \\ 0 \\ 1 \\ \vdots \end{pmatrix}
+\]</div>
+<p>Each is a one-hot vector: "particle definitely at position <span class="arithmatex">\(x_i\)</span>".</p>
+<p>A general state: <span class="arithmatex">\(|\psi\rangle = \sum_i c_i |x_i\rangle\)</span> where <span class="arithmatex">\(c_i = \psi(x_i)\)</span> is the amplitude at position <span class="arithmatex">\(x_i\)</span>.</p>
+<p>Same idea as energy basis—just different labels!</p>
+<h3 id="make-the-lattice-finer">Make the Lattice Finer<a class="headerlink" href="#make-the-lattice-finer" title="Permanent link">&para;</a></h3>
+<p>Now make the spacing <span class="arithmatex">\(\Delta x\)</span> smaller and add more positions:
+- N = 5 positions → coarse lattice
+- N = 20 positions → finer lattice
+- N = 100 positions → very fine lattice</p>
+<p>As N increases:
+- The column vector gets longer
+- The coefficients <span class="arithmatex">\(c_i\)</span> become a function: <span class="arithmatex">\(c_i \to \psi(x_i)\)</span>
+- Normalization <span class="arithmatex">\(\sum_i |\psi(x_i)|^2 = 1\)</span> starts looking like area under a curve
+- If we multiply by <span class="arithmatex">\(\Delta x\)</span>: <span class="arithmatex">\(\sum_i |\psi(x_i)|^2 \Delta x \approx \int |\psi(x)|^2 dx\)</span></p>
+<h3 id="the-continuous-limit">The Continuous Limit<a class="headerlink" href="#the-continuous-limit" title="Permanent link">&para;</a></h3>
+<p>Let <span class="arithmatex">\(\Delta x \to 0\)</span> and <span class="arithmatex">\(N \to \infty\)</span>. The discrete list becomes a smooth function:</p>
+<div class="arithmatex">\[\psi(x_i) \longrightarrow \psi(x)\]</div>
+<p><strong>Thinking of states as column vectors:</strong></p>
+<p>Discrete (N positions):</p>
+<div class="arithmatex">\[|\psi\rangle \longleftrightarrow \begin{pmatrix} \psi(x_1) \\ \psi(x_2) \\ \psi(x_3) \\ \vdots \\ \psi(x_N) \end{pmatrix}\]</div>
+<p>Continuous limit (infinitely many positions):</p>
+<div class="arithmatex">\[|\psi\rangle \longleftrightarrow (..., \psi(x-\Delta x), \psi(x), \psi(x+\Delta x), ...)^T\]</div>
+<p><strong>What about basis vectors?</strong></p>
+<p>Discrete:</p>
+<div class="arithmatex">\[|x_i\rangle \longleftrightarrow (..., 0, 1 \text{ (at } x_i), 0, ...)^T\]</div>
+<p>Continuous limit:</p>
+<div class="arithmatex">\[|x\rangle \longleftrightarrow (..., 0, 1 \text{ (at } x), 0, ...)^T\]</div>
+<p>In the continuous limit, that "1 at position x" becomes a <strong>delta function spike</strong>: <span class="arithmatex">\(|x\rangle \leftrightarrow \delta(x' - x)\)</span></p>
+<p><strong>One-line summary:</strong> <span class="arithmatex">\(|x\rangle\)</span> is the continuous version of the one-hot basis vectors—it represents "particle definitely at position x".</p>
+<hr />
+<h2 id="position-basis-the-complete-machinery">Position Basis: The Complete Machinery<a class="headerlink" href="#position-basis-the-complete-machinery" title="Permanent link">&para;</a></h2>
+<p>Now let's see how everything from the discrete case carries over.</p>
+<h3 id="orthonormality">Orthonormality<a class="headerlink" href="#orthonormality" title="Permanent link">&para;</a></h3>
+<p><strong>Discrete:</strong> <span class="arithmatex">\(\langle x_i|x_j\rangle = \delta_{ij}\)</span> (Kronecker delta)</p>
+<p><strong>Continuous:</strong> <span class="arithmatex">\(\langle x'|x\rangle = \delta(x' - x)\)</span> (Dirac delta)</p>
+<p>The Kronecker delta becomes the Dirac delta—same idea, continuous version!</p>
+<h3 id="extracting-the-wavefunction">Extracting the Wavefunction<a class="headerlink" href="#extracting-the-wavefunction" title="Permanent link">&para;</a></h3>
+<p><strong>Discrete:</strong> <span class="arithmatex">\(c_i = \langle x_i|\psi\rangle\)</span> extracts coefficient at position <span class="arithmatex">\(x_i\)</span></p>
+<p><strong>Continuous:</strong> <span class="arithmatex">\(\boxed{\psi(x) = \langle x|\psi\rangle}\)</span> extracts amplitude at position <span class="arithmatex">\(x\)</span></p>
+<p>This is THE key equation! The wavefunction <span class="arithmatex">\(\psi(x)\)</span> is just the position coefficient function. You input a position, it tells you the amplitude there.</p>
+<p>(Note: For complex states, <span class="arithmatex">\(\psi(x) = \langle x|\psi\rangle = \langle\psi|x\rangle^*\)</span>, but when ψ is real-valued they're equal.)</p>
+<h3 id="building-states">Building States<a class="headerlink" href="#building-states" title="Permanent link">&para;</a></h3>
+<p><strong>Discrete:</strong> <span class="arithmatex">\(|\psi\rangle = \sum_i c_i |x_i\rangle\)</span></p>
+<p><strong>Continuous:</strong> <span class="arithmatex">\(|\psi\rangle = \int \psi(x)|x\rangle dx\)</span></p>
+<p>Same pattern! Sum becomes integral. We're adding up basis vectors weighted by amplitudes.</p>
+<p><strong>Physical picture:</strong> Each <span class="arithmatex">\(|x\rangle\)</span> is a delta spike at position x. The integral says "place amplitude <span class="arithmatex">\(\psi(x)\)</span> worth of spike at each position, then add them all up." You're building the state from infinitely many delta functions.</p>
+<h3 id="the-delta-function-sifting-property">The Delta Function Sifting Property<a class="headerlink" href="#the-delta-function-sifting-property" title="Permanent link">&para;</a></h3>
+<p>Why does <span class="arithmatex">\(\langle x|\psi\rangle = \psi(x)\)</span> work? The delta function "picks out" values:</p>
+<div class="arithmatex">\[\psi(x) = \langle x|\psi\rangle = \int \psi(x') \langle x|x'\rangle dx' = \int \psi(x') \delta(x - x') dx' = \psi(x)\]</div>
+<p>The delta function <span class="arithmatex">\(\delta(x - x')\)</span> is zero everywhere except at <span class="arithmatex">\(x' = x\)</span>, where it "sifts out" exactly <span class="arithmatex">\(\psi(x)\)</span>.</p>
+<h3 id="normalization_1">Normalization<a class="headerlink" href="#normalization_1" title="Permanent link">&para;</a></h3>
+<p><strong>Discrete:</strong> <span class="arithmatex">\(\sum_i |c_i|^2 = 1\)</span></p>
+<p><strong>Continuous:</strong> <span class="arithmatex">\(\int_{-\infty}^{\infty} |\psi(x)|^2 dx = 1\)</span></p>
+<p>All probabilities must sum to 100%. In the continuous case, <span class="arithmatex">\(|\psi(x)|^2 dx\)</span> is the probability of finding the particle in interval <span class="arithmatex">\([x, x+dx]\)</span>.</p>
+<hr />
+<h2 id="the-complete-parallel-structure">The Complete Parallel Structure<a class="headerlink" href="#the-complete-parallel-structure" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Concept</strong></th>
+<th><strong>Discrete (Energy)</strong></th>
+<th><strong>Continuous (Position)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basis labels</strong></td>
+<td><span class="arithmatex">\(n = 0,1,2,...\)</span></td>
+<td><span class="arithmatex">\(x \in \mathbb{R}\)</span></td>
+</tr>
+<tr>
+<td><strong>Basis vectors</strong></td>
+<td>One-hot columns <span class="arithmatex">\(\vert n\rangle\)</span></td>
+<td>Delta spikes <span class="arithmatex">\(\vert x\rangle\)</span></td>
+</tr>
+<tr>
+<td><strong>Coefficients</strong></td>
+<td><span class="arithmatex">\(c_n = \langle n\vert\psi\rangle\)</span></td>
+<td><span class="arithmatex">\(\psi(x) = \langle x\vert\psi\rangle\)</span></td>
+</tr>
+<tr>
+<td><strong>Orthonormality</strong></td>
+<td><span class="arithmatex">\(\langle m\vert n\rangle = \delta_{mn}\)</span></td>
+<td><span class="arithmatex">\(\langle x'\vert x\rangle = \delta(x'-x)\)</span></td>
+</tr>
+<tr>
+<td><strong>Build state</strong></td>
+<td><span class="arithmatex">\(\vert\psi\rangle = \sum_n c_n\vert n\rangle\)</span></td>
+<td><span class="arithmatex">\(\vert\psi\rangle = \int \psi(x)\vert x\rangle dx\)</span></td>
+</tr>
+<tr>
+<td><strong>Normalization</strong></td>
+<td><span class="arithmatex">\(\sum_n \vert c_n\vert^2 = 1\)</span></td>
+<td><span class="arithmatex">\(\int \vert\psi(x)\vert^2 dx = 1\)</span></td>
+</tr>
+<tr>
+<td><strong>Probability</strong></td>
+<td><span class="arithmatex">\(P(E_n) = \vert c_n\vert^2\)</span></td>
+<td><span class="arithmatex">\(P(x)dx = \vert\psi(x)\vert^2 dx\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Discrete sums <span class="arithmatex">\(\sum\)</span> become continuous integrals <span class="arithmatex">\(\int\)</span>. Kronecker deltas <span class="arithmatex">\(\delta_{mn}\)</span> become Dirac deltas <span class="arithmatex">\(\delta(x-x')\)</span>. Everything else is identical!</p>
+<hr />
+<h2 id="connecting-to-our-running-example">Connecting to Our Running Example<a class="headerlink" href="#connecting-to-our-running-example" title="Permanent link">&para;</a></h2>
+<p>Remember our state: <span class="arithmatex">\(|\psi\rangle = \frac{1}{2}|0\rangle + \frac{\sqrt{2}}{2}|1\rangle + \frac{1}{2}|2\rangle\)</span></p>
+<p>In position space, this becomes:</p>
+<div class="arithmatex">\[\psi(x) = \frac{1}{2}\psi_0(x) + \frac{\sqrt{2}}{2}\psi_1(x) + \frac{1}{2}\psi_2(x)\]</div>
+<p>where <span class="arithmatex">\(\psi_0(x), \psi_1(x), \psi_2(x)\)</span> are the Gaussian energy eigenfunctions from Part 1.</p>
+<p><strong>Key insight:</strong> We only use <strong>three</strong> energy basis vectors (the rest have <span class="arithmatex">\(c_n = 0\)</span>). But in position basis, we need <span class="arithmatex">\(\psi(x)\)</span> defined for <strong>every</strong> x! Why?</p>
+<p>Because each Gaussian energy eigenstate spreads over all space. When we add three Gaussians together, the result is non-zero almost everywhere. So in position basis, we need infinitely many values to describe what's happening.</p>
+<p>It's like describing a diagonal line in 2D:
+- <strong>Rotated basis aligned with the line:</strong> Just one coordinate
+- <strong>Standard xy basis:</strong> Need both x and y everywhere</p>
+<p>Different bases make different aspects simple or complicated. Our state is "simple" in energy basis (just 3 numbers) but "complicated" in position basis (function over all x).</p>
+<hr />
+<h2 id="naked-vs-ket-now-its-clear">Naked ψ vs Ket |ψ⟩: Now It's Clear<a class="headerlink" href="#naked-vs-ket-now-its-clear" title="Permanent link">&para;</a></h2>
+<p>The distinction is simple:</p>
+<p><strong>|ψ⟩ — The complete quantum state (basis-independent)</strong></p>
+<ul>
+<li>Contains all measurement possibilities</li>
+<li>Like a vector in 3D space</li>
+</ul>
+<p><strong>ψ(x) — The position representation</strong></p>
+<ul>
+<li>Gives amplitude at each position: <span class="arithmatex">\(\psi(x) = \langle x|\psi\rangle\)</span></li>
+<li>Like the x-components of a 3D vector</li>
+</ul>
+<p><strong><span class="arithmatex">\(c_0, c_1, c_2, ...\)</span> — The energy representation</strong></p>
+<ul>
+<li>Coefficients for each energy level: <span class="arithmatex">\(c_n = \langle n|\psi\rangle\)</span></li>
+<li>Like components in a different coordinate system</li>
+</ul>
+<p><strong>The pattern is always:</strong></p>
+<ul>
+<li>Energy coefficients: <span class="arithmatex">\(c_n = \langle n|\psi\rangle\)</span></li>
+<li>Position wavefunction: <span class="arithmatex">\(\psi(x) = \langle x|\psi\rangle\)</span></li>
+<li>Momentum wavefunction: <span class="arithmatex">\(\tilde{\psi}(p) = \langle p|\psi\rangle\)</span></li>
+</ul>
+<p>The ket |ψ⟩ is the state itself. The functions ψ(x), <span class="arithmatex">\(\tilde{\psi}(p)\)</span> and coefficients <span class="arithmatex">\(c_n\)</span> are different ways of describing it.</p>
+<hr />
+<h2 id="the-punchline">The Punchline<a class="headerlink" href="#the-punchline" title="Permanent link">&para;</a></h2>
+<p>Quantum mechanics seems complicated because we're juggling multiple representations of the same thing. But once you see the pattern, it all becomes linear algebra:</p>
+<h3 id="the-core-ideas">The Core Ideas<a class="headerlink" href="#the-core-ideas" title="Permanent link">&para;</a></h3>
+<p><strong>1. The abstract state |ψ⟩ exists independent of how we describe it</strong>
+- Like a vector in 3D space that doesn't change whether you use Cartesian, cylindrical, or spherical coordinates
+- The state itself is basis-independent—only our description changes</p>
+<p><strong>2. Representations are projections</strong>
+- Energy coefficients: <span class="arithmatex">\(c_n = \langle n|\psi\rangle\)</span>
+- Position wavefunction: <span class="arithmatex">\(\psi(x) = \langle x|\psi\rangle\)</span>
+- Momentum wavefunction: <span class="arithmatex">\(\tilde{\psi}(p) = \langle p|\psi\rangle\)</span>
+- Same formula, different basis!</p>
+<p><strong>3. Discrete and continuous follow identical patterns</strong>
+- Discrete: sums <span class="arithmatex">\(\sum\)</span>, Kronecker delta <span class="arithmatex">\(\delta_{mn}\)</span>, column vectors
+- Continuous: integrals <span class="arithmatex">\(\int\)</span>, Dirac delta <span class="arithmatex">\(\delta(x-x')\)</span>, functions
+- Everything else is the same—just different limiting cases</p>
+<p><strong>4. Choose your basis to match what you want to measure</strong>
+- Want energy probabilities? Use energy basis: <span class="arithmatex">\(P(E_n) = |c_n|^2\)</span>
+- Want position probabilities? Use position basis: <span class="arithmatex">\(P(x)dx = |\psi(x)|^2 dx\)</span>
+- Each basis makes certain questions trivial and others complicated</p>
+<p><strong>5. Time evolution is rotating phases in the energy basis</strong>
+- <span class="arithmatex">\(c_n(t) = c_n(0)e^{-iE_n t/\hbar}\)</span> (from Schrödinger's equation)
+- Magnitudes stay constant → energy probabilities conserved
+- Only relative phases change → interference creates dynamics
+- Pure energy eigenstates are stationary; only superpositions evolve</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 15, 2026 12:20:22 UTC"><span class="timeago" datetime="2026-02-15T12:20:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 15, 2026 12:20:22 UTC">2026-02-15</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/aaron-scher" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-link.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
