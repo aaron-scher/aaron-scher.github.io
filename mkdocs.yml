@@ -73,6 +73,9 @@ nav:
     - Band Theory of Solids: quantum-mechanics/band-theory-of-solids.md
     - "Electrons in Metals: From Bloch Waves to Wave Packets": quantum-mechanics/electrons-in-metals.md
     - "Phonons: What They Are and How They Hit Electrons": quantum-mechanics/phonons.md
+  - Microwave Engineering:
+    - "Positive Coupling, Negative Coupling, and All That": microwave-engineering/positive-negative-coupling.md
+    - Resonant Coupling Networks: microwave-engineering/resonant-coupling-networks.md
   - Electronics & Energy:
     - "Voltaic Cells: How Batteries Work": batteries/voltaic-cell-tutorial.md
   - Programming & Low-Level Computing:
