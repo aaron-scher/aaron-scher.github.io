@@ -82,6 +82,13 @@ nav:
     - "C Memory Model: Objects & Pointers": c-programming/c-memory-model.md
     - "Organizing C Programs: Scope, Linkage & Storage": c-programming/c-program-structure.md
     - "Visual Reference: ASCII Diagrams": c-programming/visual-reference.md
+  - DSP Teaching Materials:
+    - dsp/index.md
+    - "Lab 1: Working with Signals": dsp/dsp-lab1-signals.md
+    - "Lab 2: Sampling and Aliasing": dsp/dsp-lab2-sampling.md
+    - "Lab 3: Discrete Time Systems and Convolution": dsp/dsp-lab3-convolution.md
+    - "Lab 4: DTMF Tone and Song Generator": dsp/dsp-lab4-dtmf-generator.md
+    - "Lab 5: DTMF Tone Sequence Detector": dsp/dsp-lab5-dtmf-detector.md
 
 extra:
   generator: false

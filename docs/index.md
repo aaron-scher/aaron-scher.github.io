@@ -26,3 +26,7 @@ A place for my future self to quickly get back up to speed (and hopefully be use
 - [C Memory Model: Objects & Pointers](c-programming/c-memory-model.md)
 - [Organizing C Programs: Scope, Linkage & Storage](c-programming/c-program-structure.md)
 - [Visual Reference: ASCII Diagrams](c-programming/visual-reference.md)
+
+## DSP Teaching Materials
+
+- [DSP Lab Materials](dsp/index.md) — Five hands-on labs covering signals, sampling, convolution, filtering, and DTMF tone generation/detection.
