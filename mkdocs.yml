@@ -82,19 +82,6 @@ nav:
     - "C Memory Model: Objects & Pointers": c-programming/c-memory-model.md
     - "Organizing C Programs: Scope, Linkage & Storage": c-programming/c-program-structure.md
     - "Visual Reference: ASCII Diagrams": c-programming/visual-reference.md
-  - Arduino & IoT:
-    - Overview: arduino-iot/index.md
-    - "Arduino Yun WiFi Tutorial": arduino-iot/arduino-yun-wifi.md
-  - Circuit Design & Analysis:
-    - Overview: circuit-design/index.md
-    - "Transformer Analysis and Impedance Matching": circuit-design/transformers.md
-    - "V-I Characteristic Curves": circuit-design/vi-curves.md
-  - Digital Signal Processing:
-    - Overview: dsp/index.md
-    - "DSP Lab 3: Discrete Time Systems & Convolution": dsp/dsp-lab3-convolution.md
-  - GNU Radio & SDR:
-    - Overview: gnu-radio/index.md
-    - "BPSK Audio Modem": gnu-radio/bpsk-audio-modem.md
 
 extra:
   generator: false
