@@ -92,8 +92,6 @@ nav:
     - "Lab 3: Discrete Time Systems and Convolution": dsp/dsp-lab3-convolution.md
     - "Lab 4: DTMF Tone and Song Generator": dsp/dsp-lab4-dtmf-generator.md
     - "Lab 5: DTMF Tone Sequence Detector": dsp/dsp-lab5-dtmf-detector.md
-  - Courses:
-    - "ENGR-111, Introduction to Engineering": https://aaron-scher.github.io/engr111/
 
 extra:
   generator: false
