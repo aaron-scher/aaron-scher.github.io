@@ -31,3 +31,6 @@ A place for my future self to quickly get back up to speed (and hopefully be use
 
 - [DSP Lab Materials](dsp/index.md) — Five hands-on labs covering signals, sampling, convolution, filtering, and DTMF tone generation/detection.
 
+## Courses
+
+- [ENGR-111, Introduction to Engineering](https://aaron-scher.github.io/engr111/)
